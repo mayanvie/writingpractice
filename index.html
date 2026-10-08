@@ -109,11 +109,58 @@
     background: var(--tone-1);
     color: #5d7394;
   }
-  .tone-1 .num { background: var(--tone-1); color: #5d7394; }
-  .tone-2 .num { background: var(--tone-2); color: #6d6390; }
-  .tone-3 .num { background: var(--tone-3); color: #3f7a62; }
-  .tone-4 .num { background: var(--tone-4); color: #8a7040; }
-  .tone-5 .num { background: var(--tone-5); color: #8d625c; }
+  .book {
+    --bk: #bfe8d4;
+    --bk-edge: #8fcdb2;
+    flex: none;
+    position: relative;
+    width: 50px;
+    height: 64px;
+    margin: 2px 8px 6px 2px;
+    border-radius: 3px 11px 11px 3px;
+    background: var(--bk);
+    box-shadow: 3px 4px 0 var(--bk-edge);
+    color: #3f4a5c;
+    font-size: 0.92rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 8px;
+    transform: rotate(-4deg);
+    transition: transform 0.28s ease;
+  }
+  .book::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 8px;
+    background: var(--bk-edge);
+    border-radius: 3px 0 0 3px;
+  }
+  .book::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 14px;
+    right: 7px;
+    height: 3px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+  .lesson:hover .book { transform: rotate(0deg) translateY(-3px); }
+  .bk-1 { --bk: #bfe8d4; --bk-edge: #8fcdb2; }
+  .bk-2 { --bk: #ffd6bd; --bk-edge: #f4b08a; }
+  .bk-3 { --bk: #d8cdf6; --bk-edge: #b4a3e6; }
+  .bk-4 { --bk: #c6dcf7; --bk-edge: #9bbfec; }
+  .bk-5 { --bk: #f9cfe1; --bk-edge: #eba3c1; }
+  .bk-6 { --bk: #fff0b8; --bk-edge: #ecd279; }
+  .bk-7 { --bk: #cdeef2; --bk-edge: #98d3dc; }
+  .bk-8 { --bk: #e3efc0; --bk-edge: #bcd584; }
+  .bk-9 { --bk: #f6d3cf; --bk-edge: #e2a49d; }
+  .bk-10 { --bk: #dcd9ee; --bk-edge: #b2aed3; }
   .unit { color: var(--label); font-size: 0.82rem; font-weight: 600; }
   .learned {
     margin-left: auto;
@@ -335,6 +382,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     * { scroll-behavior: auto !important; }
+    .book { transition: none; }
   }
 </style>
 </head>
@@ -1961,10 +2009,10 @@ function renderHome() {
     var done = masteredCount(lesson);
     var total = lesson.questions.length;
     var finished = !!progress.finished[String(lesson.id)];
-    var tone = ((lesson.id - 1) % 5) + 1;
+    var bk = ((lesson.id - 1) % 10) + 1;
     var num = (lesson.id < 10 ? "0" : "") + lesson.id;
-    html += '<article class="card lesson tone-' + tone + '">';
-    html += '<div class="lesson-top"><span class="num">' + num + "</span><div>";
+    html += '<article class="card lesson">';
+    html += '<div class="lesson-top"><span class="book bk-' + bk + '">' + num + "</span><div>";
     html += "<h2>" + esc(lesson.title) + "</h2>";
     html += '<p class="desc">' + esc(lesson.vi) + "</p></div>";
     if (finished) html += '<span class="learned">Đã học</span>';
