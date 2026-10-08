@@ -161,6 +161,7 @@
   .bk-8 { --bk: #e3efc0; --bk-edge: #bcd584; }
   .bk-9 { --bk: #f6d3cf; --bk-edge: #e2a49d; }
   .bk-10 { --bk: #dcd9ee; --bk-edge: #b2aed3; }
+  .bk-1, .bk-2, .bk-3, .bk-4, .bk-5, .bk-6, .bk-7, .bk-8, .bk-9, .bk-10 { --bkd: var(--bk-edge); }
   .unit { color: var(--label); font-size: 0.82rem; font-weight: 600; }
   .learned {
     margin-left: auto;
@@ -271,7 +272,7 @@
   .chip.blank { background: var(--blank); color: var(--blank-ink); border: 2px dashed var(--blank-line); }
   .chip-vi { font-size: 0.78rem; color: var(--muted); text-align: center; }
   .example { margin-top: 14px; padding-top: 4px; }
-  .ex-en { font-size: 1.15rem; font-weight: 700; color: var(--sentence); }
+  .ex-en { font-size: 1.6rem; font-weight: 700; color: var(--sentence); line-height: 1.35; }
   .ex-vi { color: var(--muted); }
   .hint-line { color: var(--muted); margin-top: 8px; }
   .well {
@@ -298,13 +299,15 @@
   }
   .answer-input {
     width: 100%;
-    border: 1.5px solid var(--line);
-    background: var(--card);
+    border: 3px solid var(--bkd, var(--line));
+    background: #fff;
     color: var(--ink);
-    border-radius: 14px;
+    border-radius: 16px;
     padding: 14px 16px;
-    min-height: 54px;
+    min-height: 68px;
     margin: 8px 0 12px;
+    font-size: 1.35rem;
+    line-height: 1.4;
   }
   .answer-input:disabled { opacity: 0.85; }
   .fb { border-radius: 16px; padding: 14px 16px; margin-top: 12px; }
@@ -373,11 +376,160 @@
     border-radius: 16px;
     padding: 16px;
   }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .topbar.slim { flex-wrap: nowrap; gap: 10px; margin-bottom: 12px; }
+  .topbar.slim .dots, .topbar.slim .tag { margin-left: auto; flex: none; }
+  .back {
+    width: 44px;
+    min-height: 44px;
+    padding: 0;
+    flex: none;
+    font-size: 1.15rem;
+  }
+  .crumb {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 0 0 14px; }
+  .step {
+    text-align: center;
+    border-radius: 999px;
+    padding: 8px 6px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--muted);
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+  .step.on {
+    background: var(--bk, var(--primary));
+    color: #3e4556;
+    border-color: transparent;
+  }
+  .study {
+    background: #fff;
+    background: color-mix(in srgb, var(--bk, #fff) 34%, #fff);
+  }
+  .study .btn:not(.btn-ghost) {
+    background: var(--bk, var(--primary));
+    color: #2c3a4e;
+  }
+  .study .btn:not(.btn-ghost):hover { background: var(--bkd, #c9daf2); }
+  .ask-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px 12px;
+    margin: 0 0 18px;
+    text-align: center;
+  }
+  .ask-en { font-size: 1.05rem; font-weight: 600; line-height: 1.35; color: var(--ink); }
+  .ask-vi { font-size: 0.88rem; color: var(--muted); }
+  .study { text-align: center; }
+  .study .chips { justify-content: center; margin-top: 18px; }
+  .study .chip { font-size: 0.92rem; }
+  .study .example { margin-top: 0; }
+  .study .ex-en {
+    font-size: clamp(1.9rem, 4.4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.25;
+  }
+  .study .ex-vi { text-align: center; margin-top: 6px; }
+  .study .btn-row { justify-content: center; }
+  .study .slot { justify-content: center; align-content: center; }
+  .study .bank { justify-content: center; }
+  .study .vchips { justify-content: center; }
+  .study .answer-input { text-align: center; font-size: 1.5rem; }
+  .test-en {
+    margin: 0;
+    font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .test-vi { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+  .slot {
+    min-height: 124px;
+    border: 3px dashed var(--bkd, var(--line));
+    border-radius: 18px;
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 8px;
+    background: #fff;
+    background: color-mix(in srgb, var(--bk, #fff) 22%, #fff);
+    margin: 0 0 10px;
+  }
+  .slot .word { font-size: 1.35rem; }
+  .bank-box {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 12px;
+    margin-top: 8px;
+  }
+  .bank-box .bank { margin-top: 0; }
+  .bank-box .word { font-size: 1.15rem; }
+  .vocab-drawer { margin-top: 16px; }
+  .vchips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .vchip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 6px 10px;
+    text-align: left;
+    line-height: 1.3;
+  }
+  button.vchip { cursor: pointer; font: inherit; color: inherit; }
+  .vchip-en { font-weight: 700; font-size: 0.92rem; color: var(--vocab); }
+  .vchip-vi { font-size: 0.78rem; color: var(--muted); }
+  .hint-box { margin-top: 12px; }
+  .hint-note { color: var(--muted); font-size: 0.88rem; margin-top: 8px; }
+  .pile-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .pile-btn {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    border-radius: 999px;
+    min-height: 40px;
+    padding: 6px 14px;
+    font-weight: 600;
+    font-size: 0.92rem;
+  }
+  .pile-btn.ok.open { background: var(--ok-bg); color: var(--ok-ink); border-color: var(--ok-line); }
+  .pile-btn.wait.open { background: var(--warn-bg); color: var(--warn-ink); border-color: var(--warn-line); }
+  .pile-list { margin-top: 8px; }
   @media (max-width: 800px) {
     .grid, .split, .piles { grid-template-columns: 1fr; }
     .card-q { order: -1; }
     .btn-row .btn { flex: 1 1 auto; }
     .topbar .dots { flex-basis: 100%; }
+    .topbar.slim .dots { flex-basis: auto; }
     body { font-size: 17px; }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -1859,7 +2011,10 @@ var state = {
   phase: "front",
   hintUsed: false,
   hintOpen: false,
-  result: null
+  result: null,
+  vocabOpen: false,
+  pileOk: false,
+  pileWait: false
 };
 
 function normalize(raw) {
@@ -1893,6 +2048,10 @@ function lessonById(id) {
 
 function currentLesson() { return lessonById(state.lessonId); }
 function currentQuestion() { return currentLesson().questions[state.qIndex]; }
+
+function bookClass(lesson) {
+  return "bk-" + (((lesson.id - 1) % 10) + 1);
+}
 
 function defaultProgress() {
   return { sentences: 0, finished: {}, mastered: {} };
@@ -1972,20 +2131,26 @@ function questionPanel(q) {
 }
 
 function vocabHtml(q, tappable) {
-  var html = '<section class="card card-vocab"><p class="vocab-title">Từ vựng</p>';
-  if (tappable) html += '<p class="vocab-note">Bấm một dòng để điền vào câu.</p>';
-  html += '<div class="vocab-list">';
-  for (var i = 0; i < q.vocab.length; i++) {
-    var item = q.vocab[i];
-    if (tappable) {
-      html += '<button type="button" class="vocab-btn" data-action="vocab" data-index="' + i + '">';
-    } else {
-      html += '<div class="vocab-row">';
+  var open = !!state.vocabOpen;
+  var html = '<div class="vocab-drawer"><button type="button" class="btn btn-ghost" data-action="toggle-vocab" aria-expanded="' + (open ? "true" : "false") + '">';
+  html += open ? "💡 Từ gợi ý ▲ Ẩn" : "💡 Từ gợi ý ▼ Xem";
+  html += "</button>";
+  if (open) {
+    html += '<div class="vchips">';
+    for (var i = 0; i < q.vocab.length; i++) {
+      var item = q.vocab[i];
+      if (tappable) html += '<button type="button" class="vchip" data-action="vocab" data-index="' + i + '">';
+      else html += '<span class="vchip">';
+      html += '<span class="vchip-en" lang="en">' + esc(item.en) + '</span><span class="vchip-vi">' + esc(item.vi) + "</span>";
+      html += tappable ? "</button>" : "</span>";
     }
-    html += '<span class="vocab-en" lang="en">' + esc(item.en) + '</span><span class="vocab-vi">' + esc(item.vi) + "</span>";
-    html += tappable ? "</button>" : "</div>";
+    html += "</div>";
   }
-  return html + "</div></section>";
+  return html + "</div>";
+}
+
+function askLine(q) {
+  return '<p class="ask-line"><span class="ask-en" lang="en">' + esc(q.ask) + '</span><span class="ask-vi">' + esc(q.vi) + "</span></p>";
 }
 
 function dotsHtml(lesson, index) {
@@ -2017,7 +2182,6 @@ function renderHome() {
     html += '<p class="desc">' + esc(lesson.vi) + "</p></div>";
     if (finished) html += '<span class="learned">Đã học</span>';
     html += "</div>";
-    html += '<p><span class="tag">' + esc(lesson.tag) + "</span></p>";
     html += '<p class="progress-line">' + done + "/" + total + " câu đã thuộc</p>";
     html += '<div class="btn-row">';
     html += '<button type="button" class="btn" data-action="learn" data-lesson="' + lesson.id + '">Học</button>';
@@ -2031,7 +2195,6 @@ function renderHome() {
     html += '<p class="unit">' + esc(soon.unit) + "</p><h2>" + esc(soon.title) + "</h2></div>";
     html += '<span class="soon-badge">Sắp có</span></div>';
     html += '<p class="desc">' + esc(soon.vi) + "</p>";
-    html += '<p><span class="tag">' + esc(soon.tag) + "</span></p>";
     html += "</article>";
   }
   html += "</div>";
@@ -2053,8 +2216,15 @@ function pilesHtml(lesson) {
   }
   if (!okN) ok = '<p class="pile-empty">Chưa có câu nào.</p>';
   if (!waitN) wait = '<p class="pile-empty">Không còn câu nào.</p>';
-  return '<div class="piles"><section class="pile ok"><h3>Đã thuộc · ' + okN + "</h3>" + ok +
-    '</section><section class="pile wait"><h3>Chưa thuộc · ' + waitN + "</h3>" + wait + "</section></div>";
+  var okOpen = !!state.pileOk;
+  var waitOpen = !!state.pileWait;
+  var html = '<div class="pile-row">';
+  html += '<button type="button" class="pile-btn ok' + (okOpen ? " open" : "") + '" data-action="toggle-pile" data-pile="ok" aria-expanded="' + (okOpen ? "true" : "false") + '">Đã thuộc · ' + okN + "</button>";
+  html += '<button type="button" class="pile-btn wait' + (waitOpen ? " open" : "") + '" data-action="toggle-pile" data-pile="wait" aria-expanded="' + (waitOpen ? "true" : "false") + '">Chưa thuộc · ' + waitN + "</button>";
+  html += "</div>";
+  if (okOpen) html += '<div class="pile-list">' + ok + "</div>";
+  if (waitOpen) html += '<div class="pile-list">' + wait + "</div>";
+  return html;
 }
 
 function guideById(id) {
@@ -2097,45 +2267,46 @@ function renderGuide() {
 }
 
 function learnTop(lesson) {
-  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
-  html += "<h2>Bài " + lesson.id + " · " + esc(lesson.title) + "</h2>";
+  var html = '<div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="home" aria-label="Về trang chủ">←</button>';
+  html += '<p class="crumb">Bài ' + lesson.id + " · " + esc(lesson.title) + "</p>";
   if (state.single) html += '<span class="tag">Ôn lại 1 câu</span>';
   else html += dotsHtml(lesson, state.qIndex);
   html += "</div>";
-  var stepName = state.step === 1 ? "Xem" : (state.step === 2 ? "Ghép" : "Viết");
-  var qLabel = state.single ? "Ôn câu này" : ("Câu " + (state.qIndex + 1) + "/" + lesson.questions.length);
-  html += '<p class="step-label">' + qLabel + " · Bước " + state.step + "/3 · " + stepName + "</p>";
+  var names = ["Xem", "Ghép", "Viết"];
+  html += '<div class="steps" role="group" aria-label="Bước ' + state.step + ' trên 3">';
+  for (var s = 1; s <= 3; s++) {
+    html += '<span class="step' + (state.step === s ? " on" : "") + '"' + (state.step === s ? ' aria-current="step"' : "") + ">" + s + " · " + names[s - 1] + "</span>";
+  }
+  html += "</div>";
   return html;
 }
 
 function renderStep1(q) {
-  var html = questionPanel(q);
-  html += '<p class="label">Công thức</p>' + chipsHtml(q.formula);
-  html += '<div class="example"><p class="label">Ví dụ</p>';
+  var html = askLine(q);
+  html += '<div class="example">';
   html += '<p class="ex-en" lang="en">' + esc(q.example) + "</p>";
   html += '<p class="ex-vi">' + esc(q.exampleVi) + "</p></div>";
+  html += chipsHtml(q.formula);
   html += '<div class="btn-row" style="margin-top:16px"><button type="button" class="btn" data-action="to-ghep">Mình hiểu rồi →</button></div>';
   return html;
 }
 
 function renderStep2(q) {
-  var html = questionPanel(q);
-  html += "<p>Bấm các từ theo đúng thứ tự để ghép câu ví dụ. Dấu chấm đi cùng từ cuối.</p>";
-  html += '<div class="well" aria-live="polite">';
-  if (!state.picked.length) html += '<span class="placeholder">Câu của bạn hiện ở đây.</span>';
+  var html = askLine(q);
+  html += '<div class="slot" aria-live="polite" aria-label="Ô ghép câu">';
   var i;
   for (i = 0; i < state.picked.length; i++) {
     var picked = state.picked[i];
     html += '<button type="button" class="word" data-action="unpick" data-id="' + picked.id + '">' + esc(picked.text) + "</button>";
   }
   html += "</div>";
-  html += '<div class="bank">';
+  html += '<p class="ex-vi">' + esc(q.exampleVi) + "</p>";
+  html += '<div class="bank-box"><div class="bank">';
   for (i = 0; i < state.bank.length; i++) {
     var tok = state.bank[i];
     html += '<button type="button" class="word" data-action="pick" data-id="' + tok.id + '">' + esc(tok.text) + "</button>";
   }
-  html += "</div>";
-  html += '<p class="hint-line">Nghĩa: ' + esc(q.exampleVi) + "</p>";
+  html += "</div></div>";
   if (state.ghepChecked && state.ghepOk) {
     html += '<div class="fb ok"><p>Đúng rồi.</p><p class="sample" lang="en">' + esc(q.example) + "</p><p>" + esc(q.exampleVi) + "</p></div>";
     html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="to-write">Tự viết câu của bạn →</button></div>';
@@ -2146,12 +2317,11 @@ function renderStep2(q) {
 }
 
 function renderStep3(q) {
-  var html = questionPanel(q);
-  html += '<p class="label">Công thức</p>' + chipsHtml(q.formula);
-  html += '<label for="answer-input" class="label">Viết câu của bạn</label>';
+  var html = askLine(q);
+  html += chipsHtml(q.formula);
+  html += '<label for="answer-input" class="sr-only">Viết câu của bạn</label>';
   html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (state.writeOk ? " disabled" : "") + ">";
   html += '<div class="btn-row"><button type="button" class="btn" data-action="check-write"' + (state.writeOk ? " disabled" : "") + ">Kiểm tra</button></div>";
-  html += '<p class="hint-line">Đã viết: ' + progress.sentences + " câu</p>";
   html += '<div id="feedback">';
   if (state.writeOk) {
     html += '<div class="fb ok"><p>Câu của bạn đúng rồi.</p></div>';
@@ -2167,13 +2337,13 @@ function renderStep3(q) {
 function renderLearn() {
   var lesson = currentLesson();
   var q = currentQuestion();
-  var html = learnTop(lesson);
-  html += '<div class="split">';
-  html += vocabHtml(q, state.step === 3 && !state.writeOk);
-  html += '<section class="card card-q">';
+  var html = '<div class="center-col ' + bookClass(lesson) + '">';
+  html += learnTop(lesson);
+  html += '<section class="card study">';
   if (state.step === 1) html += renderStep1(q);
   else if (state.step === 2) html += renderStep2(q);
   else html += renderStep3(q);
+  if (state.step === 3) html += vocabHtml(q, !state.writeOk);
   html += "</section></div>";
   return html;
 }
@@ -2206,64 +2376,61 @@ function testCounters(lesson) {
   return '<div class="counters"><span class="pill ok">Đã thuộc ' + n + '</span><span class="pill wait">Chưa thuộc ' + m + "</span></div>";
 }
 
+function testTop(lesson, qIndex) {
+  var line = "Test · " + esc(lesson.title);
+  if (qIndex != null && qIndex >= 0) line += " · Câu " + (qIndex + 1) + "/" + lesson.questions.length;
+  return '<div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="home" aria-label="Về trang chủ">←</button><p class="crumb">' + line + "</p></div>";
+}
+
 function renderTest() {
   var lesson = currentLesson();
-  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
-  html += testCounters(lesson) + "</div>";
-  html += '<div class="center-col">';
-  html += "<h2>Test · " + esc(lesson.title) + "</h2>";
+  var qIndex = null;
+  if (state.queue.length) qIndex = state.phase === "result" ? state.result.qIndex : state.queue[0];
+  var html = '<div class="center-col ' + bookClass(lesson) + '">';
+  html += testTop(lesson, qIndex);
   if (!state.queue.length) {
     html += renderCelebrate();
     html += "</div>";
     return html;
   }
-  var qIndex = state.phase === "result" ? state.result.qIndex : state.queue[0];
   var q = lesson.questions[qIndex];
-  html += '<p class="step-label">Câu ' + (qIndex + 1) + "/" + lesson.questions.length + "</p>";
-  if (state.phase === "front") {
-    html += '<button type="button" class="front" data-action="open-card">';
-    html += '<span class="ask" lang="en">' + esc(q.ask) + '</span><span class="vi">' + esc(q.vi) + "</span>";
-    html += '<span class="tap">Bấm vào thẻ để trả lời</span></button>';
-  } else {
-    html += '<section class="card">';
-    html += questionPanel(q);
-    var locked = state.phase === "result";
-    html += '<label for="answer-input" class="label">Viết câu của bạn</label>';
-    html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (locked ? " disabled" : "") + ">";
-    html += '<div class="btn-row">';
-    html += '<button type="button" class="btn" data-action="check-test"' + (locked ? " disabled" : "") + ">Kiểm tra</button>";
-    html += '<button type="button" class="btn btn-ghost" data-action="hint"' + (locked ? " disabled" : "") + ">Xem gợi ý</button>";
-    html += "</div>";
-    if (state.hintOpen) {
-      html += '<div class="fb bad"><p>Gợi ý</p>' + chipsHtml(q.formula);
-      html += "<p>Dùng gợi ý nên thẻ này sẽ quay lại sau.</p></div>";
-    }
-    html += '<div id="feedback">';
-    if (state.phase === "write" && state.writeMsg) {
-      html += '<div class="fb bad"><p>' + formatMsg(state.writeMsg) + "</p></div>";
-    }
-    if (state.phase === "result") {
-      if (state.result.kind === "mastered") {
-        html += '<div class="fb ok"><p>Đúng rồi. Thẻ này chuyển sang Đã thuộc.</p></div>';
-        html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
-      } else if (state.result.kind === "hint") {
-        html += '<div class="fb bad"><p>Câu đúng rồi! Nhưng bạn đã dùng gợi ý nên thẻ sẽ quay lại để thử lại không gợi ý.</p></div>';
-        html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
-      } else {
-        html += '<div class="fb bad"><p>' + formatMsg(state.result.message) + "</p>";
-        html += "<p>Lưu ý: web chỉ nhận câu theo đúng mẫu của bài.</p>";
-        html += '<p class="sample" lang="en">' + esc(q.example) + "</p>";
-        html += "<p>" + esc(q.exampleVi) + "</p>";
-        html += "<p>Thẻ chuyển sang Chưa thuộc và sẽ quay lại sau.</p></div>";
-        html += '<div class="btn-row" style="margin-top:12px">';
-        html += '<button type="button" class="btn" data-action="retry">Sửa lại</button>';
-        html += '<button type="button" class="btn btn-ghost" data-action="review">Ôn lại câu này</button>';
-        html += '<button type="button" class="btn btn-ghost" data-action="next-card">Thẻ tiếp theo →</button>';
-        html += "</div>";
-      }
-    }
-    html += "</div></section>";
+  var locked = state.phase === "result";
+  html += '<section class="card study">';
+  html += '<p class="test-en" lang="en">' + esc(q.ask) + '</p><p class="test-vi">' + esc(q.vi) + "</p>";
+  html += '<label for="answer-input" class="sr-only">Viết câu của bạn</label>';
+  html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (locked ? " disabled" : "") + ">";
+  html += '<div class="btn-row">';
+  html += '<button type="button" class="btn" data-action="check-test"' + (locked ? " disabled" : "") + ">Kiểm tra</button>";
+  html += '<button type="button" class="btn btn-ghost" data-action="hint"' + (locked ? " disabled" : "") + ">Xem gợi ý</button>";
+  html += "</div>";
+  if (state.hintOpen) {
+    html += '<div class="hint-box">' + chipsHtml(q.formula);
+    html += '<p class="hint-note">Dùng gợi ý nên thẻ này sẽ quay lại sau.</p></div>';
   }
+  html += '<div id="feedback">';
+  if (!locked && state.writeMsg) {
+    html += '<div class="fb bad"><p>' + formatMsg(state.writeMsg) + "</p></div>";
+  }
+  if (state.phase === "result") {
+    if (state.result.kind === "mastered") {
+      html += '<div class="fb ok"><p>Đúng rồi. Thẻ này chuyển sang Đã thuộc.</p></div>';
+      html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
+    } else if (state.result.kind === "hint") {
+      html += '<div class="fb bad"><p>Câu đúng rồi! Nhưng bạn đã dùng gợi ý nên thẻ sẽ quay lại để thử lại không gợi ý.</p></div>';
+      html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
+    } else {
+      html += '<div class="fb bad"><p>' + formatMsg(state.result.message) + "</p>";
+      html += "<p>Lưu ý: web chỉ nhận câu theo đúng mẫu của bài.</p>";
+      html += '<p class="sample" lang="en">' + esc(q.example) + "</p>";
+      html += "<p>" + esc(q.exampleVi) + "</p>";
+      html += "<p>Thẻ chuyển sang Chưa thuộc và sẽ quay lại sau.</p></div>";
+      html += '<div class="btn-row" style="margin-top:12px">';
+      html += '<button type="button" class="btn" data-action="retry">Sửa lại</button>';
+      html += '<button type="button" class="btn btn-ghost" data-action="next-card">Thẻ tiếp theo →</button>';
+      html += "</div>";
+    }
+  }
+  html += "</div></section>";
   html += pilesHtml(lesson);
   html += "</div>";
   return html;
@@ -2292,8 +2459,7 @@ function render() {
   else if (state.view === "guide") html = renderGuide();
   else if (state.view === "celebrate") {
     var lesson = currentLesson();
-    html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>' + testCounters(lesson) + "</div>";
-    html += '<div class="center-col"><h2>Test · ' + esc(lesson.title) + "</h2>" + renderCelebrate() + "</div>";
+    html = '<div class="center-col ' + bookClass(lesson) + '">' + testTop(lesson, null) + renderCelebrate() + "</div>";
   }
   app.innerHTML = html;
   var input = document.getElementById("answer-input");
@@ -2343,6 +2509,7 @@ function startLearn(id) {
   state.counted = false;
   state.ghepChecked = false;
   state.ghepOk = false;
+  state.vocabOpen = false;
   render();
 }
 
@@ -2353,6 +2520,7 @@ function goGhep() {
   state.picked = [];
   state.ghepChecked = false;
   state.ghepOk = false;
+  state.vocabOpen = false;
   render();
 }
 
@@ -2362,6 +2530,7 @@ function goWrite() {
   state.writeMsg = "";
   state.writeOk = false;
   state.counted = false;
+  state.vocabOpen = false;
   render();
 }
 
@@ -2443,6 +2612,7 @@ function nextQuestion() {
   state.writeMsg = "";
   state.writeOk = false;
   state.counted = false;
+  state.vocabOpen = false;
   render();
 }
 
@@ -2460,6 +2630,8 @@ function startTest(id) {
   state.draft = "";
   state.writeMsg = "";
   state.single = false;
+  state.pileOk = false;
+  state.pileWait = false;
   if (!state.queue.length) state.view = "celebrate";
   render();
 }
@@ -2567,6 +2739,7 @@ function startReview() {
   state.counted = false;
   state.ghepChecked = false;
   state.ghepOk = false;
+  state.vocabOpen = false;
   render();
 }
 
@@ -2579,6 +2752,8 @@ function returnToTest() {
   state.result = null;
   state.draft = "";
   state.writeMsg = "";
+  state.pileOk = false;
+  state.pileWait = false;
   render();
 }
 
@@ -2662,6 +2837,14 @@ function onClick(e) {
   if (action === "review") { startReview(); return; }
   if (action === "reset-test") { resetTest(); return; }
   if (action === "review-lesson") { startLearn(state.lessonId); return; }
+  if (action === "toggle-vocab") { state.vocabOpen = !state.vocabOpen; render(); return; }
+  if (action === "toggle-pile") {
+    var pile = btn.getAttribute("data-pile");
+    if (pile === "ok") state.pileOk = !state.pileOk;
+    else if (pile === "wait") state.pileWait = !state.pileWait;
+    render();
+    return;
+  }
 }
 
 function onKey(e) {
