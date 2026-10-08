@@ -1,0 +1,2649 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Luyện viết tiếng Anh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --card: #ffffff;
+    --ink: #3e4556;
+    --muted: #7b8496;
+    --kicker: #8b93a6;
+    --label: #6e7890;
+    --vocab: #4c5870;
+    --sentence: #7a6248;
+    --line: #ece6f2;
+    --primary: #d7e4f6;
+    --primary-ink: #2c4468;
+    --secondary: #6d7c96;
+    --panel: #eef3fb;
+    --chip: #e7eef8;
+    --chip-ink: #3f4d68;
+    --blank: #fff6dc;
+    --blank-ink: #7a6248;
+    --blank-line: #e6d3a1;
+    --ok-bg: #e7f6ee;
+    --ok-ink: #2f6b52;
+    --ok-line: #cfe8db;
+    --warn-bg: #fff4e6;
+    --warn-ink: #8a6238;
+    --warn-line: #f0ddc4;
+    --shadow: 0 14px 34px rgba(92, 78, 120, 0.06);
+    --well: #faf8fc;
+    --tag: #efeaf8;
+    --tag-ink: #6d6390;
+    --soon-bg: #f7f5f8;
+    --dot: #ddd6e8;
+    --dot-done: #8aa4d4;
+    --tone-1: #e7f0ff;
+    --tone-2: #efe8fb;
+    --tone-3: #e5f6ee;
+    --tone-4: #fff6dc;
+    --tone-5: #ffe9e4;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: "Be Vietnam Pro", "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 420px at 0% -10%, #efe7fb 0%, transparent 60%),
+      radial-gradient(800px 380px at 100% 0%, #e5f4ef 0%, transparent 55%),
+      #f7f5f8;
+    -webkit-font-smoothing: antialiased;
+    padding:
+      env(safe-area-inset-top)
+      env(safe-area-inset-right)
+      env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+  }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; touch-action: manipulation; }
+  :focus-visible { outline: 3px solid #b7c6e4; outline-offset: 2px; }
+  .wrap { width: min(1040px, calc(100% - 32px)); margin: 0 auto; padding: 32px 0 64px; }
+  h1 { font-size: 1.85rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.2; margin: 0; color: var(--ink); }
+  h2 { font-size: 1.12rem; font-weight: 600; letter-spacing: -0.02em; margin: 0; line-height: 1.35; color: var(--ink); }
+  p { margin: 0; }
+  .hero { margin-bottom: 16px; }
+  .hero .sub { margin-top: 6px; }
+  .eyebrow { color: var(--kicker); margin-bottom: 6px; font-weight: 500; }
+  .sub { margin-top: 8px; color: var(--muted); max-width: 40rem; }
+  .count-pill {
+    display: inline-block;
+    margin-top: 14px;
+    background: var(--ok-bg);
+    color: var(--ok-ink);
+    border: 1px solid var(--ok-line);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-weight: 700;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: var(--card);
+    border: 1px solid rgba(120, 108, 150, 0.08);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 18px 18px 16px;
+  }
+  .lesson { display: flex; flex-direction: column; gap: 12px; min-height: 100%; }
+  .lesson-top { display: flex; gap: 14px; align-items: center; }
+  .num {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: var(--tone-1);
+    color: #5d7394;
+  }
+  .tone-1 .num { background: var(--tone-1); color: #5d7394; }
+  .tone-2 .num { background: var(--tone-2); color: #6d6390; }
+  .tone-3 .num { background: var(--tone-3); color: #3f7a62; }
+  .tone-4 .num { background: var(--tone-4); color: #8a7040; }
+  .tone-5 .num { background: var(--tone-5); color: #8d625c; }
+  .unit { color: var(--label); font-size: 0.82rem; font-weight: 600; }
+  .learned {
+    margin-left: auto;
+    background: var(--ok-bg);
+    color: var(--ok-ink);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .desc { color: var(--muted); font-size: 0.95rem; }
+  .tag {
+    display: inline-block;
+    background: var(--tag);
+    color: var(--tag-ink);
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+  .progress-line { font-weight: 500; color: var(--muted); font-size: 0.92rem; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+  .btn {
+    appearance: none;
+    border: 0;
+    background: var(--primary);
+    color: var(--primary-ink);
+    border-radius: 999px;
+    min-height: 44px;
+    padding: 8px 16px;
+    font-weight: 600;
+  }
+  .btn:hover { background: #c9daf2; }
+  .btn-ghost {
+    background: #ffffff;
+    color: var(--secondary);
+    border: 1px solid #e3dcec;
+  }
+  .btn-ghost:hover { background: #faf8fc; }
+  .soon {
+    background: var(--soon-bg);
+    opacity: 0.72;
+    box-shadow: none;
+  }
+  .soon-badge {
+    margin-left: auto;
+    border-radius: 999px;
+    padding: 4px 10px;
+    background: var(--tag);
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .foot {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 0.98rem;
+  }
+  .topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .topbar h2 { flex: 1; min-width: 0; }
+  .dots { display: flex; gap: 8px; align-items: center; }
+  .dot { width: 14px; height: 14px; border-radius: 99px; background: var(--dot); display: inline-block; }
+  .front .ask, .front .vi, .front .tap { display: block; }
+  .dot.done { background: var(--dot-done); }
+  .dot.now { background: #8aa4d4; box-shadow: 0 0 0 4px rgba(138, 164, 212, 0.28); }
+  .step-label { color: var(--muted); font-weight: 700; margin: 0 0 12px; }
+  .split { display: grid; grid-template-columns: minmax(240px, 320px) minmax(0, 1fr); gap: 16px; align-items: start; }
+  .grid > *, .split > * { min-width: 0; }
+  .vocab-title { font-weight: 600; margin-bottom: 8px; }
+  .vocab-note { color: var(--muted); font-size: 0.92rem; margin-bottom: 8px; }
+  .vocab-list { display: flex; flex-direction: column; gap: 8px; }
+  .vocab-row, .vocab-btn {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+    text-align: left;
+    background: var(--well);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 12px;
+    min-height: 48px;
+  }
+  .vocab-btn { cursor: pointer; }
+  .vocab-en { font-weight: 700; min-width: 0; color: var(--vocab); }
+  .vocab-vi { color: var(--muted); text-align: right; min-width: 0; }
+  .qpanel { background: var(--panel); border-radius: 16px; padding: 16px 18px; margin-bottom: 14px; }
+  .qpanel.tone-1 { background: var(--tone-1); }
+  .qpanel.tone-2 { background: var(--tone-2); }
+  .qpanel.tone-3 { background: var(--tone-3); }
+  .qpanel.tone-4 { background: var(--tone-4); }
+  .qpanel.tone-5 { background: var(--tone-5); }
+  .ask { font-size: clamp(1.25rem, 2.4vw, 1.55rem); font-weight: 600; line-height: 1.3; color: var(--ink); }
+  .vi { color: var(--muted); margin-top: 4px; }
+  .label { font-weight: 700; margin: 12px 0 8px; color: var(--label); }
+  .chips { display: flex; flex-wrap: wrap; gap: 12px 14px; align-items: flex-start; }
+  .chip-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; max-width: 220px; }
+  .chip { display: inline-block; padding: 8px 12px; border-radius: 12px; font-weight: 600; line-height: 1.3; text-align: center; }
+  .chip.fixed { background: var(--chip); color: var(--chip-ink); }
+  .chip.blank { background: var(--blank); color: var(--blank-ink); border: 2px dashed var(--blank-line); }
+  .chip-vi { font-size: 0.78rem; color: var(--muted); text-align: center; }
+  .example { margin-top: 14px; padding-top: 4px; }
+  .ex-en { font-size: 1.15rem; font-weight: 700; color: var(--sentence); }
+  .ex-vi { color: var(--muted); }
+  .hint-line { color: var(--muted); margin-top: 8px; }
+  .well {
+    min-height: 76px;
+    border: 2px dashed var(--line);
+    border-radius: 16px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: var(--well);
+    margin: 8px 0;
+  }
+  .placeholder { color: var(--muted); align-self: center; }
+  .bank { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .word {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: var(--card);
+    border-radius: 999px;
+    min-height: 48px;
+    padding: 8px 14px;
+    font-weight: 600;
+  }
+  .answer-input {
+    width: 100%;
+    border: 1.5px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 14px;
+    padding: 14px 16px;
+    min-height: 54px;
+    margin: 8px 0 12px;
+  }
+  .answer-input:disabled { opacity: 0.85; }
+  .fb { border-radius: 16px; padding: 14px 16px; margin-top: 12px; }
+  .fb p + p { margin-top: 6px; }
+  .fb.ok { background: var(--ok-bg); color: var(--ok-ink); border: 1px solid var(--ok-line); }
+  .fb.bad { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line); }
+  .fb .sample { font-weight: 700; color: var(--sentence); margin-top: 8px; }
+  .para {
+    font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+    line-height: 1.65;
+    background: var(--panel);
+    border-radius: 16px;
+    padding: 18px;
+    margin: 12px 0;
+  }
+  .center-col { max-width: 720px; margin: 0 auto; }
+  .counters { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pill { border-radius: 999px; padding: 6px 12px; font-weight: 600; font-size: 0.92rem; }
+  .pill.ok { background: var(--ok-bg); color: var(--ok-ink); }
+  .pill.wait { background: var(--warn-bg); color: var(--warn-ink); }
+  .front {
+    width: 100%;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 22px 18px;
+    min-height: 180px;
+  }
+  .tap { margin-top: 18px; color: #6d7c96; font-weight: 600; }
+  .big-emoji { font-size: 3rem; margin-bottom: 8px; }
+  .copy-status { min-height: 1.4em; color: var(--ok-ink); font-weight: 700; margin-top: 8px; }
+  .audience {
+    margin-top: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 14px 16px;
+    max-width: 44rem;
+  }
+  .audience strong { font-weight: 800; }
+  .piles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .pile { border-radius: 18px; padding: 12px; min-height: 92px; }
+  .pile.ok { background: var(--ok-bg); color: var(--ok-ink); border: 1px solid var(--ok-line); }
+  .pile.wait { background: var(--warn-bg); color: var(--warn-ink); border: 1px solid var(--warn-line); }
+  .pile h3 { margin: 0 0 8px; font-size: 1rem; }
+  .mini {
+    background: var(--card);
+    color: var(--ink);
+    border-radius: 12px;
+    padding: 8px 10px;
+    margin-top: 6px;
+    font-size: 0.92rem;
+    box-shadow: 0 3px 0 rgba(36, 48, 68, 0.06);
+  }
+  .pile-empty { margin: 0; opacity: 0.8; }
+  .guide-list { margin: 8px 0 0; padding-left: 1.2rem; }
+  .guide-list li + li { margin-top: 6px; }
+  .miss { margin-top: 8px; }
+  .miss p + p { margin-top: 2px; }
+  .miss .sample { font-weight: 700; color: var(--sentence); }
+  .noscript {
+    margin: 24px;
+    background: var(--card);
+    border-radius: 16px;
+    padding: 16px;
+  }
+  @media (max-width: 800px) {
+    .grid, .split, .piles { grid-template-columns: 1fr; }
+    .card-q { order: -1; }
+    .btn-row .btn { flex: 1 1 auto; }
+    .topbar .dots { flex-basis: 100%; }
+    body { font-size: 17px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="app"></div>
+<noscript><p class="noscript">Bạn cần bật JavaScript để học bài này.</p></noscript>
+<script>
+"use strict";
+
+/*
+  THÊM BÀI MỚI
+  1. Copy một object trong mảng LESSONS (đủ 5 câu).
+  2. Đổi id, emoji, title, vi, tag, opener.
+  3. Mỗi câu hỏi gồm: ask, vi, formula [{text, vi, blank}],
+     example, exampleVi, vocab [{en, vi}], accept (RegExp),
+     errors [[RegExp, "thông báo"]].
+  4. Câu ví dụ phải khớp accept và không khớp errors.
+  5. Thêm một object trong GUIDES, cùng id, cho trang thầy cô / phụ huynh.
+  Thứ tự chấm: trống → ___ hoặc [ ] → viết hoa chữ đầu → dấu . ! ?
+  → errors (khớp quy tắc đầu tiên) → accept → đúng.
+  Chữ xanh = từ cố định (blank:false). Ô vàng nét đứt = chỗ trống (blank:true).
+  COMING_SOON để trống khi đã đủ 10 bài. Không thêm thì tương lai.
+*/
+
+var UPPER = "A-ZÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬĐÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ";
+var LOWER = "a-zàáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵ";
+var WORD = "[" + UPPER + "][" + UPPER + LOWER + "]*";
+var NUMW = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty";
+var TIMEW = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve";
+
+function flex(phrase) {
+  var out = "";
+  for (var i = 0; i < phrase.length; i++) {
+    var ch = phrase.charAt(i);
+    if (/[A-Za-z]/.test(ch)) out += "[" + ch.toUpperCase() + ch.toLowerCase() + "]";
+    else if (ch === " ") out += " ";
+    else if (ch === "'") out += "'";
+    else out += "\\" + ch;
+  }
+  return out;
+}
+
+function re(source, flags) {
+  return new RegExp(source, flags || "");
+}
+
+var nameStart = "(?:" + flex("My name is") + "|" + flex("I am") + "|" + flex("I'm") + ")";
+var nameAccept = re("^" + nameStart + " " + WORD + "(?: " + WORD + ")*[.!?]$");
+var nameLower = re("^" + nameStart + "(?: " + WORD + ")* [" + LOWER + "]");
+var placeStart = flex("I live in");
+var placeAccept = re("^" + placeStart + " " + WORD + "(?: " + WORD + ")*[.!?]$");
+var placeLower = re("^" + placeStart + "(?: " + WORD + ")* [" + LOWER + "]");
+
+var VERB_S = "cook|watch|read|play|eat|clean|wash|drink|sleep|work|study|help|go|do|have|make|sing|listen|talk";
+var VERB_ING_BASE = "read|study|write|play|watch|eat|drink|listen|do|talk|learn";
+var SHE_BASE = "cook|watch|read|clean|play|eat|drink|study|write|listen|wash|work|help|go|do|have|make|sing|talk|learn|run";
+var SHE_SIMPLE = "cooks|watches|reads|cleans|plays|eats|drinks|studies|writes|listens|washes|works|helps|goes|does|has|makes|sings|talks|sleeps";
+var THEY_BASE = "play|talk|eat|run|read|watch|cook|study|write|listen|clean|drink|do|go|work|learn|sleep|help|sing";
+
+var LESSONS = [
+  {
+    id: 1,
+    emoji: "👋",
+    title: "Introduce Yourself",
+    vi: "Tự giới thiệu bản thân",
+    tag: "am / is / are",
+    opener: "Hello! ",
+    questions: [
+      {
+        id: "1.1",
+        ask: "What's your name?",
+        vi: "Bạn tên là gì?",
+        formula: [
+          { text: "My name is", vi: "Tên tôi là", blank: false },
+          { text: "[tên bạn]", vi: "viết hoa chữ đầu", blank: true }
+        ],
+        example: "My name is Lan.",
+        exampleVi: "Tên tôi là Lan.",
+        vocab: [
+          { en: "My name is", vi: "Tên tôi là" },
+          { en: "I am", vi: "Tôi là" },
+          { en: "name", vi: "tên" }
+        ],
+        accept: nameAccept,
+        errors: [
+          [/^My name (?:am|are)\b/i, "Với 'My name' ta dùng **is**, không dùng am/are. ✅ My name is Lan."],
+          [/^I (?:is|are)\b/i, "'I' luôn đi với **am**. ✅ I am Lan."],
+          [/^My name (?!is\b)\S/i, "Thiếu **is** sau 'My name'. ✅ My name is Lan."],
+          [nameLower, "Tên riêng phải **viết hoa chữ cái đầu**: Lan, không phải lan."]
+        ]
+      },
+      {
+        id: "1.2",
+        ask: "How old are you?",
+        vi: "Bạn bao nhiêu tuổi?",
+        formula: [
+          { text: "I am", vi: "Tôi", blank: false },
+          { text: "[số]", vi: "ví dụ: 10", blank: true },
+          { text: "years old", vi: "tuổi", blank: false }
+        ],
+        example: "I am 10 years old.",
+        exampleVi: "Tôi 10 tuổi.",
+        vocab: [
+          { en: "I am", vi: "Tôi (là)" },
+          { en: "years old", vi: "tuổi" },
+          { en: "ten", vi: "mười" },
+          { en: "eleven", vi: "mười một" },
+          { en: "twelve", vi: "mười hai" }
+        ],
+        accept: re("^(?:I am|I'm) (?:(?:1|one) year|(?:\\d+|" + NUMW + ") years) old[.!?]$", "i"),
+        errors: [
+          [/^I (?:is|are)\b/i, "'I' luôn đi với **am**."],
+          [/^I have\b/i, "Tiếng Anh nói tuổi bằng **am**, không dùng 'have' như tiếng Việt. ✅ I am 10 years old."],
+          [re("^I (?!am\\b)(?:\\d+|" + NUMW + ")\\b", "i"), "Thiếu **am** sau 'I'."],
+          [re("^(?:I am|I'm) (?:\\d+|" + NUMW + ") old[.!?]$", "i"), "Thiếu chữ **years**."],
+          [re("^(?:I am|I'm) (?:\\d+|" + NUMW + ")[.!?]$", "i"), "Cuối câu cần **years old** (tuổi)."],
+          [re("^(?:I am|I'm) (?!(?:1|one)\\b)(?:\\d+|" + NUMW + ") year old[.!?]$", "i"), "Số lớn hơn 1 thì dùng **years** (có s)."]
+        ]
+      },
+      {
+        id: "1.3",
+        ask: "Where do you live?",
+        vi: "Bạn sống ở đâu?",
+        formula: [
+          { text: "I live in", vi: "Tôi sống ở", blank: false },
+          { text: "[nơi bạn sống]", vi: "viết hoa", blank: true }
+        ],
+        example: "I live in Ha Noi.",
+        exampleVi: "Tôi sống ở Hà Nội.",
+        vocab: [
+          { en: "I live in", vi: "Tôi sống ở" },
+          { en: "Ha Noi", vi: "Hà Nội" },
+          { en: "Ho Chi Minh City", vi: "TP. Hồ Chí Minh" },
+          { en: "Da Nang", vi: "Đà Nẵng" },
+          { en: "Vietnam", vi: "Việt Nam" }
+        ],
+        accept: placeAccept,
+        errors: [
+          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
+          [/^I (?:am|is|are) live\b/i, "Không dùng am/is/are cùng với 'live'."],
+          [/^I live (?!in\b)/i, "Thiếu **in** (ở) trước tên nơi."],
+          [placeLower, "Tên nơi chốn phải **viết hoa chữ cái đầu**."]
+        ]
+      },
+      {
+        id: "1.4",
+        ask: "How many people are in your family?",
+        vi: "Gia đình bạn có bao nhiêu người?",
+        formula: [
+          { text: "There are", vi: "Có", blank: false },
+          { text: "[số]", vi: "ví dụ: 4", blank: true },
+          { text: "people in my family", vi: "người trong gia đình tôi", blank: false }
+        ],
+        example: "There are 4 people in my family.",
+        exampleVi: "Gia đình tôi có 4 người.",
+        vocab: [
+          { en: "There are", vi: "Có (nhiều)" },
+          { en: "people", vi: "người" },
+          { en: "in my family", vi: "trong gia đình tôi" },
+          { en: "three", vi: "ba" },
+          { en: "four", vi: "bốn" },
+          { en: "five", vi: "năm" }
+        ],
+        accept: re("^There are (?:\\d+|" + NUMW + ") people in my family[.!?]$", "i"),
+        errors: [
+          [/^There is\b/i, "'people' là số nhiều nên dùng **There are**."],
+          [/\bpeoples\b/i, "'people' đã là số nhiều rồi, **không thêm s**."],
+          [/^I have\b/i, "Câu này vẫn đúng, nhưng bài này tập mẫu **There are...**"],
+          [re("^There are (?:\\d+|" + NUMW + ") people[.!?]$", "i"), "Thiếu **in my family** (trong gia đình tôi)."]
+        ]
+      },
+      {
+        id: "1.5",
+        ask: "What do you like?",
+        vi: "Bạn thích gì?",
+        formula: [
+          { text: "I like", vi: "Tôi thích", blank: false },
+          { text: "[thứ bạn thích]", vi: "ví dụ: cats", blank: true }
+        ],
+        example: "I like cats.",
+        exampleVi: "Tôi thích mèo.",
+        vocab: [
+          { en: "I like", vi: "Tôi thích" },
+          { en: "cats", vi: "mèo" },
+          { en: "dogs", vi: "chó" },
+          { en: "music", vi: "âm nhạc" },
+          { en: "football", vi: "bóng đá" },
+          { en: "playing games", vi: "chơi game" }
+        ],
+        accept: /^(?:I like|I love) .+[.!?]$/i,
+        errors: [
+          [/^I likes\b/i, "'I' đi với **like**, không thêm s."],
+          [/^I (?:am|is) (?:like|love)\b/i, "Không dùng am/is với 'like'."],
+          [/^(?:I like|I love)[.!?]$/i, "Thiếu thứ bạn thích."],
+          [/^(?:I like|I love) (?:play|read|watch|swim|draw|sing|cook)\b/i, "Sau 'like' thêm **-ing** cho động từ: I like **playing** games."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    emoji: "⏰",
+    title: "My Daily Routine",
+    vi: "Kể về một ngày của bạn",
+    tag: "Hiện tại đơn",
+    opener: "This is my day. ",
+    questions: [
+      {
+        id: "2.1",
+        ask: "What time do you wake up?",
+        vi: "Bạn thức dậy lúc mấy giờ?",
+        formula: [
+          { text: "I wake up", vi: "Tôi thức dậy", blank: false },
+          { text: "at", vi: "lúc", blank: false },
+          { text: "[giờ]", vi: "ví dụ: 6 o'clock", blank: true }
+        ],
+        example: "I wake up at 6 o'clock.",
+        exampleVi: "Tôi thức dậy lúc 6 giờ.",
+        vocab: [
+          { en: "wake up", vi: "thức dậy" },
+          { en: "at", vi: "lúc" },
+          { en: "o'clock", vi: "giờ (đúng)" },
+          { en: "six", vi: "sáu" },
+          { en: "seven", vi: "bảy" }
+        ],
+        accept: re("^I wake up at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+        errors: [
+          [/^I wakes\b/i, "'I' đi với **wake**, không thêm s."],
+          [/^I wake at\b/i, "Thiếu **up**: 'wake up' là cụm có nghĩa 'thức dậy'."],
+          [/^I wake up (?:in|on)\b/i, "Trước giờ ta dùng **at**, không dùng in/on."],
+          [/^I wake up (?!at\b)\S/i, "Thiếu **at** (lúc) trước giờ."],
+          [/^I (?:am|is) wake\b/i, "Không dùng am/is với 'wake up'."]
+        ]
+      },
+      {
+        id: "2.2",
+        ask: "What do you eat for breakfast?",
+        vi: "Bạn ăn gì vào bữa sáng?",
+        formula: [
+          { text: "I eat", vi: "Tôi ăn", blank: false },
+          { text: "[món ăn]", vi: "ví dụ: bread", blank: true },
+          { text: "for breakfast", vi: "cho bữa sáng", blank: false }
+        ],
+        example: "I eat bread for breakfast.",
+        exampleVi: "Tôi ăn bánh mì vào bữa sáng.",
+        vocab: [
+          { en: "eat", vi: "ăn" },
+          { en: "breakfast", vi: "bữa sáng" },
+          { en: "bread", vi: "bánh mì" },
+          { en: "rice", vi: "cơm" },
+          { en: "noodles", vi: "mì / phở" },
+          { en: "eggs", vi: "trứng" }
+        ],
+        accept: /^(?:I eat|I have) .+ for breakfast[.!?]$/i,
+        errors: [
+          [/^I eats\b/i, "'I' đi với **eat**, không thêm s."],
+          [/^I (?:am|is) eat\b/i, "Không dùng am/is với 'eat'."],
+          [/^(?:I eat|I have) for breakfast[.!?]$/i, "Thiếu **món ăn** ở giữa."],
+          [/^(?:I eat|I have)\b(?!.*\bfor breakfast[.!?]$).+/i, "Thiếu **for breakfast** (cho bữa sáng) ở cuối câu."]
+        ]
+      },
+      {
+        id: "2.3",
+        ask: "How do you go to school?",
+        vi: "Bạn đi học bằng gì?",
+        formula: [
+          { text: "I go to school", vi: "Tôi đi học", blank: false },
+          { text: "by", vi: "bằng", blank: false },
+          { text: "[phương tiện]", vi: "ví dụ: bike", blank: true }
+        ],
+        example: "I go to school by bike.",
+        exampleVi: "Tôi đi học bằng xe đạp.",
+        vocab: [
+          { en: "go to school", vi: "đi học" },
+          { en: "by bike", vi: "bằng xe đạp" },
+          { en: "by bus", vi: "bằng xe buýt" },
+          { en: "by motorbike", vi: "bằng xe máy" },
+          { en: "on foot", vi: "đi bộ" }
+        ],
+        accept: /^(?:I go to school by [A-Za-z]+|I go to school on foot)[.!?]$/i,
+        errors: [
+          [/^I goes\b/i, "'I' đi với **go**, không thêm es."],
+          [/^I go school\b/i, "Thiếu **to**: 'go to school' (đi học)."],
+          [/\bby foot\b/i, "Đi bộ nói là **on foot**, không phải 'by foot'."],
+          [/\bwith (?:bike|bus|car|motorbike)\b/i, "Phương tiện dùng **by**, không dùng 'with'."],
+          [/^I go to school (?:bike|bus|car|motorbike)\b/i, "Thiếu **by** (bằng) trước phương tiện."]
+        ]
+      },
+      {
+        id: "2.4",
+        ask: "What does your mother do in the evening?",
+        vi: "Mẹ bạn làm gì vào buổi tối?",
+        formula: [
+          { text: "She", vi: "Cô ấy, hoặc He = anh ấy", blank: false },
+          { text: "[động từ + s]", vi: "ví dụ: cooks", blank: true },
+          { text: "[việc]", vi: "ví dụ: dinner", blank: true }
+        ],
+        example: "She cooks dinner.",
+        exampleVi: "Mẹ tôi nấu bữa tối.",
+        vocab: [
+          { en: "cooks", vi: "nấu (cook + s)" },
+          { en: "watches", vi: "xem (watch + es)" },
+          { en: "reads", vi: "đọc (read + s)" },
+          { en: "cleans", vi: "lau dọn (clean + s)" },
+          { en: "dinner", vi: "bữa tối" },
+          { en: "TV", vi: "tivi" }
+        ],
+        accept: /^(?:She|He) [A-Za-z]+(?:s|es) .+[.!?]$/i,
+        errors: [
+          [/^(?:She|He) (?:is|are|am)\b/i, "Bài này tập hiện tại đơn: dùng **động từ + s**, không dùng is."],
+          [re("^(?:She|He) (?:" + VERB_S + ")\\b", "i"), "Với She/He, động từ phải thêm **-s / -es**. ✅ She cooks dinner."]
+        ]
+      },
+      {
+        id: "2.5",
+        ask: "What time do you go to bed?",
+        vi: "Bạn đi ngủ lúc mấy giờ?",
+        formula: [
+          { text: "I go to bed", vi: "Tôi đi ngủ", blank: false },
+          { text: "at", vi: "lúc", blank: false },
+          { text: "[giờ]", vi: "ví dụ: 10 o'clock", blank: true }
+        ],
+        example: "I go to bed at 10 o'clock.",
+        exampleVi: "Tôi đi ngủ lúc 10 giờ.",
+        vocab: [
+          { en: "go to bed", vi: "đi ngủ" },
+          { en: "at", vi: "lúc" },
+          { en: "o'clock", vi: "giờ (đúng)" },
+          { en: "nine", vi: "chín" },
+          { en: "ten", vi: "mười" }
+        ],
+        accept: re("^I go to bed at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+        errors: [
+          [/^I goes\b/i, "'I' đi với **go**, không thêm es."],
+          [/^I go bed\b/i, "Thiếu **to**: 'go to bed' (đi ngủ)."],
+          [/^I go to the bed\b/i, "'go to bed' **không có the**."],
+          [/^I go to bed (?!at\b)/i, "Thiếu **at** (lúc) trước giờ."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    emoji: "🏃",
+    title: "What Are You Doing?",
+    vi: "Nói về việc đang làm",
+    tag: "Hiện tại tiếp diễn",
+    opener: "Look at me now. ",
+    questions: [
+      {
+        id: "3.1",
+        ask: "What are you doing now?",
+        vi: "Bây giờ bạn đang làm gì?",
+        formula: [
+          { text: "I am", vi: "Tôi đang", blank: false },
+          { text: "[động từ + ing]", vi: "ví dụ: reading", blank: true },
+          { text: "[việc]", vi: "ví dụ: a book", blank: true }
+        ],
+        example: "I am reading a book.",
+        exampleVi: "Tôi đang đọc sách.",
+        vocab: [
+          { en: "reading", vi: "đang đọc" },
+          { en: "writing", vi: "đang viết" },
+          { en: "studying", vi: "đang học" },
+          { en: "listening", vi: "đang nghe" },
+          { en: "a book", vi: "một quyển sách" },
+          { en: "English", vi: "tiếng Anh" }
+        ],
+        accept: /^(?:I am|I'm) [A-Za-z]+ing\b.*[.!?]$/i,
+        errors: [
+          [/^I (?:is|are)\b/i, "'I' luôn đi với **am**."],
+          [re("^(?:I am|I'm) (?:" + VERB_ING_BASE + ")\\b", "i"), "Đang làm gì thì động từ thêm **-ing**."],
+          [/^I [A-Za-z]+ing\b/i, "Thiếu **am** trước động từ -ing."]
+        ]
+      },
+      {
+        id: "3.2",
+        ask: "What is your mother doing?",
+        vi: "Mẹ bạn đang làm gì?",
+        formula: [
+          { text: "She is", vi: "Cô ấy đang; He is = anh ấy đang", blank: false },
+          { text: "[động từ + ing]", vi: "ví dụ: cooking", blank: true },
+          { text: "[việc]", vi: "ví dụ: dinner", blank: true }
+        ],
+        example: "She is cooking dinner.",
+        exampleVi: "Mẹ tôi đang nấu bữa tối.",
+        vocab: [
+          { en: "cooking", vi: "đang nấu" },
+          { en: "watching", vi: "đang xem" },
+          { en: "cleaning", vi: "đang lau dọn" },
+          { en: "dinner", vi: "bữa tối" },
+          { en: "TV", vi: "tivi" },
+          { en: "the house", vi: "ngôi nhà" }
+        ],
+        accept: /^(?:She|He) is [A-Za-z]+ing\b.*[.!?]$/i,
+        errors: [
+          [/^(?:She|He) (?:am|are)\b/i, "She/He đi với **is**."],
+          [/^(?:She|He) [A-Za-z]+ing\b/i, "Thiếu **is** trước động từ -ing."],
+          [re("^(?:She|He) (?:" + SHE_SIMPLE + ")\\b", "i"), "Bài này tập hiện tại tiếp diễn: dùng **is + V-ing**."],
+          [re("^(?:She|He) is (?:" + SHE_BASE + ")\\b", "i"), "Động từ phải thêm **-ing**."]
+        ]
+      },
+      {
+        id: "3.3",
+        ask: "What are your friends doing?",
+        vi: "Bạn của bạn đang làm gì?",
+        formula: [
+          { text: "They are", vi: "Họ đang", blank: false },
+          { text: "[động từ + ing]", vi: "ví dụ: playing", blank: true },
+          { text: "[việc]", vi: "ví dụ: football", blank: true }
+        ],
+        example: "They are playing football.",
+        exampleVi: "Họ đang chơi bóng đá.",
+        vocab: [
+          { en: "playing", vi: "đang chơi" },
+          { en: "football", vi: "bóng đá" },
+          { en: "talking", vi: "đang nói chuyện" },
+          { en: "eating", vi: "đang ăn" },
+          { en: "running", vi: "đang chạy" }
+        ],
+        accept: /^They are [A-Za-z]+ing\b.*[.!?]$/i,
+        errors: [
+          [/^They (?:is|am)\b/i, "'They' (nhiều người) đi với **are**."],
+          [/^They [A-Za-z]+ing\b/i, "Thiếu **are** trước động từ -ing."],
+          [re("^They are (?:" + THEY_BASE + ")\\b", "i"), "Động từ phải thêm **-ing**."]
+        ]
+      },
+      {
+        id: "3.4",
+        ask: "What is the weather like now?",
+        vi: "Bây giờ thời tiết thế nào?",
+        formula: [
+          { text: "It is", vi: "Trời", blank: false },
+          { text: "[thời tiết]", vi: "ví dụ: sunny", blank: true }
+        ],
+        example: "It is sunny.",
+        exampleVi: "Trời nắng.",
+        vocab: [
+          { en: "sunny", vi: "có nắng" },
+          { en: "rainy", vi: "có mưa" },
+          { en: "cloudy", vi: "nhiều mây" },
+          { en: "hot", vi: "nóng" },
+          { en: "cold", vi: "lạnh" },
+          { en: "raining", vi: "đang mưa" }
+        ],
+        accept: /^It is [A-Za-z]+[.!?]$/i,
+        errors: [
+          [/^It (?:am|are)\b/i, "'It' đi với **is**."],
+          [/^It (?:sunny|rainy|cloudy|windy|hot|cold|raining)\b/i, "Thiếu **is** sau 'It'."],
+          [/^It is rain[.!?]$/i, "'rain' là động từ/danh từ. Nói **rainy** (có mưa) hoặc **raining** (đang mưa)."]
+        ]
+      },
+      {
+        id: "3.5",
+        ask: "What are you wearing today?",
+        vi: "Hôm nay bạn đang mặc gì?",
+        formula: [
+          { text: "I am wearing", vi: "Tôi đang mặc", blank: false },
+          { text: "[quần áo]", vi: "ví dụ: a blue shirt", blank: true }
+        ],
+        example: "I am wearing a blue shirt.",
+        exampleVi: "Tôi đang mặc áo sơ mi xanh.",
+        vocab: [
+          { en: "wearing", vi: "đang mặc" },
+          { en: "a shirt", vi: "áo sơ mi" },
+          { en: "a T-shirt", vi: "áo thun" },
+          { en: "jeans", vi: "quần jeans" },
+          { en: "a hat", vi: "cái mũ" },
+          { en: "blue", vi: "màu xanh dương" }
+        ],
+        accept: /^(?:I am|I'm) wearing .+[.!?]$/i,
+        errors: [
+          [/^I wear\b/i, "Đang mặc lúc này: dùng **I am wearing**."],
+          [/^I (?:is|are)\b/i, "'I' luôn đi với **am**."],
+          [/^(?:I am|I'm) wear\b/i, "Thêm **-ing**: **wearing** (đang mặc)."],
+          [/^I wearing\b/i, "Thiếu **am**."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    emoji: "👨‍👩‍👧",
+    title: "My Family",
+    vi: "Nói về gia đình",
+    tag: "have / is",
+    opener: "This is my family. ",
+    questions: [
+      {
+        id: "4.1",
+        ask: "Do you have a brother or a sister?",
+        vi: "Bạn có anh, chị, em không?",
+        formula: [
+          { text: "I have", vi: "Tôi có", blank: false },
+          { text: "[số]", vi: "a, one, two...", blank: true },
+          { text: "[brother / sister]", vi: "số nhiều thêm s", blank: true }
+        ],
+        example: "I have one brother.",
+        exampleVi: "Tôi có một anh (hoặc em trai).",
+        vocab: [
+          { en: "I have", vi: "Tôi có" },
+          { en: "a brother", vi: "một anh/em trai" },
+          { en: "a sister", vi: "một chị/em gái" },
+          { en: "two brothers", vi: "hai anh/em trai" }
+        ],
+        accept: re("^I have (?:a |an |(?:\\d+|" + NUMW + ") )?(?:brother|sister|brothers|sisters)\\b.*[.!?]$", "i"),
+        errors: [
+          [/^I has\b/i, "'I' đi với **have**, không thêm s."],
+          [/^I am have\b/i, "Không dùng am trước have. ✅ I have one brother."]
+        ]
+      },
+      {
+        id: "4.2",
+        ask: "What does your father do?",
+        vi: "Bố bạn làm nghề gì?",
+        formula: [
+          { text: "He is", vi: "Ông ấy là; My father is cũng được", blank: false },
+          { text: "a", vi: "một", blank: false },
+          { text: "[nghề]", vi: "ví dụ: teacher", blank: true }
+        ],
+        example: "He is a teacher.",
+        exampleVi: "Bố tôi là giáo viên.",
+        vocab: [
+          { en: "He is", vi: "Ông ấy là" },
+          { en: "My father is", vi: "Bố tôi là" },
+          { en: "a teacher", vi: "giáo viên" },
+          { en: "a doctor", vi: "bác sĩ" },
+          { en: "a cook", vi: "đầu bếp" }
+        ],
+        accept: /^(?:He|She|My father|My mother|My dad|My mum|My mom) is an? .+[.!?]$/i,
+        errors: [
+          [/^(?:He|She) (?:am|are)\b/i, "He/She đi với **is**."],
+          [/^(?:He|She|My father|My mother) (?:a|an)\b/i, "Thiếu **is**. ✅ He is a teacher."],
+          [/^(?:He|She|My father|My mother|My dad|My mum|My mom) is (?!an?\b)\S/i, "Trước tên nghề thêm **a** hoặc **an**. ✅ He is a teacher."]
+        ]
+      },
+      {
+        id: "4.3",
+        ask: "What is your mother like?",
+        vi: "Mẹ bạn là người như thế nào?",
+        formula: [
+          { text: "She is", vi: "Bà ấy", blank: false },
+          { text: "[tính cách]", vi: "ví dụ: kind", blank: true }
+        ],
+        example: "She is kind.",
+        exampleVi: "Mẹ tôi tốt bụng.",
+        vocab: [
+          { en: "kind", vi: "tốt bụng" },
+          { en: "funny", vi: "vui tính" },
+          { en: "busy", vi: "bận" },
+          { en: "young", vi: "trẻ" }
+        ],
+        accept: /^She is [A-Za-z]+[.!?]$/i,
+        errors: [
+          [/^She (?:am|are)\b/i, "She đi với **is**."],
+          [/^She [A-Za-z]+[.!?]$/i, "Thiếu **is**. ✅ She is kind."]
+        ]
+      },
+      {
+        id: "4.4",
+        ask: "Who do you live with?",
+        vi: "Bạn sống cùng ai?",
+        formula: [
+          { text: "I live with", vi: "Tôi sống cùng", blank: false },
+          { text: "[người]", vi: "ví dụ: my family", blank: true }
+        ],
+        example: "I live with my family.",
+        exampleVi: "Tôi sống cùng gia đình.",
+        vocab: [
+          { en: "live with", vi: "sống cùng" },
+          { en: "my family", vi: "gia đình tôi" },
+          { en: "my parents", vi: "bố mẹ tôi" },
+          { en: "my grandmother", vi: "bà tôi" }
+        ],
+        accept: /^I live with .+[.!?]$/i,
+        errors: [
+          [/^I am live\b/i, "Không thêm am. ✅ I live with my family."],
+          [/^I living\b/i, "Thiếu động từ đúng. ✅ I live with my family."],
+          [/^I live to\b/i, "Sống cùng ai dùng **with**, không dùng to."]
+        ]
+      },
+      {
+        id: "4.5",
+        ask: "Do you have a pet?",
+        vi: "Bạn có thú cưng không?",
+        formula: [
+          { text: "I have", vi: "Tôi có", blank: false },
+          { text: "a", vi: "một", blank: false },
+          { text: "[thú cưng]", vi: "ví dụ: cat", blank: true }
+        ],
+        example: "I have a cat.",
+        exampleVi: "Tôi có một con mèo.",
+        vocab: [
+          { en: "a cat", vi: "một con mèo" },
+          { en: "a dog", vi: "một con chó" },
+          { en: "a bird", vi: "một con chim" },
+          { en: "a fish", vi: "một con cá" }
+        ],
+        accept: /^I have an? [A-Za-z]+[.!?]$/i,
+        errors: [
+          [/^I has\b/i, "'I' đi với **have**."],
+          [/^I have (?:cat|dog|bird|fish)\b/i, "Thêm **a** trước tên con vật. ✅ I have a cat."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 5,
+    emoji: "🍚",
+    title: "Food",
+    vi: "Nói về đồ ăn",
+    tag: "like / don't like",
+    opener: "I like food. ",
+    questions: [
+      {
+        id: "5.1",
+        ask: "What do you eat for lunch?",
+        vi: "Bữa trưa bạn ăn gì?",
+        formula: [
+          { text: "I eat", vi: "Tôi ăn", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: rice", blank: true },
+          { text: "for lunch", vi: "vào bữa trưa", blank: false }
+        ],
+        example: "I eat rice for lunch.",
+        exampleVi: "Tôi ăn cơm vào bữa trưa.",
+        vocab: [
+          { en: "rice", vi: "cơm" },
+          { en: "noodles", vi: "mì" },
+          { en: "bread", vi: "bánh mì" },
+          { en: "for lunch", vi: "vào bữa trưa" }
+        ],
+        accept: /^I eat .+ for lunch[.!?]$/i,
+        errors: [
+          [/^I eats\b/i, "'I' không thêm s. ✅ I eat rice for lunch."],
+          [/^I (?:am )?eating\b/i, "Bữa trưa mỗi ngày dùng hiện tại đơn: **I eat**, không dùng -ing."],
+          [/^I am eat\b/i, "Không dùng am. ✅ I eat rice for lunch."]
+        ]
+      },
+      {
+        id: "5.2",
+        ask: "What food do you like?",
+        vi: "Bạn thích món gì?",
+        formula: [
+          { text: "I like", vi: "Tôi thích", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: chicken", blank: true }
+        ],
+        example: "I like chicken.",
+        exampleVi: "Tôi thích thịt gà.",
+        vocab: [
+          { en: "like", vi: "thích" },
+          { en: "chicken", vi: "thịt gà" },
+          { en: "fruit", vi: "trái cây" },
+          { en: "milk", vi: "sữa" }
+        ],
+        accept: /^I like .+[.!?]$/i,
+        errors: [
+          [/^I likes\b/i, "'I' không thêm s. ✅ I like chicken."],
+          [/^I am like\b/i, "Không dùng am trước like."],
+          [/^I liking\b/i, "Thích một món dùng **like**, không thêm -ing."]
+        ]
+      },
+      {
+        id: "5.3",
+        ask: "What food don't you like?",
+        vi: "Bạn không thích món gì?",
+        formula: [
+          { text: "I don't like", vi: "Tôi không thích", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: fish", blank: true }
+        ],
+        example: "I don't like fish.",
+        exampleVi: "Tôi không thích cá.",
+        vocab: [
+          { en: "don't like", vi: "không thích" },
+          { en: "do not like", vi: "không thích" },
+          { en: "fish", vi: "cá" },
+          { en: "eggs", vi: "trứng" }
+        ],
+        accept: /^(?:I don't like|I do not like) .+[.!?]$/i,
+        errors: [
+          [/^I not like\b/i, "Phủ định cần **don't** hoặc **do not**. ✅ I don't like fish."],
+          [/^I doesn't like\b/i, "'I' dùng **don't**, không dùng doesn't."],
+          [/^I don't likes\b/i, "Sau don't dùng **like**, không thêm s."]
+        ]
+      },
+      {
+        id: "5.4",
+        ask: "What does your friend like?",
+        vi: "Bạn của bạn thích gì?",
+        formula: [
+          { text: "She likes", vi: "Cô ấy thích; He likes = anh ấy thích", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: milk", blank: true }
+        ],
+        example: "She likes milk.",
+        exampleVi: "Bạn ấy thích sữa.",
+        vocab: [
+          { en: "She likes", vi: "Cô ấy thích" },
+          { en: "He likes", vi: "Anh ấy thích" },
+          { en: "milk", vi: "sữa" },
+          { en: "juice", vi: "nước ép" }
+        ],
+        accept: /^(?:She|He) likes .+[.!?]$/i,
+        errors: [
+          [/^(?:She|He) like\b/i, "She/He phải thêm **s**: likes."],
+          [/^(?:She|He) is like\b/i, "Không dùng is. ✅ She likes milk."]
+        ]
+      },
+      {
+        id: "5.5",
+        ask: "What is your favourite food?",
+        vi: "Món bạn thích nhất là gì?",
+        formula: [
+          { text: "My favourite food is", vi: "Món tôi thích nhất là", blank: false },
+          { text: "[món]", vi: "ví dụ: pho", blank: true }
+        ],
+        example: "My favourite food is pho.",
+        exampleVi: "Món tôi thích nhất là phở.",
+        vocab: [
+          { en: "favourite", vi: "ưa thích nhất" },
+          { en: "food", vi: "đồ ăn" },
+          { en: "pho", vi: "phở" },
+          { en: "soup", vi: "canh, súp" }
+        ],
+        accept: /^My favou?rite food is .+[.!?]$/i,
+        errors: [
+          [/^My favou?rite food (?:am|are)\b/i, "'Food' là một món, dùng **is**."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    emoji: "🏫",
+    title: "At School",
+    vi: "Nói về trường học",
+    tag: "Hiện tại đơn",
+    opener: "I go to school. ",
+    questions: [
+      {
+        id: "6.1",
+        ask: "What do you study?",
+        vi: "Bạn học môn gì?",
+        formula: [
+          { text: "I study", vi: "Tôi học", blank: false },
+          { text: "[môn]", vi: "viết hoa: English", blank: true }
+        ],
+        example: "I study English.",
+        exampleVi: "Tôi học tiếng Anh.",
+        vocab: [
+          { en: "study", vi: "học" },
+          { en: "English", vi: "tiếng Anh" },
+          { en: "Maths", vi: "toán" },
+          { en: "Music", vi: "âm nhạc" }
+        ],
+        accept: /^I study .+[.!?]$/i,
+        errors: [
+          [/^I studies\b/i, "'I' không thêm s. ✅ I study English."],
+          [/^I (?:am )?studying\b/i, "Môn học mỗi ngày dùng **I study**, không dùng -ing."],
+          [/^I study english\b/, "Tên môn viết hoa chữ cái đầu: **English**."]
+        ]
+      },
+      {
+        id: "6.2",
+        ask: "What time do you go to school?",
+        vi: "Bạn đi học lúc mấy giờ?",
+        formula: [
+          { text: "I go to school at", vi: "Tôi đi học lúc", blank: false },
+          { text: "[giờ]", vi: "ví dụ: 7 o'clock", blank: true }
+        ],
+        example: "I go to school at 7 o'clock.",
+        exampleVi: "Tôi đi học lúc 7 giờ.",
+        vocab: [
+          { en: "go to school", vi: "đi học" },
+          { en: "at", vi: "lúc (giờ)" },
+          { en: "7 o'clock", vi: "7 giờ" }
+        ],
+        accept: /^I go to school at .+[.!?]$/i,
+        errors: [
+          [/^I goes\b/i, "'I' không thêm s. ✅ I go to school."],
+          [/^I go to school in\b/i, "Giờ dùng **at**, không dùng in."],
+          [/^I am go\b/i, "Không dùng am. ✅ I go to school at 7 o'clock."]
+        ]
+      },
+      {
+        id: "6.3",
+        ask: "Who is your teacher?",
+        vi: "Giáo viên của bạn là ai?",
+        formula: [
+          { text: "My teacher is", vi: "Giáo viên của tôi là", blank: false },
+          { text: "[tên]", vi: "viết hoa chữ đầu", blank: true }
+        ],
+        example: "My teacher is Ms Lan.",
+        exampleVi: "Giáo viên của tôi là cô Lan.",
+        vocab: [
+          { en: "teacher", vi: "giáo viên" },
+          { en: "Ms", vi: "cô" },
+          { en: "Mr", vi: "thầy" }
+        ],
+        accept: /^My teacher is .+[.!?]$/i,
+        errors: [
+          [/^My teacher (?:am|are)\b/i, "'My teacher' đi với **is**."],
+          [/^My teacher (?!is\b)\S/i, "Thiếu **is**. ✅ My teacher is Ms Lan."]
+        ]
+      },
+      {
+        id: "6.4",
+        ask: "What do you do at school?",
+        vi: "Ở trường bạn làm gì?",
+        formula: [
+          { text: "I", vi: "Tôi", blank: false },
+          { text: "[động từ]", vi: "ví dụ: read", blank: true },
+          { text: "at school", vi: "ở trường", blank: false }
+        ],
+        example: "I read at school.",
+        exampleVi: "Tôi đọc ở trường.",
+        vocab: [
+          { en: "read", vi: "đọc" },
+          { en: "write", vi: "viết" },
+          { en: "learn", vi: "học" },
+          { en: "at school", vi: "ở trường" }
+        ],
+        accept: /^I (?!am\b|is\b)[A-Za-z]+ at school[.!?]$/i,
+        errors: [
+          [/^I am\b/i, "Việc mỗi ngày ở trường dùng hiện tại đơn: **I read at school**."],
+          [/^I [A-Za-z]+s at school[.!?]$/i, "'I' không thêm s."]
+        ]
+      },
+      {
+        id: "6.5",
+        ask: "How do you feel at school?",
+        vi: "Ở trường bạn thấy thế nào?",
+        formula: [
+          { text: "I am", vi: "Tôi", blank: false },
+          { text: "[cảm xúc]", vi: "ví dụ: happy", blank: true },
+          { text: "at school", vi: "ở trường", blank: false }
+        ],
+        example: "I am happy at school.",
+        exampleVi: "Tôi vui ở trường.",
+        vocab: [
+          { en: "happy", vi: "vui" },
+          { en: "tired", vi: "mệt" },
+          { en: "excited", vi: "hào hứng" }
+        ],
+        accept: /^(?:I am|I'm) [A-Za-z]+ at school[.!?]$/i,
+        errors: [
+          [/^I (?:is|are)\b/i, "'I' luôn đi với **am**."],
+          [/^I [A-Za-z]+ at school[.!?]$/i, "Thiếu **am**. ✅ I am happy at school."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    emoji: "🏠",
+    title: "My Home",
+    vi: "Nói về nhà của bạn",
+    tag: "there is / are",
+    opener: "Welcome to my home. ",
+    questions: [
+      {
+        id: "7.1",
+        ask: "What is in your room?",
+        vi: "Trong phòng bạn có gì?",
+        formula: [
+          { text: "There is", vi: "Có một", blank: false },
+          { text: "a", vi: "một", blank: false },
+          { text: "[đồ vật]", vi: "ví dụ: bed", blank: true },
+          { text: "in my room", vi: "trong phòng tôi", blank: false }
+        ],
+        example: "There is a bed in my room.",
+        exampleVi: "Trong phòng tôi có một cái giường.",
+        vocab: [
+          { en: "There is", vi: "Có một" },
+          { en: "a bed", vi: "một cái giường" },
+          { en: "a desk", vi: "một cái bàn học" },
+          { en: "a chair", vi: "một cái ghế" }
+        ],
+        accept: /^There is an? .+ in my room[.!?]$/i,
+        errors: [
+          [/^There are a\b/i, "Một đồ vật dùng **There is**, không dùng There are."],
+          [/^There (?:have|has)\b/i, "Không dịch 'có' thành have. Dùng **There is**."],
+          [/^There (?:a|an)\b/i, "Thiếu **is**. ✅ There is a bed in my room."]
+        ]
+      },
+      {
+        id: "7.2",
+        ask: "How many rooms are there in your house?",
+        vi: "Nhà bạn có mấy phòng?",
+        formula: [
+          { text: "There are", vi: "Có (nhiều)", blank: false },
+          { text: "[số]", vi: "ví dụ: three", blank: true },
+          { text: "rooms in my house", vi: "phòng trong nhà tôi", blank: false }
+        ],
+        example: "There are three rooms in my house.",
+        exampleVi: "Nhà tôi có ba phòng.",
+        vocab: [
+          { en: "There are", vi: "Có nhiều" },
+          { en: "rooms", vi: "các phòng" },
+          { en: "three", vi: "ba" },
+          { en: "four", vi: "bốn" }
+        ],
+        accept: re("^There are (?:\\d+|" + NUMW + ") rooms in my house[.!?]$", "i"),
+        errors: [
+          [re("^There is (?:\\d+|" + NUMW + ")\\b", "i"), "Số từ hai trở lên dùng **There are**."],
+          [/^There (?:have|has)\b/i, "Dùng **There are**, không dùng have."]
+        ]
+      },
+      {
+        id: "7.3",
+        ask: "Where is your bag?",
+        vi: "Cặp của bạn ở đâu?",
+        formula: [
+          { text: "The bag is", vi: "Cái cặp thì", blank: false },
+          { text: "[in / on / under]", vi: "giới từ", blank: true },
+          { text: "the", vi: "", blank: false },
+          { text: "[nơi]", vi: "ví dụ: table", blank: true }
+        ],
+        example: "The bag is on the table.",
+        exampleVi: "Cái cặp ở trên bàn.",
+        vocab: [
+          { en: "on", vi: "ở trên" },
+          { en: "in", vi: "ở trong" },
+          { en: "under", vi: "ở dưới" },
+          { en: "the table", vi: "cái bàn" },
+          { en: "the chair", vi: "cái ghế" }
+        ],
+        accept: /^The bag is (?:in|on|under|next to) the .+[.!?]$/i,
+        errors: [
+          [/^The bag are\b/i, "'The bag' là một vật, dùng **is**."],
+          [/^The bag (?:in|on|under|next)\b/i, "Thiếu **is**. ✅ The bag is on the table."]
+        ]
+      },
+      {
+        id: "7.4",
+        ask: "Is there a kitchen in your house?",
+        vi: "Nhà bạn có bếp không?",
+        formula: [
+          { text: "Yes, there is", vi: "Có", blank: false },
+          { text: "a kitchen", vi: "một cái bếp", blank: false }
+        ],
+        example: "Yes, there is a kitchen.",
+        exampleVi: "Có, nhà tôi có bếp.",
+        vocab: [
+          { en: "Yes, there is", vi: "Có" },
+          { en: "a kitchen", vi: "một cái bếp" },
+          { en: "a bathroom", vi: "một phòng tắm" }
+        ],
+        accept: /^Yes, there is an? .+[.!?]$/i,
+        errors: [
+          [/^Yes, there are an?\b/i, "Một phòng dùng **there is**."],
+          [/^Yes, there (?:a|an)\b/i, "Thiếu **is**."]
+        ]
+      },
+      {
+        id: "7.5",
+        ask: "Do you live in a house or a flat?",
+        vi: "Bạn sống trong nhà hay căn hộ?",
+        formula: [
+          { text: "I live in", vi: "Tôi sống trong", blank: false },
+          { text: "a", vi: "một", blank: false },
+          { text: "[house / flat]", vi: "nhà hoặc căn hộ", blank: true }
+        ],
+        example: "I live in a house.",
+        exampleVi: "Tôi sống trong một ngôi nhà.",
+        vocab: [
+          { en: "a house", vi: "một ngôi nhà" },
+          { en: "a flat", vi: "một căn hộ" },
+          { en: "live in", vi: "sống trong" }
+        ],
+        accept: /^I live in an? (?:house|flat|small house|big house)[.!?]$/i,
+        errors: [
+          [/^I live at\b/i, "Nhà dùng **in**: I live in a house."],
+          [/^I am live\b/i, "Không thêm am. ✅ I live in a house."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    emoji: "⚽",
+    title: "Free Time",
+    vi: "Nói về lúc rảnh",
+    tag: "can / like",
+    opener: "After school I have free time. ",
+    questions: [
+      {
+        id: "8.1",
+        ask: "What can you do?",
+        vi: "Bạn có thể làm gì?",
+        formula: [
+          { text: "I can", vi: "Tôi có thể", blank: false },
+          { text: "[động từ]", vi: "không thêm -ing, ví dụ: swim", blank: true }
+        ],
+        example: "I can swim.",
+        exampleVi: "Tôi có thể bơi.",
+        vocab: [
+          { en: "can", vi: "có thể" },
+          { en: "swim", vi: "bơi" },
+          { en: "draw", vi: "vẽ" },
+          { en: "sing", vi: "hát" },
+          { en: "cook", vi: "nấu ăn" }
+        ],
+        accept: /^I can [A-Za-z]+[.!?]$/i,
+        errors: [
+          [/^I can to\b/i, "Sau can không dùng to. ✅ I can swim."],
+          [/^I can (?:swimming|reading|playing|drawing|cooking|watching|listening|running|singing|eating)\b/i, "Sau can dùng động từ nguyên mẫu, không thêm **-ing**."],
+          [/^I (?:am|is) can\b/i, "Không thêm am. ✅ I can swim."]
+        ]
+      },
+      {
+        id: "8.2",
+        ask: "What do you like doing?",
+        vi: "Bạn thích làm gì?",
+        formula: [
+          { text: "I like", vi: "Tôi thích", blank: false },
+          { text: "[động từ + ing]", vi: "ví dụ: reading", blank: true }
+        ],
+        example: "I like reading.",
+        exampleVi: "Tôi thích đọc.",
+        vocab: [
+          { en: "reading", vi: "đọc" },
+          { en: "drawing", vi: "vẽ" },
+          { en: "singing", vi: "hát" },
+          { en: "playing football", vi: "chơi bóng đá" }
+        ],
+        accept: /^I like [A-Za-z]+ing(?: .+)?[.!?]$/i,
+        errors: [
+          [/^I like (?:read|play|swim|draw|sing|cook|watch|listen|run|eat)\b/i, "Thích làm một việc thì động từ thêm **-ing**. ✅ I like reading."],
+          [/^I likes\b/i, "'I' không thêm s."]
+        ]
+      },
+      {
+        id: "8.3",
+        ask: "What do you do after school?",
+        vi: "Sau giờ học bạn làm gì?",
+        formula: [
+          { text: "I", vi: "Tôi", blank: false },
+          { text: "[động từ]", vi: "ví dụ: play", blank: true },
+          { text: "[việc]", vi: "ví dụ: football", blank: true },
+          { text: "after school", vi: "sau giờ học", blank: false }
+        ],
+        example: "I play football after school.",
+        exampleVi: "Tôi chơi bóng sau giờ học.",
+        vocab: [
+          { en: "play football", vi: "chơi bóng đá" },
+          { en: "watch TV", vi: "xem tivi" },
+          { en: "after school", vi: "sau giờ học" }
+        ],
+        accept: /^I (?!am\b|is\b)[A-Za-z]+ .+ after school[.!?]$/i,
+        errors: [
+          [/^I am\b/i, "Việc sau giờ học mỗi ngày dùng hiện tại đơn: **I play football after school**."],
+          [/^I playing\b/i, "Thiếu dạng đúng. ✅ I play football after school."]
+        ]
+      },
+      {
+        id: "8.4",
+        ask: "Can your friend ride a bike?",
+        vi: "Bạn của bạn có đi xe đạp được không?",
+        formula: [
+          { text: "She can", vi: "Cô ấy có thể; He can = anh ấy có thể", blank: false },
+          { text: "ride", vi: "đi, cưỡi", blank: false },
+          { text: "a bike", vi: "xe đạp", blank: false }
+        ],
+        example: "She can ride a bike.",
+        exampleVi: "Bạn ấy đi xe đạp được.",
+        vocab: [
+          { en: "She can", vi: "Cô ấy có thể" },
+          { en: "He can", vi: "Anh ấy có thể" },
+          { en: "ride a bike", vi: "đi xe đạp" }
+        ],
+        accept: /^(?:She|He) can ride a bike[.!?]$/i,
+        errors: [
+          [/^(?:She|He) cans\b/i, "Can không thêm s."],
+          [/^(?:She|He) can to\b/i, "Sau can không dùng to."],
+          [/^(?:She|He) is can\b/i, "Không dùng is. ✅ She can ride a bike."]
+        ]
+      },
+      {
+        id: "8.5",
+        ask: "What do you usually do at the weekend?",
+        vi: "Cuối tuần bạn thường làm gì?",
+        formula: [
+          { text: "I usually", vi: "Tôi thường", blank: false },
+          { text: "[động từ]", vi: "ví dụ: play", blank: true },
+          { text: "[việc]", vi: "ví dụ: games", blank: true }
+        ],
+        example: "I usually play games.",
+        exampleVi: "Tôi thường chơi trò chơi.",
+        vocab: [
+          { en: "usually", vi: "thường" },
+          { en: "play games", vi: "chơi trò chơi" },
+          { en: "visit", vi: "thăm" },
+          { en: "my grandparents", vi: "ông bà tôi" }
+        ],
+        accept: /^I usually [A-Za-z]+ .+[.!?]$/i,
+        errors: [
+          [/^I usually (?:playing|watching|reading|swimming|drawing|cooking|singing|running|eating)\b/i, "Việc thường làm dùng động từ thường, không thêm -ing."],
+          [/^I am usually\b/i, "Không dùng am. ✅ I usually play games."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 9,
+    emoji: "📅",
+    title: "Yesterday",
+    vi: "Kể về hôm qua",
+    tag: "Quá khứ đơn",
+    opener: "Yesterday was a normal day. ",
+    questions: [
+      {
+        id: "9.1",
+        ask: "Where did you go yesterday?",
+        vi: "Hôm qua bạn đã đi đâu?",
+        formula: [
+          { text: "I went to", vi: "Tôi đã đi tới", blank: false },
+          { text: "[nơi]", vi: "ví dụ: school", blank: true },
+          { text: "yesterday", vi: "hôm qua", blank: false }
+        ],
+        example: "I went to school yesterday.",
+        exampleVi: "Hôm qua tôi đã đi học.",
+        vocab: [
+          { en: "went", vi: "đã đi (quá khứ của go)" },
+          { en: "school", vi: "trường" },
+          { en: "the park", vi: "công viên" },
+          { en: "yesterday", vi: "hôm qua" }
+        ],
+        accept: /^I went to .+ yesterday[.!?]$/i,
+        errors: [
+          [/^I (?:go|goes|goed) to\b/i, "Hôm qua dùng **went**, không dùng go."],
+          [/^I did went\b/i, "Đã dùng went thì không thêm did."],
+          [/^I was go\b/i, "Không dùng was go. ✅ I went to school yesterday."]
+        ]
+      },
+      {
+        id: "9.2",
+        ask: "What did you eat yesterday?",
+        vi: "Hôm qua bạn đã ăn gì?",
+        formula: [
+          { text: "I ate", vi: "Tôi đã ăn", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: rice", blank: true },
+          { text: "yesterday", vi: "hôm qua", blank: false }
+        ],
+        example: "I ate rice yesterday.",
+        exampleVi: "Hôm qua tôi đã ăn cơm.",
+        vocab: [
+          { en: "ate", vi: "đã ăn (quá khứ của eat)" },
+          { en: "rice", vi: "cơm" },
+          { en: "noodles", vi: "mì" },
+          { en: "yesterday", vi: "hôm qua" }
+        ],
+        accept: /^I ate .+ yesterday[.!?]$/i,
+        errors: [
+          [/^I eat\b/i, "Hôm qua dùng **ate**, không dùng eat."],
+          [/^I eated\b/i, "Không thêm -ed vào eat. Quá khứ là **ate**."]
+        ]
+      },
+      {
+        id: "9.3",
+        ask: "What did you do after school yesterday?",
+        vi: "Hôm qua sau giờ học bạn đã làm gì?",
+        formula: [
+          { text: "I", vi: "Tôi", blank: false },
+          { text: "[động từ + ed]", vi: "ví dụ: played", blank: true },
+          { text: "[việc]", vi: "ví dụ: football", blank: true },
+          { text: "yesterday", vi: "hôm qua", blank: false }
+        ],
+        example: "I played football yesterday.",
+        exampleVi: "Hôm qua tôi đã chơi bóng.",
+        vocab: [
+          { en: "played", vi: "đã chơi" },
+          { en: "watched", vi: "đã xem" },
+          { en: "walked", vi: "đã đi bộ" },
+          { en: "football", vi: "bóng đá" }
+        ],
+        accept: /^I [A-Za-z]+ed .+ yesterday[.!?]$/i,
+        errors: [
+          [/^I (?:play|watch|visit|clean|cook|help|walk|talk)\b.+ yesterday\b/i, "Hôm qua động từ thêm **-ed**: played, watched."]
+        ]
+      },
+      {
+        id: "9.4",
+        ask: "What was the weather like yesterday?",
+        vi: "Hôm qua thời tiết thế nào?",
+        formula: [
+          { text: "It was", vi: "Trời đã", blank: false },
+          { text: "[thời tiết]", vi: "ví dụ: sunny", blank: true },
+          { text: "yesterday", vi: "hôm qua", blank: false }
+        ],
+        example: "It was sunny yesterday.",
+        exampleVi: "Hôm qua trời nắng.",
+        vocab: [
+          { en: "was", vi: "đã là (quá khứ của is)" },
+          { en: "sunny", vi: "có nắng" },
+          { en: "rainy", vi: "có mưa" },
+          { en: "hot", vi: "nóng" },
+          { en: "cold", vi: "lạnh" }
+        ],
+        accept: /^It was [A-Za-z]+ yesterday[.!?]$/i,
+        errors: [
+          [/^It (?:is|are|were|am)\b/i, "Hôm qua, It đi với **was**."],
+          [/^It [A-Za-z]+ yesterday[.!?]$/i, "Thiếu **was**. ✅ It was sunny yesterday."]
+        ]
+      },
+      {
+        id: "9.5",
+        ask: "Who did you see yesterday?",
+        vi: "Hôm qua bạn đã gặp ai?",
+        formula: [
+          { text: "I saw", vi: "Tôi đã gặp", blank: false },
+          { text: "[người]", vi: "ví dụ: my friend", blank: true },
+          { text: "yesterday", vi: "hôm qua", blank: false }
+        ],
+        example: "I saw my friend yesterday.",
+        exampleVi: "Hôm qua tôi đã gặp bạn.",
+        vocab: [
+          { en: "saw", vi: "đã gặp (quá khứ của see)" },
+          { en: "my friend", vi: "bạn tôi" },
+          { en: "my teacher", vi: "thầy cô tôi" },
+          { en: "yesterday", vi: "hôm qua" }
+        ],
+        accept: /^I saw .+ yesterday[.!?]$/i,
+        errors: [
+          [/^I (?:see|seed|sawed)\b/i, "Hôm qua dùng **saw**, không dùng see và không thêm -ed."]
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    emoji: "🌟",
+    title: "Things I Have Done",
+    vi: "Nói về việc bạn đã từng làm",
+    tag: "Hiện tại hoàn thành",
+    opener: "I have done a few things. ",
+    questions: [
+      {
+        id: "10.1",
+        ask: "What place have you visited?",
+        vi: "Bạn đã đi thăm nơi nào?",
+        formula: [
+          { text: "I have visited", vi: "Tôi đã đi thăm", blank: false },
+          { text: "[nơi]", vi: "viết hoa tên nơi", blank: true }
+        ],
+        example: "I have visited Hue.",
+        exampleVi: "Tôi đã đi thăm Huế.",
+        vocab: [
+          { en: "have visited", vi: "đã đi thăm" },
+          { en: "Hue", vi: "Huế" },
+          { en: "Ha Noi", vi: "Hà Nội" },
+          { en: "Da Nang", vi: "Đà Nẵng" }
+        ],
+        accept: /^I have visited .+[.!?]$/i,
+        errors: [
+          [/^I has\b/i, "'I' đi với **have**, không dùng has."],
+          [/^I have visit\b/i, "Thêm **-ed**: visited."],
+          [/^I visited\b/i, "Kinh nghiệm đã từng làm dùng **have visited**, không chỉ visited."]
+        ]
+      },
+      {
+        id: "10.2",
+        ask: "What food have you tried?",
+        vi: "Bạn đã ăn thử món gì?",
+        formula: [
+          { text: "I have eaten", vi: "Tôi đã ăn", blank: false },
+          { text: "[đồ ăn]", vi: "ví dụ: pho", blank: true }
+        ],
+        example: "I have eaten pho.",
+        exampleVi: "Tôi đã ăn phở.",
+        vocab: [
+          { en: "have eaten", vi: "đã ăn" },
+          { en: "pho", vi: "phở" },
+          { en: "banh mi", vi: "bánh mì" },
+          { en: "fruit", vi: "trái cây" }
+        ],
+        accept: /^I have eaten .+[.!?]$/i,
+        errors: [
+          [/^I have (?:ate|eat|eated)\b/i, "Sau have dùng **eaten**, không dùng ate hay eat."],
+          [/^I ate\b/i, "Câu này nói việc đã từng ăn: **I have eaten**."]
+        ]
+      },
+      {
+        id: "10.3",
+        ask: "Have you finished your homework?",
+        vi: "Bạn đã làm xong bài tập chưa?",
+        formula: [
+          { text: "I have finished", vi: "Tôi đã làm xong", blank: false },
+          { text: "[việc]", vi: "ví dụ: my homework", blank: true }
+        ],
+        example: "I have finished my homework.",
+        exampleVi: "Tôi đã làm xong bài tập.",
+        vocab: [
+          { en: "have finished", vi: "đã làm xong" },
+          { en: "my homework", vi: "bài tập của tôi" },
+          { en: "my book", vi: "sách của tôi" }
+        ],
+        accept: /^I have finished .+[.!?]$/i,
+        errors: [
+          [/^I have finish\b/i, "Thêm **-ed**: finished."],
+          [/^I finished\b/i, "Thêm **have**: I have finished my homework."]
+        ]
+      },
+      {
+        id: "10.4",
+        ask: "What have you learned?",
+        vi: "Bạn đã học được điều gì?",
+        formula: [
+          { text: "I have learned", vi: "Tôi đã học được", blank: false },
+          { text: "[điều]", vi: "ví dụ: English", blank: true }
+        ],
+        example: "I have learned English.",
+        exampleVi: "Tôi đã học tiếng Anh.",
+        vocab: [
+          { en: "have learned", vi: "đã học được" },
+          { en: "English", vi: "tiếng Anh" },
+          { en: "a song", vi: "một bài hát" }
+        ],
+        accept: /^I have learned .+[.!?]$/i,
+        errors: [
+          [/^I have learn\b/i, "Thêm **-ed**: learned."],
+          [/^I learned\b/i, "Thêm **have**: I have learned English."]
+        ]
+      },
+      {
+        id: "10.5",
+        ask: "Which city have you been to?",
+        vi: "Bạn đã từng đến thành phố nào?",
+        formula: [
+          { text: "I have been to", vi: "Tôi đã từng đến", blank: false },
+          { text: "[nơi]", vi: "viết hoa tên nơi", blank: true }
+        ],
+        example: "I have been to Ha Noi.",
+        exampleVi: "Tôi đã từng đến Hà Nội.",
+        vocab: [
+          { en: "have been to", vi: "đã từng đến" },
+          { en: "Ha Noi", vi: "Hà Nội" },
+          { en: "Hue", vi: "Huế" },
+          { en: "never", vi: "chưa từng" }
+        ],
+        accept: /^I have (?:never )?been to .+[.!?]$/i,
+        errors: [
+          [/^I have (?:went|go|gone) to\b/i, "Đã từng đến một nơi dùng **have been to**, không dùng went."],
+          [/^I have be\b/i, "Dùng **been**, không dùng be."],
+          [/^I was been\b/i, "Không dùng was. ✅ I have been to Ha Noi."]
+        ]
+      }
+    ]
+  }
+];
+
+var COMING_SOON = [];
+
+var GUIDES = [
+  {
+    id: 1,
+    teaches: "Năm câu tự giới thiệu: tên, tuổi, nơi ở, số người trong gia đình, và sở thích. Em tập động từ to be: I đi với am, My name đi với is, There are dùng khi có nhiều người.",
+    why: "Tiếng Việt nói “tôi có 10 tuổi”, nên em rất hay viết I have 10 years old. Tiếng Anh nói tuổi bằng am: I am 10 years old. My name là một sự vật, không phải I, nên dùng is. Tên người và tên nơi phải viết hoa chữ cái đầu, nếu không người đọc không biết đó là tên riêng.",
+    probes: [
+      "Em muốn nói “tôi 10 tuổi”. Vì sao không được viết I have 10 years old?",
+      "My name đi với am hay is? Em chỉ vào từ trong câu rồi giải thích.",
+      "Đổi tên trong câu thành tên thật của em. Chữ nào phải viết hoa? Nếu quên dấu chấm thì câu còn được nhận không?"
+    ]
+  },
+  {
+    id: 2,
+    teaches: "Việc lặp lại mỗi ngày: thức dậy, ăn sáng, đi học, việc mẹ làm buổi tối, và giờ đi ngủ. I đi với động từ không thêm s. She và He phải thêm s hoặc es. Giờ dùng at. Đi xe dùng by. Đi bộ là on foot.",
+    why: "Bài này nói thói quen, không phải việc đang xảy ra ngay lúc nói, nên không dùng am/is + -ing. Tiếng Việt không chia động từ, nên em dễ quên chữ s sau She/He. Giới từ cũng không dịch từng chữ: “lúc 6 giờ” là at, không phải in. “Đi bộ” là on foot, không phải by foot.",
+    probes: [
+      "Vì sao I wake up không có s, còn She cooks lại có s? Đổi She thành I thì động từ đổi thế nào?",
+      "at 6 o'clock sai ở đâu nếu em viết in 6 o'clock?",
+      "Em đi học bằng xe đạp và đi bộ về. Câu nào dùng by, câu nào dùng on? Vì sao hai câu khác nhau?"
+    ]
+  },
+  {
+    id: 3,
+    teaches: "Việc đang xảy ra ngay lúc nói. I am, She/He is, They are, rồi động từ thêm -ing. Thời tiết dùng It is. Quần áo đang mặc trên người dùng I am wearing.",
+    why: "Bài 2 là việc mỗi ngày. Bài 3 là việc ngay bây giờ. Cùng một ý nhưng hình thức khác: I read every day và I am reading now. am, is, are phải khớp chủ ngữ. Viết I reading là câu cụt vì thiếu am. I wear nghe như thói quen. I am wearing mới là đang mặc lúc này.",
+    probes: [
+      "I read a book và I am reading a book khác nhau thế nào? Em lấy một việc trong ngày của em làm ví dụ.",
+      "They đi với is hay are? Nếu chỉ còn một bạn, đổi thành She hoặc He, thì is/are đổi thành gì?",
+      "Nhìn áo em đang mặc. Em viết I wear hay I am wearing? Vì sao?"
+    ]
+  },
+  {
+    id: 4,
+    teaches: "Năm câu về gia đình: có anh chị em, nghề của bố, tính cách của mẹ, sống cùng ai, và thú cưng. Em dùng I have và He/She is.",
+    why: "Tiếng Việt không chia động từ, nên em dễ viết I has. Have đi với I. He và She đi với is. Trước tên nghề cần a hoặc an, nếu không câu nghe cụt.",
+    probes: [
+      "Vì sao viết I have a brother, không viết I has a brother?",
+      "My father đi với is hay are? Nếu đổi thành My parents thì từ đó đổi thế nào?",
+      "Câu He is teacher thiếu từ nào? Em thêm vào rồi đọc lại."
+    ]
+  },
+  {
+    id: 5,
+    teaches: "Năm câu về đồ ăn: ăn gì vào bữa trưa, món thích, món không thích, món bạn thích, và món thích nhất. Em dùng like và don't like.",
+    why: "I like không có s. She likes phải có s vì là ngôi thứ ba số ít. Phủ định của I không phải 'I not like'. Cần don't hoặc do not, vì tiếng Anh phải có trợ động từ do.",
+    probes: [
+      "She likes milk có s, còn I like milk thì không. Em giải thích vì sao.",
+      "I not like fish sai ở đâu? Cần thêm từ nào?",
+      "Em thích cơm nhưng không thích cá. Em nói hai câu đó khác nhau chỗ nào?"
+    ]
+  },
+  {
+    id: 6,
+    teaches: "Năm câu về trường: môn học, giờ đi học, tên giáo viên, việc làm ở trường, và cảm xúc ở trường. Đây vẫn là hiện tại đơn, việc lặp lại.",
+    why: "Ở trường mỗi ngày không dùng am + -ing. Giờ vẫn dùng at. Tên môn như English viết hoa vì đó là tên ngôn ngữ, không phải từ thường.",
+    probes: [
+      "Việc mỗi ngày ở trường em viết I study hay I am studying? Khác nhau thế nào?",
+      "at 7 o'clock đổi thành in 7 o'clock thì sai ở đâu?",
+      "Vì sao English phải viết hoa, còn school thì không?"
+    ]
+  },
+  {
+    id: 7,
+    teaches: "Năm câu về nhà: một đồ trong phòng, số phòng, vị trí cái cặp, có bếp không, và ở nhà hay căn hộ. Em dùng There is, There are, và in/on/under.",
+    why: "Tiếng Việt dùng 'có' cho cả người lẫn vật, nên em hay viết There have. Một vật dùng There is. Từ hai vật trở lên dùng There are. Giới từ không dịch word-by-word: trên mặt bàn là on, trong phòng là in.",
+    probes: [
+      "Một cái giường dùng There is hay There are? Ba cái ghế thì sao?",
+      "The bag on the table thiếu từ nào?",
+      "Em chỉ một đồ trong phòng. Đồ đó dùng in, on, hay under? Vì sao?"
+    ]
+  },
+  {
+    id: 8,
+    teaches: "Năm câu về lúc rảnh: em làm được gì, thích làm gì, sau giờ học làm gì, bạn có đi xe đạp được không, và cuối tuần thường làm gì. Em dùng can và like + -ing.",
+    why: "Can đi với động từ nguyên mẫu, không thêm to và không thêm -ing. I like reading là thích việc đó. I read every day là thói quen. Hai câu không thay nhau được. Can không thêm s sau She.",
+    probes: [
+      "Sau can vì sao không viết to swim và không viết swimming?",
+      "I like reading và I read every day khác nhau chỗ nào?",
+      "She can có thêm s không? Vì sao?"
+    ]
+  },
+  {
+    id: 9,
+    teaches: "Năm câu về hôm qua: đã đi đâu, đã ăn gì, đã làm gì sau giờ học, thời tiết, và đã gặp ai. Đây là quá khứ đơn.",
+    why: "Việc đã xong hôm qua không dùng thì hiện tại. Go thành went, eat thành ate, see thành saw. Những động từ đều thêm -ed, như play thành played. It hôm qua đi với was, không còn is.",
+    probes: [
+      "Hôm qua vì sao không dùng go mà dùng went?",
+      "I played khác I play ở chữ nào? Chữ đó nghĩa là gì?",
+      "It is sunny yesterday sai ở đâu? Em sửa thành câu đúng."
+    ]
+  },
+  {
+    id: 10,
+    teaches: "Năm câu về việc đã từng làm: đã đi thăm đâu, đã ăn món gì, đã làm xong bài chưa, đã học được gì, và đã đến thành phố nào. Đây là hiện tại hoàn thành: have + quá khứ phân từ.",
+    why: "Quá khứ đơn kể một lần hôm qua. Hiện tại hoàn thành kể kinh nghiệm tính đến bây giờ. Vì vậy không viết I visited khi bài yêu cầu have visited, và không viết I have went. Eat sau have là eaten. Go trong kinh nghiệm 'đã từng đến' là have been to.",
+    probes: [
+      "I visited Hue và I have visited Hue khác nhau thế nào?",
+      "Vì sao không viết I have ate hoặc I have went?",
+      "I đi với have hay has? She thì dùng từ nào?"
+    ]
+  }
+];
+
+var STORAGE_KEY = "writing-practice-v1";
+var progress = { sentences: 0, finished: {}, mastered: {} };
+
+var state = {
+  view: "home",
+  lessonId: 1,
+  qIndex: 0,
+  step: 1,
+  single: false,
+  answers: [],
+  bank: [],
+  picked: [],
+  ghepChecked: false,
+  ghepOk: false,
+  draft: "",
+  writeMsg: "",
+  writeOk: false,
+  counted: false,
+  queue: [],
+  phase: "front",
+  hintUsed: false,
+  hintOpen: false,
+  result: null
+};
+
+function normalize(raw) {
+  var s = String(raw == null ? "" : raw).replace(/[’‘‛]/g, "'").replace(/\s+/g, " ").trim();
+  return s.replace(/\s+([.!?])$/, "$1");
+}
+
+function checkAnswer(raw, question) {
+  var s = normalize(raw);
+  if (!s) return { ok: false, message: "Hãy viết câu trả lời của bạn trước nhé." };
+  if (/___|\[|\]/.test(s)) return { ok: false, message: "Hãy thay phần [ ] bằng từ của bạn." };
+  if (!re("^[" + UPPER + "]").test(s)) {
+    return { ok: false, message: "Chữ cái đầu câu phải **viết hoa**." };
+  }
+  if (!/[.!?]$/.test(s)) return { ok: false, message: "Cuối câu cần có **dấu chấm (.)**." };
+  var i;
+  for (i = 0; i < question.errors.length; i++) {
+    if (question.errors[i][0].test(s)) return { ok: false, message: question.errors[i][1] };
+  }
+  if (!question.accept.test(s)) {
+    return { ok: false, message: "Câu chưa đúng mẫu. Hãy nhìn lại **công thức** và ví dụ ở trên nhé." };
+  }
+  return { ok: true, sentence: s };
+}
+
+function lessonById(id) {
+  var n = Number(id);
+  for (var i = 0; i < LESSONS.length; i++) if (LESSONS[i].id === n) return LESSONS[i];
+  return LESSONS[0];
+}
+
+function currentLesson() { return lessonById(state.lessonId); }
+function currentQuestion() { return currentLesson().questions[state.qIndex]; }
+
+function defaultProgress() {
+  return { sentences: 0, finished: {}, mastered: {} };
+}
+
+function loadProgress() {
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return defaultProgress();
+    var data = JSON.parse(raw);
+    var p = defaultProgress();
+    if (data && typeof data.sentences === "number" && isFinite(data.sentences) && data.sentences >= 0) {
+      p.sentences = Math.floor(data.sentences);
+    }
+    if (data && data.finished && typeof data.finished === "object") p.finished = data.finished;
+    if (data && data.mastered && typeof data.mastered === "object") p.mastered = data.mastered;
+    return p;
+  } catch (err) {
+    return defaultProgress();
+  }
+}
+
+function saveProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  } catch (err) {}
+}
+
+function masteredFlags(lesson) {
+  var id = String(lesson.id);
+  var n = lesson.questions.length;
+  var arr = progress.mastered[id];
+  if (!Array.isArray(arr) || arr.length !== n) {
+    var old = Array.isArray(arr) ? arr : [];
+    arr = [];
+    for (var i = 0; i < n; i++) arr.push(!!old[i]);
+    progress.mastered[id] = arr;
+  }
+  return arr;
+}
+
+function masteredCount(lesson) {
+  var flags = masteredFlags(lesson);
+  var n = 0;
+  for (var i = 0; i < flags.length; i++) if (flags[i]) n++;
+  return n;
+}
+
+function esc(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function formatMsg(s) {
+  return esc(s).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
+function chipsHtml(formula) {
+  var html = '<div class="chips">';
+  for (var i = 0; i < formula.length; i++) {
+    var ch = formula[i];
+    html += '<div class="chip-wrap"><span class="chip ' + (ch.blank ? "blank" : "fixed") + '">' +
+      esc(ch.text) + '</span><span class="chip-vi">' + esc(ch.vi) + "</span></div>";
+  }
+  return html + "</div>";
+}
+
+function questionPanel(q) {
+  var n = 1;
+  var parts = String(q.id || "1.1").split(".");
+  if (parts.length > 1 && isFinite(Number(parts[1]))) n = Number(parts[1]);
+  var tone = ((n - 1) % 5) + 1;
+  return '<div class="qpanel tone-' + tone + '"><p class="ask" lang="en">' + esc(q.ask) + '</p><p class="vi">' + esc(q.vi) + "</p></div>";
+}
+
+function vocabHtml(q, tappable) {
+  var html = '<section class="card card-vocab"><p class="vocab-title">Từ vựng</p>';
+  if (tappable) html += '<p class="vocab-note">Bấm một dòng để điền vào câu.</p>';
+  html += '<div class="vocab-list">';
+  for (var i = 0; i < q.vocab.length; i++) {
+    var item = q.vocab[i];
+    if (tappable) {
+      html += '<button type="button" class="vocab-btn" data-action="vocab" data-index="' + i + '">';
+    } else {
+      html += '<div class="vocab-row">';
+    }
+    html += '<span class="vocab-en" lang="en">' + esc(item.en) + '</span><span class="vocab-vi">' + esc(item.vi) + "</span>";
+    html += tappable ? "</button>" : "</div>";
+  }
+  return html + "</div></section>";
+}
+
+function dotsHtml(lesson, index) {
+  var html = '<div class="dots" role="img" aria-label="Câu ' + (index + 1) + " trên " + lesson.questions.length + '">';
+  for (var i = 0; i < lesson.questions.length; i++) {
+    var cls = i < index ? "dot done" : (i === index ? "dot now" : "dot");
+    html += '<span class="' + cls + '"></span>';
+  }
+  return html + "</div>";
+}
+
+function renderHome() {
+  var html = '<header class="hero">';
+  html += "<h1>Luyện viết tiếng Anh</h1>";
+  html += '<p class="sub">Bài tập đệm cho học sinh mất gốc, học cùng thầy cô hoặc phụ huynh.</p>';
+  html += '<p class="count-pill">Đã viết ' + progress.sentences + " câu</p></header>";
+  html += '<div class="grid">';
+  var i;
+  for (i = 0; i < LESSONS.length; i++) {
+    var lesson = LESSONS[i];
+    var done = masteredCount(lesson);
+    var total = lesson.questions.length;
+    var finished = !!progress.finished[String(lesson.id)];
+    var tone = ((lesson.id - 1) % 5) + 1;
+    var num = (lesson.id < 10 ? "0" : "") + lesson.id;
+    html += '<article class="card lesson tone-' + tone + '">';
+    html += '<div class="lesson-top"><span class="num">' + num + "</span><div>";
+    html += "<h2>" + esc(lesson.title) + "</h2>";
+    html += '<p class="desc">' + esc(lesson.vi) + "</p></div>";
+    if (finished) html += '<span class="learned">Đã học</span>';
+    html += "</div>";
+    html += '<p><span class="tag">' + esc(lesson.tag) + "</span></p>";
+    html += '<p class="progress-line">' + done + "/" + total + " câu đã thuộc</p>";
+    html += '<div class="btn-row">';
+    html += '<button type="button" class="btn" data-action="learn" data-lesson="' + lesson.id + '">Học</button>';
+    html += '<button type="button" class="btn btn-ghost" data-action="test" data-lesson="' + lesson.id + '">Test</button>';
+    html += "</div></article>";
+  }
+  for (i = 0; i < COMING_SOON.length; i++) {
+    var soon = COMING_SOON[i];
+    html += '<article class="card lesson soon" aria-disabled="true">';
+    html += '<div class="lesson-top"><span class="num">0</span><div>';
+    html += '<p class="unit">' + esc(soon.unit) + "</p><h2>" + esc(soon.title) + "</h2></div>";
+    html += '<span class="soon-badge">Sắp có</span></div>';
+    html += '<p class="desc">' + esc(soon.vi) + "</p>";
+    html += '<p><span class="tag">' + esc(soon.tag) + "</span></p>";
+    html += "</article>";
+  }
+  html += "</div>";
+  html += '<div class="btn-row" style="margin-top:16px"><button type="button" class="btn btn-ghost" data-action="guide">Dành cho thầy cô / phụ huynh</button></div>';
+  return html;
+}
+
+function pilesHtml(lesson) {
+  var flags = masteredFlags(lesson);
+  var ok = "";
+  var wait = "";
+  var okN = 0;
+  var waitN = 0;
+  var i;
+  for (i = 0; i < lesson.questions.length; i++) {
+    var label = '<div class="mini"><strong>' + (i + 1) + ".</strong> " + esc(lesson.questions[i].ask) + "</div>";
+    if (flags[i]) { ok += label; okN++; }
+    else { wait += label; waitN++; }
+  }
+  if (!okN) ok = '<p class="pile-empty">Chưa có câu nào.</p>';
+  if (!waitN) wait = '<p class="pile-empty">Không còn câu nào.</p>';
+  return '<div class="piles"><section class="pile ok"><h3>Đã thuộc · ' + okN + "</h3>" + ok +
+    '</section><section class="pile wait"><h3>Chưa thuộc · ' + waitN + "</h3>" + wait + "</section></div>";
+}
+
+function guideById(id) {
+  for (var i = 0; i < GUIDES.length; i++) if (GUIDES[i].id === id) return GUIDES[i];
+  return null;
+}
+
+function renderGuide() {
+  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
+  html += "<h2>Dành cho thầy cô / phụ huynh</h2></div>";
+  html += '<section class="card"><p>Web không cho điểm. Em viết đúng mẫu thì câu vào chồng <strong>Đã thuộc</strong>. Dùng gợi ý, hoặc viết sai, thì thẻ quay lại. Danh sách bên dưới lấy từ máy này. Nếu em chưa làm Test, cả 5 câu hiện ở mục chưa thuộc.</p></section>';
+  var i;
+  for (i = 0; i < LESSONS.length; i++) {
+    var lesson = LESSONS[i];
+    var guide = guideById(lesson.id) || { teaches: "", why: "", probes: [] };
+    var flags = masteredFlags(lesson);
+    html += '<section class="card" style="margin-top:16px">';
+    html += "<h2>Bài " + lesson.id + " · " + esc(lesson.title) + "</h2>";
+    html += '<p class="desc" style="margin-top:4px">' + esc(lesson.vi) + " · " + esc(lesson.tag) + "</p>";
+    html += '<p class="label">Bài này dạy gì</p><p>' + esc(guide.teaches) + "</p>";
+    html += '<p class="label">Vì sao có quy tắc</p><p>' + esc(guide.why) + "</p>";
+    html += '<p class="label">Hỏi em để biết em hiểu hay chỉ nhớ</p><ol class="guide-list">';
+    var p;
+    for (p = 0; p < guide.probes.length; p++) html += "<li>" + esc(guide.probes[p]) + "</li>";
+    html += "</ol>";
+    html += '<p class="label">Câu em chưa thuộc</p>';
+    var any = false;
+    var q;
+    for (q = 0; q < lesson.questions.length; q++) {
+      if (flags[q]) continue;
+      any = true;
+      var item = lesson.questions[q];
+      html += '<div class="miss"><p><strong>' + (q + 1) + ".</strong> " + esc(item.ask) + " — " + esc(item.vi) + "</p>";
+      html += '<p class="sample" lang="en">' + esc(item.example) + "</p></div>";
+    }
+    if (!any) html += "<p>Em đã thuộc cả " + lesson.questions.length + " câu của bài này.</p>";
+    html += "</section>";
+  }
+  return html;
+}
+
+function learnTop(lesson) {
+  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
+  html += "<h2>Bài " + lesson.id + " · " + esc(lesson.title) + "</h2>";
+  if (state.single) html += '<span class="tag">Ôn lại 1 câu</span>';
+  else html += dotsHtml(lesson, state.qIndex);
+  html += "</div>";
+  var stepName = state.step === 1 ? "Xem" : (state.step === 2 ? "Ghép" : "Viết");
+  var qLabel = state.single ? "Ôn câu này" : ("Câu " + (state.qIndex + 1) + "/" + lesson.questions.length);
+  html += '<p class="step-label">' + qLabel + " · Bước " + state.step + "/3 · " + stepName + "</p>";
+  return html;
+}
+
+function renderStep1(q) {
+  var html = questionPanel(q);
+  html += '<p class="label">Công thức</p>' + chipsHtml(q.formula);
+  html += '<div class="example"><p class="label">Ví dụ</p>';
+  html += '<p class="ex-en" lang="en">' + esc(q.example) + "</p>";
+  html += '<p class="ex-vi">' + esc(q.exampleVi) + "</p></div>";
+  html += '<div class="btn-row" style="margin-top:16px"><button type="button" class="btn" data-action="to-ghep">Mình hiểu rồi →</button></div>';
+  return html;
+}
+
+function renderStep2(q) {
+  var html = questionPanel(q);
+  html += "<p>Bấm các từ theo đúng thứ tự để ghép câu ví dụ. Dấu chấm đi cùng từ cuối.</p>";
+  html += '<div class="well" aria-live="polite">';
+  if (!state.picked.length) html += '<span class="placeholder">Câu của bạn hiện ở đây.</span>';
+  var i;
+  for (i = 0; i < state.picked.length; i++) {
+    var picked = state.picked[i];
+    html += '<button type="button" class="word" data-action="unpick" data-id="' + picked.id + '">' + esc(picked.text) + "</button>";
+  }
+  html += "</div>";
+  html += '<div class="bank">';
+  for (i = 0; i < state.bank.length; i++) {
+    var tok = state.bank[i];
+    html += '<button type="button" class="word" data-action="pick" data-id="' + tok.id + '">' + esc(tok.text) + "</button>";
+  }
+  html += "</div>";
+  html += '<p class="hint-line">Nghĩa: ' + esc(q.exampleVi) + "</p>";
+  if (state.ghepChecked && state.ghepOk) {
+    html += '<div class="fb ok"><p>Đúng rồi.</p><p class="sample" lang="en">' + esc(q.example) + "</p><p>" + esc(q.exampleVi) + "</p></div>";
+    html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="to-write">Tự viết câu của bạn →</button></div>';
+  } else if (state.ghepChecked) {
+    html += '<div class="fb bad"><p>Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p></div>';
+  }
+  return html;
+}
+
+function renderStep3(q) {
+  var html = questionPanel(q);
+  html += '<p class="label">Công thức</p>' + chipsHtml(q.formula);
+  html += '<label for="answer-input" class="label">Viết câu của bạn</label>';
+  html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (state.writeOk ? " disabled" : "") + ">";
+  html += '<div class="btn-row"><button type="button" class="btn" data-action="check-write"' + (state.writeOk ? " disabled" : "") + ">Kiểm tra</button></div>";
+  html += '<p class="hint-line">Đã viết: ' + progress.sentences + " câu</p>";
+  html += '<div id="feedback">';
+  if (state.writeOk) {
+    html += '<div class="fb ok"><p>Câu của bạn đúng rồi.</p></div>';
+    var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === currentLesson().questions.length - 1 ? "Xem đoạn văn của mình →" : "Câu tiếp theo →");
+    html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-q">' + nextLabel + "</button></div>";
+  } else if (state.writeMsg) {
+    html += '<div class="fb bad"><p>' + formatMsg(state.writeMsg) + "</p><p>Không sao, sửa lại và bấm Kiểm tra lần nữa nhé.</p></div>";
+  }
+  html += "</div>";
+  return html;
+}
+
+function renderLearn() {
+  var lesson = currentLesson();
+  var q = currentQuestion();
+  var html = learnTop(lesson);
+  html += '<div class="split">';
+  html += vocabHtml(q, state.step === 3 && !state.writeOk);
+  html += '<section class="card card-q">';
+  if (state.step === 1) html += renderStep1(q);
+  else if (state.step === 2) html += renderStep2(q);
+  else html += renderStep3(q);
+  html += "</section></div>";
+  return html;
+}
+
+function paragraphText() {
+  return currentLesson().opener + state.answers.join(" ");
+}
+
+function renderEnd() {
+  var lesson = currentLesson();
+  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
+  html += "<h2>Đoạn văn của bạn</h2></div>";
+  html += '<section class="card">';
+  html += "<h2>Bạn vừa viết một đoạn văn.</h2>";
+  html += '<p class="para" id="paragraph">' + esc(paragraphText()) + "</p>";
+  html += "<p>Tổng số câu bạn đã viết: " + progress.sentences + "</p>";
+  html += '<div class="btn-row" style="margin-top:14px">';
+  html += '<button type="button" class="btn" data-action="copy">Sao chép</button>';
+  html += '<button type="button" class="btn btn-ghost" data-action="rewrite">Viết lại</button>';
+  html += '<button type="button" class="btn btn-ghost" data-action="home">Chọn bài khác</button>';
+  html += "</div>";
+  html += '<p class="copy-status" id="copy-status" aria-live="polite"></p>';
+  html += "</section>";
+  return html;
+}
+
+function testCounters(lesson) {
+  var n = masteredCount(lesson);
+  var m = lesson.questions.length - n;
+  return '<div class="counters"><span class="pill ok">Đã thuộc ' + n + '</span><span class="pill wait">Chưa thuộc ' + m + "</span></div>";
+}
+
+function renderTest() {
+  var lesson = currentLesson();
+  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
+  html += testCounters(lesson) + "</div>";
+  html += '<div class="center-col">';
+  html += "<h2>Test · " + esc(lesson.title) + "</h2>";
+  if (!state.queue.length) {
+    html += renderCelebrate();
+    html += "</div>";
+    return html;
+  }
+  var qIndex = state.phase === "result" ? state.result.qIndex : state.queue[0];
+  var q = lesson.questions[qIndex];
+  html += '<p class="step-label">Câu ' + (qIndex + 1) + "/" + lesson.questions.length + "</p>";
+  if (state.phase === "front") {
+    html += '<button type="button" class="front" data-action="open-card">';
+    html += '<span class="ask" lang="en">' + esc(q.ask) + '</span><span class="vi">' + esc(q.vi) + "</span>";
+    html += '<span class="tap">Bấm vào thẻ để trả lời</span></button>';
+  } else {
+    html += '<section class="card">';
+    html += questionPanel(q);
+    var locked = state.phase === "result";
+    html += '<label for="answer-input" class="label">Viết câu của bạn</label>';
+    html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (locked ? " disabled" : "") + ">";
+    html += '<div class="btn-row">';
+    html += '<button type="button" class="btn" data-action="check-test"' + (locked ? " disabled" : "") + ">Kiểm tra</button>";
+    html += '<button type="button" class="btn btn-ghost" data-action="hint"' + (locked ? " disabled" : "") + ">Xem gợi ý</button>";
+    html += "</div>";
+    if (state.hintOpen) {
+      html += '<div class="fb bad"><p>Gợi ý</p>' + chipsHtml(q.formula);
+      html += "<p>Dùng gợi ý nên thẻ này sẽ quay lại sau.</p></div>";
+    }
+    html += '<div id="feedback">';
+    if (state.phase === "write" && state.writeMsg) {
+      html += '<div class="fb bad"><p>' + formatMsg(state.writeMsg) + "</p></div>";
+    }
+    if (state.phase === "result") {
+      if (state.result.kind === "mastered") {
+        html += '<div class="fb ok"><p>Đúng rồi. Thẻ này chuyển sang Đã thuộc.</p></div>';
+        html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
+      } else if (state.result.kind === "hint") {
+        html += '<div class="fb bad"><p>Câu đúng rồi! Nhưng bạn đã dùng gợi ý nên thẻ sẽ quay lại để thử lại không gợi ý.</p></div>';
+        html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-card">Thẻ tiếp theo →</button></div>';
+      } else {
+        html += '<div class="fb bad"><p>' + formatMsg(state.result.message) + "</p>";
+        html += "<p>Lưu ý: web chỉ nhận câu theo đúng mẫu của bài.</p>";
+        html += '<p class="sample" lang="en">' + esc(q.example) + "</p>";
+        html += "<p>" + esc(q.exampleVi) + "</p>";
+        html += "<p>Thẻ chuyển sang Chưa thuộc và sẽ quay lại sau.</p></div>";
+        html += '<div class="btn-row" style="margin-top:12px">';
+        html += '<button type="button" class="btn" data-action="retry">Sửa lại</button>';
+        html += '<button type="button" class="btn btn-ghost" data-action="review">Ôn lại câu này</button>';
+        html += '<button type="button" class="btn btn-ghost" data-action="next-card">Thẻ tiếp theo →</button>';
+        html += "</div>";
+      }
+    }
+    html += "</div></section>";
+  }
+  html += pilesHtml(lesson);
+  html += "</div>";
+  return html;
+}
+
+function renderCelebrate() {
+  var lesson = currentLesson();
+  var html = '<section class="card" style="margin-top:16px">';
+  html += "<h2>Bạn đã thuộc cả " + lesson.questions.length + " câu.</h2>";
+  html += '<p class="desc" style="margin-top:8px">Bạn viết được từ trí nhớ, không cần gợi ý.</p>';
+  html += '<div class="btn-row" style="margin-top:16px">';
+  html += '<button type="button" class="btn" data-action="reset-test">Test lại từ đầu</button>';
+  html += '<button type="button" class="btn btn-ghost" data-action="review-lesson">Ôn bài</button>';
+  html += "</div></section>";
+  html += pilesHtml(lesson);
+  return html;
+}
+
+function render() {
+  var app = document.getElementById("app");
+  var html = "";
+  if (state.view === "home") html = renderHome();
+  else if (state.view === "learn") html = renderLearn();
+  else if (state.view === "end") html = renderEnd();
+  else if (state.view === "test") html = renderTest();
+  else if (state.view === "guide") html = renderGuide();
+  else if (state.view === "celebrate") {
+    var lesson = currentLesson();
+    html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>' + testCounters(lesson) + "</div>";
+    html += '<div class="center-col"><h2>Test · ' + esc(lesson.title) + "</h2>" + renderCelebrate() + "</div>";
+  }
+  app.innerHTML = html;
+  var input = document.getElementById("answer-input");
+  if (input && !input.disabled) {
+    input.focus();
+    var n = input.value.length;
+    try { input.setSelectionRange(n, n); } catch (err) {}
+  }
+}
+
+function fisher(list) {
+  var a = list.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = a[i];
+    a[i] = a[j];
+    a[j] = tmp;
+  }
+  return a;
+}
+
+function shuffledTokens(sentence) {
+  var words = sentence.split(" ");
+  var tokens = [];
+  for (var i = 0; i < words.length; i++) tokens.push({ id: String(i), text: words[i] });
+  var original = words.join(" ");
+  var order = tokens.slice();
+  for (var n = 0; n < 20; n++) {
+    order = fisher(tokens);
+    var joined = [];
+    for (var k = 0; k < order.length; k++) joined.push(order[k].text);
+    if (joined.join(" ") !== original) return order;
+  }
+  return tokens.slice().reverse();
+}
+
+function startLearn(id) {
+  state.view = "learn";
+  state.lessonId = Number(id);
+  state.qIndex = 0;
+  state.step = 1;
+  state.single = false;
+  state.answers = [];
+  state.draft = "";
+  state.writeMsg = "";
+  state.writeOk = false;
+  state.counted = false;
+  state.ghepChecked = false;
+  state.ghepOk = false;
+  render();
+}
+
+function goGhep() {
+  var q = currentQuestion();
+  state.step = 2;
+  state.bank = shuffledTokens(q.example);
+  state.picked = [];
+  state.ghepChecked = false;
+  state.ghepOk = false;
+  render();
+}
+
+function goWrite() {
+  state.step = 3;
+  state.draft = "";
+  state.writeMsg = "";
+  state.writeOk = false;
+  state.counted = false;
+  render();
+}
+
+function pickWord(id) {
+  if (state.ghepOk) return;
+  var idx = -1;
+  var i;
+  for (i = 0; i < state.bank.length; i++) if (state.bank[i].id === id) idx = i;
+  if (idx < 0) return;
+  var tok = state.bank.splice(idx, 1)[0];
+  state.picked.push(tok);
+  if (!state.bank.length) {
+    var built = [];
+    for (i = 0; i < state.picked.length; i++) built.push(state.picked[i].text);
+    state.ghepChecked = true;
+    state.ghepOk = built.join(" ") === currentQuestion().example;
+  } else {
+    state.ghepChecked = false;
+    state.ghepOk = false;
+  }
+  render();
+}
+
+function unpickWord(id) {
+  if (state.ghepOk) return;
+  var idx = -1;
+  for (var i = 0; i < state.picked.length; i++) if (state.picked[i].id === id) idx = i;
+  if (idx < 0) return;
+  var tok = state.picked.splice(idx, 1)[0];
+  state.bank.push(tok);
+  state.ghepChecked = false;
+  state.ghepOk = false;
+  render();
+}
+
+function rememberSentence() {
+  if (state.counted) return;
+  progress.sentences += 1;
+  state.counted = true;
+  saveProgress();
+}
+
+function checkWrite() {
+  if (state.writeOk) return;
+  var input = document.getElementById("answer-input");
+  var raw = input ? input.value : state.draft;
+  state.draft = raw;
+  var result = checkAnswer(raw, currentQuestion());
+  if (!result.ok) {
+    state.writeMsg = result.message;
+    state.writeOk = false;
+    render();
+    return;
+  }
+  rememberSentence();
+  if (!state.single) state.answers[state.qIndex] = result.sentence;
+  state.draft = result.sentence;
+  state.writeMsg = "";
+  state.writeOk = true;
+  render();
+}
+
+function nextQuestion() {
+  if (state.single) {
+    returnToTest();
+    return;
+  }
+  var lesson = currentLesson();
+  if (state.qIndex >= lesson.questions.length - 1) {
+    progress.finished[String(lesson.id)] = true;
+    saveProgress();
+    state.view = "end";
+    render();
+    return;
+  }
+  state.qIndex += 1;
+  state.step = 1;
+  state.draft = "";
+  state.writeMsg = "";
+  state.writeOk = false;
+  state.counted = false;
+  render();
+}
+
+function startTest(id) {
+  var lesson = lessonById(id);
+  var flags = masteredFlags(lesson);
+  state.view = "test";
+  state.lessonId = lesson.id;
+  state.queue = [];
+  for (var i = 0; i < lesson.questions.length; i++) if (!flags[i]) state.queue.push(i);
+  state.phase = "front";
+  state.hintUsed = false;
+  state.hintOpen = false;
+  state.result = null;
+  state.draft = "";
+  state.writeMsg = "";
+  state.single = false;
+  if (!state.queue.length) state.view = "celebrate";
+  render();
+}
+
+function openCard() {
+  state.phase = "write";
+  state.draft = "";
+  state.writeMsg = "";
+  state.hintUsed = false;
+  state.hintOpen = false;
+  state.result = null;
+  state.counted = false;
+  render();
+}
+
+function showHint() {
+  if (state.phase === "result") return;
+  state.hintOpen = true;
+  state.hintUsed = true;
+  render();
+}
+
+function moveCard(how) {
+  var card = state.queue.shift();
+  if (how === "end") state.queue.push(card);
+  else {
+    var pos = Math.min(3, state.queue.length);
+    state.queue.splice(pos, 0, card);
+  }
+  return card;
+}
+
+function checkTest() {
+  if (state.phase === "result") return;
+  if (!state.queue.length) return;
+  var input = document.getElementById("answer-input");
+  var raw = input ? input.value : state.draft;
+  state.draft = raw;
+  var qIndex = state.queue[0];
+  var q = currentLesson().questions[qIndex];
+  var result = checkAnswer(raw, q);
+  if (!normalize(raw)) {
+    state.writeMsg = result.message;
+    render();
+    return;
+  }
+  state.phase = "result";
+  state.writeMsg = "";
+  if (result.ok && !state.hintUsed) {
+    rememberSentence();
+    masteredFlags(currentLesson())[qIndex] = true;
+    saveProgress();
+    state.queue.shift();
+    state.result = { kind: "mastered", qIndex: qIndex };
+    state.draft = result.sentence;
+  } else if (result.ok) {
+    rememberSentence();
+    moveCard("end");
+    state.result = { kind: "hint", qIndex: qIndex };
+    state.draft = result.sentence;
+  } else {
+    moveCard("later");
+    state.result = { kind: "wrong", qIndex: qIndex, message: result.message };
+  }
+  render();
+}
+
+function retryWrite() {
+  if (!state.result || state.result.kind !== "wrong") return;
+  var qIndex = state.result.qIndex;
+  var msg = state.result.message || "";
+  var i = -1;
+  var k;
+  for (k = 0; k < state.queue.length; k++) if (state.queue[k] === qIndex) i = k;
+  if (i >= 0) state.queue.splice(i, 1);
+  state.queue.unshift(qIndex);
+  state.phase = "write";
+  state.result = null;
+  state.writeMsg = msg;
+  state.hintOpen = state.hintUsed;
+  render();
+}
+
+function nextCard() {
+  state.phase = "front";
+  state.hintUsed = false;
+  state.hintOpen = false;
+  state.result = null;
+  state.draft = "";
+  state.writeMsg = "";
+  state.counted = false;
+  if (!state.queue.length) state.view = "celebrate";
+  render();
+}
+
+function startReview() {
+  var qIndex = state.result ? state.result.qIndex : state.queue[0];
+  state.view = "learn";
+  state.qIndex = qIndex;
+  state.step = 1;
+  state.single = true;
+  state.draft = "";
+  state.writeMsg = "";
+  state.writeOk = false;
+  state.counted = false;
+  state.ghepChecked = false;
+  state.ghepOk = false;
+  render();
+}
+
+function returnToTest() {
+  state.view = state.queue.length ? "test" : "celebrate";
+  state.single = false;
+  state.phase = "front";
+  state.hintUsed = false;
+  state.hintOpen = false;
+  state.result = null;
+  state.draft = "";
+  state.writeMsg = "";
+  render();
+}
+
+function resetTest() {
+  var lesson = currentLesson();
+  var fresh = [];
+  for (var i = 0; i < lesson.questions.length; i++) fresh.push(false);
+  progress.mastered[String(lesson.id)] = fresh;
+  saveProgress();
+  startTest(lesson.id);
+}
+
+function appendVocab(index) {
+  var input = document.getElementById("answer-input");
+  if (!input || input.disabled) return;
+  var word = currentQuestion().vocab[Number(index)].en;
+  var base = String(input.value).replace(/\s+$/, "");
+  input.value = base ? base + " " + word : word;
+  state.draft = input.value;
+  state.writeMsg = "";
+  var fb = document.getElementById("feedback");
+  if (fb && state.view === "learn") fb.innerHTML = "";
+  input.focus();
+}
+
+function setCopyStatus(msg) {
+  var el = document.getElementById("copy-status");
+  if (el) el.textContent = msg;
+}
+
+function copyParagraph() {
+  var text = paragraphText();
+  function legacy() {
+    try {
+      var node = document.getElementById("paragraph");
+      var sel = window.getSelection();
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      sel.removeAllRanges();
+      sel.addRange(range);
+      var done = document.execCommand("copy");
+      sel.removeAllRanges();
+      setCopyStatus(done ? "Đã sao chép." : "Bạn hãy chọn đoạn văn và chép tay nhé.");
+    } catch (err) {
+      setCopyStatus("Bạn hãy chọn đoạn văn và chép tay nhé.");
+    }
+  }
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        setCopyStatus("Đã sao chép.");
+      }).catch(function () { legacy(); });
+      return;
+    }
+  } catch (err) {}
+  legacy();
+}
+
+function onClick(e) {
+  var btn = e.target.closest("[data-action]");
+  if (!btn || btn.disabled) return;
+  var action = btn.getAttribute("data-action");
+  if (action === "home") { state.view = "home"; render(); return; }
+  if (action === "guide") { state.view = "guide"; render(); return; }
+  if (action === "learn") { startLearn(btn.getAttribute("data-lesson")); return; }
+  if (action === "test") { startTest(btn.getAttribute("data-lesson")); return; }
+  if (action === "to-ghep") { goGhep(); return; }
+  if (action === "to-write") { goWrite(); return; }
+  if (action === "pick") { pickWord(btn.getAttribute("data-id")); return; }
+  if (action === "unpick") { unpickWord(btn.getAttribute("data-id")); return; }
+  if (action === "check-write") { checkWrite(); return; }
+  if (action === "next-q") { nextQuestion(); return; }
+  if (action === "vocab") { appendVocab(btn.getAttribute("data-index")); return; }
+  if (action === "rewrite") { startLearn(state.lessonId); return; }
+  if (action === "copy") { copyParagraph(); return; }
+  if (action === "open-card") { openCard(); return; }
+  if (action === "check-test") { checkTest(); return; }
+  if (action === "hint") { showHint(); return; }
+  if (action === "retry") { retryWrite(); return; }
+  if (action === "next-card") { nextCard(); return; }
+  if (action === "review") { startReview(); return; }
+  if (action === "reset-test") { resetTest(); return; }
+  if (action === "review-lesson") { startLearn(state.lessonId); return; }
+}
+
+function onKey(e) {
+  if (e.key !== "Enter") return;
+  if (!e.target || e.target.id !== "answer-input") return;
+  e.preventDefault();
+  if (state.view === "learn") checkWrite();
+  else if (state.view === "test") checkTest();
+}
+
+function onInput(e) {
+  if (!e.target || e.target.id !== "answer-input") return;
+  state.draft = e.target.value;
+  if (state.writeMsg && state.phase !== "result" && !state.writeOk) {
+    state.writeMsg = "";
+    var fb = document.getElementById("feedback");
+    if (fb) fb.innerHTML = "";
+  }
+}
+
+function boot() {
+  progress = loadProgress();
+  var app = document.getElementById("app");
+  app.addEventListener("click", onClick);
+  app.addEventListener("keydown", onKey);
+  app.addEventListener("input", onInput);
+  render();
+}
+
+if (typeof document !== "undefined") boot();
+</script>
+</body>
+</html>
