@@ -650,8 +650,9 @@
   .sheet .well { background: #fff; border: 2px dashed var(--bkd, var(--coral)); border-radius: 22px; min-height: 96px; }
   .sheet .well.good { border-style: solid; border-color: var(--coral); background: var(--coral-pale); }
   .sheet .bank { background: transparent; padding: 4px 0; margin: 0; justify-content: center; }
-  .sheet .word { background: #fff; border: 0; box-shadow: 0 2px 0 rgba(74, 74, 82, 0.1); color: var(--gk); }
-  .sheet .well .word { box-shadow: 0 2px 0 var(--bkd, var(--coral)); }
+  .sheet .word { background: var(--coral); border: 0; color: #fff; font-weight: 800; box-shadow: 0 4px 0 #c45a42; }
+  .sheet .word:hover { transform: translateY(-2px); }
+  .sheet .word:active { transform: translateY(2px); box-shadow: 0 2px 0 #c45a42; }
   .sheet .answer-input { background: #fff; border: 2px solid var(--coral); border-radius: 22px; }
   .sheet .answer-input.good, .sheet .answer-input:disabled.good { background: var(--coral-pale); border-color: var(--coral); color: var(--coral-ink); }
   .sheet .btn { background: #fff; color: var(--coral-ink); width: 100%; min-height: 52px; font-weight: 700; box-shadow: none; }
@@ -672,7 +673,7 @@
   .fit .stage { flex: 1 1 0; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; margin: 0 0 8px; gap: 4px; align-items: stretch; }
   .fit .stage .speech { min-height: 0; overflow: auto; padding: 6px 4px 0 6px; align-self: start; }
   .fit { --charH: clamp(130px, 25dvh, 190px); }
-  .fit .stage svg.char { width: auto; height: var(--charH); min-height: 0; max-width: 100%; align-self: end; justify-self: end; }
+  .fit .stage .char { width: auto; height: var(--charH); min-height: 0; max-width: 100%; align-self: end; justify-self: end; }
   .fit .say { margin-top: 6px; font-size: clamp(1.1rem, 4.6vw, 1.3rem); }
   .fit .sheet { flex: none; position: relative; padding: 12px; gap: 8px; border-radius: 28px; }
   .fit .sheet .well { min-height: 58px; }
@@ -706,8 +707,8 @@
   .tile-test svg { width: 18px; height: 18px; }
   .fit.landing .stage { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); }
   .fit.landing .stage .speech { padding: 8px 10px 0; text-align: center; overflow: visible; }
-  .fit.landing .stage svg.char { justify-self: center; align-self: end; }
-  @media (max-height: 540px) { .fit .stage svg.char { display: none; } }
+  .fit.landing .stage .char { justify-self: center; align-self: end; }
+  @media (max-height: 540px) { .fit .stage .char { display: none; } }
   @media (min-width: 900px) {
     .phone { width: min(1100px, calc(100vw - 48px)); padding: 16px 28px 14px; border-radius: 48px; }
     .fit { width: min(1100px, calc(100vw - 48px)); top: 16px; height: calc(100dvh - 32px); display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto auto; grid-template-rows: auto minmax(0, 1fr) auto; column-gap: 14px; row-gap: 10px; padding: 16px 28px 14px; --charH: clamp(220px, 36dvh, 380px); }
@@ -754,6 +755,14 @@
     .fit { --charH: clamp(160px, 30dvh, 260px); padding: 12px 22px 10px; }
     .fit .say { font-size: 1.55rem; }
   }
+  .phone.fit:not(.landing):not(.topics) { background: transparent; box-shadow: none; border-radius: 0; }
+  .phone.fit:not(.landing) .sheet { background: transparent; border-radius: 0; box-shadow: none; }
+  .phone.fit:not(.landing) .sheet .qline { background: transparent; border-radius: 0; padding: 0 0 2px; }
+  .fit .qrow, .fit .qrow.done { background: transparent; border: 0; border-bottom: 1px solid var(--gs); border-radius: 0; box-shadow: none; }
+  .fit .qrow:hover { background: rgba(255, 255, 255, 0.5); }
+  .fit .qlist .qrow:last-child { border-bottom: 0; }
+  .fit .test-card { background: transparent; border-radius: 0; padding: 4px 0 0; }
+  .fit .qbig { background: transparent; border-radius: 0; padding: 4px 0 14px; margin-bottom: 0; }
 </style>
 </head>
 <body>
@@ -2205,12 +2214,12 @@ var TOPIC_ICONS = {
   9: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="20" height="18" rx="4" fill="#fff"/><path d="M6 14h20M12 5v5M20 5v5"/><path d="M12 20l3 3 5-6" stroke="#e58a74" stroke-width="2.2"/></svg>',
   10: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22h20"/><path d="M8 22a8 8 0 0116 0" fill="#e58a74"/><path d="M16 6v4M8.5 11l2.2 2.2M23.5 11l-2.2 2.2"/></svg>'
 };
-var CHAR_SVG = '<svg class="char" viewBox="0 0 200 250" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><defs><filter id="fz" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6"/></filter></defs><ellipse cx="46" cy="214" rx="34" ry="22" fill="#d9d7dc" filter="url(#fz)"/><circle cx="62" cy="208" r="2.6" fill="#4a4a52"/><g stroke="#2f2f35" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="100" y="194" width="11" height="26" fill="#fff"/><rect x="124" y="194" width="11" height="26" fill="#fff"/><path d="M94 222h22v9H92z M118 222h22v9h-24z" fill="#55555c"/><path d="M84 138c-8 20-14 40-10 60h82c4-20-2-42-12-60z" fill="#55555c"/><path d="M86 146l-22 22 9 7 18-17z" fill="#55555c"/><path d="M146 148l20 20-9 8-16-16z" fill="#55555c"/><ellipse cx="118" cy="98" rx="42" ry="38" fill="#fff"/><path d="M76 100C68 58 100 38 128 44c26 6 38 28 32 52-10-16-24-26-44-26-16 2-30 12-40 30z" fill="#e58a74"/><path d="M78 98c-7 9-7 24 0 32 7-4 9-16 4-26z" fill="#e58a74"/></g><circle cx="104" cy="106" r="3.6" fill="#2f2f35"/><circle cx="132" cy="106" r="3.6" fill="#2f2f35"/></svg>';
+var CHAR_SVG = '<img class="char" src="char.png" alt="" aria-hidden="true">';
 var ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg>';
 var ICON_CARD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 10h8M8 14h5"/></svg>';
 
 function renderHome() {
-  var html = '<div class="phone fit landing"><div class="stage"><div class="speech"><p class="say big">Xin chào, tớ là May 01.<br>Tớ sẽ hướng dẫn cho cậu tập viết câu.</p></div>' + CHAR_SVG + "</div>";
+  var html = '<div class="phone fit landing"><div class="stage"><div class="speech"><p class="say big">Xin chào, tớ là O-ma-oo.<br>Tớ sẽ hướng dẫn cho cậu tập viết câu.</p></div>' + CHAR_SVG + "</div>";
   html += '<section class="sheet"><div class="btn-row"><button type="button" class="btn" data-action="topics">Bắt đầu</button></div>';
   html += '<p class="note-line">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></section></div>';
   return html;
