@@ -603,6 +603,157 @@
     * { scroll-behavior: auto !important; }
     .book { transition: none; }
   }
+
+  /* Bố cục máy tính: nhân vật May, hai tông coral và xám */
+  :root {
+    --coral: #e58a74; --coral-ink: #b4503a; --coral-soft: #fbe3db; --coral-pale: #fff4f0;
+    --gk: #4a4a52; --gm: #8d8b94; --gs: #e9e6ea; --gp: #f6f4f6;
+    --ink: var(--gk); --muted: var(--gm); --kicker: var(--gm); --label: var(--gm); --vocab: var(--gk); --line: var(--gs);
+    --primary: var(--coral-soft); --primary-ink: var(--coral-ink); --secondary: var(--gm); --panel: var(--gp);
+    --chip: var(--gs); --chip-ink: var(--gk); --blank: var(--coral-soft); --blank-ink: var(--coral-ink); --blank-line: #eeb3a4;
+    --ok-bg: var(--coral-soft); --ok-ink: var(--coral-ink); --ok-line: #f0c3b6; --warn-bg: var(--gp); --warn-ink: var(--gk); --warn-line: var(--gs);
+    --well: #fff; --soon-bg: var(--gp); --dot: var(--gs); --dot-done: var(--coral);
+    --shadow: 0 12px 30px rgba(74, 74, 82, 0.08);
+  }
+  body { background: #fbf3ea; overflow: hidden; }
+  .wrap { width: auto; max-width: none; margin: 0; padding: 0; }
+  .bk-1 { --bk: #f6cfc5; --bkd: #e58a74; } .bk-2 { --bk: #dedce1; --bkd: #9a98a2; } .bk-3 { --bk: #fbe0d8; --bkd: #eba08c; }
+  .bk-4 { --bk: #ebe9ed; --bkd: #b0aeb7; } .bk-5 { --bk: #f3bfb2; --bkd: #d9755d; } .bk-6 { --bk: #d3d1d7; --bkd: #8d8b94; }
+  .bk-7 { --bk: #fdeae4; --bkd: #f0b3a3; } .bk-8 { --bk: #e4e2e7; --bkd: #a4a2ab; } .bk-9 { --bk: #f8d6cc; --bkd: #e3917b; }
+  .bk-10 { --bk: #f0eef2; --bkd: #b9b7c0; }
+  .btn { background: var(--coral-soft); color: var(--coral-ink); box-shadow: none; }
+  .btn:hover { background: #f8d7cc; }
+  .btn-ghost { background: #fff; color: var(--gm); border: 1.5px solid var(--gs); }
+  .btn-ghost:hover { background: var(--gp); }
+  .qn.done { background: var(--gs); color: var(--gm); }
+  .qn.now, .steps .st.now { background: var(--coral-soft); color: var(--coral-ink); box-shadow: inset 0 0 0 2px var(--coral); border-color: transparent; }
+  .steps .st.done { background: var(--gs); color: var(--gm); }
+  .qrow { border-color: var(--gs); box-shadow: 0 3px 0 var(--gs); }
+  .qmark { background: var(--coral-soft); color: var(--coral-ink); }
+  .qrow.done { background: var(--coral-pale); border-color: var(--coral-soft); box-shadow: 0 3px 0 var(--coral-soft); }
+  .qrow.done .qmark { background: var(--coral-soft); color: var(--coral-ink); }
+  .phone { width: min(440px, calc(100vw - 16px)); margin: 0 auto; background: #fcfbfa; border-radius: 40px; padding: 16px 16px 10px; box-shadow: var(--shadow); }
+  .phone .topbar.slim, .phone .steps, .fit .card.focus { max-width: none; }
+  .stage { display: grid; grid-template-columns: minmax(0, 1fr) 150px; gap: 6px; align-items: end; min-height: 220px; margin: 6px 0 10px; }
+  .stage .speech { align-self: start; padding: 14px 4px 0 6px; min-width: 0; }
+  .stage .char { width: 150px; height: auto; display: block; }
+  .say { margin: 10px 0 0; font-size: 1.3rem; font-weight: 700; color: var(--gk); line-height: 1.35; }
+  .stage .qline, .stage .example, .stage .ex-en { text-align: left; justify-content: flex-start; }
+  .stage .chips { justify-content: flex-start; }
+  .stage .qline { margin-bottom: 10px; }
+  .stage .qline .ask { font-size: 1.02rem; }
+  .stage .chip { font-size: 0.95rem; padding: 6px 10px; }
+  .stage .example { margin-top: 12px; background: transparent; padding: 0; border: 0; box-shadow: none; }
+  .stage .ex-en { font-size: 1.15rem; font-weight: 700; margin: 0; color: var(--gk); }
+  .sheet { background: var(--gs); border-radius: 32px; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .sheet .qline { background: #fff; border-radius: 22px; padding: 12px 16px; margin: 0; }
+  .sheet .well { background: #fff; border: 2px dashed var(--bkd, var(--coral)); border-radius: 22px; min-height: 96px; }
+  .sheet .well.good { border-style: solid; border-color: var(--coral); background: var(--coral-pale); }
+  .sheet .bank { background: transparent; padding: 4px 0; margin: 0; justify-content: center; }
+  .sheet .word { background: #fff; border: 0; box-shadow: 0 2px 0 rgba(74, 74, 82, 0.1); color: var(--gk); }
+  .sheet .well .word { box-shadow: 0 2px 0 var(--bkd, var(--coral)); }
+  .sheet .answer-input { background: #fff; border: 2px solid var(--coral); border-radius: 22px; }
+  .sheet .answer-input.good, .sheet .answer-input:disabled.good { background: var(--coral-pale); border-color: var(--coral); color: var(--coral-ink); }
+  .sheet .btn { background: #fff; color: var(--coral-ink); width: 100%; min-height: 52px; font-weight: 700; box-shadow: none; }
+  .sheet .btn-row { display: flex; gap: 10px; margin-top: 0 !important; }
+  .sheet .btn-row .btn { flex: 1; }
+  .sheet .fb, .fit .hint-box { background: #fff; color: var(--gk); border: 1.5px solid #eeb3a4; border-radius: 16px; }
+  .vwrap { border-top: 0; margin-top: 0; padding-top: 0; }
+  .sheet .vtoggle { background: transparent; border: 0; color: var(--gm); }
+  .sheet .vtoggle.open { background: #fff; color: var(--coral-ink); }
+  .sheet .vchip { background: #fff; border: 0; }
+  .tabbar { display: flex; justify-content: space-around; margin-top: 10px; padding-top: 8px; }
+  .tab { appearance: none; border: 0; background: none; display: flex; flex-direction: column; align-items: center; gap: 2px; font: inherit; font-size: 0.75rem; font-weight: 700; color: var(--gm); cursor: pointer; padding: 4px 22px; }
+  .tab.on { color: var(--coral-ink); }
+  .tab svg { width: 24px; height: 24px; }
+  .fit { position: fixed; top: 10px; left: 50%; transform: translateX(-50%); width: min(440px, calc(100vw - 16px)); height: calc(100dvh - 20px); max-width: none; margin: 0; display: flex; flex-direction: column; overflow: hidden; padding: 12px 12px 6px; box-sizing: border-box; }
+  .fit .topbar.slim { margin: 0 0 6px; flex: none; }
+  .fit .steps { margin: 0 0 4px; flex: none; }
+  .fit .stage { flex: 1 1 0; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; margin: 0 0 8px; gap: 4px; align-items: stretch; }
+  .fit .stage .speech { min-height: 0; overflow: auto; padding: 6px 4px 0 6px; align-self: start; }
+  .fit { --charH: clamp(130px, 25dvh, 190px); }
+  .fit .stage svg.char { width: auto; height: var(--charH); min-height: 0; max-width: 100%; align-self: end; justify-self: end; }
+  .fit .say { margin-top: 6px; font-size: clamp(1.1rem, 4.6vw, 1.3rem); }
+  .fit .sheet { flex: none; position: relative; padding: 12px; gap: 8px; border-radius: 28px; }
+  .fit .sheet .well { min-height: 58px; }
+  .fit .sheet .answer-input { font-size: 1.1rem; min-height: 52px; }
+  .fit .sheet .btn { min-height: 46px; }
+  .fit .vchips { position: absolute; left: 10px; right: 10px; bottom: calc(100% + 6px); margin: 0; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 10px 30px rgba(74, 74, 82, 0.2); z-index: 5; max-height: 40vh; overflow: auto; }
+  .fit .tabbar { flex: none; margin-top: 4px; padding-top: 2px; }
+  .fit .center-col { flex: 1 1 0; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start; max-width: none; width: 100%; padding: 0; }
+  .fit .center-col > .card:not(.test-card) { background: transparent; border: 0; box-shadow: none; width: 100%; max-width: none; margin: 0; padding: 4px 2px 12px; }
+  .fit .test-card { background: var(--gs); box-shadow: none; border: 0; border-radius: 28px; padding: 14px; max-width: none; margin: 0; }
+  .fit .qbig { background: #fff; border-radius: 20px; padding: 12px 16px; margin-bottom: 10px; text-align: center; }
+  .fit .qbig .ask { font-size: clamp(1.25rem, 5vw, 1.7rem); font-weight: 700; }
+  .fit .qbig .vi { color: var(--gm); }
+  .fit .test-card .answer-input { background: #fff; border: 2px solid var(--coral); border-radius: 20px; font-size: 1.1rem; min-height: 54px; text-align: center; }
+  .fit .test-card .btn { background: #fff; color: var(--coral-ink); }
+  .fit .crumb { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex: 1 1 auto; }
+  .say-fb { margin: 6px 0 0; font-size: 0.95rem; line-height: 1.45; color: var(--gk); }
+  .say-fb p { margin: 0 0 4px; }
+  .landing { --charH: clamp(180px, 36dvh, 320px); }
+  .say.big { font-size: clamp(1.25rem, 5vw, 1.7rem); line-height: 1.4; }
+  .note-line { text-align: center; margin: 2px 0 0; font-size: 0.82rem; color: var(--gm); }
+  .tgrid { flex: 1 1 0; min-height: 0; overflow-y: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; align-content: start; padding: 2px; }
+  .tile { position: relative; background: var(--bk); border-radius: 26px; min-height: 96px; display: flex; }
+  .tile-main { appearance: none; border: 0; background: none; width: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 12px 14px; text-align: left; font: inherit; color: var(--gk); cursor: pointer; border-radius: 26px; }
+  .tile-main:hover { transform: translateY(-2px); }
+  .ticon { width: 42px; height: 42px; border-radius: 50%; background: #fff; display: grid; place-items: center; flex: none; }
+  .ticon svg { width: 27px; height: 27px; }
+  .ttitle { font-weight: 700; font-size: 0.98rem; line-height: 1.2; }
+  .tmeta { position: absolute; top: 18px; right: 52px; font-size: 0.78rem; font-weight: 700; color: var(--gk); opacity: 0.7; }
+  .tile-test { position: absolute; top: 10px; right: 10px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: #fff; color: var(--coral-ink); display: grid; place-items: center; cursor: pointer; padding: 0; }
+  .tile-test svg { width: 18px; height: 18px; }
+  .fit.landing .stage { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); }
+  .fit.landing .stage .speech { padding: 8px 10px 0; text-align: center; overflow: visible; }
+  .fit.landing .stage svg.char { justify-self: center; align-self: end; }
+  @media (max-height: 540px) { .fit .stage svg.char { display: none; } }
+  @media (min-width: 900px) {
+    .phone { width: min(1100px, calc(100vw - 48px)); padding: 16px 28px 14px; border-radius: 48px; }
+    .fit { width: min(1100px, calc(100vw - 48px)); top: 16px; height: calc(100dvh - 32px); display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto auto; grid-template-rows: auto minmax(0, 1fr) auto; column-gap: 14px; row-gap: 10px; padding: 16px 28px 14px; --charH: clamp(220px, 36dvh, 380px); }
+    .fit .topbar.slim { display: contents; }
+    .fit .back { grid-column: 1; grid-row: 1; align-self: center; }
+    .fit .crumb { grid-column: 2; grid-row: 1; align-self: center; font-size: 1rem; }
+    .fit .steps { display: flex !important; grid-column: 3; grid-row: 1; width: 300px; margin: 0; align-self: center; }
+    .fit .qnums { grid-column: 4; grid-row: 1; align-self: center; }
+    .fit .tabbar { grid-column: 5; grid-row: 1; margin: 0; padding: 0; gap: 6px; align-self: center; flex-direction: row; }
+    .fit .tab { flex-direction: row; gap: 6px; padding: 7px 14px; font-size: 0.9rem; border-radius: 999px; background: var(--gp); }
+    .fit .tab.on { background: var(--coral-soft); }
+    .fit .tab svg { width: 18px; height: 18px; }
+    .fit .stage { grid-column: 1 / -1; grid-row: 2; margin: 0; }
+    .fit .stage .speech { padding: 18px 16px 0 8px; }
+    .fit .say { font-size: 2rem; margin-top: 12px; }
+    .fit .stage .qline .ask { font-size: 1.35rem; }
+    .fit .stage .ex-en { font-size: 1.7rem; }
+    .fit .sheet { grid-column: 1 / -1; grid-row: 3; display: flex; flex-direction: row; flex-wrap: wrap; align-items: center; padding: 14px 22px; gap: 10px; border-radius: 40px; }
+    .fit .center-col { grid-column: 1 / -1; grid-row: 2 / 4; }
+    .fit .sheet > .qline, .fit .sheet > .chips, .fit .sheet > .well, .fit .sheet > .bank, .fit .sheet > .fb, .fit .sheet > .hint-box { flex: 1 1 100%; }
+    .fit .sheet > .answer-input { flex: 1 1 360px; font-size: 1.35rem; min-height: 64px; }
+    .fit .sheet > .btn-row { flex: 0 0 auto; }
+    .fit .sheet .btn-row .btn { flex: none; width: auto; padding: 0 28px; min-height: 56px; }
+    .fit .sheet > #feedback { flex: 0 0 auto; }
+    .fit .sheet > #feedback:empty { display: none; }
+    .fit .sheet > .vwrap { flex: 0 0 auto; }
+    .fit .sheet > .btn-row:only-child, .fit .sheet.step-2 > .btn-row { flex: 1 1 100%; justify-content: center; }
+    .fit .qbig .ask { font-size: 2rem; }
+    .fit .test-card { padding: 22px 28px; border-radius: 40px; }
+    .landing { --charH: clamp(240px, 42dvh, 420px); }
+    .say.big { font-size: 2.15rem; }
+    .landing .sheet > .btn-row, .landing .sheet > .note-line { flex: 1 1 100%; }
+    .landing .sheet .btn-row { justify-content: center; }
+    .landing .sheet .btn-row .btn { min-width: 280px; }
+    .tgrid { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: minmax(104px, 1fr); gap: 14px; }
+    .tile { min-height: 0; height: 100%; }
+    .ttitle { font-size: 1.2rem; }
+    .say-fb { font-size: 1.15rem; }
+  }
+  @media (max-width: 899px) {
+    .fit .crumb-rest { display: none; }
+  }
+  @media (min-width: 900px) and (max-height: 820px) {
+    .fit { --charH: clamp(160px, 30dvh, 260px); padding: 12px 22px 10px; }
+    .fit .say { font-size: 1.55rem; }
+  }
 </style>
 </head>
 <body>
@@ -2042,47 +2193,41 @@ function dotsHtml(lesson, index) {
   return html + "</div>";
 }
 
+var TOPIC_ICONS = {
+  1: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="7" width="20" height="18" rx="4" fill="#fff"/><circle cx="12.5" cy="14" r="2.6" fill="#e58a74"/><path d="M9.5 21c.6-2 2.2-3 3-3s2.4 1 3 3"/><path d="M18.5 13.5h4M18.5 17h4"/></svg>',
+  2: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15.5L16 6l11 9.5"/><path d="M8 13.5V26h16V13.5" fill="#fff"/><rect x="13.5" y="18" width="5" height="8" rx="1" fill="#e58a74"/></svg>',
+  3: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="11" r="3.4" fill="#fff"/><path d="M5.5 24c.4-4.2 3-6.4 6.5-6.4s6.1 2.2 6.5 6.4z" fill="#fff"/><circle cx="22.5" cy="15" r="2.6" fill="#e58a74"/><path d="M18.5 24c.3-3.2 2-4.9 4-4.9s3.7 1.7 4 4.9z" fill="#e58a74"/></svg>',
+  4: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26s-8.2-5-10.6-9C3.2 13.2 4.4 9 8.2 8.2c2.5-.5 4.8.8 6 2.6 1.2-1.8 3.5-3.1 6-2.6 3.8.8 5 5 2.8 8.8C24.2 21 16 26 16 26z" fill="#e58a74"/></svg>',
+  5: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="#e58a74"/><path d="M16 5v3M16 24v3M5 16h3M24 16h3M8.2 8.2l2.1 2.1M21.7 21.7l2.1 2.1M23.8 8.2l-2.1 2.1M10.3 21.7l-2.1 2.1"/></svg>',
+  6: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="10" fill="#fff"/><path d="M16 9v8l5 3" stroke="#e58a74"/></svg>',
+  7: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18h22v5H5z" fill="#fff"/><path d="M8 18v-3a3 3 0 013-3h6v6" fill="#e58a74"/><path d="M7 23v3M25 23v3"/></svg>',
+  8: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5l2.6 6.2L25 12l-5 4.4L21.4 23 16 19.8 10.6 23 12 16.4 7 12l6.4-.8z" fill="#e58a74"/></svg>',
+  9: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="20" height="18" rx="4" fill="#fff"/><path d="M6 14h20M12 5v5M20 5v5"/><path d="M12 20l3 3 5-6" stroke="#e58a74" stroke-width="2.2"/></svg>',
+  10: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22h20"/><path d="M8 22a8 8 0 0116 0" fill="#e58a74"/><path d="M16 6v4M8.5 11l2.2 2.2M23.5 11l-2.2 2.2"/></svg>'
+};
+var CHAR_SVG = '<svg class="char" viewBox="0 0 200 250" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false"><defs><filter id="fz" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6"/></filter></defs><ellipse cx="46" cy="214" rx="34" ry="22" fill="#d9d7dc" filter="url(#fz)"/><circle cx="62" cy="208" r="2.6" fill="#4a4a52"/><g stroke="#2f2f35" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"><rect x="100" y="194" width="11" height="26" fill="#fff"/><rect x="124" y="194" width="11" height="26" fill="#fff"/><path d="M94 222h22v9H92z M118 222h22v9h-24z" fill="#55555c"/><path d="M84 138c-8 20-14 40-10 60h82c4-20-2-42-12-60z" fill="#55555c"/><path d="M86 146l-22 22 9 7 18-17z" fill="#55555c"/><path d="M146 148l20 20-9 8-16-16z" fill="#55555c"/><ellipse cx="118" cy="98" rx="42" ry="38" fill="#fff"/><path d="M76 100C68 58 100 38 128 44c26 6 38 28 32 52-10-16-24-26-44-26-16 2-30 12-40 30z" fill="#e58a74"/><path d="M78 98c-7 9-7 24 0 32 7-4 9-16 4-26z" fill="#e58a74"/></g><circle cx="104" cy="106" r="3.6" fill="#2f2f35"/><circle cx="132" cy="106" r="3.6" fill="#2f2f35"/></svg>';
+var ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg>';
+var ICON_CARD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 10h8M8 14h5"/></svg>';
+
 function renderHome() {
-  var html = '<header class="hero">';
-  html += "<h1>Luyện viết tiếng Anh</h1>";
-  html += '<p class="sub">Bài tập đệm cho học sinh mất gốc, học cùng thầy cô hoặc phụ huynh.</p>';
-  html += '<p class="count-pill">Đã viết ' + progress.sentences + " câu</p></header>";
-  var allN = 0;
-  var allT = 0;
-  var k;
-  for (k = 0; k < LESSONS.length; k++) { allN += masteredCount(LESSONS[k]); allT += LESSONS[k].questions.length; }
-  if (allT && allN === allT) html += '<div class="ready">Bạn đã thuộc tất cả các câu. Bạn đã sẵn sàng học những phần khó hơn cùng thầy cô!</div>';
-  html += '<div class="grid">';
-  var i;
-  for (i = 0; i < LESSONS.length; i++) {
+  var html = '<div class="phone fit landing"><div class="stage"><div class="speech"><p class="say big">Xin chào, tớ là May 01.<br>Tớ sẽ hướng dẫn cho cậu tập viết câu.</p></div>' + CHAR_SVG + "</div>";
+  html += '<section class="sheet"><div class="btn-row"><button type="button" class="btn" data-action="topics">Bắt đầu</button></div>';
+  html += '<p class="note-line">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></section></div>';
+  return html;
+}
+
+function renderTopics() {
+  var html = '<div class="phone fit topics"><div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="welcome" aria-label="Về trang đầu">←</button>';
+  html += '<span class="crumb">Chọn chủ đề</span></div><div class="tgrid">';
+  for (var i = 0; i < LESSONS.length; i++) {
     var lesson = LESSONS[i];
-    var done = masteredCount(lesson);
-    var total = lesson.questions.length;
-    var finished = !!progress.finished[String(lesson.id)];
-    var bk = ((lesson.id - 1) % 10) + 1;
-    var num = (lesson.id < 10 ? "0" : "") + lesson.id;
-    html += '<article class="card lesson">';
-    html += '<div class="lesson-top"><span class="book bk-' + bk + '">' + num + "</span><div>";
-    html += "<h2>" + esc(lesson.title) + "</h2>";
-    html += '<p class="desc">' + esc(lesson.vi) + "</p></div>";
-    if (finished) html += '<span class="learned">Đã học</span>';
-    html += "</div>";
-    html += '<p class="progress-line">' + done + "/" + total + " câu đã thuộc</p>";
-    html += '<div class="btn-row">';
-    html += '<button type="button" class="btn" data-action="learn" data-lesson="' + lesson.id + '">Học</button>';
-    html += '<button type="button" class="btn btn-ghost" data-action="test" data-lesson="' + lesson.id + '">Test</button>';
-    html += "</div></article>";
+    html += '<div class="tile ' + bookClass(lesson) + '"><button type="button" class="tile-main" data-action="learn" data-lesson="' + lesson.id + '">';
+    html += '<span class="ticon">' + (TOPIC_ICONS[lesson.id] || "") + "</span>";
+    html += '<span class="ttitle">' + esc(lesson.title) + "</span></button>";
+    html += '<span class="tmeta">' + masteredCount(lesson) + "/" + lesson.questions.length + "</span>";
+    html += '<button type="button" class="tile-test" data-action="test" data-lesson="' + lesson.id + '" aria-label="Test ' + esc(lesson.title) + '">' + ICON_CARD + "</button></div>";
   }
-  for (i = 0; i < COMING_SOON.length; i++) {
-    var soon = COMING_SOON[i];
-    html += '<article class="card lesson soon" aria-disabled="true">';
-    html += '<div class="lesson-top"><span class="num">0</span><div>';
-    html += '<p class="unit">' + esc(soon.unit) + "</p><h2>" + esc(soon.title) + "</h2></div>";
-    html += '<span class="soon-badge">Sắp có</span></div>';
-    html += '<p class="desc">' + esc(soon.vi) + "</p>";
-    html += "</article>";
-  }
-  html += "</div>";
+  html += "</div></div>";
   return html;
 }
 
@@ -2113,12 +2258,13 @@ function pilesHtml(lesson) {
 
 function learnTop(lesson) {
   var html = '<div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="to-list" aria-label="Về danh sách câu">←</button>';
-  html += '<p class="crumb">Bài ' + lesson.id + " · " + esc(lesson.title) + "</p>";
-  if (state.single) html += '<span class="tag">Ôn lại 1 câu</span>';
-  else html += dotsHtml(lesson, state.qIndex);
+  var crumb = '<span>Bài ' + lesson.id + '</span><span class="crumb-rest"> · ' + esc(lesson.title);
+  if (state.single) crumb += " · Ôn lại 1 câu";
+  html += '<p class="crumb">' + crumb + "</span></p>";
+  if (!state.single) html += dotsHtml(lesson, state.qIndex);
   html += "</div>";
   var names = ["Xem", "Ghép", "Viết"];
-  html += '<div class="steps" role="group" aria-label="Các bước">';
+  html += '<div class="steps ' + bookClass(lesson) + '" role="group" aria-label="Các bước">';
   for (var s = 1; s <= 3; s++) {
     var cls = s === state.step ? " now" : (s < state.step ? " done" : "");
     html += '<button type="button" class="st' + cls + '" data-action="goto-step" data-step="' + s + '">' + s + " · " + names[s - 1] + "</button>";
@@ -2127,13 +2273,8 @@ function learnTop(lesson) {
   return html;
 }
 
-function renderStep1(q) {
-  var html = questionLine(q);
-  html += chipsHtml(q.formula, false);
-  html += '<div class="example">';
-  html += '<p class="ex-en" lang="en">' + esc(q.example) + "</p></div>";
-  html += '<div class="btn-row" style="margin-top:16px"><button type="button" class="btn" data-action="to-ghep">Mình hiểu rồi →</button></div>';
-  return html;
+function renderStep1() {
+  return '<div class="btn-row"><button type="button" class="btn" data-action="to-ghep">Mình hiểu rồi</button></div>';
 }
 
 function renderStep2(q) {
@@ -2155,9 +2296,7 @@ function renderStep2(q) {
     html += "</div>";
   }
   if (state.ghepChecked && state.ghepOk) {
-    html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="to-write">Tiếp tục →</button></div>';
-  } else if (state.ghepChecked) {
-    html += '<div class="fb bad"><p>Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p></div>';
+    html += '<div class="btn-row"><button type="button" class="btn" data-action="to-write">Tiếp tục →</button></div>';
   }
   return html;
 }
@@ -2171,9 +2310,7 @@ function renderStep3(q) {
   html += '<div id="feedback">';
   if (state.writeOk) {
     var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === currentLesson().questions.length - 1 ? "Về danh sách →" : "Câu tiếp theo →");
-    html += '<div class="btn-row" style="margin-top:12px"><button type="button" class="btn" data-action="next-q">' + nextLabel + "</button></div>";
-  } else if (state.writeMsg) {
-    html += '<div class="fb bad"><p>' + formatMsg(state.writeMsg) + "</p><p>Không sao, sửa lại và bấm Kiểm tra lần nữa nhé.</p></div>";
+    html += '<div class="btn-row"><button type="button" class="btn" data-action="next-q">' + nextLabel + "</button></div>";
   }
   html += "</div>";
   return html;
@@ -2184,14 +2321,26 @@ function renderLearn() {
   var q = currentQuestion();
   var key = lesson.id + "|" + state.qIndex + "|" + state.step + "|" + (state.single ? 1 : 0);
   if (state.vkey !== key) { state.vkey = key; state.vocabOpen = false; }
-  var html = '<div class="center-col ' + bookClass(lesson) + '">';
-  html += learnTop(lesson);
-  html += '<section class="card focus step-' + state.step + " " + bookClass(lesson) + '">';
-  if (state.step === 1) html += renderStep1(q);
+  var speech;
+  if (state.step === 1) {
+    speech = questionLine(q) + chipsHtml(q.formula, false) + '<div class="example"><p class="ex-en" lang="en">' + esc(q.example) + "</p></div>";
+  } else if (state.step === 2) {
+    speech = (state.ghepChecked && !state.ghepOk) ? '<div class="say-fb"><p>Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p></div>' : '<p class="say">Hãy ghép câu của bạn.</p>';
+  } else if (!state.writeOk && state.writeMsg) {
+    speech = '<div class="say-fb"><p>' + formatMsg(state.writeMsg) + "</p><p>Không sao, sửa lại và bấm Kiểm tra lần nữa nhé.</p></div>";
+  } else {
+    speech = '<p class="say">Hãy viết câu của bạn.</p>';
+  }
+  var html = '<div class="phone fit ' + bookClass(lesson) + '">' + learnTop(lesson);
+  html += '<div class="stage step-' + state.step + '"><div class="speech">' + speech + "</div>" + CHAR_SVG + "</div>";
+  html += '<section class="sheet step-' + state.step + " " + bookClass(lesson) + '">';
+  if (state.step === 1) html += renderStep1();
   else if (state.step === 2) html += renderStep2(q);
   else html += renderStep3(q);
-  html += vocabHtml(q, state.step === 3 && !state.writeOk);
-  html += "</section></div>";
+  if (state.step === 3) html += vocabHtml(q, !state.writeOk);
+  html += "</section>";
+  html += '<nav class="tabbar" aria-label="Điều hướng"><button type="button" class="tab on" data-action="to-list">' + ICON_BOOK + "<span>Học</span></button>";
+  html += '<button type="button" class="tab" data-action="test" data-lesson="' + lesson.id + '">' + ICON_CARD + "<span>Test</span></button></nav></div>";
   return html;
 }
 
@@ -2204,10 +2353,10 @@ function allLearned(lesson) {
 function renderLessonList() {
   var lesson = currentLesson();
   var arr = progress.learned[String(lesson.id)] || [];
-  var html = '<div class="center-col ' + bookClass(lesson) + '">';
-  html += '<div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="home" aria-label="Về trang chủ">←</button>';
+  var html = '<div class="phone fit ' + bookClass(lesson) + '">';
+  html += '<div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="home" aria-label="Về danh sách chủ đề">←</button>';
   html += '<p class="crumb">Bài ' + lesson.id + "</p></div>";
-  html += '<section class="card focus ' + bookClass(lesson) + '">';
+  html += '<div class="center-col"><section class="card focus ' + bookClass(lesson) + '">';
   html += '<h2 class="list-title">' + esc(lesson.title) + '</h2><p class="sub">' + esc(lesson.vi) + '</p><div class="qlist">';
   for (var i = 0; i < lesson.questions.length; i++) {
     var q = lesson.questions[i];
@@ -2217,7 +2366,7 @@ function renderLessonList() {
   }
   html += "</div>";
   if (allLearned(lesson)) html += '<div class="btn-row" style="margin-top:16px"><button type="button" class="btn" data-action="show-end">Xem đoạn văn của mình</button></div>';
-  html += "</section></div>";
+  html += "</section></div></div>";
   return html;
 }
 
@@ -2229,10 +2378,8 @@ function paragraphText() {
 }
 
 function renderEnd() {
-  var lesson = currentLesson();
-  var html = '<div class="topbar"><button type="button" class="btn btn-ghost" data-action="home">← Trang chủ</button>';
-  html += "<h2>Đoạn văn của bạn</h2></div>";
-  html += '<section class="card">';
+  var html = '<div class="phone fit"><div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="home" aria-label="Về danh sách chủ đề">←</button>';
+  html += '<p class="crumb">Đoạn văn của bạn</p></div><div class="center-col"><section class="card">';
   html += "<h2>Bạn vừa viết một đoạn văn.</h2>";
   html += '<p class="para" id="paragraph">' + esc(paragraphText()) + "</p>";
   html += "<p>Tổng số câu bạn đã viết: " + progress.sentences + "</p>";
@@ -2242,7 +2389,7 @@ function renderEnd() {
   html += '<button type="button" class="btn btn-ghost" data-action="home">Chọn bài khác</button>';
   html += "</div>";
   html += '<p class="copy-status" id="copy-status" aria-live="polite"></p>';
-  html += "</section>";
+  html += "</section></div></div>";
   return html;
 }
 
@@ -2262,17 +2409,18 @@ function renderTest() {
   var lesson = currentLesson();
   var qIndex = null;
   if (state.queue.length) qIndex = state.phase === "result" ? state.result.qIndex : state.queue[0];
-  var html = '<div class="center-col ' + bookClass(lesson) + '">';
+  var html = '<div class="phone fit ' + bookClass(lesson) + '">';
   html += testTop(lesson, qIndex);
+  html += '<div class="center-col">';
   if (!state.queue.length) {
     html += renderCelebrate();
-    html += "</div>";
+    html += "</div></div>";
     return html;
   }
   var q = lesson.questions[qIndex];
   var locked = state.phase === "result";
-  html += '<section class="card study">';
-  html += '<p class="test-en" lang="en">' + esc(q.ask) + '</p><p class="test-vi">' + esc(q.vi) + "</p>";
+  html += '<section class="card focus step-3 test-card ' + bookClass(lesson) + '">';
+  html += '<div class="qbig"><p class="ask" lang="en">' + esc(q.ask) + '</p><p class="vi">' + esc(q.vi) + "</p></div>";
   html += '<label for="answer-input" class="sr-only">Viết câu của bạn</label>';
   html += '<input id="answer-input" class="answer-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (locked ? " disabled" : "") + ">";
   html += '<div class="btn-row">';
@@ -2308,7 +2456,7 @@ function renderTest() {
   }
   html += "</div></section>";
   html += pilesHtml(lesson);
-  html += "</div>";
+  html += "</div></div>";
   return html;
 }
 
@@ -2329,13 +2477,14 @@ function render() {
   var app = document.getElementById("app");
   var html = "";
   if (state.view === "home") html = renderHome();
+  else if (state.view === "topics") html = renderTopics();
   else if (state.view === "lesson") html = renderLessonList();
   else if (state.view === "learn") html = renderLearn();
   else if (state.view === "end") html = renderEnd();
   else if (state.view === "test") html = renderTest();
   else if (state.view === "celebrate") {
     var lesson = currentLesson();
-    html = '<div class="center-col ' + bookClass(lesson) + '">' + testTop(lesson, null) + renderCelebrate() + "</div>";
+    html = '<div class="phone fit ' + bookClass(lesson) + '">' + testTop(lesson, null) + '<div class="center-col">' + renderCelebrate() + "</div></div>";
   }
   app.innerHTML = html;
   var input = document.getElementById("answer-input");
@@ -2705,7 +2854,8 @@ function onClick(e) {
   var btn = e.target.closest("[data-action]");
   if (!btn || btn.disabled) return;
   var action = btn.getAttribute("data-action");
-  if (action === "home") { state.view = "home"; render(); return; }
+  if (action === "welcome") { state.view = "home"; render(); return; }
+  if (action === "home" || action === "topics") { state.view = "topics"; render(); return; }
   if (action === "learn") { startLearn(btn.getAttribute("data-lesson")); return; }
   if (action === "to-list") { state.view = "lesson"; render(); return; }
   if (action === "open-q") { state.view = "learn"; state.single = false; goQuestion(Number(btn.getAttribute("data-index"))); return; }
