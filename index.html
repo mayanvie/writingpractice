@@ -615,7 +615,7 @@
     --well: #fff; --soon-bg: var(--gp); --dot: var(--gs); --dot-done: var(--coral);
     --shadow: 0 12px 30px rgba(74, 74, 82, 0.08);
   }
-  body { background: #fbf3ea; overflow: hidden; }
+  body { background: #f4e3d4; overflow: hidden; }
   .wrap { width: auto; max-width: none; margin: 0; padding: 0; }
   .bk-1 { --bk: #f6cfc5; --bkd: #e58a74; } .bk-2 { --bk: #dedce1; --bkd: #9a98a2; } .bk-3 { --bk: #fbe0d8; --bkd: #eba08c; }
   .bk-4 { --bk: #ebe9ed; --bkd: #b0aeb7; } .bk-5 { --bk: #f3bfb2; --bkd: #d9755d; } .bk-6 { --bk: #d3d1d7; --bkd: #8d8b94; }
@@ -679,7 +679,8 @@
   .fit .sheet .well { min-height: 58px; }
   .fit .sheet .answer-input { font-size: 1.1rem; min-height: 52px; }
   .fit .sheet .btn { min-height: 46px; }
-  .fit .vchips { position: absolute; left: 10px; right: 10px; bottom: calc(100% + 6px); margin: 0; background: #fff; border-radius: 22px; padding: 10px; box-shadow: 0 10px 30px rgba(74, 74, 82, 0.2); z-index: 5; max-height: 40vh; overflow: auto; }
+  .fit .vwrap { display: contents; }
+  .fit .vchips { position: static; flex: 1 1 100%; width: 100%; margin: 8px 0 0; background: #fff; border-radius: 22px; padding: 12px 14px; box-shadow: 0 8px 22px rgba(74, 74, 82, 0.08); max-height: none; overflow: visible; }
   .fit .tabbar { flex: none; margin-top: 4px; padding-top: 2px; }
   .fit .center-col { flex: 1 1 0; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-start; max-width: none; width: 100%; padding: 0; }
   .fit .center-col > .card:not(.test-card) { background: transparent; border: 0; box-shadow: none; width: 100%; max-width: none; margin: 0; padding: 4px 2px 12px; }
@@ -730,6 +731,7 @@
     .fit .center-col { grid-column: 1 / -1; grid-row: 2 / 4; }
     .fit .sheet > .qline, .fit .sheet > .chips, .fit .sheet > .well, .fit .sheet > .bank, .fit .sheet > .fb, .fit .sheet > .hint-box { flex: 1 1 100%; }
     .fit .sheet > .answer-input { flex: 1 1 360px; font-size: 1.35rem; min-height: 64px; }
+    .fit .sheet > .answer-input.good { flex: 1 1 100%; }
     .fit .sheet > .btn-row { flex: 0 0 auto; }
     .fit .sheet .btn-row .btn { flex: none; width: auto; padding: 0 28px; min-height: 56px; }
     .fit .sheet > #feedback { flex: 0 0 auto; }
@@ -755,14 +757,94 @@
     .fit { --charH: clamp(160px, 30dvh, 260px); padding: 12px 22px 10px; }
     .fit .say { font-size: 1.55rem; }
   }
-  .phone.fit:not(.landing):not(.topics) { background: transparent; box-shadow: none; border-radius: 0; }
+  .phone.fit { background: #fff8f3; box-shadow: 0 18px 40px rgba(140, 96, 70, 0.1); }
   .phone.fit:not(.landing) .sheet { background: transparent; border-radius: 0; box-shadow: none; }
+  .fit.landing .sheet { background: transparent; }
+  .btn:not(.btn-ghost), .sheet .btn, .fit .test-card .btn { background: var(--coral); color: #fff; box-shadow: 0 4px 0 #c45a42; }
+  .btn:not(.btn-ghost):hover, .sheet .btn:hover { background: #d97862; }
+  .tile { background: #fff; box-shadow: var(--shadow); border-radius: 28px; }
+  .ticon { background: var(--bk); }
+  .tile-test { background: var(--coral-soft); }
+  .tmeta { color: var(--gm); font-weight: 600; opacity: 1; }
+  .fit:not(.landing) .say { font-weight: 600; color: var(--gm); }
+  .fit.landing .say.big { font-size: clamp(1.35rem, 5vw, 1.8rem); font-weight: 700; color: #5c4338; }
+  .fit.landing { justify-content: center; }
+  .fit.landing .stage { flex: 0 1 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .fit .qline .ask, .fit .qbig .ask { font-size: 1.45rem; font-weight: 800; color: var(--gk); line-height: 1.25; }
+  .fit:not(.landing) .say { font-size: 1rem; }
+  .fit .qline .vi, .fit .qbig .vi { color: var(--gm); font-weight: 500; }
+  .fit .sheet .qline { justify-content: flex-start; text-align: left; }
   .phone.fit:not(.landing) .sheet .qline { background: transparent; border-radius: 0; padding: 0 0 2px; }
   .fit .qrow, .fit .qrow.done { background: transparent; border: 0; border-bottom: 1px solid var(--gs); border-radius: 0; box-shadow: none; }
   .fit .qrow:hover { background: rgba(255, 255, 255, 0.5); }
   .fit .qlist .qrow:last-child { border-bottom: 0; }
   .fit .test-card { background: transparent; border-radius: 0; padding: 4px 0 0; }
   .fit .qbig { background: transparent; border-radius: 0; padding: 4px 0 14px; margin-bottom: 0; }
+  .fit .chips, .fit .bank, .fit .well { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; }
+  .fit .chip-wrap { flex: 0 0 auto; max-width: none; align-items: flex-start; }
+  .fit .chip, .fit .word { flex: 0 0 auto; white-space: nowrap; }
+  .fit .chip { border-radius: 999px; }
+  .fit .chip.fixed { background: #ececee; color: #3a3a42; }
+  .fit .chip.blank { background: #fde8df; color: #b4503a; border: 0; }
+  .sheet .btn[data-action="check-write"] { background: var(--coral); color: #fff; box-shadow: 0 4px 0 #c45a42; }
+  @media (min-width: 900px) {
+    .fit:not(.landing):has(.stage) { height: auto; max-height: calc(100dvh - 48px); top: 50%; transform: translate(-50%, -50%); overflow: auto; grid-template-rows: auto auto auto; align-content: start; row-gap: 16px; padding: 20px 32px 24px; --charH: 200px; }
+    .fit:not(.landing) .stage { display: contents; }
+    .fit:not(.landing) .stage .speech { grid-column: 1 / 5; grid-row: 2; max-width: none; align-self: end; padding: 0 28px 0 0; }
+    .fit:not(.landing) .stage .char { grid-column: 5; grid-row: 2 / 4; height: 240px; align-self: center; justify-self: end; }
+    .fit:not(.landing) .sheet { grid-column: 1 / 5; grid-row: 3; max-width: none; justify-self: stretch; align-self: start; padding: 0 28px 0 0; gap: 12px; }
+    .fit:not(.landing):has(.stage) .sheet > .btn-row:only-child,
+    .fit:not(.landing):has(.stage) .sheet.step-2 > .btn-row { justify-content: flex-start; }
+    .fit .say { font-size: 1.05rem; font-weight: 600; color: var(--gm); margin-top: 0; }
+    .fit .stage .qline .ask, .fit .sheet .qline .ask, .fit .qbig .ask { font-size: 2.15rem; line-height: 1.25; }
+    .fit .qline .vi, .fit .qbig .vi { font-size: 0.95rem; }
+    .fit .stage .ex-en { font-size: 1.35rem; }
+    .fit.landing { display: flex; flex-direction: column; align-items: center; justify-content: center; --charH: 220px; }
+    .fit.landing .stage { display: flex; flex-direction: column; align-items: center; flex: 0 0 auto; width: min(640px, 100%); min-height: 0; }
+    .fit.landing .stage .speech { padding: 0; text-align: center; }
+    .fit.landing .stage .char { height: 220px; align-self: center; }
+    .fit.landing .sheet { width: min(640px, 100%); }
+    .fit.landing .say.big { font-size: 2rem; font-weight: 700; color: #5c4338; }
+    .ttitle { font-size: 1.35rem; }
+    .tmeta { font-size: 0.8rem; }
+  }
+  .phone.fit.topics { background: #fff7f3; }
+  .topics .tile { min-height: 112px; box-shadow: 0 8px 18px rgba(120, 90, 78, 0.07); }
+  .topics .tile.tone-peach { background: #fde8df; }
+  .topics .tile.tone-pink { background: #f8e4ea; }
+  .topics .tile.tone-gray { background: #f1eeea; }
+  .topics .tile-main { padding: 14px 16px 16px; }
+  .topics .tile-main:hover { transform: none; }
+  .topics .tile:hover { transform: translateY(-2px); }
+  .topics .ticon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.82); }
+  .topics .ticon svg { width: 26px; height: 26px; }
+  .topics .ttitle { color: #3a3538; font-weight: 800; padding-right: 8px; }
+  .topics .tmeta { top: 16px; right: 52px; color: #8a7f86; font-weight: 700; }
+  .topics .tile-test { top: 10px; right: 10px; bottom: auto; background: rgba(255, 255, 255, 0.9); }
+  .fit:not(.landing):has(.stage) { background: #fff8f3; box-shadow: 0 18px 40px rgba(140, 96, 70, 0.12); }
+  .fit:not(.landing):has(.stage) .say { display: flex; align-items: center; gap: 10px; color: #8d756c; font-weight: 600; }
+  .fit:not(.landing):has(.stage) .say::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--coral); flex: none; }
+  .fit:not(.landing):has(.stage) .qline { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .fit:not(.landing):has(.stage) .ask,
+  .fit:not(.landing):has(.stage) .ex-en { color: #5c4338; }
+  .fit:not(.landing):has(.stage) .vi { color: #b6a096; }
+  .fit:not(.landing):has(.stage) .chip.fixed { background: #f6e4d6; color: #6a5148; }
+  .fit:not(.landing):has(.stage) .chip.blank { background: #fff; color: #c46b56; box-shadow: inset 0 0 0 1.5px #f3c7b8; }
+  .fit:not(.landing):has(.stage) .answer-input { background: #fff; border: 1.5px solid #f0d0c4; color: #5c4338; }
+  .fit:not(.landing):has(.stage) .well { background: rgba(255, 255, 255, 0.7); border-color: #f0c2b4; }
+  .fit:not(.landing):has(.stage) .vtoggle { flex: 1 1 100%; justify-content: flex-start; text-align: left; color: var(--coral-ink); font-weight: 700; background: transparent; padding: 2px 0 0; }
+  .fit:not(.landing):has(.stage) .steps .st { background: #f6ebe4; color: #8a736a; }
+  .fit:not(.landing):has(.stage) .steps .st.now { background: var(--coral); color: #fff; box-shadow: none; }
+  .fit:not(.landing):has(.stage) .steps .st.done { background: #f3ddd4; color: #b4503a; }
+  .fit:not(.landing):has(.stage) .qnums { background: #f6ebe4; border-color: transparent; }
+  .fit:not(.landing):has(.stage) .qn.now { background: var(--coral); color: #fff; box-shadow: none; }
+  .fit:not(.landing):has(.stage) .btn-ghost { background: #fff8f3; border-color: #f0ddd4; color: #8a736a; }
+  .fit:not(.landing):has(.stage) .tab { background: #fff; color: #8a736a; }
+  .fit:not(.landing):has(.stage) .tab.on { background: #fde8df; color: var(--coral-ink); }
+  @media (min-width: 900px) {
+    .fit:not(.landing):has(.stage) .ask { font-size: 2.55rem; }
+    .fit:not(.landing):has(.stage) .ex-en { font-size: 1.55rem; color: #5c4338; }
+  }
 </style>
 </head>
 <body>
@@ -2202,19 +2284,8 @@ function dotsHtml(lesson, index) {
   return html + "</div>";
 }
 
-var TOPIC_ICONS = {
-  1: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="7" width="20" height="18" rx="4" fill="#fff"/><circle cx="12.5" cy="14" r="2.6" fill="#e58a74"/><path d="M9.5 21c.6-2 2.2-3 3-3s2.4 1 3 3"/><path d="M18.5 13.5h4M18.5 17h4"/></svg>',
-  2: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15.5L16 6l11 9.5"/><path d="M8 13.5V26h16V13.5" fill="#fff"/><rect x="13.5" y="18" width="5" height="8" rx="1" fill="#e58a74"/></svg>',
-  3: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="11" r="3.4" fill="#fff"/><path d="M5.5 24c.4-4.2 3-6.4 6.5-6.4s6.1 2.2 6.5 6.4z" fill="#fff"/><circle cx="22.5" cy="15" r="2.6" fill="#e58a74"/><path d="M18.5 24c.3-3.2 2-4.9 4-4.9s3.7 1.7 4 4.9z" fill="#e58a74"/></svg>',
-  4: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 26s-8.2-5-10.6-9C3.2 13.2 4.4 9 8.2 8.2c2.5-.5 4.8.8 6 2.6 1.2-1.8 3.5-3.1 6-2.6 3.8.8 5 5 2.8 8.8C24.2 21 16 26 16 26z" fill="#e58a74"/></svg>',
-  5: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="5" fill="#e58a74"/><path d="M16 5v3M16 24v3M5 16h3M24 16h3M8.2 8.2l2.1 2.1M21.7 21.7l2.1 2.1M23.8 8.2l-2.1 2.1M10.3 21.7l-2.1 2.1"/></svg>',
-  6: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="10" fill="#fff"/><path d="M16 9v8l5 3" stroke="#e58a74"/></svg>',
-  7: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18h22v5H5z" fill="#fff"/><path d="M8 18v-3a3 3 0 013-3h6v6" fill="#e58a74"/><path d="M7 23v3M25 23v3"/></svg>',
-  8: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5l2.6 6.2L25 12l-5 4.4L21.4 23 16 19.8 10.6 23 12 16.4 7 12l6.4-.8z" fill="#e58a74"/></svg>',
-  9: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="8" width="20" height="18" rx="4" fill="#fff"/><path d="M6 14h20M12 5v5M20 5v5"/><path d="M12 20l3 3 5-6" stroke="#e58a74" stroke-width="2.2"/></svg>',
-  10: '<svg viewBox="0 0 32 32" fill="none" stroke="#3a3a42" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22h20"/><path d="M8 22a8 8 0 0116 0" fill="#e58a74"/><path d="M16 6v4M8.5 11l2.2 2.2M23.5 11l-2.2 2.2"/></svg>'
-};
 var CHAR_SVG = '<img class="char" src="char.png" alt="" aria-hidden="true">';
+var TOMATO_ICON = '<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.2 7.2c.3-2.2 1.6-3.4 3-3.6" fill="none" stroke="#d7b48a" stroke-width="1.7" stroke-linecap="round"/><path d="M15.6 8.4c-2.6-2.2-5.6-1-6.4 1.2 2 .1 3.6 1.3 4.6 2.8.8-1.8 2.4-3 4.6-3.2-1-.6-2-1-2.8-.8z" fill="#c5ddb2"/><path d="M18.2 8.2c2.4-.6 4.8.6 5.2 2.6-2.2.4-3.8 1.6-4.8 3.2-1-1.8-2.2-3-4.2-3.6 1.2-1 2.4-1.8 3.8-2.2z" fill="#d5e8c4"/><ellipse cx="16" cy="19.2" rx="9.2" ry="8.2" fill="#f3b7a2"/><ellipse cx="12.4" cy="16.4" rx="2.3" ry="1.4" fill="#fff" opacity=".7"/></svg>';
 var ICON_BOOK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h10"/></svg>';
 var ICON_CARD = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="3"/><path d="M8 10h8M8 14h5"/></svg>';
 
@@ -2226,12 +2297,13 @@ function renderHome() {
 }
 
 function renderTopics() {
+  var tones = ["tone-peach", "tone-pink", "tone-gray"];
   var html = '<div class="phone fit topics"><div class="topbar slim"><button type="button" class="btn btn-ghost back" data-action="welcome" aria-label="Về trang đầu">←</button>';
   html += '<span class="crumb">Chọn chủ đề</span></div><div class="tgrid">';
   for (var i = 0; i < LESSONS.length; i++) {
     var lesson = LESSONS[i];
-    html += '<div class="tile ' + bookClass(lesson) + '"><button type="button" class="tile-main" data-action="learn" data-lesson="' + lesson.id + '">';
-    html += '<span class="ticon">' + (TOPIC_ICONS[lesson.id] || "") + "</span>";
+    html += '<div class="tile ' + bookClass(lesson) + " " + tones[i % 3] + '"><button type="button" class="tile-main" data-action="learn" data-lesson="' + lesson.id + '">';
+    html += '<span class="ticon">' + TOMATO_ICON + "</span>";
     html += '<span class="ttitle">' + esc(lesson.title) + "</span></button>";
     html += '<span class="tmeta">' + masteredCount(lesson) + "/" + lesson.questions.length + "</span>";
     html += '<button type="button" class="tile-test" data-action="test" data-lesson="' + lesson.id + '" aria-label="Test ' + esc(lesson.title) + '">' + ICON_CARD + "</button></div>";
@@ -2315,7 +2387,7 @@ function renderStep3(q) {
   html += chipsHtml(q.formula, false);
   html += '<label for="answer-input" class="sr-only">Viết câu của bạn</label>';
   html += '<input id="answer-input" class="answer-input' + (state.writeOk ? " good" : "") + '" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (state.writeOk ? " disabled" : "") + ">";
-  html += '<div class="btn-row"><button type="button" class="btn" data-action="check-write"' + (state.writeOk ? " disabled" : "") + ">Kiểm tra</button></div>";
+  if (!state.writeOk) html += '<div class="btn-row"><button type="button" class="btn" data-action="check-write">Kiểm tra</button></div>';
   html += '<div id="feedback">';
   if (state.writeOk) {
     var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === currentLesson().questions.length - 1 ? "Về danh sách →" : "Câu tiếp theo →");
@@ -2334,7 +2406,7 @@ function renderLearn() {
   if (state.step === 1) {
     speech = questionLine(q) + chipsHtml(q.formula, false) + '<div class="example"><p class="ex-en" lang="en">' + esc(q.example) + "</p></div>";
   } else if (state.step === 2) {
-    speech = (state.ghepChecked && !state.ghepOk) ? '<div class="say-fb"><p>Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p></div>' : '<p class="say">Hãy ghép câu của bạn.</p>';
+    speech = ((state.ghepChecked && !state.ghepOk) ? '<div class="say-fb"><p>Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p></div>' : '<p class="say">Hãy ghép câu của bạn.</p>') + chipsHtml(q.formula, false);
   } else if (!state.writeOk && state.writeMsg) {
     speech = '<div class="say-fb"><p>' + formatMsg(state.writeMsg) + "</p><p>Không sao, sửa lại và bấm Kiểm tra lần nữa nhé.</p></div>";
   } else {
