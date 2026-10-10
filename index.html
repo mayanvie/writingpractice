@@ -176,6 +176,8 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .hub-main{flex:1;min-width:0}
 .hub-pad{display:none}
 .hub-side{position:sticky;top:0;flex:none;width:min(320px,34%);display:flex;flex-direction:column;gap:12px;max-height:calc(100dvh - 40px)}
+.home-back{appearance:none;border:0;background:#fff;color:var(--ink);font-weight:800;font-size:.95rem;border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;box-shadow:0 8px 14px -10px rgba(92,64,56,.4)}
+.home-back svg{width:18px;height:18px;flex:none}
 .greet{display:flex;flex-direction:column;align-items:stretch;gap:8px;flex:1 1 auto;min-height:0}
 .greet .bubble{position:relative;left:auto;right:auto;bottom:auto;flex:none;max-height:none;overflow:visible;border-radius:32px;padding:20px 22px}
 .greet .bubble::after{left:46%;right:auto;bottom:-10px;width:22px;height:22px}
@@ -2011,6 +2013,7 @@ function testCounters(lesson) {
 var ICON_BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
 var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 var ICON_HOME = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg>';
+var ICON_TOPICS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>';
 
 
 function enterClass(key) {
@@ -2025,7 +2028,8 @@ function headHtml(back, title, right) {
 
 function dockHtml(active, lessonId) {
   var html = '<div class="ground"><nav class="dock" aria-label="Điều hướng">';
-  html += '<button type="button" class="dk" data-action="home">' + ICON_HOME + "<span>Chủ đề</span></button>";
+  html += '<button type="button" class="dk" data-action="welcome">' + ICON_HOME + "<span>Trang chủ</span></button>";
+  html += '<button type="button" class="dk" data-action="home">' + ICON_TOPICS + "<span>Chủ đề</span></button>";
   html += '<button type="button" class="dk' + (active === "learn" ? " on" : "") + '" data-action="to-list">' + ICON_BOOK + "<span>Học</span></button>";
   html += '<button type="button" class="dk' + (active === "test" ? " on" : "") + '" data-action="test" data-lesson="' + lessonId + '">' + ICON_CARD + "<span>Bài kiểm tra nhỏ</span></button></nav></div>";
   return html;
@@ -2057,6 +2061,7 @@ function renderHub() {
   var pct = Math.round(done / LESSONS.length * 100);
   var tones = ["tone-blush", "tone-mint"];
   var html = '<div class="scene hub"><div class="col"><div class="hub-app"><aside class="hub-side">';
+  html += '<button type="button" class="home-back" data-action="welcome">' + ICON_HOME + "<span>Trang chủ</span></button>";
   html += '<div class="greet"><div class="bubble"><p class="greet-k">Xin chào, tớ là <span class="nobr">O-ma-oo</span>.</p><h2>Tớ sẽ hướng dẫn cho cậu tập viết câu.</h2></div>' + charImg() + "</div>";
   html += '<div class="progcard"><div><p>Hôm nay</p><b>' + done + " / " + LESSONS.length + ' bài</b></div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
   html += '<div class="hub-foot"><div class="foot-row">' + tomatoHtml() + '<button type="button" class="btn" data-action="continue">Bắt đầu</button></div><p class="note">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></div></aside>';
