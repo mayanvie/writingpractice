@@ -281,42 +281,43 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .stage .btn{width:min(640px,100%);margin-top:auto}
 .stage .btn + .btn{margin-top:8px}
 @media (max-width:760px){
-  .hub .col{padding:16px 16px 196px}
+  .hub .col{display:flex;flex-direction:column;overflow:hidden;padding:12px 16px 0}
   .hub-main{padding-bottom:0}
-  .hub-app{display:flex;flex-direction:column;gap:0;min-height:100%}
+  .hub-app{flex:1 1 0%;min-height:0;height:auto;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;gap:0}
   .hub-side{display:contents;position:static;max-height:none}
-  .greet{order:1;flex:none;flex-direction:row;align-items:flex-end;gap:8px;min-height:0}
+  .greet{order:1;flex:0 0 auto;flex-direction:row;align-items:flex-end;gap:8px;min-height:0}
   .greet .bubble{flex:1;margin-bottom:14px;padding:14px 16px;border-radius:22px}
   .greet .bubble::after{left:auto;right:-6px;bottom:22px;width:16px;height:16px}
   .greet h2{font-size:1.2rem}
   .greet-k{font-size:.92rem}
   .greet .char{height:118px;max-height:none;min-height:0;margin:0;flex:none}
-  .progcard{order:2;min-height:64px;border-radius:20px;padding:10px 14px;margin-top:14px}
-  .progcard b{font-size:1.2rem}
-  .progcard p{font-size:.85rem}
+  .progcard{order:2;flex:0 0 auto;min-height:72px;border-radius:20px;padding:12px 16px;margin-top:12px}
+  .progcard b{font-size:1.25rem}
+  .progcard p{font-size:.92rem}
   .progcard .bar{width:108px;height:12px}
-  .hub-main{order:3;display:flex;flex-direction:column;min-width:0;flex:none;width:100%}
-  .hub-pad{display:block;height:170px;order:6;flex:none}
-  .hub-topics{order:3}
-  .hub-head{min-height:0;margin:18px 0 10px}
-  .hub-head h1,.big-head h2{font-size:1.4rem}
+  .hub-main{order:3;display:flex;flex-direction:column;min-width:0;flex:1 1 auto;min-height:0;overflow:hidden;width:100%}
+  .hub-head{flex:0 0 auto;min-height:0;margin:12px 0 8px}
+  .hub-scroll{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(#000 0,#000 calc(100% - 28px),transparent);-webkit-mask-image:linear-gradient(#000 0,#000 calc(100% - 28px),transparent)}
+  .hub-scroll::-webkit-scrollbar{width:0;height:0}
+  .hub-pad{display:block;height:28px;flex:none}
+  .hub-head h1,.big-head h2{font-size:1.35rem}
   .big-head p{font-size:.85rem}
   .test-note{font-size:1.05rem;margin-bottom:12px}
-  .rand{font-size:1rem}
-  .hub .tgrid{grid-template-columns:1fr 1fr;gap:12px}
-  .hub .tile{min-height:148px;border-radius:24px;padding:14px 14px 12px;gap:8px}
+  .rand{flex:none;font-size:1.05rem}
+  .hub .tgrid{flex:none;overflow:visible;grid-template-columns:1fr 1fr;gap:12px}
+  .hub .tile{min-height:168px;height:auto;border-radius:24px;padding:14px 14px 12px;gap:8px}
   .hub .ticon{width:58px;height:58px}
   .hub .ticon svg{width:34px;height:34px}
   .hub .ttitle{font-size:1.02rem}
   .hub .tsub{font-size:.8rem;line-height:1.3}
   .tcheck{top:10px;right:10px;width:26px;height:26px;font-size:.85rem}
-  .big-block{order:4;margin-top:26px}
+  .big-block{margin-top:22px}
   .big-row{grid-template-columns:1fr 1fr;gap:12px}
   .big-btn{min-height:120px;border-radius:24px;padding:14px}
   .big-btn b{font-size:1.2rem}
   .big-btn small{font-size:.82rem}
-  .hub-foot{order:5;position:fixed;left:0;right:0;bottom:0;z-index:6;gap:6px;padding:14px 16px 12px;background:linear-gradient(180deg,rgba(255,246,242,0),#FFF6F2 18px)}
-  .hub-foot .btn{min-height:58px;font-size:1.2rem}
+  .hub-foot{order:4;flex:0 0 auto;align-self:stretch;width:100%;position:static;z-index:1;gap:6px;margin:6px 0 0;padding:4px 0 calc(8px + env(safe-area-inset-bottom));background:transparent}
+  .hub-foot .btn{min-height:64px;font-size:1.3rem}
   .hub-foot .note{font-size:.8rem}
   .stash{height:40px}
   .stash svg{width:28px;height:28px}
@@ -339,7 +340,13 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
   .listx .qmark{width:52px;height:52px;font-size:1.2rem}
   .listx .qtext b{font-size:1.2rem}
   .listx .qtext small{font-size:.98rem}
-  .learn-split{display:flex;flex-direction:column;gap:12px;align-items:stretch;margin:8px 0 20px}
+  .learnx .learn-top{flex:0 0 auto}
+  .learn-split{display:flex;flex-direction:column;gap:12px;align-items:stretch;flex:1 1 auto;margin:8px 0 14px}
+  .learnx .well{flex:1;min-height:132px}
+  .learnx .writeline{flex:1;min-height:128px}
+  .learnx .answer-input{font-size:1.35rem;padding:18px 8px}
+  .learnx .go{width:64px;height:64px}
+  .learnx .sheet.card .btn-row{margin-top:auto}
   .learnx .stepper{padding-top:4px}
   .learnx .stp{height:48px;font-size:1rem}
   .learnx .stp i{width:26px;height:26px;font-size:.85rem}
@@ -351,7 +358,7 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
   .learnx .qline .vi{font-size:1rem}
   .float-char{position:static;left:auto;right:auto;top:auto;bottom:auto;height:108px;margin:0;align-self:end}
   .learnx[class*="step-"] .float-char{grid-column:2}
-  .sheet.card{border-radius:26px;padding:16px 14px 14px;flex:none;width:100%;align-self:stretch}
+  .sheet.card{border-radius:26px;padding:16px 14px 14px;flex:1 1 auto;width:100%;align-self:stretch}
   .formula{border-radius:22px;padding:14px 14px 16px}
   .formula .chip{font-size:1.35rem}
   .formula .chip.blank{min-height:52px;font-size:1.05rem}
@@ -1958,7 +1965,7 @@ function renderHub() {
   html += '<div class="greet"><div class="bubble"><p class="greet-k">Xin chào, tớ là <span class="nobr">O-ma-oo</span>.</p><h2>Tớ sẽ hướng dẫn cho cậu tập viết câu.</h2></div>' + charImg() + "</div>";
   html += '<div class="progcard"><div><p>Hôm nay</p><b>' + done + " / " + LESSONS.length + ' bài</b></div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
   html += '<div class="hub-foot"><div class="foot-row">' + tomatoHtml() + '<button type="button" class="btn" data-action="continue">Bắt đầu</button></div><p class="note">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></div></aside>';
-  html += '<div class="hub-main"><section class="hub-topics"><div class="hub-head"><h1>Chọn chủ đề</h1><button type="button" class="rand" data-action="random">Chọn ngẫu nhiên</button></div><div class="tgrid">';
+  html += '<div class="hub-main"><div class="hub-scroll"><div class="hub-head"><h1>Chọn chủ đề</h1></div><section class="hub-topics"><div class="tgrid">';
   for (i = 0; i < LESSONS.length; i++) {
     var lesson = LESSONS[i];
     var finished = allLearned(lesson);
@@ -1973,7 +1980,7 @@ function renderHub() {
     var got = bigDone(i);
     html += '<button type="button" class="big-btn' + (got === 10 ? " done" : "") + '" data-action="big-test" data-big="' + i + '"><b>Bài ' + i + "</b><small>" + (got ? got + "/10 câu đã thuộc" : "10 câu, mỗi chủ đề một câu") + "</small></button>";
   }
-  html += "</div></section><div class=\"hub-pad\"></div></div></div></div></div>";
+  html += "</div></section><div class=\"hub-pad\"></div></div></div></div></div></div>";
   return html;
 }
 
@@ -2673,14 +2680,6 @@ function onClick(e) {
   if (!btn || btn.disabled) return;
   var action = btn.getAttribute("data-action");
   if (action === "continue") { startLearn(nextLesson().id); return; }
-  if (action === "random") {
-    var pool = [];
-    var ri;
-    for (ri = 0; ri < LESSONS.length; ri++) if (!allLearned(LESSONS[ri])) pool.push(LESSONS[ri]);
-    if (!pool.length) pool = LESSONS;
-    startLearn(pool[Math.floor(Math.random() * pool.length)].id);
-    return;
-  }
   if (action === "resume") {
     var lessonNow = currentLesson();
     var saved = progress.learned[String(lessonNow.id)] || [];
