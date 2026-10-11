@@ -28,7 +28,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .enter .content>*,.enter .bubble{animation:rise .38s ease backwards}
 .enter .content>*:nth-child(2){animation-delay:.05s}.enter .content>*:nth-child(3){animation-delay:.1s}.enter .content>*:nth-child(4){animation-delay:.15s}
 .char{display:block;height:var(--mH);width:auto;animation:bob 3.6s ease-in-out infinite;filter:drop-shadow(0 10px 10px rgba(150,80,50,.18))}
-@media (prefers-reduced-motion:reduce){.enter .content>*,.enter .bubble,.char,.stash.pop b{animation:none}}
+@media (prefers-reduced-motion:reduce){.enter .content>*,.enter .bubble,.char,.stash.pop,.stash.pop svg,.stash.pop b,.stash.pop::after{animation:none}}
 /* header */
 .head{flex:none;display:flex;align-items:center;gap:12px;min-height:48px}
 .back{appearance:none;border:0;background:#fff;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:var(--muted);box-shadow:0 8px 14px -8px rgba(92,64,56,.4)}
@@ -195,11 +195,17 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .big-head p{margin:0;color:var(--muted);font-size:.95rem;font-weight:700;line-height:1.4}
 .test-note{margin:0 0 16px;color:var(--muted);font-size:clamp(1.25rem,1.6vw,1.5rem);font-weight:700;line-height:1.45}
 .hub-tools{display:flex;align-items:center;gap:10px;flex:none}
-.stash{display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 10px 0 4px;border-radius:999px;background:#fff;box-shadow:0 8px 14px -10px rgba(92,64,56,.45);flex:none}
+.stash{position:relative;display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 10px 0 4px;border-radius:999px;background:#fff;box-shadow:0 8px 14px -10px rgba(92,64,56,.45);flex:none}
 .stash svg{width:26px;height:26px;display:block;flex:none}
-.stash b{font-size:1rem;font-weight:800;min-width:1ch;line-height:1}
-@keyframes tomato-pop{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
-.stash.pop b{animation:tomato-pop .45s ease}
+.stash b{display:inline-block;font-size:1rem;font-weight:800;min-width:1ch;line-height:1}
+@keyframes tomato-pop{0%{transform:scale(1);background:#fff}28%{transform:scale(1.48) translateY(-10px);background:#FDECEA;box-shadow:0 18px 26px -8px rgba(196,92,92,.7)}52%{transform:scale(1.05) translateY(2px);background:#fff}74%{transform:scale(1.2)}100%{transform:scale(1);background:#fff}}
+@keyframes tomato-wiggle{0%{transform:rotate(0) scale(1)}30%{transform:rotate(-18deg) scale(1.6)}58%{transform:rotate(12deg) scale(1.15)}100%{transform:rotate(0) scale(1)}}
+@keyframes tomato-num{0%{transform:scale(1)}30%{transform:scale(1.85);color:#C45C5C}100%{transform:scale(1)}}
+@keyframes tomato-plus{0%{opacity:0;transform:translateY(8px) scale(.5)}24%{opacity:1;transform:translateY(-4px) scale(1.25)}100%{opacity:0;transform:translateY(-12px) scale(1)}}
+.stash.pop{animation:tomato-pop .85s cubic-bezier(.2,1.3,.4,1);z-index:6}
+.stash.pop svg{animation:tomato-wiggle .85s ease}
+.stash.pop b{animation:tomato-num .85s ease}
+.stash.pop::after{content:"+1";position:absolute;right:calc(100% + 8px);top:4px;color:#C45C5C;font-size:1.25rem;font-weight:800;line-height:1;pointer-events:none;white-space:nowrap;animation:tomato-plus 1s ease forwards}
 .rand{appearance:none;border:0;background:none;color:#C45C5C;font-weight:800;font-size:1.05rem;padding:0}
 .hub .tgrid{flex:none;min-height:0;overflow:visible;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-content:start;padding:2px}
 .hub .tile{position:relative;min-height:196px;height:auto;border-radius:28px;padding:18px 18px 16px;gap:12px;justify-content:space-between}
