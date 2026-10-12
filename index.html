@@ -71,8 +71,12 @@ button{font:inherit;color:inherit;cursor:pointer}
 .chip.blank{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;color:#C45C5C;border:2px dashed #E07A7A;border-radius:16px;background:#FDECEA}
 .chip-vi{color:var(--muted);font-size:.8rem}
 .example{margin:0}.ex-en{margin:0;width:100%;box-sizing:border-box;padding:14px 16px;border-radius:22px;background:#EAF6EE;font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:800;color:var(--ink)}
+.ex-cue{margin:0;color:var(--muted);font-weight:800;font-size:1.15rem;line-height:1.35}
 /* ghép */
 .well{width:100%;min-height:72px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px;border:2px dashed #E07A7A;border-radius:18px;background:#fff}
+.well-words{flex:1;min-width:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.well .go{margin-left:auto;align-self:center}
+.sheet .btn-row.split .btn{width:auto;flex:1}
 .well.good{border-style:solid;border-color:#7DB892;background:#EAF6EE}
 .placeholder{color:var(--muted);font-weight:600}
 .bank{display:flex;flex-wrap:wrap;gap:10px}
@@ -379,6 +383,8 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
   .learnx.step-2 .learn-split,.learnx.step-3 .learn-split{grid-template-columns:minmax(0,.8fr) minmax(460px,1.2fr)}
   .learnx.step-2 .sheet.card,.learnx.step-3 .sheet.card{padding:32px 34px 28px;gap:22px;min-height:340px;justify-content:center}
   .learnx .well{min-height:156px;padding:24px 26px;border-width:3px;border-radius:28px;gap:14px}
+  .learnx .well-words{gap:14px}
+  .learnx .ex-cue{font-size:1.3rem}
   .learnx .placeholder{font-size:1.4rem}
   .learnx .bank{gap:16px}
   .learnx .word{min-height:74px;padding:14px 28px;font-size:1.75rem;border-radius:22px}
@@ -2357,13 +2363,180 @@ function questionPanel(q) {
   return '<div class="qpanel tone-' + tone + '"><p class="ask" lang="en">' + esc(q.ask) + '</p><p class="vi">' + esc(q.vi) + "</p></div>";
 }
 
+var WORD_VI = {
+  i: "tôi", my: "của tôi", name: "tên", is: "là", am: "là", are: "có",
+  a: "một", an: "một", the: "cái", in: "ở", on: "trên", at: "lúc", to: "đến",
+  up: "dậy", for: "cho", by: "bằng", of: "của", and: "và", with: "với",
+  "don't": "không", not: "không", no: "không", yes: "vâng", "i'm": "tôi là",
+  can: "có thể", "can't": "không thể", will: "sẽ", "o'clock": "giờ",
+  years: "năm", old: "tuổi", this: "đây", there: "có", people: "người",
+  family: "gia đình", like: "thích", go: "đi", wake: "thức", eat: "ăn",
+  bed: "giường", reading: "đang đọc", eating: "đang ăn", watching: "đang xem",
+  playing: "đang chơi", studying: "đang học", book: "sách", room: "phòng",
+  rooms: "phòng", house: "nhà", bag: "cặp", table: "bàn", chair: "ghế",
+  under: "dưới", went: "đã đi", ate: "đã ăn", played: "đã chơi",
+  watched: "đã xem", visited: "đã thăm", get: "thức", half: "nửa", past: "hơn",
+  very: "rất", well: "tốt", little: "một chút", ha: "Hà Nội", noi: "Hà Nội",
+  da: "Đà Nẵng", nang: "Đà Nẵng", "6": "sáu", "7": "bảy", "4": "bốn", "3": "ba",
+  "10": "mười", six: "sáu", nine: "chín", "6:30": "6 giờ 30", "7:30": "7 giờ 30",
+  today: "hôm nay", friend: "bạn", home: "nhà", water: "nước", milk: "sữa",
+  happy: "vui", cat: "mèo", dog: "chó", rice: "cơm", park: "công viên",
+  school: "trường", student: "học sinh", live: "sống", apartment: "căn hộ",
+  do: "có", city: "thành phố", town: "thị trấn", village: "ngôi làng",
+  countryside: "nông thôn", hometown: "quê", have: "có", brother: "anh hoặc em trai",
+  sister: "chị hoặc em gái", mother: "mẹ", father: "bố", teacher: "giáo viên",
+  doctor: "bác sĩ", cook: "nấu ăn", bird: "chim", books: "sách", listening: "nghe",
+  breakfast: "bữa sáng", bike: "xe đạp", bus: "xe buýt", foot: "đi bộ", car: "ô tô",
+  movie: "phim", desk: "bàn học", lamp: "đèn", box: "hộp", sofa: "ghế sofa",
+  swim: "bơi", ride: "đi", speak: "nói", english: "tiếng Anh", play: "chơi",
+  aunt: "dì", grandma: "bà", visit: "thăm", read: "đọc", music: "âm nhạc",
+  drawing: "vẽ", noodles: "mì", fruit: "trái cây", bread: "bánh mì",
+  cartoons: "hoạt hình", football: "bóng đá", badminton: "cầu lông", chess: "cờ",
+  games: "trò chơi", pho: "phở", fish: "cá", cats: "mèo", dogs: "chó",
+  bananas: "chuối", mangoes: "xoài", apples: "táo", oranges: "cam"
+};
+var HINT_PAD = { a: 1, an: 1, the: 1, my: 1, to: 1, of: 1, in: 1, on: 1, at: 1, for: 1, and: 1, with: 1, by: 1, is: 1, am: 1, are: 1, i: 1, up: 1 };
+var HINT_MORE = {
+  "1.1": [["Nam", "Nam"], ["An", "An"], ["Mai", "Mai"], ["Linh", "Linh"]],
+  "1.2": [["nine", "chín"], ["eight", "tám"], ["seven", "bảy"], ["twelve", "mười hai"]],
+  "1.3": [["happy", "vui"], ["sad", "buồn"], ["tired", "mệt"], ["okay", "ổn"], ["well", "khỏe"]],
+  "1.4": [["school", "trường"], ["class", "lớp"]],
+  "1.5": [["fine", "khỏe"], ["good", "tốt"], ["great", "rất ổn"], ["okay", "ổn"], ["today", "hôm nay"]],
+  "2.1": [["Saigon", "Sài Gòn"], ["Hanoi", "Hà Nội"]],
+  "2.2": [["Saigon", "Sài Gòn"], ["Hanoi", "Hà Nội"]],
+  "2.4": [["suburb", "ngoại ô"], ["island", "đảo"]],
+  "2.5": [["Saigon", "Sài Gòn"], ["Hanoi", "Hà Nội"]],
+  "3.1": [["brother", "anh hoặc em trai"], ["grandma", "bà"], ["grandpa", "ông"], ["aunt", "dì"]],
+  "3.2": [["No", "không"], ["don't", "không"], ["cousin", "anh chị em họ"]],
+  "3.3": [["three", "ba"], ["five", "số 5"]],
+  "3.4": [["nurse", "y tá"], ["farmer", "nông dân"], ["driver", "tài xế"]],
+  "3.5": [["rabbit", "thỏ"], ["hamster", "chuột hamster"], ["turtle", "rùa"]],
+  "4.1": [["birds", "chim"], ["songs", "bài hát"], ["dancing", "nhảy"], ["movies", "phim"], ["games", "trò chơi"]],
+  "4.2": [["bread", "bánh mì"], ["milk", "sữa"], ["chicken", "gà"], ["soup", "súp"]],
+  "4.3": [["dogs", "chó"], ["meat", "thịt"], ["eggs", "trứng"], ["bread", "bánh mì"]],
+  "4.4": [["grapes", "nho"], ["watermelon", "dưa hấu"], ["pineapple", "dứa"]],
+  "4.5": [["singing", "hát"]],
+  "5.1": [["seven", "bảy"]],
+  "5.2": [["rice", "cơm"], ["noodles", "mì"], ["milk", "sữa"], ["eggs", "trứng"]],
+  "5.3": [["motorbike", "xe máy"]],
+  "5.4": [["eight", "tám"], ["six", "sáu"]],
+  "5.5": [["eight", "tám"], ["eleven", "mười một"]],
+  "6.1": [["playing", "đang chơi"], ["sleeping", "đang ngủ"]],
+  "6.2": [["noodles", "mì"], ["soup", "súp"], ["chicken", "gà"], ["fish", "cá"]],
+  "6.3": [["film", "phim"], ["video", "video"], ["YouTube", "YouTube"], ["show", "chương trình"]],
+  "6.4": [["writing", "đang viết"], ["listening", "đang nghe"]],
+  "6.5": [["tennis", "quần vợt"], ["basketball", "bóng rổ"], ["volleyball", "bóng chuyền"]],
+  "7.2": [["four", "bốn"], ["five", "số 5"]],
+  "7.3": [["sofa", "ghế sofa"]],
+  "7.4": [["table", "bàn"]],
+  "7.5": [["table", "bàn"], ["desk", "bàn học"], ["bed", "giường"]],
+  "8.1": [["little", "một chút"], ["fast", "nhanh"]],
+  "8.2": [["very", "rất"], ["well", "tốt"], ["fast", "nhanh"]],
+  "8.3": [["very", "rất"]],
+  "8.4": [["very", "rất"], ["well", "tốt"]],
+  "8.5": [["little", "một chút"]],
+  "9.1": [["market", "chợ"], ["zoo", "sở thú"], ["beach", "biển"], ["cinema", "rạp phim"]],
+  "9.2": [["bread", "bánh mì"], ["chicken", "gà"], ["soup", "súp"], ["fish", "cá"], ["milk", "sữa"]],
+  "9.3": [["chess", "cờ"], ["tennis", "quần vợt"], ["basketball", "bóng rổ"], ["volleyball", "bóng chuyền"], ["cards", "bài"]],
+  "9.4": [["film", "phim"], ["video", "video"], ["YouTube", "YouTube"], ["show", "chương trình"], ["match", "trận đấu"]],
+  "9.5": [["grandpa", "ông"], ["uncle", "chú"], ["mother", "mẹ"], ["father", "bố"]],
+  "10.1": [["swim", "bơi"], ["draw", "vẽ"]],
+  "10.2": [["bread", "bánh mì"], ["chicken", "gà"], ["soup", "súp"], ["fish", "cá"]],
+  "10.3": [["market", "chợ"], ["zoo", "sở thú"], ["beach", "biển"]],
+  "10.4": [["grandpa", "ông"], ["uncle", "chú"], ["mother", "mẹ"]],
+  "10.5": [["seven", "bảy"], ["five", "số 5"]]
+};
+var HINT_VI = {
+  "3.4": { cook: "người nấu ăn" },
+  "4.5": { reading: "đọc", playing: "chơi" },
+  "6.1": { am: "đang", eating: "đang ăn" },
+  "6.2": { am: "đang" },
+  "6.3": { am: "đang" },
+  "6.4": { am: "đang" },
+  "6.5": { am: "đang" }
+};
+var HINT_GLOSS = null;
+
+function glossIndex() {
+  if (HINT_GLOSS) return HINT_GLOSS;
+  HINT_GLOSS = {};
+  var i;
+  var j;
+  var k;
+  for (i = 0; i < LESSONS.length; i++) {
+    var qs = LESSONS[i].questions;
+    for (j = 0; j < qs.length; j++) {
+      var vocab = qs[j].vocab || [];
+      for (k = 0; k < vocab.length; k++) {
+        var en = vocab[k].en;
+        if (!en || en.indexOf(" ") >= 0) continue;
+        var key = en.toLowerCase();
+        if (!HINT_GLOSS[key]) HINT_GLOSS[key] = vocab[k].vi;
+      }
+    }
+  }
+  return HINT_GLOSS;
+}
+
+function wordVi(en) {
+  var key = String(en).toLowerCase();
+  var g = glossIndex();
+  if (g[key]) return g[key];
+  if (WORD_VI[key]) return WORD_VI[key];
+  return "";
+}
+
+function splitWords(text) {
+  var raw = String(text || "").replace(/[.!?]+$/, "").trim();
+  if (!raw) return [];
+  var parts = raw.split(/\s+/);
+  var out = [];
+  var i;
+  for (i = 0; i < parts.length; i++) {
+    var w = parts[i].replace(/^[^0-9A-Za-z']+|[^0-9A-Za-z']+$/g, "");
+    if (w) out.push(w);
+  }
+  return out;
+}
+
+function hintWords(q) {
+  var list = [];
+  var seen = {};
+  function add(en, vi) {
+    if (!en || list.length >= 10) return;
+    var key = en.toLowerCase();
+    if (seen[key]) return;
+    seen[key] = 1;
+    var over = HINT_VI[q.id];
+    if (!vi && over && over[key]) vi = over[key];
+    list.push({ en: en, vi: vi || wordVi(en) });
+  }
+  var base = splitWords(q.example);
+  var i;
+  var v;
+  var w;
+  for (i = 0; i < base.length; i++) add(base[i]);
+  var vocab = q.vocab || [];
+  for (v = 0; v < vocab.length; v++) {
+    var words = splitWords(vocab[v].en);
+    for (w = 0; w < words.length; w++) {
+      if (HINT_PAD[words[w].toLowerCase()]) continue;
+      add(words[w]);
+    }
+  }
+  var more = HINT_MORE[q.id] || [];
+  for (i = 0; i < more.length; i++) add(more[i][0], more[i][1]);
+  return list;
+}
+
 function vocabHtml(q, tappable) {
   var open = !!state.vocabOpen;
+  var words = hintWords(q);
   var html = '<div class="vwrap"><button type="button" class="vtoggle' + (open ? " open" : "") + '" data-action="toggle-vocab" aria-expanded="' + (open ? "true" : "false") + '">' + (open ? "Ẩn gợi ý" : "Từ gợi ý") + "</button>";
   if (open) {
     html += '<div class="vchips">';
-    for (var i = 0; i < q.vocab.length; i++) {
-      var item = q.vocab[i];
+    for (var i = 0; i < words.length; i++) {
+      var item = words[i];
       if (tappable) html += '<button type="button" class="vchip" data-action="vocab" data-index="' + i + '">';
       else html += '<span class="vchip">';
       html += '<span class="vchip-en" lang="en">' + esc(item.en) + '</span><span class="vchip-vi">' + esc(item.vi) + "</span>";
@@ -2476,6 +2649,7 @@ function testCounters(lesson) {
 
 var ICON_BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
 var ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+var ICON_NEXT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 var ICON_HOME = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg>';
 var ICON_TOPICS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>';
 
@@ -2623,17 +2797,19 @@ function renderTopics() {
 }
 
 function renderStep1() {
-  return '<div class="btn-row"><button type="button" class="btn" data-action="to-ghep">Mình hiểu rồi</button></div>';
+  return '<div class="btn-row"><button type="button" class="btn" data-action="to-ghep">Bắt đầu làm</button></div>';
 }
 
 function renderStep2(q) {
-  var html = '<div class="well' + (state.ghepChecked && state.ghepOk ? " good" : "") + '" aria-live="polite" aria-label="Ô ghép câu">';
+  var html = '<div class="well' + (state.ghepChecked && state.ghepOk ? " good" : "") + '" aria-live="polite" aria-label="Ô ghép câu"><div class="well-words">';
   if (!state.picked.length) html += '<span class="placeholder">Câu của bạn hiện ở đây.</span>';
   var i;
   for (i = 0; i < state.picked.length; i++) {
     var picked = state.picked[i];
     html += '<button type="button" class="word" data-action="unpick" data-id="' + picked.id + '">' + esc(picked.text) + "</button>";
   }
+  html += "</div>";
+  if (state.ghepChecked && state.ghepOk) html += '<button type="button" class="go" data-action="to-write" aria-label="Tiếp theo">' + ICON_NEXT + "</button>";
   html += "</div>";
   if (state.bank.length) {
     html += '<div class="bank">';
@@ -2643,7 +2819,6 @@ function renderStep2(q) {
     }
     html += "</div>";
   }
-  if (state.ghepChecked && state.ghepOk) html += '<div class="btn-row"><button type="button" class="btn ok" data-action="to-write">Tiếp tục →</button></div>';
   return html;
 }
 
@@ -2678,10 +2853,10 @@ function renderLearn() {
   html += '<div class="learn-split' + enterClass(key) + '"><div class="learn-left">' + stepperHtml() + questionLine(q);
   html += '<div class="mascot">' + (say ? '<p class="say' + sayCls + '">' + say + "</p>" : "") + charImg(mood, "float-char") + "</div>";
   html += '</div><div class="sheet card">';
-  if (step === 1) html += '<div class="formula">' + chipsHtml(q.formula, false) + '</div><p class="example ex-en" lang="en">' + esc(q.example) + "</p>" + renderStep1();
+  if (step === 1) html += '<p class="ex-cue">Xem mẫu câu trước nhé.</p><div class="formula">' + chipsHtml(q.formula, false) + '</div><p class="example ex-en" lang="en">' + esc(q.example) + "</p>" + renderStep1();
   else if (step === 2) {
     html += renderStep2(q);
-    if (state.ghepChecked && !state.ghepOk) html += '<p class="why">Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p>';
+    if (state.ghepChecked && !state.ghepOk) html += '<p class="why">Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p><div class="btn-row split"><button type="button" class="btn" data-action="hint-xem">Xem lại mẫu</button><button type="button" class="btn btn-ghost" data-action="skip-q">Bỏ qua</button></div>';
   }
   else if (step === 3 && state.writeAlso) html += renderStep3(q) + '<p class="why">' + formatMsg(state.writeMsg) + "</p>" + vocabHtml(q, true);
   else if (!(step === 3 && (state.writeOk || state.writeMsg))) html += renderStep3(q) + vocabHtml(q, !state.writeOk);
@@ -2690,7 +2865,7 @@ function renderLearn() {
     html += '<p class="answer-pill ok" lang="en">' + esc(state.draft) + "</p>";
     if (state.nudge) html += '<p class="why">' + formatMsg(state.nudge) + "</p>";
     html += '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + nextLabel + "</button></div>";
-  } else html += '<p class="answer-pill bad" lang="en">' + esc(state.draft) + '</p><p class="why">' + formatMsg(state.writeMsg) + '</p><div class="btn-row"><button type="button" class="btn" data-action="retry-write">Thử lại</button></div>';
+  } else html += '<p class="answer-pill bad" lang="en">' + esc(state.draft) + '</p><p class="why">' + formatMsg(state.writeMsg) + '</p><div class="btn-row split"><button type="button" class="btn" data-action="retry-write">Viết lại</button><button type="button" class="btn btn-ghost" data-action="skip-q">Bỏ qua</button></div>';
   html += "</div></div></div></div>";
   return html;
 }
@@ -2997,6 +3172,20 @@ function checkWrite() {
   render();
 }
 
+function skipQuestion() {
+  if (state.single) {
+    returnToTest();
+    return;
+  }
+  var lesson = currentLesson();
+  if (state.qIndex >= lesson.questions.length - 1) {
+    state.view = "lesson";
+    render();
+    return;
+  }
+  goQuestion(state.qIndex + 1);
+}
+
 function nextQuestion() {
   if (state.single) {
     returnToTest();
@@ -3301,7 +3490,10 @@ function resetTest() {
 function appendVocab(index) {
   var input = document.getElementById("answer-input");
   if (!input || input.disabled) return;
-  var word = currentQuestion().vocab[Number(index)].en;
+  var hints = hintWords(currentQuestion());
+  var picked = hints[Number(index)];
+  if (!picked) return;
+  var word = picked.en;
   var base = String(input.value).replace(/\s+$/, "");
   input.value = base ? base + " " + word : word;
   state.draft = input.value;
@@ -3378,6 +3570,8 @@ function onClick(e) {
   if (action === "big-test") { startBigTest(Number(btn.getAttribute("data-big"))); return; }
   if (action === "to-ghep") { goGhep(); return; }
   if (action === "to-write") { goWrite(); return; }
+  if (action === "hint-xem") { state.step = 1; state.ghepChecked = false; state.ghepOk = false; state.vocabOpen = false; render(); return; }
+  if (action === "skip-q") { skipQuestion(); return; }
   if (action === "pick") { pickWord(btn.getAttribute("data-id")); return; }
   if (action === "unpick") { unpickWord(btn.getAttribute("data-id")); return; }
   if (action === "check-write") { checkWrite(); return; }
