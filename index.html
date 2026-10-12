@@ -146,6 +146,23 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .para{background:#fff;border:0;border-radius:24px;padding:16px 18px;font-size:1.2rem;line-height:1.6;box-shadow:var(--shadow)}
 .copy-status{margin:0;color:var(--muted);font-size:.85rem}
 .desc{margin:0;color:var(--muted)}
+.sheet.card.end-sheet .para{margin:0;background:#FFF6F2;padding:22px 24px;font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:800;line-height:1.5;color:var(--ink)}
+.sheet.card.end-sheet .desc{font-size:.95rem}
+.sheet.card.end-sheet .end-actions{flex-wrap:wrap;justify-content:center;gap:8px;margin-top:2px}
+.sheet.card.end-sheet .end-actions .btn{width:auto;flex:1 1 0;min-width:0;min-height:42px;padding:8px 12px;font-size:.98rem;line-height:1.2;white-space:normal;box-shadow:inset 0 2px 0 rgba(255,255,255,.35),0 8px 14px -10px rgba(196,92,92,.5)}
+.sheet.card.end-sheet .end-actions .btn-ghost{box-shadow:0 6px 12px -10px rgba(92,64,56,.4)}
+.learnx .sheet.card.end-sheet{flex:0 1 auto;align-self:center;height:auto}
+.learnx .sheet.card.end-sheet .end-actions{margin-top:6px}
+@media (max-width:760px){
+  .sheet.card.end-sheet .end-actions{gap:6px}
+  .sheet.card.end-sheet .end-actions .btn{font-size:.8rem;padding:7px 6px;min-height:40px}
+}
+.sheet.card.end-sheet .trace{display:grid;background:#FFF6F2;border-radius:24px;box-shadow:var(--shadow);min-height:148px}
+.sheet.card.end-sheet .trace-ghost,.sheet.card.end-sheet .trace-input{grid-area:1 / 1;min-width:0;margin:0;border:0;padding:22px 24px;border-radius:24px;font-family:inherit;font-size:clamp(1.7rem,2.5vw,2.2rem);font-weight:800;line-height:1.5;letter-spacing:0;white-space:pre-wrap;overflow-wrap:break-word}
+.sheet.card.end-sheet .trace-ghost{color:rgba(92,64,56,.42);pointer-events:none;user-select:none}
+.sheet.card.end-sheet .trace-input{width:100%;height:100%;min-height:148px;resize:none;background:transparent;color:var(--ink);outline:none;caret-color:#C45C5C;overflow:auto}
+.sheet.card.end-sheet .trace-input::placeholder{color:#C7AEA4;font-weight:700}
+.sheet.card.end-sheet .trace:focus-within{box-shadow:0 0 0 3px rgba(224,122,122,.45),var(--shadow)}
 /* phone */
 @media (max-width:760px){
   .col{padding:10px 16px 0}
@@ -800,6 +817,7 @@ var LESSONS = [
         core: { affirm: [one("I am a student", ["I'm a student"])], negate: [one("I am not a student", ["I'm not a student"])] },
         altFrames: JOB_ALT,
         example: "I am a student.", exampleVi: "Tôi là học sinh.",
+        stmt: { yes: "I am a student.", no: "I am not a student." },
         vocab: [V("I am", "Tôi là"), V("a student", "một học sinh"), V("Yes, I am", "Vâng, tôi là"), V("No, I'm not", "Không phải")],
         errors: [
           E("^I is\\b", "'I' đi với **am**. ✅ I am a student."),
@@ -819,6 +837,7 @@ var LESSONS = [
         core: { affirm: [one("I am happy", ["I'm happy"])], negate: [one("I am not happy", ["I'm not happy"])] },
         altFrames: FEEL_ALT,
         example: "I am happy.", exampleVi: "Tôi vui.",
+        stmt: { yes: "I am happy today.", no: "I am not happy today." },
         vocab: [V("happy", "vui"), V("sad", "buồn"), V("tired", "mệt"), V("I am", "Tôi")],
         errors: [
           E("^I is\\b", "'I' đi với **am**. ✅ I am happy."),
@@ -865,6 +884,7 @@ var LESSONS = [
         core: { affirm: [one("I live in a house")], negate: [one("I don't live in a house", ["I do not live in a house"])] },
         altFrames: HOUSE_ALT,
         example: "I live in a house.", exampleVi: "Tôi sống trong một ngôi nhà.",
+        stmt: { yes: "I live in a house.", no: "I do not live in a house." },
         vocab: [V("a house", "một ngôi nhà"), V("an apartment", "một căn hộ"), V("Yes, I do", "Có"), V("No, I don't", "Không")],
         errors: [
           E("^I lives\\b", "'I' không thêm **s**. ✅ I live in a house."),
@@ -881,6 +901,7 @@ var LESSONS = [
         core: { affirm: [one("I live in the city")], negate: [one("I don't live in the city", ["I do not live in the city"])] },
         altFrames: AREA_ALT,
         example: "I live in the city.", exampleVi: "Tôi sống ở thành phố.",
+        stmt: { yes: "I live in the city.", no: "I do not live in the city." },
         vocab: [V("the city", "thành phố"), V("a town", "một thị trấn"), V("a village", "một ngôi làng"), V("the countryside", "nông thôn")],
         errors: [
           E("^I lives\\b", "'I' không thêm **s**. ✅ I live in the city."),
@@ -939,6 +960,7 @@ var LESSONS = [
           ]
         },
         example: "I have a brother.", exampleVi: "Tôi có một anh hoặc em trai.",
+        stmt: { yes: "I have a brother or a sister.", no: "I do not have a brother or a sister." },
         vocab: [V("I have", "Tôi có"), V("a brother", "một anh hoặc em trai"), V("a sister", "một chị hoặc em gái"), V("Yes, I do", "Có")],
         errors: [
           E("^I has\\b", "'I' dùng **have**. ✅ I have a brother."),
@@ -984,6 +1006,7 @@ var LESSONS = [
           negate: [one("I don't have a pet", ["I do not have a pet"])]
         },
         example: "I have a cat.", exampleVi: "Tôi có một con mèo.",
+        stmt: { yes: "I have a pet.", no: "I do not have a pet." },
         vocab: [V("a cat", "một con mèo"), V("a dog", "một con chó"), V("a bird", "một con chim"), V("a fish", "một con cá")],
         errors: [
           E("^I has\\b", "'I' dùng **have**. ✅ I have a cat."),
@@ -1168,6 +1191,7 @@ var LESSONS = [
         core: { affirm: [one("I am studying", ["I'm studying"])], negate: [one("I am not studying", ["I'm not studying"])] },
         altFrames: ING_ALT,
         example: "I am studying.", exampleVi: "Tôi đang học.",
+        stmt: { yes: "I am studying.", no: "I am not studying." },
         vocab: [V("I am studying", "Tôi đang học"), V("Yes, I am", "Vâng"), V("No, I'm not", "Không"), V("reading", "đang đọc")],
         errors: [
           E("^I studying\\b", "Thiếu **am**. ✅ I am studying."),
@@ -1263,6 +1287,7 @@ var LESSONS = [
         core: { affirm: [one("I can swim")], negate: [one("I can't swim", ["I cannot swim"])] },
         altFrames: CAN_ALT,
         example: "I can swim.", exampleVi: "Tôi bơi được.",
+        stmt: { yes: "I can swim.", no: "I can't swim." },
         vocab: [V("I can swim", "Tôi bơi được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("very well", "rất tốt")],
         errors: [
           E("^I swimming\\b", "Thiếu **can**. ✅ I can swim."),
@@ -1277,6 +1302,7 @@ var LESSONS = [
         core: { affirm: [one("I can cook")], negate: [one("I can't cook", ["I cannot cook"])] },
         altFrames: CAN_ALT,
         example: "I can cook.", exampleVi: "Tôi nấu ăn được.",
+        stmt: { yes: "I can cook.", no: "I can't cook." },
         vocab: [V("I can cook", "Tôi nấu ăn được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("a little", "một chút")],
         errors: [
           E("^I cooking\\b", "Thiếu **can**. ✅ I can cook."),
@@ -1291,6 +1317,7 @@ var LESSONS = [
         core: { affirm: [one("I can ride a bike")], negate: [one("I can't ride a bike", ["I cannot ride a bike"])] },
         altFrames: CAN_ALT,
         example: "I can ride a bike.", exampleVi: "Tôi đi xe đạp được.",
+        stmt: { yes: "I can ride a bike.", no: "I can't ride a bike." },
         vocab: [V("I can ride a bike", "Tôi đi xe đạp được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("well", "tốt")],
         errors: [
           E("^I riding\\b", "Thiếu **can**. ✅ I can ride a bike."),
@@ -1305,6 +1332,7 @@ var LESSONS = [
         core: { affirm: [one("I can speak English")], negate: [one("I can't speak English", ["I cannot speak English"])] },
         altFrames: CAN_ALT,
         example: "I can speak English.", exampleVi: "Tôi nói tiếng Anh được.",
+        stmt: { yes: "I can speak English.", no: "I can't speak English." },
         vocab: [V("I can speak English", "Tôi nói tiếng Anh được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("a little", "một chút")],
         errors: [
           E("^I speaking\\b", "Thiếu **can**. ✅ I can speak English."),
@@ -1319,6 +1347,7 @@ var LESSONS = [
         core: { affirm: [one("I can play football")], negate: [one("I can't play football", ["I cannot play football"])] },
         altFrames: CAN_ALT,
         example: "I can play football.", exampleVi: "Tôi chơi bóng được.",
+        stmt: { yes: "I can play football.", no: "I can't play football." },
         vocab: [V("I can play football", "Tôi chơi bóng được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("very well", "rất tốt")],
         errors: [
           E("^I playing\\b", "Thiếu **can**. ✅ I can play football."),
@@ -1495,7 +1524,10 @@ var state = {
   result: null,
   vocabOpen: false,
   pileOk: false,
-  pileWait: false
+  pileWait: false,
+  rewriteOn: false,
+  rewriteHint: false,
+  rewriteDraft: ""
 };
 
 function normalize(raw) {
@@ -2629,11 +2661,27 @@ function allLearned(lesson) {
 }
 
 
+function toStatement(q, sentence) {
+  if (!q || !q.stmt) return sentence;
+  var m = String(sentence).match(/^(yes|no)\b[,.!]?\s*(.*)$/i);
+  if (!m) return sentence;
+  var rest = m[2].trim();
+  var isShort = rest === "" ||
+    /^(?:I|we|they)\s*(?:'m|am|do|can|did|will|don't|can't|cannot)?(?:\s*not)?[.!?]?$/i.test(rest);
+  if (!isShort) return rest.charAt(0).toUpperCase() + rest.slice(1);
+  return m[1].toLowerCase() === "yes" ? q.stmt.yes : q.stmt.no;
+}
+
 function paragraphText() {
-  var saved = progress.learned[String(currentLesson().id)] || [];
+  var lesson = currentLesson();
+  var saved = progress.learned[String(lesson.id)] || [];
   var lines = [];
-  for (var i = 0; i < saved.length; i++) if (saved[i]) lines.push(saved[i]);
-  return currentLesson().opener + lines.join(" ");
+  var i;
+  for (i = 0; i < saved.length; i++) {
+    if (!saved[i]) continue;
+    lines.push(toStatement(lesson.questions[i], saved[i]));
+  }
+  return lesson.opener + lines.join(" ");
 }
 
 
@@ -2822,15 +2870,19 @@ function renderStep2(q) {
   return html;
 }
 
+function writeNextHtml() {
+  if (state.single) return '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">Quay lại test →</button></div>';
+  if (allLearned(currentLesson())) return '<div class="btn-row"><button type="button" class="btn ok" data-action="show-end">Xem đoạn văn →</button></div>';
+  var last = state.qIndex === currentLesson().questions.length - 1;
+  return '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + (last ? "Về danh sách →" : "Câu tiếp theo →") + "</button></div>";
+}
+
 function renderStep3(q) {
   var html = '<div class="writeline"><label for="answer-input" class="sr-only">Viết câu của bạn</label>';
   html += '<input id="answer-input" class="answer-input' + (state.writeOk ? " good" : "") + '" type="text" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" enterkeyhint="done" placeholder="Viết cả câu ở đây..." value="' + esc(state.draft) + '"' + (state.writeOk ? " disabled" : "") + ">";
   if (!state.writeOk) html += '<button type="button" class="go" data-action="check-write" aria-label="Kiểm tra">' + ICON_CHECK + "</button>";
   html += '</div><div id="feedback">';
-  if (state.writeOk) {
-    var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === currentLesson().questions.length - 1 ? "Về danh sách →" : "Câu tiếp theo →");
-    html += '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + nextLabel + "</button></div>";
-  }
+  if (state.writeOk) html += writeNextHtml();
   return html + "</div>";
 }
 
@@ -2861,10 +2913,9 @@ function renderLearn() {
   else if (step === 3 && state.writeAlso) html += renderStep3(q) + '<p class="why">' + formatMsg(state.writeMsg) + "</p>" + vocabHtml(q, true);
   else if (!(step === 3 && (state.writeOk || state.writeMsg))) html += renderStep3(q) + vocabHtml(q, !state.writeOk);
   else if (state.writeOk) {
-    var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === lesson.questions.length - 1 ? "Về danh sách →" : "Câu tiếp theo →");
     html += '<p class="answer-pill ok" lang="en">' + esc(state.draft) + "</p>";
     if (state.nudge) html += '<p class="why">' + formatMsg(state.nudge) + "</p>";
-    html += '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + nextLabel + "</button></div>";
+    html += writeNextHtml();
   } else html += '<p class="answer-pill bad" lang="en">' + esc(state.draft) + '</p><p class="why">' + formatMsg(state.writeMsg) + '</p><div class="btn-row split"><button type="button" class="btn" data-action="retry-write">Viết lại</button><button type="button" class="btn btn-ghost" data-action="skip-q">Bỏ qua</button></div>';
   html += "</div></div></div></div>";
   return html;
@@ -2904,11 +2955,20 @@ function renderEnd() {
   var lesson = currentLesson();
   var html = '<div class="scene learnx"><div class="col">';
   html += '<header class="learn-top end-top"><button type="button" class="back" data-action="home" aria-label="Quay lại">' + ICON_BACK + "</button>" + dockHtml("learn", lesson.id) + '<span class="top-end">' + tomatoHtml() + '<span class="frac">Đoạn văn</span></span></header>';
-  html += '<div class="learn-split"><div class="learn-left"><h2 class="list-title">Bạn vừa viết một đoạn văn.</h2>' + charImg("happy") + '</div><div class="sheet card">';
-  html += '<p class="para" id="paragraph">' + esc(paragraphText()) + "</p>";
-  html += '<p class="desc">Tổng số câu bạn đã viết: ' + progress.sentences + "</p>";
-  html += '<div class="btn-row"><button type="button" class="btn" data-action="copy">Sao chép</button><button type="button" class="btn btn-ghost" data-action="rewrite">Viết lại</button><button type="button" class="btn btn-ghost" data-action="home">Chọn bài khác</button></div>';
-  html += '<p class="copy-status" id="copy-status" aria-live="polite"></p></div></div></div></div>';
+  html += '<div class="learn-split"><div class="learn-left"><h2 class="list-title">Bạn vừa viết một đoạn văn.</h2>' + charImg("happy") + '</div><div class="sheet card end-sheet">';
+  if (state.rewriteOn) {
+    html += '<div class="trace">';
+    if (state.rewriteHint) html += '<p class="trace-ghost" lang="en" aria-hidden="true">' + esc(paragraphText()) + "</p>";
+    html += '<label for="rewrite-input" class="sr-only">Tự viết lại đoạn văn</label>';
+    html += '<textarea id="rewrite-input" class="trace-input" lang="en" rows="5" autocomplete="off" autocorrect="off" autocapitalize="sentences" spellcheck="false" placeholder="' + (state.rewriteHint ? "" : "Viết lại đoạn văn ở đây...") + '">' + esc(state.rewriteDraft) + "</textarea></div>";
+    html += '<div class="btn-row end-actions"><button type="button" class="btn" data-action="toggle-trace">' + (state.rewriteHint ? "Ẩn gợi ý" : "Gợi ý") + '</button><button type="button" class="btn btn-ghost" data-action="home">Học bài khác</button></div>';
+  } else {
+    html += '<p class="para" id="paragraph" lang="en">' + esc(paragraphText()) + "</p>";
+    html += '<p class="desc">Tổng số câu bạn đã viết: ' + progress.sentences + "</p>";
+    html += '<div class="btn-row end-actions"><button type="button" class="btn" data-action="copy">Sao chép</button><button type="button" class="btn btn-ghost" data-action="rewrite">Tự viết lại</button><button type="button" class="btn btn-ghost" data-action="home">Học bài khác</button></div>';
+    html += '<p class="copy-status" id="copy-status" aria-live="polite"></p>';
+  }
+  html += "</div></div></div></div>";
   return html;
 }
 
@@ -3017,6 +3077,12 @@ function render() {
     input.focus();
     var n = input.value.length;
     try { input.setSelectionRange(n, n); } catch (err) {}
+  }
+  var rewriteBox = document.getElementById("rewrite-input");
+  if (rewriteBox) {
+    rewriteBox.focus();
+    var rn = rewriteBox.value.length;
+    try { rewriteBox.setSelectionRange(rn, rn); } catch (err2) {}
   }
 }
 
@@ -3557,7 +3623,14 @@ function onClick(e) {
   if (action === "learn") { startLearn(btn.getAttribute("data-lesson")); return; }
   if (action === "to-list") { state.view = "lesson"; render(); return; }
   if (action === "open-q") { state.view = "learn"; state.single = false; goQuestion(Number(btn.getAttribute("data-index"))); return; }
-  if (action === "show-end") { state.view = "end"; render(); return; }
+  if (action === "show-end") {
+    state.view = "end";
+    state.rewriteOn = false;
+    state.rewriteHint = false;
+    state.rewriteDraft = "";
+    render();
+    return;
+  }
   if (action === "goto-q") { goQuestion(Number(btn.getAttribute("data-index"))); return; }
   if (action === "goto-step") {
     var gs = Number(btn.getAttribute("data-step"));
@@ -3578,10 +3651,15 @@ function onClick(e) {
   if (action === "next-q") { nextQuestion(); return; }
   if (action === "vocab") { appendVocab(btn.getAttribute("data-index")); return; }
   if (action === "rewrite") {
-    progress.learned[String(state.lessonId)] = [];
-    delete progress.finished[String(state.lessonId)];
-    saveProgress();
-    state.view = "lesson";
+    state.rewriteOn = true;
+    state.rewriteHint = false;
+    render();
+    return;
+  }
+  if (action === "toggle-trace") {
+    var traceBox = document.getElementById("rewrite-input");
+    if (traceBox) state.rewriteDraft = traceBox.value;
+    state.rewriteHint = !state.rewriteHint;
     render();
     return;
   }
@@ -3613,7 +3691,9 @@ function onKey(e) {
 }
 
 function onInput(e) {
-  if (!e.target || e.target.id !== "answer-input") return;
+  if (!e.target) return;
+  if (e.target.id === "rewrite-input") { state.rewriteDraft = e.target.value; return; }
+  if (e.target.id !== "answer-input") return;
   state.draft = e.target.value;
   if (state.writeMsg && state.phase !== "result" && !state.writeOk) {
     state.writeMsg = "";
