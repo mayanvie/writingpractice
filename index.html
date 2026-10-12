@@ -3034,7 +3034,7 @@ function certSeal() {
 function certHtml(lesson) {
   var n = paragraphCount(lesson);
   var html = '<div class="cert-rot"><div class="cert-sh"><div class="cert-tk"><div class="cert-main">';
-  html += '<div class="cert-rib">' + certTomato(18) + "PHIẾU CHỨNG NHẬN" + certTomato(18) + "</div>";
+  html += '<div class="cert-rib">' + certTomato(18) + "CHỨNG NHẬN" + certTomato(18) + "</div>";
   html += '<div class="cert-lead"><span class="cert-sentence">Chứng nhận <input id="cert-name" class="cert-name" type="text" maxlength="32" autocomplete="off" autocapitalize="words" spellcheck="false" placeholder="(điền tên bạn vào)" aria-label="Điền tên bạn vào" value="' + esc(state.certName || "") + '"> đã tự viết</span><span class="cert-sentence">một đoạn văn bằng tiếng Anh</span></div>';
   html += '<div class="cert-chip">Chủ đề · ' + esc(lesson.title) + "</div>";
   html += '<div class="cert-pp" id="paragraph" lang="en">' + esc(paragraphText()) + "</div>";
@@ -3948,7 +3948,7 @@ function paintCert(canvas, name) {
   ctx.font = "800 13px Nunito, sans-serif";
   ctx.textBaseline = "middle";
   ctx.textAlign = "left";
-  var label = "PHIẾU CHỨNG NHẬN";
+  var label = "CHỨNG NHẬN";
   var labelW = certTextWidth(ctx, label, 3);
   var ribW = 20 + 18 + 10 + labelW + 10 + 18 + 20;
   var ribH = 30;
@@ -4088,7 +4088,7 @@ function downloadCert() {
   var name = certStudentName();
   state.certName = name;
   if (btn) btn.setAttribute("data-busy", "1");
-  setCopyStatus("Đang tải phiếu...");
+  setCopyStatus("Đang tải chứng nhận...");
   var ready = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
   ready.then(function () {
     try {
@@ -4103,12 +4103,12 @@ function downloadCert() {
         var url = URL.createObjectURL(blob);
         var a = document.createElement("a");
         a.href = url;
-        a.download = "phieu-chung-nhan.png";
+        a.download = "chung-nhan.png";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
-        setCopyStatus(name ? "Đã tải phiếu về." : "Đã tải phiếu về. Ô tên đang để trống.");
+        setCopyStatus(name ? "Đã tải chứng nhận về." : "Đã tải chứng nhận về. Ô tên đang để trống.");
         if (btn) btn.removeAttribute("data-busy");
       }, "image/png");
     } catch (err) {
