@@ -171,28 +171,31 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .col::after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:0;height:180px;border-radius:50%;background:rgba(244,167,167,.3);pointer-events:none}
 .hub .col,.listx .col,.learnx .col{width:min(1180px,100%);overflow-x:hidden;overflow-y:auto;scrollbar-width:none}
 .hub .col::-webkit-scrollbar,.listx .col::-webkit-scrollbar,.learnx .col::-webkit-scrollbar{width:0;height:0}
-.hub .col{width:min(1240px,100%);padding:20px 32px 28px}
-.hub-app{min-height:100%;display:flex;align-items:flex-start;gap:36px}
-.hub-main{flex:1;min-width:0}
-.hub-pad{display:none}
-.hub-side{position:sticky;top:0;flex:none;width:min(320px,34%);display:flex;flex-direction:column;gap:12px;max-height:calc(100dvh - 40px)}
-.home-back{appearance:none;border:0;background:#fff;color:var(--ink);font-weight:800;font-size:.95rem;border-radius:999px;padding:8px 14px;display:inline-flex;align-items:center;gap:6px;align-self:flex-start;box-shadow:0 8px 14px -10px rgba(92,64,56,.4)}
-.home-back svg{width:18px;height:18px;flex:none}
-.greet{display:flex;flex-direction:column;align-items:stretch;gap:8px;flex:1 1 auto;min-height:0}
-.greet .bubble{position:relative;left:auto;right:auto;bottom:auto;flex:none;max-height:none;overflow:visible;border-radius:32px;padding:20px 22px}
-.greet .bubble::after{left:46%;right:auto;bottom:-10px;width:22px;height:22px}
-.greet h2{margin:4px 0 0;font-size:clamp(1.35rem,2vw,1.7rem);line-height:1.25;font-weight:800;text-wrap:balance}
-.greet-k{margin:0;color:var(--muted);font-size:1rem;font-weight:700}
-.greet .char{height:auto;max-height:200px;min-height:88px;width:auto;align-self:center;margin-top:auto;object-fit:contain}
-.progcard{background:#fff;border-radius:26px;min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;box-shadow:0 20px 34px -22px rgba(92,64,56,.4);flex:none}
-.progcard p{margin:0;color:var(--muted);font-size:.9rem;font-weight:700}
-.progcard b{display:block;font-size:1.3rem}
+.hub .col{width:100%;height:100%;padding:16px 28px 12px;overflow:hidden;display:flex;flex-direction:column}
+.hub-app{flex:1;min-height:0;width:100%;display:flex;flex-direction:column;gap:12px}
+.hub-bar{flex:none;display:flex;align-items:center;gap:12px;min-height:72px}
+.hub-home{appearance:none;border:0;background:#fff;color:var(--ink);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;flex:none;box-shadow:0 8px 14px -10px rgba(92,64,56,.4)}
+.hub-home svg{width:20px;height:20px}
+.hub-mascot{height:76px;width:auto;flex:none;display:block;object-fit:contain}
+.hub-hello{background:#fff;border-radius:20px;padding:10px 16px;box-shadow:0 10px 18px -14px rgba(92,64,56,.4);min-width:0}
+.hub-hello p{margin:0;color:var(--muted);font-size:13px;font-weight:700}
+.hub-hello b{display:block;margin-top:2px;font-size:17px;font-weight:800;line-height:1.25}
+.hub-spacer{flex:1}
+.hub-today{background:#fff;border-radius:18px;padding:10px 14px;width:220px;flex:none;box-shadow:0 10px 18px -14px rgba(92,64,56,.35)}
+.hub-today .row{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);font-weight:700}
+.hub-today .row b{color:var(--ink)}
 .bar{width:140px;height:14px;border-radius:7px;background:#FDECEA;overflow:hidden;flex:none}
 .bar i{display:block;height:100%;width:0;border-radius:7px;background:linear-gradient(180deg,#F4A7A7,#E07A7A)}
-.progcard .bar{width:min(120px,42%);height:14px;border-radius:10px}
-.hub-head,.big-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-height:48px;margin:0 0 14px}
-.hub-head h1,.big-head h2{margin:0;min-width:0;font-size:clamp(1.7rem,2.4vw,2.2rem);font-weight:800}
-.big-head p{margin:0;color:var(--muted);font-size:.95rem;font-weight:700;line-height:1.4}
+.hub-today .bar{width:100%;height:8px;margin-top:8px;border-radius:99px}
+.hub-start{flex:none;min-height:48px;height:48px;padding:0 26px;font-size:1.05rem}
+.hub-body{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;overflow:auto;scrollbar-width:none}
+.hub-body::-webkit-scrollbar{width:0;height:0}
+.hub-head,.hub .big-head{display:flex;align-items:baseline;gap:12px;margin:0;flex:none}
+.hub-head h1,.hub .big-head h2{margin:0;min-width:0;font-size:28px;font-weight:800}
+.hub .big-head h2{font-size:20px;white-space:nowrap}
+.hub-head span,.hub .big-head span{font-size:13px;color:var(--muted);font-weight:700}
+.hub-note{text-align:center;font-size:12px;margin:0;flex:none}
+.hub-foot{display:none}
 .test-note{margin:0 0 16px;color:var(--muted);font-size:clamp(1.25rem,1.6vw,1.5rem);font-weight:700;line-height:1.45}
 .hub-tools{display:flex;align-items:center;gap:10px;flex:none}
 .stash{position:relative;display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 10px 0 4px;border-radius:999px;background:#fff;box-shadow:0 8px 14px -10px rgba(92,64,56,.45);flex:none}
@@ -207,25 +210,24 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .stash.pop b{animation:tomato-num .85s ease}
 .stash.pop::after{content:"+1";position:absolute;right:calc(100% + 8px);top:4px;color:#C45C5C;font-size:1.25rem;font-weight:800;line-height:1;pointer-events:none;white-space:nowrap;animation:tomato-plus 1s ease forwards}
 .rand{appearance:none;border:0;background:none;color:#C45C5C;font-weight:800;font-size:1.05rem;padding:0}
-.hub .tgrid{flex:none;min-height:0;overflow:visible;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-content:start;padding:2px}
-.hub .tile{position:relative;min-height:196px;height:auto;border-radius:28px;padding:18px 18px 16px;gap:12px;justify-content:space-between}
-.hub .ticon{width:78px;height:78px}
-.hub .ticon svg{width:44px;height:44px}
-.hub .tbody{display:flex;flex-direction:column;gap:4px;min-width:0}
-.hub .ttitle{font-size:1.22rem;line-height:1.2;text-wrap:balance}
-.hub .tsub{font-size:.9rem;font-weight:700;color:var(--muted);line-height:1.3;text-wrap:balance}
-.tcheck{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:#E07A7A;color:#fff;display:grid;place-items:center;font-weight:800;font-size:.95rem}
-.big-block{margin-top:36px}
-.big-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.big-btn{appearance:none;border:0;text-align:left;background:#fff;border-radius:28px;min-height:148px;padding:18px 18px 16px;box-shadow:0 16px 26px -18px rgba(92,64,56,.45);display:flex;flex-direction:column;justify-content:space-between;gap:8px}
-.big-btn b{display:block;font-size:1.45rem;line-height:1.2}
-.big-btn small{display:block;color:var(--muted);font-size:.95rem;font-weight:700;line-height:1.35}
+.hub .tgrid{flex:none;min-height:0;overflow:visible;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto;gap:12px;align-content:start;padding:0}
+.hub .tile{position:relative;min-height:0;height:auto;border-radius:20px;padding:14px 16px 12px;gap:0;justify-content:flex-start;background:linear-gradient(160deg,#FDEFEC,#F8D3CF);box-shadow:0 14px 22px -16px rgba(92,64,56,.35)}
+.hub .tile.b,.hub .tile.m{background:linear-gradient(160deg,#FDEFEC,#F8D3CF)}
+.hub .ti{display:block;height:78px;margin:0 0 8px}
+.hub .ti svg{height:78px;width:auto;display:block}
+.hub .tile b{font-size:20px;line-height:1.15;font-weight:800;letter-spacing:-.02em}
+.hub .tile small{display:block;margin-top:3px;font-size:15px;color:var(--muted);line-height:1.25;font-weight:700}
+.tcheck{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:#E07A7A;color:#fff;display:grid;place-items:center}
+.tcheck svg{width:14px;height:14px}
+.hub-big{flex:none;display:flex;flex-direction:column;gap:10px}
+.big-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.big-btn{appearance:none;border:0;text-align:left;color:var(--ink);background:linear-gradient(165deg,#F8F1EC,#E7D5C8);border-radius:20px;min-height:76px;padding:14px 16px;box-shadow:0 14px 22px -16px rgba(92,64,56,.42);display:flex;flex-direction:column;justify-content:center;gap:2px}
+.big-btn:hover{transform:translateY(-2px);box-shadow:0 16px 24px -12px rgba(92,64,56,.4)}
+.big-btn b{display:block;font-size:17px;line-height:1.15;font-weight:800}
+.big-btn small{display:block;color:var(--muted);font-size:13px;font-weight:700;line-height:1.3}
+.big-btn.done{background:linear-gradient(165deg,#F4FBF6,#D5EBD9)}
 .big-btn.done small{color:#2F6E4B}
 .qtopic{margin:10px 0 0;color:var(--coral-ink);font-size:.85rem;font-weight:800}
-.hub-foot{flex:none;display:flex;flex-direction:column;gap:8px}
-.foot-row{display:flex;align-items:center;gap:10px}
-.hub-foot .btn{flex:1;min-height:72px;font-size:1.4rem}
-.hub-foot .note{text-align:center;margin:0;font-size:.9rem;line-height:1.35}
 .listx .col{padding-bottom:22px}
 .list-app{flex:none;min-height:100%;display:grid;grid-template-columns:minmax(260px,340px) minmax(0,1fr);grid-template-rows:auto minmax(0,1fr);grid-template-areas:"top top" "side main";column-gap:52px;row-gap:18px;align-items:stretch}
 .list-side{display:flex;flex-direction:column;gap:12px;min-height:0;grid-area:side;min-width:0}
@@ -295,44 +297,28 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .stage .btn{width:min(640px,100%);margin-top:auto}
 .stage .btn + .btn{margin-top:8px}
 @media (max-width:760px){
-  .hub .col{display:flex;flex-direction:column;overflow:hidden;padding:12px 16px 0}
-  .hub-main{padding-bottom:0}
-  .hub-app{flex:1 1 0%;min-height:0;height:auto;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;gap:0}
-  .hub-side{display:contents;position:static;max-height:none}
-  .greet{order:1;flex:0 0 auto;flex-direction:row;align-items:flex-end;gap:8px;min-height:0}
-  .greet .bubble{flex:1;margin-bottom:14px;padding:14px 16px;border-radius:22px}
-  .greet .bubble::after{left:auto;right:-6px;bottom:22px;width:16px;height:16px}
-  .greet h2{font-size:1.2rem}
-  .greet-k{font-size:.92rem}
-  .greet .char{height:118px;max-height:none;min-height:0;margin:0;flex:none}
-  .progcard{order:2;flex:0 0 auto;min-height:72px;border-radius:20px;padding:12px 16px;margin-top:12px}
-  .progcard b{font-size:1.25rem}
-  .progcard p{font-size:.92rem}
-  .progcard .bar{width:108px;height:12px}
-  .hub-main{order:3;display:flex;flex-direction:column;min-width:0;flex:1 1 auto;min-height:0;overflow:hidden;width:100%}
-  .hub-head{flex:0 0 auto;min-height:0;margin:12px 0 8px}
-  .hub-scroll{flex:1 1 auto;min-height:0;overflow-x:hidden;overflow-y:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;mask-image:linear-gradient(#000 0,#000 calc(100% - 28px),transparent);-webkit-mask-image:linear-gradient(#000 0,#000 calc(100% - 28px),transparent)}
-  .hub-scroll::-webkit-scrollbar{width:0;height:0}
-  .hub-pad{display:block;height:28px;flex:none}
-  .hub-head h1,.big-head h2{font-size:1.35rem}
-  .big-head p{font-size:.85rem}
+  .hub .col{padding:12px 16px 0}
+  .hub-app{gap:0}
+  .hub-bar{flex-wrap:wrap;gap:10px;min-height:0}
+  .hub-home{width:36px;height:36px}
+  .hub-mascot{height:64px}
+  .hub-hello{flex:1 1 140px;border-radius:16px;padding:8px 12px}
+  .hub-hello p{font-size:12px}
+  .hub-hello b{font-size:15px}
+  .hub-spacer,.hub-start,.hub-head span,.hub-big,.hub-note{display:none}
+  .hub-today{flex:1 1 calc(100% - 88px);width:auto;margin-top:8px;border-radius:16px;padding:8px 12px}
+  .hub-today .row{font-size:12px}
+  .hub-body{padding-top:8px;overflow:auto;-webkit-overflow-scrolling:touch}
+  .hub-head{margin:8px 0 8px}
+  .hub-head h1{font-size:24px}
   .test-note{font-size:1.05rem;margin-bottom:12px}
-  .rand{flex:none;font-size:1.05rem}
-  .hub .tgrid{flex:none;overflow:visible;grid-template-columns:1fr 1fr;gap:12px}
-  .hub .tile{min-height:168px;height:auto;border-radius:24px;padding:14px 14px 12px;gap:8px}
-  .hub .ticon{width:58px;height:58px}
-  .hub .ticon svg{width:34px;height:34px}
-  .hub .ttitle{font-size:1.02rem}
-  .hub .tsub{font-size:.8rem;line-height:1.3}
-  .tcheck{top:10px;right:10px;width:26px;height:26px;font-size:.85rem}
-  .big-block{margin-top:22px}
-  .big-row{grid-template-columns:1fr 1fr;gap:12px}
-  .big-btn{min-height:120px;border-radius:24px;padding:14px}
-  .big-btn b{font-size:1.2rem}
-  .big-btn small{font-size:.82rem}
-  .hub-foot{order:4;flex:0 0 auto;align-self:stretch;width:100%;position:static;z-index:1;gap:6px;margin:6px 0 0;padding:4px 0 calc(8px + env(safe-area-inset-bottom));background:transparent}
-  .hub-foot .btn{min-height:64px;font-size:1.3rem}
-  .hub-foot .note{font-size:.8rem}
+  .hub .tgrid{flex:none;overflow:visible;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}
+  .hub .tile{min-height:156px}
+  .hub .ti,.hub .ti svg{height:58px}
+  .hub .tile b{font-size:17px}
+  .hub .tile small{font-size:13px}
+  .hub-foot{display:flex;flex:none;padding:10px 0 calc(12px + env(safe-area-inset-bottom));background:rgba(255,246,242,.92);box-shadow:0 -10px 20px -14px rgba(92,64,56,.35)}
+  .hub-foot .btn{width:100%;min-height:52px;font-size:1.15rem}
   .stash{height:40px}
   .stash svg{width:28px;height:28px}
   .list-app{display:flex;flex-direction:column;overflow:visible;gap:8px;min-height:0;align-items:stretch}
@@ -407,6 +393,7 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
   .learnx .col,.listx .col{overflow:hidden;display:flex;flex-direction:column}
   .learnx .learn-split{flex:1 1 auto;min-height:0;margin:0;align-items:stretch;grid-template-rows:minmax(0,1fr);overflow:hidden}
   .learnx .learn-left{align-self:center;min-height:0}
+  .learnx .float-char{height:min(136px,18vh);margin-top:6px}
   .learnx .sheet.card{align-self:stretch;max-height:100%;overflow-y:auto;scrollbar-width:none}
   .learnx .sheet.card::-webkit-scrollbar{width:0;height:0}
   .list-app{flex:1 1 auto;min-height:0;overflow:hidden}
@@ -458,16 +445,14 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
 .home-land .step:nth-child(2) i{background:#EAF6EE;color:#3E7F5B}
 .home-land .step b{display:block;font-size:1.25rem;margin-bottom:4px}
 .home-land .step p{margin:0;color:var(--muted);line-height:1.55;font-family:"Be Vietnam Pro",Nunito,sans-serif;font-weight:500;font-size:.95rem}
-.home-land .grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.home-land .tile{position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:2px;min-height:176px;height:auto;padding:14px;border-radius:26px;box-shadow:0 14px 22px -14px rgba(92,64,56,.35);transition:transform .15s}
-.home-land .tile:hover{transform:translateY(-3px)}
-.home-land .tile.b{background:linear-gradient(150deg,#FDECEA,rgba(244,167,167,.7))}
-.home-land .tile.m{background:linear-gradient(150deg,#EAF6EE,rgba(125,184,146,.5))}
-.home-land .ti{display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.78);margin-bottom:auto}
-.home-land .ti svg{width:34px;height:34px}
-.home-land .tile b{font-size:1.02rem;line-height:1.15;font-weight:800;margin-top:10px}
-.home-land .tile small{color:var(--muted);font-size:.8rem;line-height:1.3;font-weight:700}
-.home-land .tile em{position:absolute;top:14px;right:16px;font-style:normal;font-weight:800;color:rgba(92,64,56,.35)}
+.home-land .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.home-land .tile{position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:0;min-height:0;height:auto;padding:14px 16px 12px;border-radius:20px;background:linear-gradient(160deg,#FDEFEC,#F8D3CF);box-shadow:0 14px 22px -16px rgba(92,64,56,.35);transition:transform .15s}
+.home-land .tile:hover{transform:translateY(-2px);box-shadow:0 16px 24px -12px rgba(92,64,56,.4)}
+.home-land .tile.b,.home-land .tile.m{background:linear-gradient(160deg,#FDEFEC,#F8D3CF)}
+.home-land .ti{display:block;width:auto;height:78px;margin:0 0 8px;border-radius:0;background:none}
+.home-land .ti svg{height:78px;width:auto;display:block}
+.home-land .tile b{font-size:20px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-top:0}
+.home-land .tile small{display:block;margin-top:3px;font-size:15px;color:var(--muted);line-height:1.25;font-weight:700}
 .home-land .tests{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px}
 .home-land .panel{background:#fff;border-radius:30px;padding:24px;box-shadow:0 24px 40px -26px rgba(92,64,56,.4)}
 .home-land .panel h3{margin:0 0 6px;font-size:1.3rem}
@@ -485,7 +470,11 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
   .home-land .hero .w{grid-template-columns:1fr;padding-top:32px}
   .home-land .stage{order:-1}
   .home-land .stage .mascot-img{width:150px}
-  .home-land .grid{grid-template-columns:repeat(2,1fr)}
+  .home-land .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .home-land .tile{min-height:156px}
+  .home-land .ti,.home-land .ti svg{height:58px}
+  .home-land .tile b{font-size:17px}
+  .home-land .tile small{font-size:13px}
   .home-land .steps,.home-land .tests{grid-template-columns:1fr}
   .home-land .nl{display:none}
   .home-land nav .stash{margin-left:auto}
@@ -502,13 +491,14 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
 /*
   THÊM BÀI MỚI
   1. Copy một object trong mảng LESSONS (đủ 5 câu).
-  2. Đổi id, emoji, title, vi, tag, opener.
-  3. Mỗi câu hỏi gồm: ask, vi, formula [{text, vi, blank}],
-     example, exampleVi, vocab [{en, vi}], accept (RegExp),
-     errors [[RegExp, "thông báo"]].
-  4. Câu ví dụ phải khớp accept và không khớp errors.
-  Thứ tự chấm: trống → ___ hoặc [ ] → viết hoa chữ đầu → dấu . ! ?
-  → errors (khớp quy tắc đầu tiên) → accept → đúng.
+  2. Đổi id, emoji, title, vi, tag, opener. Không đổi ask.
+  3. Mỗi câu: frame (phần cố định + ô slot), example, exampleVi,
+     vocab [{en, vi}], errors [[RegExp, "thông báo"]], alsoOk.
+     formula do Q() tạo từ frame. Ô trống hiện hint tiếng Việt.
+  4. Câu ví dụ phải được chấm ok và không khớp errors.
+  Thứ tự chấm: trống → ___ / [ ] / ... → viết hoa chữ đầu → dấu . ! ?
+  → errors → khớp frame → cũngOk nếu lệch khung mà đúng ngoài đời
+  → ô từ (kho từ, loại từ, danh từ). Từ lạ hợp lệ vẫn tính đúng.
   Chữ xanh = từ cố định (blank:false). Ô vàng nét đứt = chỗ trống (blank:true).
   COMING_SOON để trống khi đã đủ 10 bài. Mỗi bài là một tình huống hỏi-đáp. Bài 10 trả lời bằng I will.
 */
@@ -535,1223 +525,940 @@ function re(source, flags) {
   return new RegExp(source, flags || "");
 }
 
-var nameStart = "(?:" + flex("My name is") + "|" + flex("I am") + "|" + flex("I'm") + ")";
-var nameAccept = re("^" + nameStart + " " + WORD + "(?: " + WORD + ")*[.!?]$");
-var nameLower = re("^" + nameStart + "(?: " + WORD + ")* [" + LOWER + "]");
-var placeStart = flex("I live in");
-var placeAccept = re("^" + placeStart + " " + WORD + "(?: " + WORD + ")*[.!?]$");
-var placeLower = re("^" + placeStart + "(?: " + WORD + ")* [" + LOWER + "]");
+var LEX = {};
+var PLURAL = {};
+var LOANS = { "pho": 1, "banh mi": 1, "spring rolls": 1 };
+var VI_MARK = "àáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬĐÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ";
+var CAT_VI = {
+  verb: "động từ", adj: "tính từ", color: "màu sắc", food: "tên món ăn", fruit: "tên trái cây",
+  drink: "đồ uống", thing_like: "thứ bạn thích", hobby_ing: "sở thích", activity_ing: "việc đang làm",
+  activity_future: "việc sẽ làm", activity_past: "việc đã làm", job: "nghề nghiệp", pet: "thú cưng",
+  family_member: "người thân", person_visit: "người bạn thăm", feeling: "cảm xúc", city_place: "tên nơi",
+  name: "tên người", furniture: "đồ nội thất", object_room: "đồ vật", sport_game: "môn thể thao",
+  place_go: "nơi đến", house_type: "loại nhà", area_type: "khu vực", watch_thing: "thứ để xem",
+  transport: "phương tiện", verb_a1: "hành động", time_clock: "giờ", number_age: "số"
+};
+var NEED = {
+  food: "tên món ăn", fruit: "tên trái cây", drink: "đồ uống", thing_like: "thứ bạn thích",
+  hobby_ing: "sở thích thêm -ing", feeling: "cảm xúc", job: "nghề nghiệp", pet: "thú cưng",
+  family_member: "người thân", person_visit: "người bạn thăm", city_place: "tên nơi", name: "tên người",
+  furniture: "đồ nội thất", object_room: "đồ vật", sport_game: "môn thể thao", place_go: "nơi đến",
+  house_type: "loại nhà", area_type: "khu vực", watch_thing: "thứ để xem", verb_a1: "hành động",
+  activity_ing: "việc đang làm", activity_future: "việc sẽ làm", activity_past: "việc đã làm",
+  transport: "phương tiện", prep_place: "vị trí", time_clock: "giờ", number_age: "số"
+};
+var HINTS = {
+  name: ["[tên]", "ví dụ: Lan", 3],
+  number_age: ["[số]", "ví dụ: ten", 1],
+  feeling: ["[cảm xúc]", "ví dụ: fine", 2],
+  city_place: ["[nơi ở]", "ví dụ: Ha Noi", 4],
+  family_member: ["[người thân]", "ví dụ: mother", 2],
+  job: ["[nghề nghiệp]", "ví dụ: teacher", 3],
+  pet: ["[thú cưng]", "ví dụ: dog", 3],
+  food: ["[món ăn]", "ví dụ: pho", 3],
+  fruit: ["[trái cây]", "ví dụ: apples", 3],
+  drink: ["[đồ uống]", "ví dụ: milk", 3],
+  thing_like: ["[thứ bạn thích]", "ví dụ: music", 3],
+  hobby_ing: ["[sở thích]", "ví dụ: reading books", 4],
+  time_clock: ["[giờ]", "ví dụ: 6 o'clock", 3],
+  transport: ["[phương tiện]", "ví dụ: by bus", 3],
+  object_room: ["[đồ vật]", "ví dụ: a desk", 3],
+  furniture: ["[đồ nội thất]", "ví dụ: bed", 2],
+  prep_place: ["[vị trí]", "ví dụ: on the table", 4],
+  activity_ing: ["[việc đang làm]", "ví dụ: reading", 4],
+  activity_past: ["[việc đã làm]", "ví dụ: watched TV", 4],
+  activity_future: ["[việc sẽ làm]", "ví dụ: visit my aunt", 4],
+  place_go: ["[nơi đến]", "ví dụ: the park", 4],
+  sport_game: ["[môn thể thao]", "ví dụ: football", 3],
+  person_visit: ["[người bạn thăm]", "ví dụ: friend", 2],
+  house_type: ["[loại nhà]", "ví dụ: apartment", 3],
+  area_type: ["[khu vực]", "ví dụ: village", 3],
+  verb_a1: ["[hành động]", "ví dụ: ride a bike", 4],
+  watch_thing: ["[thứ bạn xem]", "ví dụ: TV", 3]
+};
+
+function autoPlural(w) {
+  if (/(?:s|x|z|ch|sh)$/i.test(w)) return w + "es";
+  if (/[^aeiou]y$/i.test(w)) return w.slice(0, -1) + "ies";
+  if (/o$/i.test(w) && !/oo$/i.test(w)) return w + "es";
+  return w + "s";
+}
+
+function add(w, cats, count, art, plural, vi) {
+  var key = w.toLowerCase();
+  var e = LEX[key];
+  var i;
+  if (!e) {
+    e = { w: w, cat: [], count: count || "n", art: art || "", plural: "", vi: vi || "" };
+    LEX[key] = e;
+    if (count === "c" || count === "p") {
+      var p = plural || (count === "c" ? autoPlural(w) : w);
+      e.plural = p;
+      if (!PLURAL[p.toLowerCase()]) PLURAL[p.toLowerCase()] = e;
+    }
+  }
+  for (i = 0; i < cats.length; i++) if (e.cat.indexOf(cats[i]) < 0) e.cat.push(cats[i]);
+  if (vi && !e.vi) e.vi = vi;
+  if (art && !e.art) e.art = art;
+  return e;
+}
+
+function setCount(w, slot, count) {
+  var e = LEX[w.toLowerCase()];
+  if (!e) return;
+  if (!e.countBy) e.countBy = {};
+  e.countBy[slot] = count;
+}
+
+function alias(from, to) {
+  var e = LEX[to.toLowerCase()];
+  if (e) LEX[from.toLowerCase()] = e;
+}
+
+function lineWords(cat, count, art, line) {
+  var parts = line.split(",");
+  var i;
+  for (i = 0; i < parts.length; i++) {
+    var bit = parts[i].replace(/^\s+|\s+$/g, "");
+    if (!bit) continue;
+    var bits = bit.split("/");
+    add(bits[0], [cat], count, bits[2] || art || "", bits[1] || "", "");
+  }
+}
+
+function also(cat, line) {
+  var parts = line.split(",");
+  var i;
+  for (i = 0; i < parts.length; i++) {
+    var w = parts[i].replace(/^\s+|\s+$/g, "");
+    if (!w) continue;
+    var e = LEX[w.toLowerCase()];
+    if (e && e.cat.indexOf(cat) < 0) e.cat.push(cat);
+  }
+}
+
+function ingOf(w) {
+  var DOUBLE = { run: 1, swim: 1, sit: 1, get: 1, put: 1, hit: 1, stop: 1, shop: 1, cut: 1, plan: 1 };
+  if (DOUBLE[w]) return w + w.charAt(w.length - 1) + "ing";
+  if (/ie$/.test(w)) return w.slice(0, -2) + "ying";
+  if (/e$/.test(w) && !/ee$/.test(w)) return w.slice(0, -1) + "ing";
+  return w + "ing";
+}
+
+function addVerb(w) {
+  add(w, ["verb", "verb_a1", "activity_future"], "n", "", "", "");
+  add(ingOf(w), ["activity_ing", "hobby_ing"], "n", "", "", "");
+}
+
+lineWords("food", "u", "", "pho, rice, bread, chicken, fish, soup, meat, beef, pork, salad, cheese, butter, yogurt, cereal, porridge, jam, honey, sugar, salt, candy, chocolate, pizza, tofu, sushi, pasta, spaghetti, corn, sauce, popcorn, milk, water, juice, tea, coffee, soda, lemonade");
+lineWords("food", "u", "", "ice cream, fried chicken, fried rice, sticky rice, chicken soup, hot dog, spring rolls, banh mi");
+lineWords("food", "p", "", "noodles, vegetables, fries, chips, sweets, snacks, dumplings");
+lineWords("food", "c", "a", "egg/eggs/an, sandwich/sandwiches/a, cake/cakes/a, cookie/cookies/a, biscuit/biscuits/a, hamburger/hamburgers/a, sausage/sausages/a, pancake/pancakes/a, dumpling/dumplings/a, pie/pies/a, nut/nuts/a, peanut/peanuts/a, bean/beans/a, pea/peas/a, carrot/carrots/a, onion/onions/an, potato/potatoes/a, tomato/tomatoes/a");
+lineWords("fruit", "c", "a", "apple/apples/an, banana/bananas/a, mango/mangoes/a, orange/oranges/an, grape/grapes/a, watermelon/watermelons/a, pineapple/pineapples/a, strawberry/strawberries/a, lemon/lemons/a, peach/peaches/a, pear/pears/a, papaya/papayas/a, durian/durians/a, lychee/lychees/a, guava/guavas/a, plum/plums/a, cherry/cherries/a, kiwi/kiwis/a, avocado/avocados/an, melon/melons/a, coconut/coconuts/a");
+also("food", "apple, banana, mango, orange, grape, watermelon, pineapple, strawberry, lemon, peach, pear, papaya, durian, lychee, guava, plum, cherry, kiwi, avocado, melon, coconut, tomato, potato");
+also("thing_like", "pho, rice, bread, chicken, fish, soup, noodles, milk, water, juice, tea, coffee, apple, banana, mango, orange, cake, pizza, ice cream, chocolate, candy");
+also("drink", "milk, water, juice, tea, coffee, soda, lemonade");
+add("fish", ["food", "thing_like", "pet"], "u", "a", "", "");
+setCount("fish", "pet", "c");
+lineWords("drink", "u", "", "milk, water, juice, tea, coffee, soda, lemonade");
+lineWords("feeling", "n", "", "fine, good, great, ok, okay, happy, sad, tired, hungry, sleepy, angry, excited, bored, sick, well, bad, wonderful, busy, nervous, scared, thirsty, cold, hot, proud, calm, sorry, fantastic, awesome, super, alright");
+add("all right", ["feeling"], "n", "", "", "");
+lineWords("job", "c", "a", "teacher, doctor, nurse, farmer, driver, cook, worker, student, singer, dancer, pilot, chef, waiter, dentist, vet, firefighter, seller, baker, cleaner, tailor, guard, mechanic, fisherman, artist/artists/an, engineer/engineers/an, actor/actors/an, officer/officers/an");
+add("police officer", ["job"], "c", "a", "police officers", "");
+lineWords("family_member", "c", "a", "mother, father, brother, sister, grandmother, grandfather, grandma, grandpa, aunt, uncle, cousin, baby, son, daughter, parent, husband, wife, friend");
+lineWords("family_member", "p", "", "parents, grandparents");
+also("person_visit", "mother, father, brother, sister, grandmother, grandfather, grandma, grandpa, aunt, uncle, cousin, friend, parents");
+lineWords("pet", "c", "a", "dog, cat, bird, rabbit, hamster, turtle, parrot, puppy, kitten, goldfish, duck, mouse/mice/a");
+also("pet", "fish");
+also("thing_like", "dog, cat, bird, rabbit, music, football, art, math, English, cats, dogs");
+lineWords("thing_like", "u", "", "music, art, math, English, homework, sport, science, history, noise, rain, school, home");
+lineWords("thing_like", "c", "a", "book/books/a, song/songs/a, movie/movies/a, game/games/a, color/colors/a, animal/animals/an, flower/flowers/a, picture/pictures/a, story/stories/a, toy/toys/a");
+lineWords("color", "n", "", "red, blue, green, yellow, black, white, pink, purple, brown, grey, gray, orange");
+also("thing_like", "red, blue, green, yellow, black, white, pink, purple, brown, orange");
+lineWords("sport_game", "n", "", "football, badminton, chess, basketball, volleyball, tennis, ping-pong, baseball, games, tag");
+add("table tennis", ["sport_game", "thing_like"], "n", "", "", "");
+add("video games", ["sport_game", "thing_like"], "n", "", "", "");
+add("the piano", ["sport_game", "watch_thing"], "n", "", "", "");
+lineWords("furniture", "c", "a", "bed, desk, chair, table, lamp, sofa, fan, clock, picture, mirror, wardrobe, shelf, box, bag, computer, cupboard, stool, bench, drawer, pillow, blanket, curtain, door, window, rug");
+also("object_room", "bed, desk, chair, table, lamp, sofa, fan, clock, picture, mirror, wardrobe, shelf, box, bag, computer, pillow, book");
+lineWords("object_room", "c", "a", "book/books/a, pen/pens/a, pencil/pencils/a, ruler/rulers/a, eraser/erasers/an, phone/phones/a, key/keys/a, hat/hats/a, shoe/shoes/a, shirt/shirts/a, cup/cups/a, plate/plates/a, bottle/bottles/a, ball/balls/a");
+lineWords("watch_thing", "u", "", "TV, television, YouTube, cartoons");
+add("tv", ["watch_thing"], "u", "", "", "");
+alias("tv", "TV");
+lineWords("watch_thing", "c", "a", "movie/movies/a, film/films/a, video/videos/a, cartoon/cartoons/a, show/shows/a, match/matches/a");
+lineWords("place_go", "n", "", "school, home, work, class, bed, outside, downtown");
+lineWords("place_go", "c", "a", "park/parks/a, market/markets/a, zoo/zoos/a, beach/beaches/a, cinema/cinemas/a, hospital/hospitals/a, shop/shops/a, store/stores/a, library/libraries/a, museum/museums/a, pagoda/pagodas/a, temple/temples/a, farm/farms/a, station/stations/a, airport/airports/an, restaurant/restaurants/a");
+lineWords("house_type", "c", "a", "house, apartment/apartments/an, flat, villa, room, dorm");
+lineWords("area_type", "c", "a", "village, town, city, suburb, island");
+add("countryside", ["area_type"], "n", "", "", "");
+lineWords("transport", "n", "", "bus, bike, bicycle, car, train, motorbike, taxi, boat, plane, tram, cyclo, walking");
+lineWords("city_place", "n", "", "Ha Noi, Hanoi, Hue, Da Nang, Ho Chi Minh City, Saigon, Hoi An, Can Tho, Hai Phong, Nha Trang, Da Lat, Vung Tau, Ha Long, Bien Hoa, Vinh, Quy Nhon, Phan Thiet, Nam Dinh, Thai Nguyen, Bac Ninh, Vietnam, Japan, Korea, France, America, England, China, Thailand, Singapore, London, Paris, Tokyo, Seoul, New York");
+lineWords("name", "n", "", "Lan, Minh, Hoa, Nam, An, Mai, Linh, Huy, Long, Khoa, My, Vy, Anh, Bao, Duc, Ha, Hanh, Hieu, Huong, Khanh, Lam, Nga, Ngoc, Phuong, Quan, Son, Tam, Thao, Thu, Trang, Trung, Tuan, Van, Viet, Dung, Duyen, Giang, Hai, Hien, Hung, Lien, Ly, Nhi, Phong, Phuc, Tai, Thanh, Thuy, Tien, Trinh, Tu, Uyen, Vinh, Vu, Yen, Binh, Chi, Cuc");
+addVerb("run"); addVerb("walk"); addVerb("jump"); addVerb("swim"); addVerb("cook"); addVerb("read"); addVerb("write"); addVerb("draw"); addVerb("sing"); addVerb("dance"); addVerb("play"); addVerb("speak"); addVerb("ride"); addVerb("eat"); addVerb("drink"); addVerb("go"); addVerb("come"); addVerb("see"); addVerb("look"); addVerb("watch"); addVerb("listen"); addVerb("study"); addVerb("learn"); addVerb("sleep"); addVerb("visit"); addVerb("live"); addVerb("like"); addVerb("love"); addVerb("help"); addVerb("open"); addVerb("close"); addVerb("sit"); addVerb("stand"); addVerb("wash"); addVerb("clean"); addVerb("buy"); addVerb("make"); addVerb("do"); addVerb("work"); addVerb("start"); addVerb("stop"); addVerb("call"); addVerb("wait"); addVerb("stay"); addVerb("talk"); addVerb("give"); addVerb("take"); addVerb("use"); addVerb("paint"); addVerb("count"); addVerb("practice"); addVerb("rest"); addVerb("cry"); addVerb("smile"); addVerb("think"); addVerb("try"); addVerb("move"); addVerb("shop"); addVerb("drive"); addVerb("climb"); addVerb("kick"); addVerb("fly"); addVerb("get");
+add("ride a bike", ["verb_a1", "activity_future"], "n", "", "", "");
+add("play football", ["verb_a1", "activity_future"], "n", "", "", "");
+add("speak English", ["verb_a1", "activity_future"], "n", "", "", "");
+add("reading books", ["hobby_ing", "activity_ing"], "n", "", "", "");
+add("reading a book", ["activity_ing", "hobby_ing"], "n", "", "", "");
+add("listening to music", ["hobby_ing", "activity_ing"], "n", "", "", "");
+add("playing football", ["hobby_ing", "activity_ing"], "n", "", "", "");
+add("watching TV", ["activity_ing"], "n", "", "", "");
+add("visit my aunt", ["activity_future"], "n", "", "", "");
+add("go to school", ["activity_future", "place_go"], "n", "", "", "");
+add("do my homework", ["activity_future"], "n", "", "", "");
+lineWords("adj", "n", "", "big, small, tall, short, long, new, old, young, fast, slow, easy, hard, fun, boring, beautiful, pretty, delicious, spicy, sweet, sour, salty, nice, favorite");
+alias("grey", "gray");
+alias("television", "TV");
+alias("film", "movie");
+alias("grandma", "grandmother");
+alias("grandpa", "grandfather");
+
+function F(t, vi, alts) { return { t: t, vi: vi || "", alts: alts || [] }; }
+function S(slot, noun, max, hint, hintVi) {
+  var h = HINTS[slot];
+  return { slot: slot, noun: noun || "none", words: { min: 1, max: max || (h ? h[2] : 3) }, hint: hint || h[0], hintVi: hintVi || h[1] };
+}
+function V(en, vi) { return { en: en, vi: vi }; }
+function one(t, alts) { return [F(t, "", alts || [])]; }
+function E(source, msg) { return [re(source, "i"), msg]; }
+function Ecap(source, msg) { return [re(source, ""), msg]; }
+function alsoMsg(label) { return "Câu này đúng ngoài đời! Nhưng bài này luyện khung **" + label + "**, thử viết lại nhé."; }
+function ynAlso() { return "Câu này đúng ngoài đời! Nhưng bài này luyện **Yes/No + câu đầy đủ**, thử viết lại nhé."; }
+function Q(o) {
+  var formula = [];
+  var i;
+  for (i = 0; i < o.frame.length; i++) {
+    var p = o.frame[i];
+    if (p.slot) formula.push({ text: p.hint, vi: p.hintVi, blank: true });
+    else formula.push({ text: p.t, vi: p.vi, blank: false });
+  }
+  o.formula = formula;
+  if (!o.errors) o.errors = [];
+  if (!o.alsoOk) o.alsoOk = [];
+  if (!o.altFrames) o.altFrames = [];
+  return o;
+}
+
+var CAN_ALT = [[F("I can", ""), S("verb_a1", "none", 4)]];
+var JOB_ALT = [[F("I am", ""), S("job", "article_or_uncount", 3)], [F("I'm", ""), S("job", "article_or_uncount", 3)]];
+var FEEL_ALT = [[F("I am", ""), S("feeling", "none", 2)], [F("I'm", ""), S("feeling", "none", 2)]];
+var HOUSE_ALT = [[F("I live in", ""), S("house_type", "article_or_uncount", 3, "[loại nhà]", "ví dụ: an apartment")]];
+var AREA_ALT = [[F("I live in", ""), S("area_type", "article_or_uncount", 3, "[khu vực]", "ví dụ: a village")], one("I live in the countryside")];
+var ING_ALT = [[F("I am", ""), S("activity_ing", "none", 4)], [F("I'm", ""), S("activity_ing", "none", 4)]];
 
 var LESSONS = [
   {
-    id: 1,
-    emoji: "💬",
-    title: "Introduce Yourself",
-    vi: "Trả lời khi người khác chào bạn",
-    tag: "My name is / I am",
-    opener: "Hello! ",
+    id: 1, emoji: "💬", title: "Introduce Yourself", vi: "Trả lời khi người khác chào bạn", tag: "My name is / I am", opener: "Hello! ",
     questions: [
-      {
-        id: "1.1",
-        ask: "What's your name?",
-        vi: "Bạn tên là gì?",
-        formula: [
-          { text: "My name is", vi: "Tên tôi là", blank: false },
-          { text: "[tên bạn]", vi: "viết hoa chữ đầu", blank: true }
-        ],
-        example: "My name is Lan.",
-        exampleVi: "Tên tôi là Lan.",
-        vocab: [
-          { en: "My name is", vi: "Tên tôi là" },
-          { en: "Lan", vi: "Lan" },
-          { en: "Minh", vi: "Minh" },
-          { en: "Hoa", vi: "Hoa" }
-        ],
-        accept: nameAccept,
+      Q({ id: "1.1", ask: "What's your name?", vi: "Bạn tên là gì?",
+        frame: [F("My name is", "Tên tôi là", ["I am", "I'm"]), S("name", "proper", 3)],
+        example: "My name is Lan.", exampleVi: "Tên tôi là Lan.",
+        vocab: [V("My name is", "Tên tôi là"), V("Lan", "Lan"), V("Minh", "Minh"), V("Hoa", "Hoa")],
         errors: [
-          [/^My name (?:am|are)\b/i, "Sau 'My name' dùng **is**. ✅ My name is Lan."],
-          [/^My name (?!is\b)\S/i, "Thiếu **is**. ✅ My name is Lan."],
-          [nameLower, "Tên phải **viết hoa chữ cái đầu**: Lan, không phải lan."]
-        ]
-      },
-      {
-        id: "1.2",
-        ask: "How old are you?",
-        vi: "Bạn bao nhiêu tuổi?",
-        formula: [
-          { text: "I am", vi: "Tôi", blank: false },
-          { text: "[số]", vi: "ví dụ: 10", blank: true },
-          { text: "years old", vi: "tuổi", blank: false }
+          E("^I is\\b", "'I' đi với **am**. ✅ My name is Lan."),
+          E("^I are\\b", "'I' đi với **am**. ✅ My name is Lan."),
+          E("^My name are\\b", "Dùng **is**. ✅ My name is Lan."),
+          E("^My name Lan\\b", "Thiếu **is**. ✅ My name is Lan."),
+          E("^Me name\\b", "Dùng **My name is**. ✅ My name is Lan.")
         ],
-        example: "I am 10 years old.",
-        exampleVi: "Tôi 10 tuổi.",
-        vocab: [
-          { en: "I am", vi: "Tôi" },
-          { en: "10", vi: "mười" },
-          { en: "years old", vi: "tuổi" },
-          { en: "eleven", vi: "mười một" }
-        ],
-        accept: re("^(?:I am|I'm) (?:\\d{1,3}|" + NUMW + ") years old[.!?]$", "i"),
+        alsoOk: [E("^My name's [^.!?]+[.!?]$", alsoMsg("My name is"))]
+      }),
+      Q({ id: "1.2", ask: "How old are you?", vi: "Bạn bao nhiêu tuổi?",
+        frame: [F("I am", "Tôi", ["I'm"]), S("number_age", "none", 1), F("years old", "tuổi")],
+        example: "I am 10 years old.", exampleVi: "Tôi 10 tuổi.",
+        vocab: [V("I am", "Tôi"), V("10", "mười"), V("years old", "tuổi"), V("eleven", "mười một")],
         errors: [
-          [/^I have\b/i, "Nói tuổi bằng **am**, không dùng have. ✅ I am 10 years old."],
-          [/^I (?:is|are)\b/i, "'I' đi với **am**."],
-          [/^(?:I am|I'm) years old[.!?]$/i, "Thiếu số tuổi."],
-          [re("^(?:I am|I'm) (?:\\d{1,3}|" + NUMW + ") year old\\b", "i"), "Dùng **years**, vì đây là số nhiều."]
+          E("^I have\\b", "Dùng **am**, không dùng have. ✅ I am 10 years old."),
+          E("\\byear old\\b", "Dùng **years**, không phải year. ✅ I am 10 years old."),
+          E("^I am years old\\b", "Thiếu số tuổi. ✅ I am 10 years old."),
+          E("^I'm years old\\b", "Thiếu số tuổi. ✅ I am 10 years old."),
+          E("^I is\\b", "'I' đi với **am**. ✅ I am 10 years old."),
+          E("^I are\\b", "'I' đi với **am**. ✅ I am ten years old.")
         ]
-      },
-      {
-        id: "1.3",
-        ask: "How are you?",
-        vi: "Bạn khỏe không?",
-        formula: [
-          { text: "I am", vi: "Tôi", blank: false },
-          { text: "[cảm giác]", vi: "ví dụ: fine", blank: true }
-        ],
-        example: "I am fine.",
-        exampleVi: "Tôi khỏe.",
-        vocab: [
-          { en: "I am", vi: "Tôi" },
-          { en: "fine", vi: "khỏe" },
-          { en: "good", vi: "tốt" },
-          { en: "great", vi: "rất ổn" }
-        ],
-        accept: /^(?:I am|I'm) (?:fine|good|great|ok|okay)[.!?]$/i,
+      }),
+      Q({ id: "1.3", ask: "How are you?", vi: "Bạn khỏe không?",
+        frame: [F("I am", "Tôi", ["I'm"]), S("feeling", "none", 2)],
+        example: "I am fine.", exampleVi: "Tôi khỏe.",
+        vocab: [V("I am", "Tôi"), V("fine", "khỏe"), V("good", "tốt"), V("great", "rất ổn")],
         errors: [
-          [/^I (?:is|are)\b/i, "'I' đi với **am**. ✅ I am fine."],
-          [/^I (?:fine|good|great|ok|okay)\b/i, "Thiếu **am**. ✅ I am fine."]
+          E("^I fine\\b", "Thiếu **am**. ✅ I am fine."),
+          E("^I is\\b", "'I' đi với **am**. ✅ I am fine."),
+          E("^I are\\b", "'I' đi với **am**. ✅ I am fine."),
+          E("^I am a fine\\b", "Không thêm **a**. ✅ I am fine."),
+          E("^Me am\\b", "Dùng **I am**. ✅ I am fine.")
         ]
-      },
-      {
-        id: "1.4",
-        ask: "Are you a student?",
-        vi: "Bạn là học sinh à?",
-        formula: [
-          { text: "I am a student", vi: "Tôi là học sinh", blank: false }
-        ],
-        example: "I am a student.",
-        exampleVi: "Tôi là học sinh.",
-        vocab: [
-          { en: "I am", vi: "Tôi là" },
-          { en: "a student", vi: "một học sinh" }
-        ],
-        accept: /^(?:I am|I'm) a student[.!?]$/i,
+      }),
+      Q({ id: "1.4", ask: "Are you a student?", vi: "Bạn là học sinh à?",
+        type: "yesno", aux: "am", negExample: "I am not a student.",
+        frame: [F("I am a student", "Tôi là học sinh")],
+        core: { affirm: [one("I am a student", ["I'm a student"])], negate: [one("I am not a student", ["I'm not a student"])] },
+        altFrames: JOB_ALT,
+        example: "I am a student.", exampleVi: "Tôi là học sinh.",
+        vocab: [V("I am", "Tôi là"), V("a student", "một học sinh"), V("Yes, I am", "Vâng, tôi là"), V("No, I'm not", "Không phải")],
         errors: [
-          [/^I (?:is|are)\b/i, "'I' đi với **am**."],
-          [/^(?:I am|I'm) student\b/i, "Thêm **a** trước student. ✅ I am a student."]
+          E("^I is\\b", "'I' đi với **am**. ✅ I am a student."),
+          E("^I are\\b", "'I' đi với **am**. ✅ I am a student."),
+          E("^I am student\\b", "Thiếu **a**. ✅ I am a student."),
+          E("^I student\\b", "Thiếu **am**. ✅ I am a student."),
+          E("^I fine\\b", "Thiếu **am**. ✅ I am a student.")
+        ],
+        alsoOk: [
+          E("^I am a (?!student\\b)[^.!?]+[.!?]$", ynAlso()),
+          E("^I'm a (?!student\\b)[^.!?]+[.!?]$", ynAlso())
         ]
-      },
-      {
-        id: "1.5",
-        ask: "Are you happy today?",
-        vi: "Hôm nay bạn có vui không?",
-        formula: [
-          { text: "I am", vi: "Tôi", blank: false },
-          { text: "[cảm giác]", vi: "ví dụ: happy", blank: true }
-        ],
-        example: "I am happy.",
-        exampleVi: "Tôi vui.",
-        vocab: [
-          { en: "happy", vi: "vui" },
-          { en: "sad", vi: "buồn" },
-          { en: "tired", vi: "mệt" }
-        ],
-        accept: /^(?:I am|I'm) (?:happy|sad|tired)[.!?]$/i,
+      }),
+      Q({ id: "1.5", ask: "Are you happy today?", vi: "Hôm nay bạn có vui không?",
+        type: "yesno", aux: "am", negExample: "I am not happy.",
+        frame: [F("I am happy", "Tôi vui")],
+        core: { affirm: [one("I am happy", ["I'm happy"])], negate: [one("I am not happy", ["I'm not happy"])] },
+        altFrames: FEEL_ALT,
+        example: "I am happy.", exampleVi: "Tôi vui.",
+        vocab: [V("happy", "vui"), V("sad", "buồn"), V("tired", "mệt"), V("I am", "Tôi")],
         errors: [
-          [/^I (?:is|are)\b/i, "'I' đi với **am**. ✅ I am happy."],
-          [/^I (?:happy|sad|tired)\b/i, "Thiếu **am**. ✅ I am happy."]
+          E("^I is\\b", "'I' đi với **am**. ✅ I am happy."),
+          E("^I are\\b", "'I' đi với **am**. ✅ I am happy."),
+          E("^I happy\\b", "Thiếu **am**. ✅ I am happy."),
+          E("^I am a happy\\b", "Không thêm **a**. ✅ I am happy.")
+        ],
+        alsoOk: [
+          E("^I am (?!not\\b)(?!happy\\b)[A-Za-z]+[.!?]$", ynAlso()),
+          E("^I'm (?!not\\b)(?!happy\\b)[A-Za-z]+[.!?]$", ynAlso())
         ]
-      }
+      })
     ]
   },
   {
-    id: 2,
-    emoji: "💬",
-    title: "Where I Live",
-    vi: "Trả lời khi người khác hỏi chỗ ở",
-    tag: "I live in",
-    opener: "This is where I live. ",
+    id: 2, emoji: "💬", title: "Where I Live", vi: "Trả lời khi người khác hỏi chỗ ở", tag: "I live in", opener: "This is where I live. ",
     questions: [
-      {
-        id: "2.1",
-        ask: "Where do you live?",
-        vi: "Bạn sống ở đâu?",
-        formula: [
-          { text: "I live in", vi: "Tôi sống ở", blank: false },
-          { text: "[nơi]", vi: "viết hoa tên nơi", blank: true }
-        ],
-        example: "I live in Ha Noi.",
-        exampleVi: "Tôi sống ở Hà Nội.",
-        vocab: [
-          { en: "I live in", vi: "Tôi sống ở" },
-          { en: "Ha Noi", vi: "Hà Nội" },
-          { en: "Hue", vi: "Huế" },
-          { en: "Da Nang", vi: "Đà Nẵng" }
-        ],
-        accept: placeAccept,
+      Q({ id: "2.1", ask: "Where do you live?", vi: "Bạn sống ở đâu?",
+        frame: [F("I live in", "Tôi sống ở"), S("city_place", "proper", 4, "[nơi bạn ở]", "ví dụ: Ha Noi")],
+        example: "I live in Ha Noi.", exampleVi: "Tôi sống ở Hà Nội.",
+        vocab: [V("I live in", "Tôi sống ở"), V("Ha Noi", "Hà Nội"), V("Hue", "Huế"), V("Da Nang", "Đà Nẵng")],
         errors: [
-          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
-          [/^I live (?!in\b)/i, "Thiếu **in**. ✅ I live in Ha Noi."],
-          [placeLower, "Tên nơi phải **viết hoa chữ cái đầu**."]
+          E("^I lives\\b", "'I' không thêm **s**. ✅ I live in Ha Noi."),
+          E("^I living\\b", "Dùng **live**. ✅ I live in Ha Noi."),
+          E("^I am live\\b", "Bỏ **am**. ✅ I live in Ha Noi."),
+          Ecap("^I [Ll]ive (?!in\\b)", "Thiếu **in**. ✅ I live in Ha Noi."),
+          E("^I doesn't live\\b", "'I' dùng **don't**. ✅ I live in Ha Noi.")
         ]
-      },
-      {
-        id: "2.2",
-        ask: "Which city do you live in?",
-        vi: "Bạn sống ở thành phố nào?",
-        formula: [
-          { text: "I live in", vi: "Tôi sống ở", blank: false },
-          { text: "[thành phố]", vi: "viết hoa tên nơi", blank: true }
-        ],
-        example: "I live in Hue.",
-        exampleVi: "Tôi sống ở Huế.",
-        vocab: [
-          { en: "Hue", vi: "Huế" },
-          { en: "Ha Noi", vi: "Hà Nội" },
-          { en: "Da Nang", vi: "Đà Nẵng" }
-        ],
-        accept: placeAccept,
+      }),
+      Q({ id: "2.2", ask: "Which city do you live in?", vi: "Bạn sống ở thành phố nào?",
+        frame: [F("I live in", "Tôi sống ở"), S("city_place", "proper", 4, "[thành phố]", "ví dụ: Hue")],
+        example: "I live in Hue.", exampleVi: "Tôi sống ở Huế.",
+        vocab: [V("Hue", "Huế"), V("Ha Noi", "Hà Nội"), V("Da Nang", "Đà Nẵng"), V("I live in", "Tôi sống ở")],
         errors: [
-          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
-          [/^I live (?!in\b)/i, "Thiếu **in**."],
-          [placeLower, "Tên thành phố phải **viết hoa chữ cái đầu**."]
+          E("^I lives\\b", "'I' không thêm **s**. ✅ I live in Hue."),
+          E("^I living\\b", "Dùng **live**. ✅ I live in Hue."),
+          Ecap("^I [Ll]ive (?!in\\b)", "Thiếu **in**. ✅ I live in Hue."),
+          E("^I am live\\b", "Bỏ **am**. ✅ I live in Hue.")
         ]
-      },
-      {
-        id: "2.3",
-        ask: "Do you live in a house?",
-        vi: "Bạn sống trong một ngôi nhà à?",
-        formula: [
-          { text: "I live in", vi: "Tôi sống ở", blank: false },
-          { text: "[chỗ]", vi: "ví dụ: a house", blank: true }
-        ],
-        example: "I live in a house.",
-        exampleVi: "Tôi sống trong một ngôi nhà.",
-        vocab: [
-          { en: "a house", vi: "một ngôi nhà" },
-          { en: "an apartment", vi: "một căn hộ" },
-          { en: "a flat", vi: "một căn hộ" }
-        ],
-        accept: /^I live in (?:a house|an apartment|a flat)[.!?]$/i,
+      }),
+      Q({ id: "2.3", ask: "Do you live in a house?", vi: "Bạn sống trong một ngôi nhà à?",
+        type: "yesno", aux: "do", negExample: "I don't live in a house.",
+        frame: [F("I live in a house", "Tôi sống trong một ngôi nhà")],
+        core: { affirm: [one("I live in a house")], negate: [one("I don't live in a house", ["I do not live in a house"])] },
+        altFrames: HOUSE_ALT,
+        example: "I live in a house.", exampleVi: "Tôi sống trong một ngôi nhà.",
+        vocab: [V("a house", "một ngôi nhà"), V("an apartment", "một căn hộ"), V("Yes, I do", "Có"), V("No, I don't", "Không")],
         errors: [
-          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
-          [/^I live (?!in\b)/i, "Thiếu **in**."],
-          [/^I live in house\b/i, "Thêm **a** trước house."]
-        ]
-      },
-      {
-        id: "2.4",
-        ask: "Do you live in the city?",
-        vi: "Bạn sống ở thành phố à?",
-        formula: [
-          { text: "I live in", vi: "Tôi sống ở", blank: false },
-          { text: "[chỗ]", vi: "ví dụ: the city", blank: true }
+          E("^I lives\\b", "'I' không thêm **s**. ✅ I live in a house."),
+          E("^I living\\b", "Dùng **live**. ✅ I live in a house."),
+          E("^I not live\\b", "'I' dùng **don't**. ✅ I don't live in a house."),
+          E("^I doesn't live\\b", "'I' dùng **don't**. ✅ I don't live in a house."),
+          E("^I live house\\b", "Thiếu **in a**. ✅ I live in a house.")
         ],
-        example: "I live in the city.",
-        exampleVi: "Tôi sống ở thành phố.",
-        vocab: [
-          { en: "the city", vi: "thành phố" },
-          { en: "a town", vi: "một thị trấn" },
-          { en: "a village", vi: "một ngôi làng" }
-        ],
-        accept: /^I live in (?:the city|a city|a town|a village)[.!?]$/i,
+        alsoOk: [E("^I live in an? (?!house\\b)[^.!?]+[.!?]$", ynAlso())]
+      }),
+      Q({ id: "2.4", ask: "Do you live in the city?", vi: "Bạn sống ở thành phố à?",
+        type: "yesno", aux: "do", negExample: "I don't live in the city.",
+        frame: [F("I live in the city", "Tôi sống ở thành phố")],
+        core: { affirm: [one("I live in the city")], negate: [one("I don't live in the city", ["I do not live in the city"])] },
+        altFrames: AREA_ALT,
+        example: "I live in the city.", exampleVi: "Tôi sống ở thành phố.",
+        vocab: [V("the city", "thành phố"), V("a town", "một thị trấn"), V("a village", "một ngôi làng"), V("the countryside", "nông thôn")],
         errors: [
-          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
-          [/^I live (?!in\b)/i, "Thiếu **in**."]
+          E("^I lives\\b", "'I' không thêm **s**. ✅ I live in the city."),
+          E("^I not live\\b", "'I' dùng **don't**. ✅ I don't live in the city."),
+          E("^I doesn't live\\b", "'I' dùng **don't**. ✅ I don't live in the city."),
+          E("^I live city\\b", "Thiếu **in the**. ✅ I live in the city.")
+        ],
+        alsoOk: [
+          E("^I live in a (?!city\\b)[^.!?]+[.!?]$", ynAlso()),
+          E("^I live in the countryside[.!?]$", ynAlso())
         ]
-      },
-      {
-        id: "2.5",
-        ask: "Where is your hometown?",
-        vi: "Quê bạn ở đâu?",
-        formula: [
-          { text: "I live in", vi: "Tôi sống ở", blank: false },
-          { text: "[quê]", vi: "viết hoa tên nơi", blank: true }
-        ],
-        example: "I live in Da Nang.",
-        exampleVi: "Tôi sống ở Đà Nẵng.",
-        vocab: [
-          { en: "Da Nang", vi: "Đà Nẵng" },
-          { en: "Ha Noi", vi: "Hà Nội" },
-          { en: "Hue", vi: "Huế" }
-        ],
-        accept: placeAccept,
+      }),
+      Q({ id: "2.5", ask: "Where is your hometown?", vi: "Quê bạn ở đâu?",
+        frame: [F("My hometown is", "Quê tôi ở"), S("city_place", "proper", 4, "[quê của bạn]", "ví dụ: Da Nang")],
+        example: "My hometown is Da Nang.", exampleVi: "Quê tôi ở Đà Nẵng.",
+        vocab: [V("My hometown is", "Quê tôi ở"), V("Da Nang", "Đà Nẵng"), V("Ha Noi", "Hà Nội"), V("Hue", "Huế")],
         errors: [
-          [/^I lives\b/i, "'I' đi với **live**, không thêm s."],
-          [/^I live (?!in\b)/i, "Thiếu **in**."],
-          [placeLower, "Tên nơi phải **viết hoa chữ cái đầu**."]
+          E("^My hometown are\\b", "Dùng **is**. ✅ My hometown is Da Nang."),
+          E("^My hometown in\\b", "Dùng **is**. ✅ My hometown is Da Nang."),
+          Ecap("^My hometown (?!is\\b)", "Dùng **is**. ✅ My hometown is Da Nang."),
+          E("^I hometown\\b", "Dùng **My hometown is**. ✅ My hometown is Da Nang."),
+          E("^My hometown is is\\b", "Chỉ cần một **is**. ✅ My hometown is Da Nang.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 3,
-    emoji: "💬",
-    title: "My Family",
-    vi: "Trả lời khi người khác hỏi về gia đình",
-    tag: "This is / I have / There are",
-    opener: "This is my family. ",
+    id: 3, emoji: "💬", title: "My Family", vi: "Trả lời khi người khác hỏi về gia đình", tag: "This is / I have / There are", opener: "This is my family. ",
     questions: [
-      {
-        id: "3.1",
-        ask: "Who is this?",
-        vi: "Đây là ai?",
-        formula: [
-          { text: "This is my", vi: "Đây là", blank: false },
-          { text: "[người]", vi: "ví dụ: mother", blank: true }
-        ],
-        example: "This is my mother.",
-        exampleVi: "Đây là mẹ tôi.",
-        vocab: [
-          { en: "This is my", vi: "Đây là" },
-          { en: "mother", vi: "mẹ" },
-          { en: "father", vi: "bố" },
-          { en: "sister", vi: "chị hoặc em gái" },
-          { en: "brother", vi: "anh hoặc em trai" }
-        ],
-        accept: /^This is my (?:mother|father|sister|brother|grandma|grandpa|mom|dad|friend)[.!?]$/i,
+      Q({ id: "3.1", ask: "Who is this?", vi: "Đây là ai?",
+        frame: [F("This is my", "Đây là"), S("family_member", "none", 2)],
+        example: "This is my mother.", exampleVi: "Đây là mẹ tôi.",
+        vocab: [V("This is my", "Đây là"), V("mother", "mẹ"), V("father", "bố"), V("sister", "chị hoặc em gái")],
         errors: [
-          [/^This are\b/i, "Một người dùng **This is**."],
-          [/^This my\b/i, "Thiếu **is**. ✅ This is my mother."],
-          [/^(?:She|He) is\b/i, "Bài này trả lời bằng **This is**. ✅ This is my mother."]
+          E("^This are my\\b", "Dùng **is**. ✅ This is my mother."),
+          E("^This my\\b", "Thiếu **is**. ✅ This is my mother."),
+          E("^This is me\\b", "Dùng **my** + người thân. ✅ This is my mother."),
+          E("^She is my\\b", "Bài này dùng **This is my**. ✅ This is my mother."),
+          E("^This is a my\\b", "Bỏ **a**. ✅ This is my mother.")
         ]
-      },
-      {
-        id: "3.2",
-        ask: "Do you have a brother or a sister?",
-        vi: "Bạn có anh chị em không?",
-        formula: [
-          { text: "I have a", vi: "Tôi có một", blank: false },
-          { text: "[người]", vi: "ví dụ: brother", blank: true }
-        ],
-        example: "I have a brother.",
-        exampleVi: "Tôi có một anh hoặc em trai.",
-        vocab: [
-          { en: "I have", vi: "Tôi có" },
-          { en: "a brother", vi: "một anh hoặc em trai" },
-          { en: "a sister", vi: "một chị hoặc em gái" }
-        ],
-        accept: /^I have a (?:brother|sister)[.!?]$/i,
+      }),
+      Q({ id: "3.2", ask: "Do you have a brother or a sister?", vi: "Bạn có anh chị em không?",
+        type: "yesno", aux: "do", negExample: "I don't have a brother or a sister.",
+        frame: [F("I have a brother", "Tôi có một anh hoặc em trai")],
+        core: {
+          affirm: [
+            one("I have a brother and a sister"),
+            one("I have a brother"),
+            one("I have a sister"),
+            [F("I have"), S("number_age", "none", 1, "[số]", "ví dụ: two"), F("brothers")],
+            [F("I have"), S("number_age", "none", 1, "[số]", "ví dụ: one"), F("sisters")]
+          ],
+          negate: [
+            one("I don't have a brother or a sister", ["I do not have a brother or a sister"]),
+            one("I don't have any brothers or sisters", ["I do not have any brothers or sisters"])
+          ]
+        },
+        example: "I have a brother.", exampleVi: "Tôi có một anh hoặc em trai.",
+        vocab: [V("I have", "Tôi có"), V("a brother", "một anh hoặc em trai"), V("a sister", "một chị hoặc em gái"), V("Yes, I do", "Có")],
         errors: [
-          [/^I has\b/i, "'I' đi với **have**, không dùng has."],
-          [/^I have (?:brother|sister)\b/i, "Thêm **a**. ✅ I have a brother."]
+          E("^I has\\b", "'I' dùng **have**. ✅ I have a brother."),
+          E("^I not have\\b", "'I' dùng **don't**. ✅ I don't have a brother or a sister."),
+          E("^I doesn't have\\b", "'I' dùng **don't**. ✅ No, I don't."),
+          E("^I have brother\\b", "Thêm **a**. ✅ I have a brother."),
+          E("^Me have\\b", "Dùng **I have**. ✅ I have a sister.")
         ]
-      },
-      {
-        id: "3.3",
-        ask: "How many people are in your family?",
-        vi: "Nhà bạn có mấy người?",
-        formula: [
-          { text: "There are", vi: "Có", blank: false },
-          { text: "[số]", vi: "ví dụ: 4", blank: true },
-          { text: "people in my family", vi: "người trong gia đình tôi", blank: false }
-        ],
-        example: "There are 4 people in my family.",
-        exampleVi: "Nhà tôi có 4 người.",
-        vocab: [
-          { en: "There are", vi: "Có" },
-          { en: "people", vi: "người" },
-          { en: "in my family", vi: "trong gia đình tôi" },
-          { en: "four", vi: "bốn" }
-        ],
-        accept: re("^There are (?:\\d+|" + NUMW + ") people in my family[.!?]$", "i"),
+      }),
+      Q({ id: "3.3", ask: "How many people are in your family?", vi: "Nhà bạn có mấy người?",
+        frame: [F("There are", "Có"), S("number_age", "none", 1), F("people in my family", "người trong gia đình tôi")],
+        example: "There are 4 people in my family.", exampleVi: "Nhà tôi có 4 người.",
+        vocab: [V("There are", "Có"), V("people", "người"), V("in my family", "trong gia đình tôi"), V("four", "bốn")],
         errors: [
-          [/^There is\b/i, "Nhiều người dùng **There are**."],
-          [/^There have\b/i, "Không dùng have. ✅ There are 4 people in my family."],
-          [/^There are people\b/i, "Thiếu số người."]
+          E("^There is\\b", "Số nhiều dùng **There are**. ✅ There are 4 people in my family."),
+          E("^There are people\\b", "Thiếu số. ✅ There are 4 people in my family."),
+          E("^There are person\\b", "Dùng **people**. ✅ There are 4 people in my family."),
+          E("^They are\\b", "Dùng **There are**. ✅ There are 4 people in my family."),
+          E("^There have\\b", "Dùng **There are**. ✅ There are 4 people in my family.")
         ]
-      },
-      {
-        id: "3.4",
-        ask: "What does your mother do?",
-        vi: "Mẹ bạn làm nghề gì?",
-        formula: [
-          { text: "My mother is a", vi: "Mẹ tôi là một", blank: false },
-          { text: "[nghề]", vi: "ví dụ: teacher", blank: true }
-        ],
-        example: "My mother is a teacher.",
-        exampleVi: "Mẹ tôi là giáo viên.",
-        vocab: [
-          { en: "My mother is", vi: "Mẹ tôi là" },
-          { en: "a teacher", vi: "một giáo viên" },
-          { en: "a doctor", vi: "một bác sĩ" },
-          { en: "a cook", vi: "một người nấu ăn" }
-        ],
-        accept: /^My (?:mother|father) is a (?:teacher|doctor|nurse|cook|driver)[.!?]$/i,
+      }),
+      Q({ id: "3.4", ask: "What does your mother do?", vi: "Mẹ bạn làm nghề gì?",
+        frame: [F("My mother is", "Mẹ tôi là"), S("job", "article_or_uncount", 3, "[nghề nghiệp]", "ví dụ: a teacher")],
+        example: "My mother is a teacher.", exampleVi: "Mẹ tôi là giáo viên.",
+        vocab: [V("My mother is", "Mẹ tôi là"), V("a teacher", "một giáo viên"), V("a doctor", "một bác sĩ"), V("a cook", "một người nấu ăn")],
         errors: [
-          [/^My (?:mother|father) are\b/i, "Một người dùng **is**."],
-          [/^My (?:mother|father) is (?:teacher|doctor|nurse|cook|driver)\b/i, "Thêm **a** trước nghề. ✅ My mother is a teacher."],
-          [/^(?:She|He) is\b/i, "Nói rõ **My mother** hoặc **My father**."]
+          E("^My mother are\\b", "Dùng **is**. ✅ My mother is a teacher."),
+          E("^My mother a\\b", "Thiếu **is**. ✅ My mother is a teacher."),
+          E("^My mother is teacher\\b", "Thiếu **a**. ✅ My mother is a teacher."),
+          E("^My mother work\\b", "Dùng **is**. ✅ My mother is a teacher."),
+          E("^My mother does\\b", "Dùng **is a**. ✅ My mother is a teacher.")
+        ],
+        alsoOk: [
+          E("^She is an? [^.!?]+[.!?]$", alsoMsg("My mother is")),
+          E("^He is an? [^.!?]+[.!?]$", alsoMsg("My mother is"))
         ]
-      },
-      {
-        id: "3.5",
-        ask: "Do you have a pet?",
-        vi: "Bạn có thú cưng không?",
-        formula: [
-          { text: "I have a", vi: "Tôi có một", blank: false },
-          { text: "[con vật]", vi: "ví dụ: cat", blank: true }
-        ],
-        example: "I have a cat.",
-        exampleVi: "Tôi có một con mèo.",
-        vocab: [
-          { en: "a cat", vi: "một con mèo" },
-          { en: "a dog", vi: "một con chó" },
-          { en: "a bird", vi: "một con chim" },
-          { en: "a fish", vi: "một con cá" }
-        ],
-        accept: /^I have a (?:cat|dog|bird|fish)[.!?]$/i,
+      }),
+      Q({ id: "3.5", ask: "Do you have a pet?", vi: "Bạn có thú cưng không?",
+        type: "yesno", aux: "do", negExample: "I don't have a pet.",
+        frame: [F("I have", "Tôi có"), S("pet", "article_or_uncount", 3, "[thú cưng]", "ví dụ: a cat")],
+        core: {
+          affirm: [one("I have a pet"), [F("I have"), S("pet", "article_or_uncount", 3, "[thú cưng]", "ví dụ: a cat")]],
+          negate: [one("I don't have a pet", ["I do not have a pet"])]
+        },
+        example: "I have a cat.", exampleVi: "Tôi có một con mèo.",
+        vocab: [V("a cat", "một con mèo"), V("a dog", "một con chó"), V("a bird", "một con chim"), V("a fish", "một con cá")],
         errors: [
-          [/^I has\b/i, "'I' đi với **have**, không dùng has."],
-          [/^I have (?:cat|dog|bird|fish)\b/i, "Thêm **a**. ✅ I have a cat."]
+          E("^I has\\b", "'I' dùng **have**. ✅ I have a cat."),
+          E("^I not have\\b", "'I' dùng **don't**. ✅ I don't have a pet."),
+          E("^I doesn't have\\b", "'I' dùng **don't**. ✅ I don't have a pet."),
+          E("^I have pet\\b", "Thêm **a**. ✅ I have a pet."),
+          E("^Me have\\b", "Dùng **I have**. ✅ I have a dog.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 4,
-    emoji: "💬",
-    title: "Things I Like",
-    vi: "Trả lời khi người khác hỏi bạn thích gì",
-    tag: "I like / I don't like",
-    opener: "These are things I like. ",
+    id: 4, emoji: "💬", title: "Things I Like", vi: "Trả lời khi người khác hỏi bạn thích gì", tag: "I like / I don't like", opener: "These are things I like. ",
     questions: [
-      {
-        id: "4.1",
-        ask: "What do you like?",
-        vi: "Bạn thích gì?",
-        formula: [
-          { text: "I like", vi: "Tôi thích", blank: false },
-          { text: "[thứ bạn thích]", vi: "ví dụ: cats", blank: true }
-        ],
-        example: "I like cats.",
-        exampleVi: "Tôi thích mèo.",
-        vocab: [
-          { en: "I like", vi: "Tôi thích" },
-          { en: "cats", vi: "mèo" },
-          { en: "dogs", vi: "chó" },
-          { en: "music", vi: "âm nhạc" },
-          { en: "football", vi: "bóng đá" }
-        ],
-        accept: /^I like .+[.!?]$/i,
+      Q({ id: "4.1", ask: "What do you like?", vi: "Bạn thích gì?",
+        frame: [F("I like", "Tôi thích"), S("thing_like", "plural_or_uncount", 3)],
+        example: "I like cats.", exampleVi: "Tôi thích mèo.",
+        vocab: [V("I like", "Tôi thích"), V("cats", "mèo"), V("dogs", "chó"), V("music", "âm nhạc")],
         errors: [
-          [/^I likes\b/i, "'I' không thêm s. ✅ I like cats."],
-          [/^I like (?:to |playing|reading|watching|swimming|eating|going|doing|cooking)\b/i, "Bài này nói thứ bạn thích: **I like** + món hoặc vật. ✅ I like cats."],
-          [/^I am like\b/i, "Không dùng am. ✅ I like cats."]
-        ]
-      },
-      {
-        id: "4.2",
-        ask: "What food do you like?",
-        vi: "Bạn thích món gì?",
-        formula: [
-          { text: "I like", vi: "Tôi thích", blank: false },
-          { text: "[món]", vi: "ví dụ: pho", blank: true }
+          E("^I likes\\b", "'I' không thêm **s**. ✅ I like cats."),
+          E("^I like (?:to |eating |playing )", "Nói tên thứ bạn thích: **I like cats.**"),
+          E("^I not like\\b", "Dùng **don't** nếu muốn phủ định. ✅ I like cats."),
+          E("^I no like\\b", "Dùng **I like** hoặc **I don't like**."),
+          E("^I doesn't like\\b", "'I' dùng **don't**. ✅ I like music.")
         ],
-        example: "I like pho.",
-        exampleVi: "Tôi thích phở.",
-        vocab: [
-          { en: "pho", vi: "phở" },
-          { en: "rice", vi: "cơm" },
-          { en: "noodles", vi: "mì" },
-          { en: "fruit", vi: "trái cây" }
-        ],
-        accept: /^I like .+[.!?]$/i,
+        alsoOk: [E("^I (?:love|really like) [^.!?]+[.!?]$", alsoMsg("I like"))]
+      }),
+      Q({ id: "4.2", ask: "What food do you like?", vi: "Bạn thích món gì?",
+        frame: [F("I like", "Tôi thích"), S("food", "plural_or_uncount", 3)],
+        example: "I like pho.", exampleVi: "Tôi thích phở.",
+        vocab: [V("pho", "phở"), V("rice", "cơm"), V("noodles", "mì"), V("fruit", "trái cây")],
         errors: [
-          [/^I likes\b/i, "'I' không thêm s."],
-          [/^I like (?:to |eating|playing)\b/i, "Nói tên món: **I like pho.**"]
-        ]
-      },
-      {
-        id: "4.3",
-        ask: "What don't you like?",
-        vi: "Bạn không thích gì?",
-        formula: [
-          { text: "I don't like", vi: "Tôi không thích", blank: false },
-          { text: "[thứ]", vi: "ví dụ: fish", blank: true }
+          E("^I likes\\b", "'I' không thêm **s**. ✅ I like pho."),
+          E("^I like (?:to |eating |playing )", "Nói tên món: **I like pho.**"),
+          E("^I not like\\b", "Dùng **don't like** khi phủ định. ✅ I like pho."),
+          E("^I no like\\b", "Dùng **I like**. ✅ I like pho."),
+          E("^I doesn't like\\b", "'I' dùng **don't**. ✅ I like pho.")
         ],
-        example: "I don't like fish.",
-        exampleVi: "Tôi không thích cá.",
-        vocab: [
-          { en: "I don't like", vi: "Tôi không thích" },
-          { en: "fish", vi: "cá" },
-          { en: "milk", vi: "sữa" },
-          { en: "spicy food", vi: "đồ cay" }
-        ],
-        accept: /^I (?:don't|do not) like .+[.!?]$/i,
+        alsoOk: [E("^I (?:love|really like) [^.!?]+[.!?]$", alsoMsg("I like"))]
+      }),
+      Q({ id: "4.3", ask: "What don't you like?", vi: "Bạn không thích gì?",
+        frame: [F("I don't like", "Tôi không thích", ["I do not like"]), S("thing_like", "plural_or_uncount", 3, "[thứ bạn không thích]", "ví dụ: fish")],
+        example: "I don't like fish.", exampleVi: "Tôi không thích cá.",
+        vocab: [V("I don't like", "Tôi không thích"), V("fish", "cá"), V("milk", "sữa"), V("cats", "mèo")],
         errors: [
-          [/^I not like\b/i, "Thêm **don't**. ✅ I don't like fish."],
-          [/^I (?:doesn't|does not) like\b/i, "'I' dùng **don't**, không dùng doesn't."],
-          [/^I don't likes\b/i, "Sau don't dùng **like**, không thêm s."],
-          [/^I no like\b/i, "Dùng **don't like**."]
+          E("^I (?:don't|do not) likes\\b", "Không thêm **s** sau like. ✅ I don't like fish."),
+          E("^I not like\\b", "Dùng **don't like**. ✅ I don't like fish."),
+          E("^I no like\\b", "Dùng **don't like**. ✅ I don't like fish."),
+          E("^I doesn't like\\b", "'I' dùng **don't**. ✅ I don't like fish."),
+          E("^I likes not\\b", "Dùng **I don't like**. ✅ I don't like fish.")
         ]
-      },
-      {
-        id: "4.4",
-        ask: "What fruit don't you like?",
-        vi: "Bạn không thích trái cây nào?",
-        formula: [
-          { text: "I don't like", vi: "Tôi không thích", blank: false },
-          { text: "[trái cây]", vi: "ví dụ: bananas", blank: true }
-        ],
-        example: "I don't like bananas.",
-        exampleVi: "Tôi không thích chuối.",
-        vocab: [
-          { en: "bananas", vi: "chuối" },
-          { en: "mangoes", vi: "xoài" },
-          { en: "apples", vi: "táo" }
-        ],
-        accept: /^I (?:don't|do not) like .+[.!?]$/i,
+      }),
+      Q({ id: "4.4", ask: "What fruit don't you like?", vi: "Bạn không thích trái cây nào?",
+        frame: [F("I don't like", "Tôi không thích", ["I do not like"]), S("fruit", "plural_or_uncount", 3)],
+        example: "I don't like bananas.", exampleVi: "Tôi không thích chuối.",
+        vocab: [V("bananas", "chuối"), V("mangoes", "xoài"), V("apples", "táo"), V("oranges", "cam")],
         errors: [
-          [/^I not like\b/i, "Thêm **don't**."],
-          [/^I don't likes\b/i, "Sau don't dùng **like**."]
+          E("^I (?:don't|do not) likes\\b", "Không thêm **s** sau like. ✅ I don't like bananas."),
+          E("^I not like\\b", "Dùng **don't like**. ✅ I don't like bananas."),
+          E("^I no like\\b", "Dùng **don't like**. ✅ I don't like bananas."),
+          E("^I doesn't like\\b", "'I' dùng **don't**. ✅ I don't like bananas."),
+          E("^I like\\b", "Câu này là không thích. ✅ I don't like bananas.")
         ]
-      },
-      {
-        id: "4.5",
-        ask: "What do you like in your free time?",
-        vi: "Lúc rảnh bạn thích gì?",
-        formula: [
-          { text: "I like", vi: "Tôi thích", blank: false },
-          { text: "[thứ]", vi: "ví dụ: music", blank: true }
-        ],
-        example: "I like music.",
-        exampleVi: "Tôi thích âm nhạc.",
-        vocab: [
-          { en: "music", vi: "âm nhạc" },
-          { en: "football", vi: "bóng đá" },
-          { en: "books", vi: "sách" }
-        ],
-        accept: /^I like .+[.!?]$/i,
+      }),
+      Q({ id: "4.5", ask: "What do you like in your free time?", vi: "Lúc rảnh bạn thích gì?",
+        frame: [F("I like", "Tôi thích"), S("hobby_ing", "none", 4)],
+        example: "I like reading books.", exampleVi: "Tôi thích đọc sách.",
+        vocab: [V("reading books", "đọc sách"), V("playing football", "chơi bóng"), V("listening to music", "nghe nhạc"), V("drawing", "vẽ")],
         errors: [
-          [/^I likes\b/i, "'I' không thêm s."],
-          [/^I like (?:playing|reading|watching|swimming)\b/i, "Nói tên việc hoặc thứ bạn thích: **I like music.**"]
+          E("^I likes\\b", "'I' không thêm **s**. ✅ I like reading books."),
+          E("^I like to\\b", "Dùng **-ing**. ✅ I like reading books."),
+          E("^I like (?!\\S*ing\\b)\\S+", "Thêm **-ing**. ✅ I like reading books."),
+          E("^I not like\\b", "Dùng **I like**. ✅ I like reading books."),
+          E("^I no like\\b", "Dùng **I like**. ✅ I like reading books.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 5,
-    emoji: "💬",
-    title: "My Day",
-    vi: "Trả lời về một ngày của bạn",
-    tag: "I + động từ",
-    opener: "This is my day. ",
+    id: 5, emoji: "💬", title: "My Day", vi: "Trả lời về một ngày của bạn", tag: "I + động từ", opener: "This is my day. ",
     questions: [
-      {
-        id: "5.1",
-        ask: "What time do you wake up?",
-        vi: "Bạn thức dậy lúc mấy giờ?",
-        formula: [
-          { text: "I wake up", vi: "Tôi thức dậy", blank: false },
-          { text: "at", vi: "lúc", blank: false },
-          { text: "[giờ]", vi: "ví dụ: 6 o'clock", blank: true }
-        ],
-        example: "I wake up at 6 o'clock.",
-        exampleVi: "Tôi thức dậy lúc 6 giờ.",
-        vocab: [
-          { en: "wake up", vi: "thức dậy" },
-          { en: "at", vi: "lúc" },
-          { en: "o'clock", vi: "giờ đúng" },
-          { en: "six", vi: "sáu" }
-        ],
-        accept: re("^I wake up at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+      Q({ id: "5.1", ask: "What time do you wake up?", vi: "Bạn thức dậy lúc mấy giờ?",
+        frame: [F("I wake up at", "Tôi thức dậy lúc"), S("time_clock", "none", 3)],
+        example: "I wake up at 6 o'clock.", exampleVi: "Tôi thức dậy lúc 6 giờ.",
+        vocab: [V("I wake up", "Tôi thức dậy"), V("at", "lúc"), V("6 o'clock", "6 giờ"), V("half past six", "sáu giờ rưỡi")],
         errors: [
-          [/^I wakes\b/i, "'I' đi với **wake**, không thêm s."],
-          [/^I wake at\b/i, "Thiếu **up**."],
-          [/^I wake up (?:in|on)\b/i, "Trước giờ dùng **at**."],
-          [/^I wake up (?!at\b)/i, "Thiếu **at** trước giờ."]
+          E("^I wakes\\b", "'I' không thêm **s**. ✅ I wake up at 6 o'clock."),
+          E("^I waking\\b", "Dùng **wake**. ✅ I wake up at 6 o'clock."),
+          E("^I am wake\\b", "Bỏ **am**. ✅ I wake up at 6 o'clock."),
+          E("^I wake up (?!at\\b)", "Thiếu **at**. ✅ I wake up at 6 o'clock."),
+          E("^I wake at\\b", "Dùng **wake up at**. ✅ I wake up at 6 o'clock.")
         ]
-      },
-      {
-        id: "5.2",
-        ask: "What do you eat for breakfast?",
-        vi: "Bữa sáng bạn ăn gì?",
-        formula: [
-          { text: "I eat", vi: "Tôi ăn", blank: false },
-          { text: "[món]", vi: "ví dụ: bread", blank: true },
-          { text: "for breakfast", vi: "vào bữa sáng", blank: false }
-        ],
-        example: "I eat bread for breakfast.",
-        exampleVi: "Tôi ăn bánh mì vào bữa sáng.",
-        vocab: [
-          { en: "eat", vi: "ăn" },
-          { en: "bread", vi: "bánh mì" },
-          { en: "rice", vi: "cơm" },
-          { en: "noodles", vi: "mì" }
-        ],
-        accept: /^I eat .+ for breakfast[.!?]$/i,
+      }),
+      Q({ id: "5.2", ask: "What do you eat for breakfast?", vi: "Bữa sáng bạn ăn gì?",
+        frame: [F("I eat", "Tôi ăn"), S("food", "plural_or_uncount", 3), F("for breakfast", "vào bữa sáng")],
+        example: "I eat bread for breakfast.", exampleVi: "Tôi ăn bánh mì vào bữa sáng.",
+        vocab: [V("I eat", "Tôi ăn"), V("bread", "bánh mì"), V("pho", "phở"), V("for breakfast", "vào bữa sáng")],
         errors: [
-          [/^I eats\b/i, "'I' không thêm s."],
-          [/^I (?:am eating|eating)\b/i, "Việc mỗi ngày dùng **I eat**, không dùng am eating."]
+          E("^I eats\\b", "'I' không thêm **s**. ✅ I eat bread for breakfast."),
+          E("^I eating\\b", "Dùng **eat**. ✅ I eat bread for breakfast."),
+          E("^I am eat\\b", "Bỏ **am**. ✅ I eat bread for breakfast."),
+          E("^I eat to\\b", "Nói tên món. ✅ I eat bread for breakfast."),
+          E("^I not eat\\b", "Dùng **I eat**. ✅ I eat bread for breakfast.")
         ]
-      },
-      {
-        id: "5.3",
-        ask: "How do you go to school?",
-        vi: "Bạn đi học bằng gì?",
-        formula: [
-          { text: "I go to school", vi: "Tôi đi học", blank: false },
-          { text: "by", vi: "bằng", blank: false },
-          { text: "[phương tiện]", vi: "ví dụ: bike", blank: true }
-        ],
-        example: "I go to school by bike.",
-        exampleVi: "Tôi đi học bằng xe đạp.",
-        vocab: [
-          { en: "by bike", vi: "bằng xe đạp" },
-          { en: "by bus", vi: "bằng xe buýt" },
-          { en: "by car", vi: "bằng ô tô" },
-          { en: "on foot", vi: "đi bộ" }
-        ],
-        accept: /^I go to school (?:by (?:bike|bus|car|motorbike)|on foot)[.!?]$/i,
+      }),
+      Q({ id: "5.3", ask: "How do you go to school?", vi: "Bạn đi học bằng gì?",
+        frame: [F("I go to school", "Tôi đi học"), S("transport", "none", 3)],
+        example: "I go to school by bike.", exampleVi: "Tôi đi học bằng xe đạp.",
+        vocab: [V("by bike", "bằng xe đạp"), V("by bus", "bằng xe buýt"), V("on foot", "đi bộ"), V("by car", "bằng ô tô")],
         errors: [
-          [/^I goes\b/i, "'I' không thêm s."],
-          [/^I go to school by foot\b/i, "Đi bộ là **on foot**, không phải by foot."],
-          [/^I go to school (?:bike|bus|car|motorbike)\b/i, "Thêm **by** trước bike, bus hoặc car."]
+          E("^I goes\\b", "'I' không thêm **s**. ✅ I go to school by bike."),
+          E("^I going\\b", "Dùng **go**. ✅ I go to school by bike."),
+          E("^I go to school by a\\b", "Không thêm **a**. ✅ I go to school by bus."),
+          E("^I go school\\b", "Thiếu **to**. ✅ I go to school by bike."),
+          E("^I am go\\b", "Bỏ **am**. ✅ I go to school by bike.")
         ]
-      },
-      {
-        id: "5.4",
-        ask: "What time do you go to school?",
-        vi: "Bạn đi học lúc mấy giờ?",
-        formula: [
-          { text: "I go to school", vi: "Tôi đi học", blank: false },
-          { text: "at", vi: "lúc", blank: false },
-          { text: "[giờ]", vi: "ví dụ: 7 o'clock", blank: true }
-        ],
-        example: "I go to school at 7 o'clock.",
-        exampleVi: "Tôi đi học lúc 7 giờ.",
-        vocab: [
-          { en: "at", vi: "lúc" },
-          { en: "seven", vi: "bảy" },
-          { en: "o'clock", vi: "giờ đúng" }
-        ],
-        accept: re("^I go to school at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+      }),
+      Q({ id: "5.4", ask: "What time do you go to school?", vi: "Bạn đi học lúc mấy giờ?",
+        frame: [F("I go to school at", "Tôi đi học lúc"), S("time_clock", "none", 3)],
+        example: "I go to school at 7 o'clock.", exampleVi: "Tôi đi học lúc 7 giờ.",
+        vocab: [V("I go to school", "Tôi đi học"), V("at", "lúc"), V("7 o'clock", "7 giờ"), V("7:30", "7 giờ 30")],
         errors: [
-          [/^I goes\b/i, "'I' không thêm s."],
-          [/^I go to school (?:in|on) \d/i, "Trước giờ dùng **at**."],
-          [/^I go to school (?!at\b)/i, "Thiếu **at** trước giờ."]
+          E("^I goes\\b", "'I' không thêm **s**. ✅ I go to school at 7 o'clock."),
+          E("^I go to school (?!at\\b)", "Thiếu **at**. ✅ I go to school at 7 o'clock."),
+          E("^I going\\b", "Dùng **go**. ✅ I go to school at 7 o'clock."),
+          E("^I am go\\b", "Bỏ **am**. ✅ I go to school at 7 o'clock.")
         ]
-      },
-      {
-        id: "5.5",
-        ask: "What time do you go to bed?",
-        vi: "Bạn đi ngủ lúc mấy giờ?",
-        formula: [
-          { text: "I go to bed", vi: "Tôi đi ngủ", blank: false },
-          { text: "at", vi: "lúc", blank: false },
-          { text: "[giờ]", vi: "ví dụ: 10 o'clock", blank: true }
-        ],
-        example: "I go to bed at 10 o'clock.",
-        exampleVi: "Tôi đi ngủ lúc 10 giờ.",
-        vocab: [
-          { en: "go to bed", vi: "đi ngủ" },
-          { en: "at", vi: "lúc" },
-          { en: "ten", vi: "mười" }
-        ],
-        accept: re("^I go to bed at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+      }),
+      Q({ id: "5.5", ask: "What time do you go to bed?", vi: "Bạn đi ngủ lúc mấy giờ?",
+        frame: [F("I go to bed at", "Tôi đi ngủ lúc"), S("time_clock", "none", 3)],
+        example: "I go to bed at 10 o'clock.", exampleVi: "Tôi đi ngủ lúc 10 giờ.",
+        vocab: [V("I go to bed", "Tôi đi ngủ"), V("at", "lúc"), V("10 o'clock", "10 giờ"), V("nine o'clock", "9 giờ")],
         errors: [
-          [/^I goes\b/i, "'I' không thêm s."],
-          [/^I go to bed (?:in|on)\b/i, "Trước giờ dùng **at**."],
-          [/^I go to bed (?!at\b)/i, "Thiếu **at** trước giờ."]
+          E("^I goes\\b", "'I' không thêm **s**. ✅ I go to bed at 10 o'clock."),
+          E("^I go to bed (?!at\\b)", "Thiếu **at**. ✅ I go to bed at 10 o'clock."),
+          E("^I going\\b", "Dùng **go**. ✅ I go to bed at 10 o'clock."),
+          E("^I sleep at\\b", "Bài này dùng **go to bed at**. ✅ I go to bed at 10 o'clock.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 6,
-    emoji: "💬",
-    title: "Right Now",
-    vi: "Trả lời khi người khác hỏi bạn đang làm gì",
-    tag: "I am + -ing",
-    opener: "This is what I am doing now. ",
+    id: 6, emoji: "💬", title: "Right Now", vi: "Trả lời khi người khác hỏi bạn đang làm gì", tag: "I am + -ing", opener: "This is what I am doing now. ",
     questions: [
-      {
-        id: "6.1",
-        ask: "What are you doing?",
-        vi: "Bạn đang làm gì?",
-        formula: [
-          { text: "I am", vi: "Tôi đang", blank: false },
-          { text: "[động từ + ing]", vi: "ví dụ: reading", blank: true },
-          { text: "[việc]", vi: "ví dụ: a book", blank: true }
-        ],
-        example: "I am reading a book.",
-        exampleVi: "Tôi đang đọc sách.",
-        vocab: [
-          { en: "I am", vi: "Tôi đang" },
-          { en: "reading", vi: "đang đọc" },
-          { en: "a book", vi: "một cuốn sách" }
-        ],
-        accept: /^(?:I am|I'm) reading(?: .+)?[.!?]$/i,
+      Q({ id: "6.1", ask: "What are you doing?", vi: "Bạn đang làm gì?",
+        frame: [F("I am", "Tôi đang", ["I'm"]), S("activity_ing", "none", 4)],
+        example: "I am reading a book.", exampleVi: "Tôi đang đọc sách.",
+        vocab: [V("I am", "Tôi đang"), V("reading a book", "đọc sách"), V("eating", "ăn"), V("watching TV", "xem tivi")],
         errors: [
-          [/^I reading\b/i, "Thiếu **am**. ✅ I am reading a book."],
-          [/^(?:I am|I'm) read\b/i, "Thêm **-ing**: reading."],
-          [/^I read\b/i, "Việc đang xảy ra dùng **I am reading**."]
+          E("^I eating\\b", "Thiếu **am**. ✅ I am eating."),
+          E("^I am eat\\b", "Thêm **-ing**. ✅ I am eating."),
+          E("^I is\\b", "'I' đi với **am**. ✅ I am reading."),
+          E("^I are\\b", "'I' đi với **am**. ✅ I am reading."),
+          E("^I reading\\b", "Thiếu **am**. ✅ I am reading a book.")
         ]
-      },
-      {
-        id: "6.2",
-        ask: "What are you eating?",
-        vi: "Bạn đang ăn gì?",
-        formula: [
-          { text: "I am eating", vi: "Tôi đang ăn", blank: false },
-          { text: "[món]", vi: "ví dụ: rice", blank: true }
-        ],
-        example: "I am eating rice.",
-        exampleVi: "Tôi đang ăn cơm.",
-        vocab: [
-          { en: "eating", vi: "đang ăn" },
-          { en: "rice", vi: "cơm" },
-          { en: "noodles", vi: "mì" },
-          { en: "bread", vi: "bánh mì" }
-        ],
-        accept: /^(?:I am|I'm) eating .+[.!?]$/i,
+      }),
+      Q({ id: "6.2", ask: "What are you eating?", vi: "Bạn đang ăn gì?",
+        frame: [F("I am eating", "Tôi đang ăn", ["I'm eating"]), S("food", "plural_or_uncount", 3)],
+        example: "I am eating rice.", exampleVi: "Tôi đang ăn cơm.",
+        vocab: [V("I am eating", "Tôi đang ăn"), V("rice", "cơm"), V("pho", "phở"), V("bread", "bánh mì")],
         errors: [
-          [/^I eating\b/i, "Thiếu **am**."],
-          [/^(?:I am|I'm) eat\b/i, "Thêm **-ing**: eating."],
-          [/^I eat\b/i, "Việc đang xảy ra dùng **I am eating**."]
+          E("^I eating\\b", "Thiếu **am**. ✅ I am eating rice."),
+          E("^I am eat\\b", "Thêm **-ing**. ✅ I am eating rice."),
+          E("^I eats\\b", "'I' không thêm **s**. ✅ I am eating rice."),
+          E("^I is eating\\b", "'I' đi với **am**. ✅ I am eating rice.")
         ]
-      },
-      {
-        id: "6.3",
-        ask: "What are you watching?",
-        vi: "Bạn đang xem gì?",
-        formula: [
-          { text: "I am watching", vi: "Tôi đang xem", blank: false },
-          { text: "[thứ]", vi: "ví dụ: TV", blank: true }
-        ],
-        example: "I am watching TV.",
-        exampleVi: "Tôi đang xem tivi.",
-        vocab: [
-          { en: "watching", vi: "đang xem" },
-          { en: "TV", vi: "tivi" },
-          { en: "a video", vi: "một video" }
-        ],
-        accept: /^(?:I am|I'm) watching .+[.!?]$/i,
+      }),
+      Q({ id: "6.3", ask: "What are you watching?", vi: "Bạn đang xem gì?",
+        frame: [F("I am watching", "Tôi đang xem", ["I'm watching"]), S("watch_thing", "plural_or_uncount", 3, "[thứ bạn xem]", "ví dụ: TV")],
+        example: "I am watching TV.", exampleVi: "Tôi đang xem tivi.",
+        vocab: [V("TV", "tivi"), V("a movie", "một bộ phim"), V("cartoons", "hoạt hình"), V("I am watching", "Tôi đang xem")],
         errors: [
-          [/^I watching\b/i, "Thiếu **am**."],
-          [/^(?:I am|I'm) watch\b/i, "Thêm **-ing**: watching."]
+          E("^I watching\\b", "Thiếu **am**. ✅ I am watching TV."),
+          E("^I am watch\\b", "Thêm **-ing**. ✅ I am watching TV."),
+          E("^I watches\\b", "'I' không thêm **s**. ✅ I am watching TV."),
+          E("^I is watching\\b", "'I' đi với **am**. ✅ I am watching TV.")
         ]
-      },
-      {
-        id: "6.4",
-        ask: "Are you studying?",
-        vi: "Bạn đang học à?",
-        formula: [
-          { text: "I am studying", vi: "Tôi đang học", blank: false },
-          { text: "[môn]", vi: "ví dụ: English", blank: true }
-        ],
-        example: "I am studying English.",
-        exampleVi: "Tôi đang học tiếng Anh.",
-        vocab: [
-          { en: "studying", vi: "đang học" },
-          { en: "English", vi: "tiếng Anh" },
-          { en: "math", vi: "toán" }
-        ],
-        accept: /^(?:I am|I'm) studying .+[.!?]$/i,
+      }),
+      Q({ id: "6.4", ask: "Are you studying?", vi: "Bạn đang học à?",
+        type: "yesno", aux: "am", negExample: "I am not studying.",
+        frame: [F("I am studying", "Tôi đang học")],
+        core: { affirm: [one("I am studying", ["I'm studying"])], negate: [one("I am not studying", ["I'm not studying"])] },
+        altFrames: ING_ALT,
+        example: "I am studying.", exampleVi: "Tôi đang học.",
+        vocab: [V("I am studying", "Tôi đang học"), V("Yes, I am", "Vâng"), V("No, I'm not", "Không"), V("reading", "đang đọc")],
         errors: [
-          [/^I studying\b/i, "Thiếu **am**."],
-          [/^(?:I am|I'm) study\b/i, "Thêm **-ing**: studying."]
+          E("^I studying\\b", "Thiếu **am**. ✅ I am studying."),
+          E("^I am study\\b", "Thêm **-ing**. ✅ I am studying."),
+          E("^I is studying\\b", "'I' đi với **am**. ✅ I am studying."),
+          E("^I studies\\b", "Dùng **am studying**. ✅ I am studying.")
+        ],
+        alsoOk: [
+          E("^I am (?!not\\b)(?!studying\\b)[A-Za-z]+ing\\b[^.!?]*[.!?]$", ynAlso()),
+          E("^I'm (?!not\\b)(?!studying\\b)[A-Za-z]+ing\\b[^.!?]*[.!?]$", ynAlso())
         ]
-      },
-      {
-        id: "6.5",
-        ask: "What are you playing?",
-        vi: "Bạn đang chơi gì?",
-        formula: [
-          { text: "I am playing", vi: "Tôi đang chơi", blank: false },
-          { text: "[trò]", vi: "ví dụ: football", blank: true }
-        ],
-        example: "I am playing football.",
-        exampleVi: "Tôi đang chơi bóng.",
-        vocab: [
-          { en: "playing", vi: "đang chơi" },
-          { en: "football", vi: "bóng đá" },
-          { en: "a game", vi: "một trò chơi" }
-        ],
-        accept: /^(?:I am|I'm) playing .+[.!?]$/i,
+      }),
+      Q({ id: "6.5", ask: "What are you playing?", vi: "Bạn đang chơi gì?",
+        frame: [F("I am playing", "Tôi đang chơi", ["I'm playing"]), S("sport_game", "none", 3)],
+        example: "I am playing football.", exampleVi: "Tôi đang chơi bóng.",
+        vocab: [V("football", "bóng đá"), V("badminton", "cầu lông"), V("chess", "cờ"), V("games", "trò chơi")],
         errors: [
-          [/^I playing\b/i, "Thiếu **am**."],
-          [/^(?:I am|I'm) play\b/i, "Thêm **-ing**: playing."]
+          E("^I playing\\b", "Thiếu **am**. ✅ I am playing football."),
+          E("^I am play\\b", "Thêm **-ing**. ✅ I am playing football."),
+          E("^I plays\\b", "'I' không thêm **s**. ✅ I am playing football."),
+          E("^I is playing\\b", "'I' đi với **am**. ✅ I am playing football.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 7,
-    emoji: "💬",
-    title: "In My Room",
-    vi: "Trả lời về đồ vật trong nhà",
-    tag: "There is / in on under",
-    opener: "This is my room. ",
+    id: 7, emoji: "💬", title: "In My Room", vi: "Trả lời về đồ vật trong nhà", tag: "There is / in on under", opener: "This is my room. ",
     questions: [
-      {
-        id: "7.1",
-        ask: "What is in your room?",
-        vi: "Trong phòng bạn có gì?",
-        formula: [
-          { text: "There is", vi: "Có", blank: false },
-          { text: "[một vật]", vi: "ví dụ: a bed", blank: true },
-          { text: "in my room", vi: "trong phòng tôi", blank: false }
-        ],
-        example: "There is a bed in my room.",
-        exampleVi: "Trong phòng tôi có một cái giường.",
-        vocab: [
-          { en: "There is", vi: "Có" },
-          { en: "a bed", vi: "một cái giường" },
-          { en: "a desk", vi: "một cái bàn học" },
-          { en: "a chair", vi: "một cái ghế" }
-        ],
-        accept: /^There is (?:a|an) [a-z]+ in my room[.!?]$/i,
+      Q({ id: "7.1", ask: "What is in your room?", vi: "Trong phòng bạn có gì?",
+        frame: [F("There is a", "Có một"), S("furniture", "after_a", 2), F("in my room", "trong phòng tôi")],
+        example: "There is a bed in my room.", exampleVi: "Trong phòng tôi có một cái giường.",
+        vocab: [V("a bed", "một cái giường"), V("a desk", "một cái bàn"), V("a chair", "một cái ghế"), V("a lamp", "một cái đèn")],
         errors: [
-          [/^There are a\b/i, "Một vật dùng **There is**."],
-          [/^There have\b/i, "Không dùng have. ✅ There is a bed in my room."],
-          [/^There is (?:bed|desk|chair)\b/i, "Thêm **a** trước tên vật."]
+          E("^There are a\\b", "Một đồ dùng **There is**. ✅ There is a bed in my room."),
+          E("^There is bed\\b", "Thêm **a**. ✅ There is a bed in my room."),
+          E("^There have\\b", "Dùng **There is**. ✅ There is a bed in my room."),
+          E("^There is an bed\\b", "Trước **bed** dùng **a**."),
+          E("^It is a\\b", "Dùng **There is a**. ✅ There is a desk in my room.")
         ]
-      },
-      {
-        id: "7.2",
-        ask: "How many rooms are in your house?",
-        vi: "Nhà bạn có mấy phòng?",
-        formula: [
-          { text: "There are", vi: "Có", blank: false },
-          { text: "[số]", vi: "ví dụ: 3", blank: true },
-          { text: "rooms in my house", vi: "phòng trong nhà tôi", blank: false }
-        ],
-        example: "There are 3 rooms in my house.",
-        exampleVi: "Nhà tôi có 3 phòng.",
-        vocab: [
-          { en: "There are", vi: "Có" },
-          { en: "rooms", vi: "phòng" },
-          { en: "three", vi: "ba" }
-        ],
-        accept: re("^There are (?:\\d+|" + NUMW + ") rooms in my house[.!?]$", "i"),
+      }),
+      Q({ id: "7.2", ask: "How many rooms are in your house?", vi: "Nhà bạn có mấy phòng?",
+        frame: [F("There are", "Có"), S("number_age", "none", 1), F("rooms in my house", "phòng trong nhà tôi")],
+        example: "There are 3 rooms in my house.", exampleVi: "Nhà tôi có 3 phòng.",
+        vocab: [V("There are", "Có"), V("rooms", "phòng"), V("in my house", "trong nhà tôi"), V("three", "ba")],
         errors: [
-          [/^There is\b/i, "Nhiều phòng dùng **There are**."],
-          [/^There have\b/i, "Không dùng have."],
-          [/^There are rooms\b/i, "Thiếu số phòng."]
+          E("^There is\\b", "Số nhiều dùng **There are**. ✅ There are 3 rooms in my house."),
+          E("^There are rooms\\b", "Thiếu số. ✅ There are 3 rooms in my house."),
+          E("^There have\\b", "Dùng **There are**. ✅ There are 3 rooms in my house."),
+          E("^They are\\b", "Dùng **There are**. ✅ There are 3 rooms in my house.")
         ]
-      },
-      {
-        id: "7.3",
-        ask: "Where is your bag?",
-        vi: "Cái cặp của bạn ở đâu?",
-        formula: [
-          { text: "The bag is", vi: "Cái cặp thì", blank: false },
-          { text: "[in / on / under]", vi: "ở đâu", blank: true },
-          { text: "the table", vi: "cái bàn", blank: false }
-        ],
-        example: "The bag is on the table.",
-        exampleVi: "Cái cặp ở trên bàn.",
-        vocab: [
-          { en: "on", vi: "trên" },
-          { en: "in", vi: "trong" },
-          { en: "under", vi: "dưới" },
-          { en: "the table", vi: "cái bàn" }
-        ],
-        accept: /^The bag is (?:in|on|under) the (?:table|desk|chair|bed)[.!?]$/i,
+      }),
+      Q({ id: "7.3", ask: "Where is your bag?", vi: "Cái cặp của bạn ở đâu?",
+        frame: [F("My bag is", "Cái cặp của tôi ở"), S("prep_place", "none", 4)],
+        example: "My bag is on the table.", exampleVi: "Cái cặp của tôi ở trên bàn.",
+        vocab: [V("My bag is", "Cái cặp của tôi ở"), V("on the table", "trên bàn"), V("in the box", "trong hộp"), V("under the chair", "dưới ghế")],
         errors: [
-          [/^The bag are\b/i, "Một cái cặp dùng **is**."],
-          [/^The bag (?:in|on|under)\b/i, "Thiếu **is**. ✅ The bag is on the table."],
-          [/^The bag is at\b/i, "Dùng **in**, **on** hoặc **under**."]
+          E("^My bag are\\b", "Dùng **is**. ✅ My bag is on the table."),
+          E("^The bag is\\b", "Dùng **My bag is**. ✅ My bag is on the table."),
+          E("^My bag on\\b", "Thiếu **is**. ✅ My bag is on the table."),
+          E("^My bag is in table\\b", "Thêm **the**, hoặc dùng **on**. ✅ My bag is on the table.")
         ]
-      },
-      {
-        id: "7.4",
-        ask: "Where is your book?",
-        vi: "Sách của bạn ở đâu?",
-        formula: [
-          { text: "The book is", vi: "Quyển sách thì", blank: false },
-          { text: "[in / on / under]", vi: "ở đâu", blank: true },
-          { text: "the bag", vi: "cái cặp", blank: false }
-        ],
-        example: "The book is in the bag.",
-        exampleVi: "Sách ở trong cặp.",
-        vocab: [
-          { en: "in the bag", vi: "trong cặp" },
-          { en: "on the desk", vi: "trên bàn học" },
-          { en: "under the book", vi: "dưới quyển sách" }
-        ],
-        accept: /^The book is (?:in|on|under) the (?:bag|desk|table|box)[.!?]$/i,
+      }),
+      Q({ id: "7.4", ask: "Where is your book?", vi: "Sách của bạn ở đâu?",
+        frame: [F("My book is", "Sách của tôi ở"), S("prep_place", "none", 4)],
+        example: "My book is in the bag.", exampleVi: "Sách của tôi ở trong cặp.",
+        vocab: [V("My book is", "Sách của tôi ở"), V("in the bag", "trong cặp"), V("on the desk", "trên bàn"), V("under the chair", "dưới ghế")],
         errors: [
-          [/^The book (?:in|on|under)\b/i, "Thiếu **is**."],
-          [/^The book is at\b/i, "Dùng **in**, **on** hoặc **under**."]
+          E("^My book are\\b", "Dùng **is**. ✅ My book is in the bag."),
+          E("^The book is\\b", "Dùng **My book is**. ✅ My book is in the bag."),
+          E("^My book in\\b", "Thiếu **is**. ✅ My book is in the bag."),
+          E("^My book is on bag\\b", "Thêm **the**. ✅ My book is in the bag.")
         ]
-      },
-      {
-        id: "7.5",
-        ask: "Where is the cat?",
-        vi: "Con mèo ở đâu?",
-        formula: [
-          { text: "The cat is", vi: "Con mèo thì", blank: false },
-          { text: "[in / on / under]", vi: "ở đâu", blank: true },
-          { text: "the chair", vi: "cái ghế", blank: false }
-        ],
-        example: "The cat is under the chair.",
-        exampleVi: "Con mèo ở dưới ghế.",
-        vocab: [
-          { en: "under the chair", vi: "dưới ghế" },
-          { en: "on the bed", vi: "trên giường" },
-          { en: "in the box", vi: "trong hộp" }
-        ],
-        accept: /^The cat is (?:in|on|under) the (?:chair|bed|table|box)[.!?]$/i,
+      }),
+      Q({ id: "7.5", ask: "Where is the cat?", vi: "Con mèo ở đâu?",
+        frame: [F("The cat is", "Con mèo ở"), S("prep_place", "none", 4)],
+        example: "The cat is under the chair.", exampleVi: "Con mèo ở dưới ghế.",
+        vocab: [V("The cat is", "Con mèo ở"), V("under the chair", "dưới ghế"), V("on the sofa", "trên ghế sofa"), V("in the box", "trong hộp")],
         errors: [
-          [/^The cat (?:in|on|under)\b/i, "Thiếu **is**."],
-          [/^The cat is at\b/i, "Dùng **in**, **on** hoặc **under**."]
+          E("^The cat are\\b", "Dùng **is**. ✅ The cat is under the chair."),
+          E("^The cat under\\b", "Thiếu **is**. ✅ The cat is under the chair."),
+          E("^Cat is\\b", "Thêm **The**. ✅ The cat is under the chair."),
+          E("^The cat is under chair\\b", "Thêm **the**. ✅ The cat is under the chair.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 8,
-    emoji: "💬",
-    title: "I Can",
-    vi: "Trả lời khi người khác hỏi bạn làm được gì",
-    tag: "I can",
-    opener: "These are things I can do. ",
+    id: 8, emoji: "💬", title: "I Can", vi: "Trả lời khi người khác hỏi bạn làm được gì", tag: "I can", opener: "These are things I can do. ",
     questions: [
-      {
-        id: "8.1",
-        ask: "Can you swim?",
-        vi: "Bạn bơi được không?",
-        formula: [
-          { text: "I can", vi: "Tôi có thể", blank: false },
-          { text: "[việc]", vi: "ví dụ: swim", blank: true }
-        ],
-        example: "I can swim.",
-        exampleVi: "Tôi bơi được.",
-        vocab: [
-          { en: "I can", vi: "Tôi có thể" },
-          { en: "swim", vi: "bơi" },
-          { en: "run", vi: "chạy" },
-          { en: "draw", vi: "vẽ" }
-        ],
-        accept: /^I can (?:swim|run|draw|cook)[.!?]$/i,
+      Q({ id: "8.1", ask: "Can you swim?", vi: "Bạn bơi được không?",
+        type: "yesno", aux: "can", tails: ["well", "very well", "a little"], negExample: "I can't swim.",
+        frame: [F("I can swim", "Tôi bơi được")],
+        core: { affirm: [one("I can swim")], negate: [one("I can't swim", ["I cannot swim"])] },
+        altFrames: CAN_ALT,
+        example: "I can swim.", exampleVi: "Tôi bơi được.",
+        vocab: [V("I can swim", "Tôi bơi được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("very well", "rất tốt")],
         errors: [
-          [/^I can to\b/i, "Sau can không dùng **to**."],
-          [/^I can (?:swimming|running|drawing|cooking)\b/i, "Sau can dùng động từ nguyên mẫu: **swim**, không thêm -ing."],
-          [/^I cans\b/i, "Can không thêm s."]
+          E("^I swimming\\b", "Thiếu **can**. ✅ I can swim."),
+          E("^I swim\\b", "Thiếu **can**. ✅ I can swim."),
+          E("^I am swim\\b", "Dùng **can**. ✅ I can swim."),
+          E("^I can swimming\\b", "Sau **can** không dùng **-ing**. ✅ I can swim.")
         ]
-      },
-      {
-        id: "8.2",
-        ask: "Can you cook?",
-        vi: "Bạn nấu ăn được không?",
-        formula: [
-          { text: "I can cook", vi: "Tôi nấu ăn được", blank: false }
-        ],
-        example: "I can cook.",
-        exampleVi: "Tôi nấu ăn được.",
-        vocab: [
-          { en: "cook", vi: "nấu ăn" },
-          { en: "I can", vi: "Tôi có thể" }
-        ],
-        accept: /^I can cook[.!?]$/i,
+      }),
+      Q({ id: "8.2", ask: "Can you cook?", vi: "Bạn nấu ăn được không?",
+        type: "yesno", aux: "can", tails: ["well", "very well", "a little"], negExample: "I can't cook.",
+        frame: [F("I can cook", "Tôi nấu ăn được")],
+        core: { affirm: [one("I can cook")], negate: [one("I can't cook", ["I cannot cook"])] },
+        altFrames: CAN_ALT,
+        example: "I can cook.", exampleVi: "Tôi nấu ăn được.",
+        vocab: [V("I can cook", "Tôi nấu ăn được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("a little", "một chút")],
         errors: [
-          [/^I can to cook\b/i, "Sau can không dùng **to**."],
-          [/^I can cooking\b/i, "Sau can dùng **cook**, không thêm -ing."]
+          E("^I cooking\\b", "Thiếu **can**. ✅ I can cook."),
+          E("^I cook\\b", "Thiếu **can**. ✅ I can cook."),
+          E("^I can cooking\\b", "Sau **can** không dùng **-ing**. ✅ I can cook."),
+          E("^I am cook\\b", "Dùng **can**. ✅ I can cook.")
         ]
-      },
-      {
-        id: "8.3",
-        ask: "Can you ride a bike?",
-        vi: "Bạn đi xe đạp được không?",
-        formula: [
-          { text: "I can ride a bike", vi: "Tôi đi xe đạp được", blank: false }
-        ],
-        example: "I can ride a bike.",
-        exampleVi: "Tôi đi xe đạp được.",
-        vocab: [
-          { en: "ride a bike", vi: "đi xe đạp" },
-          { en: "I can", vi: "Tôi có thể" }
-        ],
-        accept: /^I can ride a bike[.!?]$/i,
+      }),
+      Q({ id: "8.3", ask: "Can you ride a bike?", vi: "Bạn đi xe đạp được không?",
+        type: "yesno", aux: "can", tails: ["well", "very well", "a little"], negExample: "I can't ride a bike.",
+        frame: [F("I can ride a bike", "Tôi đi xe đạp được")],
+        core: { affirm: [one("I can ride a bike")], negate: [one("I can't ride a bike", ["I cannot ride a bike"])] },
+        altFrames: CAN_ALT,
+        example: "I can ride a bike.", exampleVi: "Tôi đi xe đạp được.",
+        vocab: [V("I can ride a bike", "Tôi đi xe đạp được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("well", "tốt")],
         errors: [
-          [/^I can to ride\b/i, "Sau can không dùng **to**."],
-          [/^I can riding\b/i, "Sau can dùng **ride**, không thêm -ing."]
+          E("^I riding\\b", "Thiếu **can**. ✅ I can ride a bike."),
+          E("^I ride a bike\\b", "Thiếu **can**. ✅ I can ride a bike."),
+          E("^I can to ride\\b", "Sau **can** không có **to**. ✅ I can ride a bike."),
+          E("^I can riding\\b", "Sau **can** không dùng **-ing**. ✅ I can ride a bike.")
         ]
-      },
-      {
-        id: "8.4",
-        ask: "Can you speak English?",
-        vi: "Bạn nói tiếng Anh được không?",
-        formula: [
-          { text: "I can speak English", vi: "Tôi nói tiếng Anh được", blank: false }
-        ],
-        example: "I can speak English.",
-        exampleVi: "Tôi nói tiếng Anh được.",
-        vocab: [
-          { en: "speak English", vi: "nói tiếng Anh" },
-          { en: "I can", vi: "Tôi có thể" }
-        ],
-        accept: /^I can speak English[.!?]$/i,
+      }),
+      Q({ id: "8.4", ask: "Can you speak English?", vi: "Bạn nói tiếng Anh được không?",
+        type: "yesno", aux: "can", tails: ["well", "very well", "a little"], negExample: "I can't speak English.",
+        frame: [F("I can speak English", "Tôi nói tiếng Anh được")],
+        core: { affirm: [one("I can speak English")], negate: [one("I can't speak English", ["I cannot speak English"])] },
+        altFrames: CAN_ALT,
+        example: "I can speak English.", exampleVi: "Tôi nói tiếng Anh được.",
+        vocab: [V("I can speak English", "Tôi nói tiếng Anh được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("a little", "một chút")],
         errors: [
-          [/^I can to speak\b/i, "Sau can không dùng **to**."],
-          [/^I can speaking\b/i, "Sau can dùng **speak**, không thêm -ing."]
+          E("^I speaking\\b", "Thiếu **can**. ✅ I can speak English."),
+          E("^I speak English\\b", "Thiếu **can**. ✅ I can speak English."),
+          E("^I can to speak\\b", "Sau **can** không có **to**. ✅ I can speak English."),
+          E("^I can speaking\\b", "Sau **can** không dùng **-ing**. ✅ I can speak English.")
         ]
-      },
-      {
-        id: "8.5",
-        ask: "Can you play football?",
-        vi: "Bạn chơi bóng được không?",
-        formula: [
-          { text: "I can play football", vi: "Tôi chơi bóng được", blank: false }
-        ],
-        example: "I can play football.",
-        exampleVi: "Tôi chơi bóng được.",
-        vocab: [
-          { en: "play football", vi: "chơi bóng" },
-          { en: "I can", vi: "Tôi có thể" }
-        ],
-        accept: /^I can play football[.!?]$/i,
+      }),
+      Q({ id: "8.5", ask: "Can you play football?", vi: "Bạn chơi bóng được không?",
+        type: "yesno", aux: "can", tails: ["well", "very well", "a little"], negExample: "I can't play football.",
+        frame: [F("I can play football", "Tôi chơi bóng được")],
+        core: { affirm: [one("I can play football")], negate: [one("I can't play football", ["I cannot play football"])] },
+        altFrames: CAN_ALT,
+        example: "I can play football.", exampleVi: "Tôi chơi bóng được.",
+        vocab: [V("I can play football", "Tôi chơi bóng được"), V("Yes, I can", "Có"), V("No, I can't", "Không"), V("very well", "rất tốt")],
         errors: [
-          [/^I can to play\b/i, "Sau can không dùng **to**."],
-          [/^I can playing\b/i, "Sau can dùng **play**, không thêm -ing."]
+          E("^I playing\\b", "Thiếu **can**. ✅ I can play football."),
+          E("^I play football\\b", "Thiếu **can**. ✅ I can play football."),
+          E("^I can to play\\b", "Sau **can** không có **to**. ✅ I can play football."),
+          E("^I can playing\\b", "Sau **can** không dùng **-ing**. ✅ I can play football.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 9,
-    emoji: "💬",
-    title: "Yesterday",
-    vi: "Trả lời về việc đã xảy ra hôm qua",
-    tag: "quá khứ đơn",
-    opener: "This is what I did yesterday. ",
+    id: 9, emoji: "💬", title: "Yesterday", vi: "Trả lời về việc đã xảy ra hôm qua", tag: "quá khứ đơn", opener: "This is what I did yesterday. ",
     questions: [
-      {
-        id: "9.1",
-        ask: "Where did you go yesterday?",
-        vi: "Hôm qua bạn đã đi đâu?",
-        formula: [
-          { text: "I went to", vi: "Tôi đã đi tới", blank: false },
-          { text: "[nơi]", vi: "ví dụ: school", blank: true }
-        ],
-        example: "I went to school.",
-        exampleVi: "Hôm qua tôi đã đi học.",
-        vocab: [
-          { en: "went", vi: "đã đi" },
-          { en: "to school", vi: "tới trường" },
-          { en: "to the park", vi: "tới công viên" },
-          { en: "home", vi: "về nhà" }
-        ],
-        accept: /^I went (?:to school|to the park|to the market|home)[.!?]$/i,
+      Q({ id: "9.1", ask: "Where did you go yesterday?", vi: "Hôm qua bạn đã đi đâu?",
+        frame: [F("I went to", "Tôi đã đi"), S("place_go", "none", 4)],
+        example: "I went to school.", exampleVi: "Hôm qua tôi đã đi học.",
+        vocab: [V("I went to", "Tôi đã đi"), V("school", "trường"), V("the park", "công viên"), V("home", "nhà")],
         errors: [
-          [/^I go\b/i, "Hôm qua dùng **went**, không dùng go."],
-          [/^I goed\b/i, "Go ở quá khứ là **went**, không phải goed."],
-          [/^I did went\b/i, "Chỉ cần **went**. ✅ I went to school."]
+          E("^I go\\b", "Hôm qua dùng **went**. ✅ I went to school."),
+          E("^I goed\\b", "Quá khứ của go là **went**. ✅ I went to school."),
+          E("^I going\\b", "Hôm qua dùng **went**. ✅ I went to school."),
+          E("^I did go\\b", "Dùng **went**. ✅ I went to school."),
+          E("^I was go\\b", "Dùng **went**. ✅ I went to school.")
         ]
-      },
-      {
-        id: "9.2",
-        ask: "What did you eat yesterday?",
-        vi: "Hôm qua bạn đã ăn gì?",
-        formula: [
-          { text: "I ate", vi: "Tôi đã ăn", blank: false },
-          { text: "[món]", vi: "ví dụ: rice", blank: true }
-        ],
-        example: "I ate rice.",
-        exampleVi: "Hôm qua tôi đã ăn cơm.",
-        vocab: [
-          { en: "ate", vi: "đã ăn" },
-          { en: "rice", vi: "cơm" },
-          { en: "noodles", vi: "mì" },
-          { en: "bread", vi: "bánh mì" }
-        ],
-        accept: /^I ate .+[.!?]$/i,
+      }),
+      Q({ id: "9.2", ask: "What did you eat yesterday?", vi: "Hôm qua bạn đã ăn gì?",
+        frame: [F("I ate", "Tôi đã ăn"), S("food", "plural_or_uncount", 3)],
+        example: "I ate rice.", exampleVi: "Hôm qua tôi đã ăn cơm.",
+        vocab: [V("I ate", "Tôi đã ăn"), V("rice", "cơm"), V("pho", "phở"), V("noodles", "mì")],
         errors: [
-          [/^I eat\b/i, "Hôm qua dùng **ate**, không dùng eat."],
-          [/^I eated\b/i, "Eat ở quá khứ là **ate**, không phải eated."]
+          E("^I eat\\b", "Hôm qua dùng **ate**. ✅ I ate rice."),
+          E("^I eats\\b", "Hôm qua dùng **ate**. ✅ I ate rice."),
+          E("^I eated\\b", "Quá khứ của eat là **ate**. ✅ I ate rice."),
+          E("^I eating\\b", "Hôm qua dùng **ate**. ✅ I ate rice."),
+          E("^I am eat\\b", "Hôm qua dùng **ate**. ✅ I ate rice.")
         ]
-      },
-      {
-        id: "9.3",
-        ask: "What did you do after school?",
-        vi: "Sau giờ học hôm qua bạn đã làm gì?",
-        formula: [
-          { text: "I played", vi: "Tôi đã chơi", blank: false },
-          { text: "[trò]", vi: "ví dụ: football", blank: true }
-        ],
-        example: "I played football.",
-        exampleVi: "Tôi đã chơi bóng.",
-        vocab: [
-          { en: "played", vi: "đã chơi" },
-          { en: "football", vi: "bóng đá" },
-          { en: "a game", vi: "một trò chơi" }
-        ],
-        accept: /^I played .+[.!?]$/i,
+      }),
+      Q({ id: "9.3", ask: "What did you do after school?", vi: "Sau giờ học hôm qua bạn đã làm gì?",
+        frame: [F("I played", "Tôi đã chơi"), S("sport_game", "none", 3)],
+        example: "I played football.", exampleVi: "Tôi đã chơi bóng.",
+        vocab: [V("I played", "Tôi đã chơi"), V("football", "bóng đá"), V("badminton", "cầu lông"), V("games", "trò chơi")],
         errors: [
-          [/^I play\b/i, "Hôm qua thêm **-ed**: played."],
-          [/^I playing\b/i, "Hôm qua dùng **played**."]
+          E("^I play\\b", "Hôm qua dùng **played**. ✅ I played football."),
+          E("^I playing\\b", "Hôm qua dùng **played**. ✅ I played football."),
+          E("^I playeded\\b", "Chỉ cần **played**. ✅ I played football."),
+          E("^I did played\\b", "Dùng **played**. ✅ I played football.")
+        ],
+        alsoOk: [
+          E("^I did my homework[.!?]$", alsoMsg("I played")),
+          E("^I watched TV[.!?]$", alsoMsg("I played"))
         ]
-      },
-      {
-        id: "9.4",
-        ask: "What did you watch yesterday?",
-        vi: "Hôm qua bạn đã xem gì?",
-        formula: [
-          { text: "I watched", vi: "Tôi đã xem", blank: false },
-          { text: "[thứ]", vi: "ví dụ: TV", blank: true }
-        ],
-        example: "I watched TV.",
-        exampleVi: "Tôi đã xem tivi.",
-        vocab: [
-          { en: "watched", vi: "đã xem" },
-          { en: "TV", vi: "tivi" },
-          { en: "a film", vi: "một bộ phim" }
-        ],
-        accept: /^I watched .+[.!?]$/i,
+      }),
+      Q({ id: "9.4", ask: "What did you watch yesterday?", vi: "Hôm qua bạn đã xem gì?",
+        frame: [F("I watched", "Tôi đã xem"), S("watch_thing", "plural_or_uncount", 3, "[thứ bạn xem]", "ví dụ: TV")],
+        example: "I watched TV.", exampleVi: "Tôi đã xem tivi.",
+        vocab: [V("I watched", "Tôi đã xem"), V("TV", "tivi"), V("a movie", "một bộ phim"), V("cartoons", "hoạt hình")],
         errors: [
-          [/^I watch\b/i, "Hôm qua thêm **-ed**: watched."],
-          [/^I watching\b/i, "Hôm qua dùng **watched**."]
+          E("^I watch\\b", "Hôm qua dùng **watched**. ✅ I watched TV."),
+          E("^I watches\\b", "Hôm qua dùng **watched**. ✅ I watched TV."),
+          E("^I watching\\b", "Hôm qua dùng **watched**. ✅ I watched TV."),
+          E("^I watchd\\b", "Dùng **watched**. ✅ I watched TV.")
         ]
-      },
-      {
-        id: "9.5",
-        ask: "Who did you visit yesterday?",
-        vi: "Hôm qua bạn đã đi thăm ai?",
-        formula: [
-          { text: "I visited", vi: "Tôi đã đi thăm", blank: false },
-          { text: "[ai]", vi: "ví dụ: my friend", blank: true }
-        ],
-        example: "I visited my friend.",
-        exampleVi: "Tôi đã đi thăm bạn.",
-        vocab: [
-          { en: "visited", vi: "đã đi thăm" },
-          { en: "my friend", vi: "bạn của tôi" },
-          { en: "my grandma", vi: "bà của tôi" }
-        ],
-        accept: /^I visited .+[.!?]$/i,
+      }),
+      Q({ id: "9.5", ask: "Who did you visit yesterday?", vi: "Hôm qua bạn đã đi thăm ai?",
+        frame: [F("I visited my", "Tôi đã đi thăm"), S("person_visit", "none", 2, "[người thân]", "ví dụ: friend")],
+        example: "I visited my friend.", exampleVi: "Tôi đã đi thăm bạn.",
+        vocab: [V("I visited", "Tôi đã đi thăm"), V("my friend", "bạn tôi"), V("my aunt", "dì tôi"), V("my grandma", "bà tôi")],
         errors: [
-          [/^I visit\b/i, "Hôm qua thêm **-ed**: visited."],
-          [/^I visiting\b/i, "Hôm qua dùng **visited**."]
+          E("^I visit\\b", "Hôm qua dùng **visited**. ✅ I visited my friend."),
+          E("^I visiting\\b", "Hôm qua dùng **visited**. ✅ I visited my friend."),
+          E("^I visited\\b(?! my\\b)", "Thêm **my**. ✅ I visited my friend."),
+          E("^I visitd\\b", "Dùng **visited**. ✅ I visited my friend.")
         ]
-      }
+      })
     ]
   },
   {
-    id: 10,
-    emoji: "💬",
-    title: "Tomorrow",
-    vi: "Trả lời về việc bạn sẽ làm ngày mai",
-    tag: "I will",
-    opener: "This is what I will do tomorrow. ",
+    id: 10, emoji: "💬", title: "Tomorrow", vi: "Trả lời về việc bạn sẽ làm ngày mai", tag: "I will", opener: "This is what I will do tomorrow. ",
     questions: [
-      {
-        id: "10.1",
-        ask: "What will you do tomorrow?",
-        vi: "Ngày mai bạn sẽ làm gì?",
-        formula: [
-          { text: "I will", vi: "Tôi sẽ", blank: false },
-          { text: "[việc]", vi: "ví dụ: play football", blank: true }
-        ],
-        example: "I will play football.",
-        exampleVi: "Tôi sẽ chơi bóng.",
-        vocab: [
-          { en: "I will", vi: "Tôi sẽ" },
-          { en: "play football", vi: "chơi bóng" },
-          { en: "read a book", vi: "đọc sách" },
-          { en: "help my mom", vi: "giúp mẹ" }
-        ],
-        accept: /^(?:I will|I'll) .+[.!?]$/i,
+      Q({ id: "10.1", ask: "What will you do tomorrow?", vi: "Ngày mai bạn sẽ làm gì?",
+        frame: [F("I will", "Tôi sẽ"), S("activity_future", "none", 4)],
+        example: "I will play football.", exampleVi: "Tôi sẽ chơi bóng.",
+        vocab: [V("I will", "Tôi sẽ"), V("play football", "chơi bóng"), V("visit my aunt", "thăm dì"), V("read a book", "đọc sách")],
         errors: [
-          [/^(?:I am|I'm) going to\b/i, "Bài này trả lời bằng **will**. ✅ I will play football."],
-          [/^I will (?:to |playing|eating|going|reading)\b/i, "Sau will dùng động từ nguyên mẫu: **play**, không thêm to hay -ing."]
+          E("^(?:I am|I'm) going to\\b", "Bài này dùng **I will**, không dùng **going to**. ✅ I will play football."),
+          E("^I will to\\b", "Sau **will** không thêm **to**. ✅ I will play football."),
+          E("^I will (?:goes|eats|plays|likes|watches)\\b", "Sau **will** là động từ nguyên mẫu, không thêm **s**. ✅ I will play football."),
+          E("^I going\\b", "Dùng **I will**. ✅ I will play football."),
+          E("^I will going\\b", "Sau **will** không dùng **-ing**. ✅ I will play football.")
         ]
-      },
-      {
-        id: "10.2",
-        ask: "What will you eat tomorrow?",
-        vi: "Ngày mai bạn sẽ ăn gì?",
-        formula: [
-          { text: "I will eat", vi: "Tôi sẽ ăn", blank: false },
-          { text: "[món]", vi: "ví dụ: rice", blank: true }
-        ],
-        example: "I will eat rice.",
-        exampleVi: "Tôi sẽ ăn cơm.",
-        vocab: [
-          { en: "will eat", vi: "sẽ ăn" },
-          { en: "rice", vi: "cơm" },
-          { en: "pho", vi: "phở" },
-          { en: "noodles", vi: "mì" }
-        ],
-        accept: /^(?:I will|I'll) eat .+[.!?]$/i,
+      }),
+      Q({ id: "10.2", ask: "What will you eat tomorrow?", vi: "Ngày mai bạn sẽ ăn gì?",
+        frame: [F("I will eat", "Tôi sẽ ăn"), S("food", "plural_or_uncount", 3)],
+        example: "I will eat rice.", exampleVi: "Tôi sẽ ăn cơm.",
+        vocab: [V("I will eat", "Tôi sẽ ăn"), V("rice", "cơm"), V("pho", "phở"), V("noodles", "mì")],
         errors: [
-          [/^(?:I am|I'm) going to\b/i, "Bài này trả lời bằng **will**."],
-          [/^I will (?:to eat|eating|ate)\b/i, "Sau will dùng **eat**."]
+          E("^(?:I am|I'm) going to\\b", "Bài này dùng **I will**. ✅ I will eat rice."),
+          E("^I will to eat\\b", "Sau **will** không thêm **to**. ✅ I will eat rice."),
+          E("^I will eats\\b", "Sau **will** không thêm **s**. ✅ I will eat rice."),
+          E("^I eat\\b", "Dùng **I will eat**. ✅ I will eat rice."),
+          E("^I will eating\\b", "Sau **will** là động từ nguyên mẫu. ✅ I will eat rice.")
         ]
-      },
-      {
-        id: "10.3",
-        ask: "Where will you go tomorrow?",
-        vi: "Ngày mai bạn sẽ đi đâu?",
-        formula: [
-          { text: "I will go to", vi: "Tôi sẽ đi tới", blank: false },
-          { text: "[nơi]", vi: "ví dụ: school", blank: true }
-        ],
-        example: "I will go to school.",
-        exampleVi: "Tôi sẽ đi học.",
-        vocab: [
-          { en: "go to school", vi: "đi tới trường" },
-          { en: "the park", vi: "công viên" },
-          { en: "the market", vi: "chợ" }
-        ],
-        accept: /^(?:I will|I'll) go to .+[.!?]$/i,
+      }),
+      Q({ id: "10.3", ask: "Where will you go tomorrow?", vi: "Ngày mai bạn sẽ đi đâu?",
+        frame: [F("I will go to", "Tôi sẽ đi"), S("place_go", "none", 4)],
+        example: "I will go to school.", exampleVi: "Tôi sẽ đi học.",
+        vocab: [V("I will go to", "Tôi sẽ đi"), V("school", "trường"), V("the park", "công viên"), V("home", "nhà")],
         errors: [
-          [/^(?:I am|I'm) going to\b/i, "Bài này trả lời bằng **will**. ✅ I will go to school."],
-          [/^I will (?:to go|going)\b/i, "Sau will dùng **go**."]
+          E("^(?:I am|I'm) going to\\b", "Bài này dùng **I will**. ✅ I will go to school."),
+          E("^I will to go\\b", "Sau **will** không thêm **to**. ✅ I will go to school."),
+          E("^I will goes\\b", "Sau **will** không thêm **s**. ✅ I will go to school."),
+          E("^I go to\\b", "Dùng **I will go**. ✅ I will go to school."),
+          E("^I will go school\\b", "Thiếu **to**. ✅ I will go to school.")
         ]
-      },
-      {
-        id: "10.4",
-        ask: "Who will you visit tomorrow?",
-        vi: "Ngày mai bạn sẽ đi thăm ai?",
-        formula: [
-          { text: "I will visit", vi: "Tôi sẽ đi thăm", blank: false },
-          { text: "[ai]", vi: "ví dụ: my grandma", blank: true }
-        ],
-        example: "I will visit my grandma.",
-        exampleVi: "Tôi sẽ đi thăm bà.",
-        vocab: [
-          { en: "visit", vi: "đi thăm" },
-          { en: "my grandma", vi: "bà của tôi" },
-          { en: "my friend", vi: "bạn của tôi" }
-        ],
-        accept: /^(?:I will|I'll) visit .+[.!?]$/i,
+      }),
+      Q({ id: "10.4", ask: "Who will you visit tomorrow?", vi: "Ngày mai bạn sẽ đi thăm ai?",
+        frame: [F("I will visit my", "Tôi sẽ đi thăm"), S("person_visit", "none", 2, "[người bạn thăm]", "ví dụ: aunt")],
+        example: "I will visit my grandma.", exampleVi: "Tôi sẽ đi thăm bà.",
+        vocab: [V("I will visit", "Tôi sẽ đi thăm"), V("my grandma", "bà tôi"), V("my aunt", "dì tôi"), V("my friend", "bạn tôi")],
         errors: [
-          [/^(?:I am|I'm) going to\b/i, "Bài này trả lời bằng **will**."],
-          [/^I will (?:to visit|visiting|visited)\b/i, "Sau will dùng **visit**."]
+          E("^(?:I am|I'm) going to\\b", "Bài này dùng **I will**. ✅ I will visit my grandma."),
+          E("^I will to visit\\b", "Sau **will** không thêm **to**. ✅ I will visit my aunt."),
+          E("^I will visits\\b", "Sau **will** không thêm **s**. ✅ I will visit my aunt."),
+          E("^I visit\\b", "Dùng **I will visit**. ✅ I will visit my grandma."),
+          E("^I will visiting\\b", "Sau **will** là động từ nguyên mẫu. ✅ I will visit my aunt.")
         ]
-      },
-      {
-        id: "10.5",
-        ask: "What time will you get up?",
-        vi: "Bạn sẽ thức dậy lúc mấy giờ?",
-        formula: [
-          { text: "I will get up", vi: "Tôi sẽ thức dậy", blank: false },
-          { text: "at", vi: "lúc", blank: false },
-          { text: "[giờ]", vi: "ví dụ: 6 o'clock", blank: true }
-        ],
-        example: "I will get up at 6 o'clock.",
-        exampleVi: "Tôi sẽ thức dậy lúc 6 giờ.",
-        vocab: [
-          { en: "get up", vi: "thức dậy" },
-          { en: "at", vi: "lúc" },
-          { en: "six", vi: "sáu" },
-          { en: "o'clock", vi: "giờ đúng" }
-        ],
-        accept: re("^(?:I will|I'll) get up at (?:\\d{1,2}(?::\\d{2})?|" + TIMEW + ")(?: o'clock)?[.!?]$", "i"),
+      }),
+      Q({ id: "10.5", ask: "What time will you get up?", vi: "Bạn sẽ thức dậy lúc mấy giờ?",
+        frame: [F("I will get up at", "Tôi sẽ thức dậy lúc"), S("time_clock", "none", 3)],
+        example: "I will get up at 6 o'clock.", exampleVi: "Tôi sẽ thức dậy lúc 6 giờ.",
+        vocab: [V("I will get up", "Tôi sẽ thức dậy"), V("at", "lúc"), V("6 o'clock", "6 giờ"), V("6:30", "6 giờ 30")],
         errors: [
-          [/^(?:I am|I'm) going to\b/i, "Bài này trả lời bằng **will**. ✅ I will get up at 6 o'clock."],
-          [/^I will (?:to |getting|got)\b/i, "Sau will dùng **get up**."],
-          [/^I will get up (?:in|on)\b/i, "Trước giờ dùng **at**."],
-          [/^I will get up (?!at\b)/i, "Thiếu **at** trước giờ."]
+          E("^(?:I am|I'm) going to\\b", "Bài này dùng **I will**. ✅ I will get up at 6 o'clock."),
+          E("^I will to\\b", "Sau **will** không thêm **to**. ✅ I will get up at 6 o'clock."),
+          E("^I will gets\\b", "Sau **will** không thêm **s**. ✅ I will get up at 6 o'clock."),
+          E("^I will get up (?!at\\b)", "Thiếu **at**. ✅ I will get up at 6 o'clock."),
+          E("^I get up\\b", "Dùng **I will get up**. ✅ I will get up at 6 o'clock.")
         ]
-      }
+      })
     ]
   }
 ];
 
 var COMING_SOON = [];
+
+
 
 
 var STORAGE_KEY = "writing-practice-v2";
@@ -1771,6 +1478,8 @@ var state = {
   draft: "",
   writeMsg: "",
   writeOk: false,
+  writeAlso: false,
+  nudge: "",
   counted: false,
   queue: [],
   bigTest: 0,
@@ -1788,22 +1497,771 @@ function normalize(raw) {
   return s.replace(/\s+([.!?])$/, "$1");
 }
 
-function checkAnswer(raw, question) {
-  var s = normalize(raw);
-  if (!s) return { ok: false, message: "Hãy viết câu trả lời của bạn trước nhé." };
-  if (/___|\[|\]/.test(s)) return { ok: false, message: "Hãy thay phần [ ] bằng từ của bạn." };
-  if (!re("^[" + UPPER + "]").test(s)) {
-    return { ok: false, message: "Chữ cái đầu câu phải **viết hoa**." };
-  }
-  if (!/[.!?]$/.test(s)) return { ok: false, message: "Cuối câu cần có **dấu chấm (.)**." };
+var unsureLog = [];
+var MSG_FRAME = "Câu chưa đúng mẫu. Hãy nhìn lại **công thức** và ví dụ ở trên nhé.";
+var MSG_ALSO_YN = "Câu này đúng ngoài đời! Nhưng bài này luyện **Yes/No + câu đầy đủ**, thử viết lại nhé.";
+var MSG_YEAH = MSG_ALSO_YN + " Thân mật khi nói. Khi viết, dùng **Yes**.";
+var YESNO_ALSO = [
+  [re("^Of course not[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^Of course[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^Not really[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^I don't think so[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^I think so[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^Sure[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^Nope[.!?]$", "i"), MSG_ALSO_YN],
+  [re("^Yeah[.!?]$", "i"), MSG_YEAH],
+  [re("^Yep[.!?]$", "i"), MSG_YEAH]
+];
+var SHARED_ERRORS = [
+  [re("\\bI is\\b", "i"), "**'I' đi với am**"],
+  [re("\\bI are\\b", "i"), "**'I' đi với am**"],
+  [re("\\bI amn't\\b", "i"), "**'I' đi với am not**"],
+  [re("\\bI aren't\\b", "i"), "**'I' đi với am not**"],
+  [re("\\bI likes\\b", "i"), "**'I' không thêm s**"],
+  [re("\\bI don't likes\\b", "i"), "**don't không thêm s**"],
+  [re("\\bI do not likes\\b", "i"), "**do not không thêm s**"],
+  [re("\\bI doesn't\\b", "i"), "**'I' dùng don't**"],
+  [re("\\bI eated\\b", "i"), "**quá khứ của eat là ate**"],
+  [re("\\bI goed\\b", "i"), "**quá khứ của go là went**"],
+  [re("\\bI buyed\\b", "i"), "**quá khứ của buy là bought**"],
+  [re("\\bI have \\d+ years old\\b", "i"), "**tuổi dùng am, không dùng have**"],
+  [re("\\bI can to\\b", "i"), "**sau can không có to**"],
+  [re("\\bI can not\\b", "i"), "**viết liền cannot hoặc can't**"],
+  [re("\\bI don't can\\b", "i"), "**với can dùng can't**"],
+  [re("\\bI will to\\b", "i"), "**sau will không có to**"],
+  [re("\\bI am student\\b", "i"), "**thiếu a**"],
+  [re("^I fine\\b", "i"), "**thiếu am**"]
+];
+var NUM_WORD = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, eleven: 11, twelve: 12, thirteen: 13, fourteen: 14, fifteen: 15, sixteen: 16, seventeen: 17, eighteen: 18, nineteen: 19, twenty: 20 };
+var HOUR_WORD = "one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve";
+var PAST_WORD = { went: 1, ate: 1, did: 1, got: 1, saw: 1, bought: 1, made: 1, came: 1, had: 1, was: 1, were: 1, took: 1, gave: 1, told: 1, said: 1, found: 1, left: 1, felt: 1, slept: 1, woke: 1, ran: 1, swam: 1, rode: 1, spoke: 1, wrote: 1, read: 0 };
+
+function viChars(s) {
   var i;
-  for (i = 0; i < question.errors.length; i++) {
-    if (question.errors[i][0].test(s)) return { ok: false, message: question.errors[i][1] };
+  for (i = 0; i < s.length; i++) if (VI_MARK.indexOf(s.charAt(i)) >= 0) return true;
+  return false;
+}
+
+function firstError(list, s) {
+  if (!list) return "";
+  var i;
+  for (i = 0; i < list.length; i++) if (list[i][0].test(s)) return list[i][1];
+  return "";
+}
+
+function logUnsure(words) {
+  var i;
+  for (i = 0; i < words.length; i++) if (words[i] && unsureLog.indexOf(words[i]) < 0) unsureLog.push(words[i]);
+}
+
+function hintPlain(part) {
+  return String(part.hint || "").replace(/^\[/, "").replace(/\]$/, "");
+}
+
+function sampleOf(part) {
+  return String(part.hintVi || "").replace(/^ví dụ:\s*/i, "");
+}
+
+function echoLabel(part) {
+  if (part.slot === "name") return "tên thật";
+  if (part.slot === "food") return "tên món cụ thể";
+  if (part.slot === "city_place") return "tên nơi thật";
+  if (part.slot === "fruit") return "tên trái cây";
+  if (part.slot === "job") return "nghề thật";
+  if (part.slot === "pet") return "tên thú cưng";
+  return hintPlain(part);
+}
+
+function isEcho(part, text) {
+  var t = text.toLowerCase();
+  var inner = hintPlain(part).toLowerCase();
+  if (!t) return false;
+  if (t === inner || t === String(part.slot || "").toLowerCase()) return true;
+  if (t.length >= 3 && inner.indexOf(t) === 0) return true;
+  return false;
+}
+
+function wordCount(text) {
+  if (!text) return 0;
+  return text.split(" ").length;
+}
+
+function countMsg(part) {
+  var min = part.words ? part.words.min : 1;
+  var max = part.words ? part.words.max : 3;
+  if (min === max) return "Ô này cần " + min + " từ.";
+  return "Ô này cần từ " + min + " đến " + max + " từ.";
+}
+
+function eachWordCap(text) {
+  var words = text.split(" ");
+  var i;
+  for (i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (!w) continue;
+    if (i > 0 && (w === "of" || w === "de")) continue;
+    if (!re("^[" + UPPER + "]").test(w)) return false;
   }
-  if (!question.accept.test(s)) {
-    return { ok: false, message: "Câu chưa đúng mẫu. Hãy nhìn lại **công thức** và ví dụ ở trên nhé." };
+  return true;
+}
+
+function latinOkWord(w) {
+  if (/^(a|an|the|my|to|of|in|on|at|up|by)$/.test(w)) return true;
+  if (/^\d{1,4}$/.test(w)) return true;
+  if (w.length < 2 || w.length > 20) return false;
+  return /^[A-Za-z][A-Za-z'-]*$/.test(w);
+}
+
+function latinPhrase(text) {
+  var words = text.split(" ");
+  var i;
+  for (i = 0; i < words.length; i++) if (!latinOkWord(words[i])) return false;
+  return words.length > 0;
+}
+
+function countFor(entry, slot) {
+  if (entry.countBy && entry.countBy[slot]) return entry.countBy[slot];
+  return entry.count || "n";
+}
+
+function hasCat(entry, slot) {
+  if (!entry) return false;
+  if (entry.cat.indexOf(slot) >= 0) return true;
+  if (slot === "thing_like" && (entry.cat.indexOf("food") >= 0 || entry.cat.indexOf("fruit") >= 0 || entry.cat.indexOf("drink") >= 0 || entry.cat.indexOf("sport_game") >= 0 || entry.cat.indexOf("pet") >= 0 || entry.cat.indexOf("color") >= 0)) return true;
+  if (slot === "food" && (entry.cat.indexOf("fruit") >= 0 || entry.cat.indexOf("drink") >= 0)) return true;
+  if (slot === "person_visit" && entry.cat.indexOf("family_member") >= 0) return true;
+  if (slot === "family_member" && entry.cat.indexOf("person_visit") >= 0) return true;
+  if (slot === "activity_future" && (entry.cat.indexOf("verb_a1") >= 0 || entry.cat.indexOf("verb") >= 0)) return true;
+  if (slot === "verb_a1" && entry.cat.indexOf("verb") >= 0) return true;
+  if (slot === "hobby_ing" && entry.cat.indexOf("activity_ing") >= 0) return true;
+  if (slot === "activity_ing" && entry.cat.indexOf("hobby_ing") >= 0) return true;
+  if (slot === "furniture" && entry.cat.indexOf("object_room") >= 0) return true;
+  if (slot === "object_room" && entry.cat.indexOf("furniture") >= 0) return true;
+  if (slot === "watch_thing" && (entry.cat.indexOf("thing_like") >= 0 || entry.cat.indexOf("sport_game") >= 0)) return true;
+  if (slot === "place_go" && entry.cat.indexOf("city_place") >= 0) return true;
+  if (slot === "activity_past" && entry.cat.indexOf("verb") >= 0) return true;
+  return false;
+}
+
+function findEntry(text) {
+  var low = String(text || "").toLowerCase();
+  var art = "";
+  var bare = low;
+  var m = /^(a|an|the|my)\s+(.+)$/.exec(low);
+  if (m) { art = m[1]; bare = m[2]; }
+  if (LEX[bare]) return { entry: LEX[bare], art: art, bare: bare };
+  if (PLURAL[bare]) return { entry: PLURAL[bare], art: art, bare: bare };
+  return null;
+}
+
+function fillFrame(frame, part, replacement) {
+  var bits = [];
+  var i;
+  for (i = 0; i < frame.length; i++) {
+    if (frame[i] === part) bits.push(replacement);
+    else if (frame[i].t) bits.push(frame[i].t);
+    else bits.push(hintPlain(frame[i]));
   }
-  return { ok: true, sentence: s };
+  return bits.join(" ");
+}
+
+function phraseOk(part, text) {
+  var slot = part.slot;
+  var open = slot === "activity_future" || slot === "verb_a1" || slot === "activity_ing" || slot === "hobby_ing" || slot === "activity_past" || slot === "place_go" || slot === "person_visit" || slot === "family_member";
+  if (!open) return false;
+  var words = text.split(" ");
+  var i;
+  var good = false;
+  for (i = 0; i < words.length; i++) {
+    var low = words[i].toLowerCase();
+    if (/^(a|an|the|my|to|of|in|on|at|up|for|and|with|by)$/.test(low)) continue;
+    var e = LEX[low] || PLURAL[low];
+    if (!e) return false;
+    if ((slot === "activity_future" || slot === "verb_a1") && i === 0 && (hasCat(e, "verb") || hasCat(e, "verb_a1"))) good = true;
+    if ((slot === "activity_ing" || slot === "hobby_ing" || slot === "activity_past") && (hasCat(e, slot) || hasCat(e, "activity_ing") || hasCat(e, "hobby_ing") || hasCat(e, "verb"))) good = true;
+    if (slot === "place_go" && (hasCat(e, "place_go") || hasCat(e, "city_place"))) good = true;
+    if ((slot === "person_visit" || slot === "family_member") && (hasCat(e, "person_visit") || hasCat(e, "family_member"))) good = true;
+  }
+  return good;
+}
+
+function needName(slot, part) {
+  if (NEED[slot]) return NEED[slot];
+  return hintPlain(part);
+}
+
+function catName(cat) {
+  return CAT_VI[cat] || "từ khác";
+}
+
+function wrongCat(entry, part) {
+  var kind = catName(entry.cat[0]);
+  return "**" + entry.w + "** là " + kind + ", ở đây cần " + needName(part.slot, part) + ", ví dụ: " + sampleOf(part) + ".";
+}
+
+function englishMsg(question, part) {
+  var tips = [];
+  var sample = part ? sampleOf(part) : "";
+  if (sample) tips.push(sample);
+  var vocab = question && question.vocab ? question.vocab : [];
+  var i;
+  for (i = 0; i < vocab.length && tips.length < 3; i++) {
+    var en = vocab[i].en;
+    if (!en || tips.indexOf(en) >= 0) continue;
+    if (viChars(en)) continue;
+    if (en.split(" ").length > 3) continue;
+    tips.push(en);
+  }
+  var tail = tips.length ? " Gợi ý: " + tips.join(", ") + "." : "";
+  return "Hãy viết bằng **tiếng Anh** nhé." + tail;
+}
+
+function okNumber(text) {
+  if (/^\d{1,3}$/.test(text)) {
+    var n = parseInt(text, 10);
+    return n >= 0 && n <= 120;
+  }
+  return !!NUM_WORD[text.toLowerCase()];
+}
+
+function hourOk(token) {
+  if (/^\d{1,2}$/.test(token)) {
+    var n = parseInt(token, 10);
+    return n >= 0 && n <= 12;
+  }
+  return !!NUM_WORD[token] && NUM_WORD[token] <= 12;
+}
+
+function okTime(text) {
+  var s = text.toLowerCase();
+  if (/^(noon|midnight|midday)$/.test(s)) return true;
+  var m = new RegExp("^(\\d{1,2}|" + HOUR_WORD + ") o'clock$").exec(s);
+  if (m) return hourOk(m[1]);
+  m = /^(\d{1,2}):(\d{2})$/.exec(s);
+  if (m) {
+    var h = parseInt(m[1], 10);
+    var min = parseInt(m[2], 10);
+    return h >= 0 && h <= 23 && min >= 0 && min <= 59;
+  }
+  m = new RegExp("^half past (\\d{1,2}|" + HOUR_WORD + ")$").exec(s);
+  if (m) return hourOk(m[1]);
+  m = new RegExp("^quarter (?:past|to) (\\d{1,2}|" + HOUR_WORD + ")$").exec(s);
+  if (m) return hourOk(m[1]);
+  m = /^(\d{1,2})\s*(am|pm)$/.exec(s);
+  if (m) return hourOk(m[1]);
+  return false;
+}
+
+function looksPast(w) {
+  if (PAST_WORD[w]) return true;
+  if (/ied$/.test(w)) {
+    var y = w.slice(0, -3) + "y";
+    if (LEX[y] && hasCat(LEX[y], "verb")) return true;
+  }
+  if (/ed$/.test(w) && w !== "need" && w !== "bed") {
+    var b1 = w.slice(0, -2);
+    var b2 = w.slice(0, -1);
+    if (LEX[b2] && /e$/.test(b2) && hasCat(LEX[b2], "verb")) return true;
+    if (LEX[b1] && hasCat(LEX[b1], "verb")) return true;
+  }
+  return false;
+}
+
+function looksThird(w) {
+  if (/^(goes|does|has|is|was)$/.test(w)) return true;
+  if (/ies$/.test(w)) {
+    var y = w.slice(0, -3) + "y";
+    if (LEX[y] && hasCat(LEX[y], "verb")) return true;
+  }
+  if (/(?:ch|sh|s|x|z)es$/.test(w)) {
+    var b = w.slice(0, -2);
+    if (LEX[b] && hasCat(LEX[b], "verb")) return true;
+  }
+  if (/s$/.test(w) && !/ss$/.test(w)) {
+    var b2 = w.slice(0, -1);
+    if (LEX[b2] && hasCat(LEX[b2], "verb")) return true;
+  }
+  return false;
+}
+
+function checkNoun(part, found, frame) {
+  var mode = part.noun;
+  if (!mode || mode === "none" || mode === "proper") return "";
+  var entry = found.entry;
+  var count = countFor(entry, part.slot);
+  var bare = found.bare;
+  var art = found.art;
+  var isBase = bare === entry.w.toLowerCase();
+  var isPlural = !!(entry.plural && bare === entry.plural.toLowerCase());
+  var fixed = "";
+  if (mode === "plural_or_uncount") {
+    if (count === "u" || count === "n") {
+      if (art === "a" || art === "an") return "**" + entry.w + "** không đếm được, bỏ **a/an**. ✅ " + fillFrame(frame, part, entry.w) + ".";
+      if (!isBase && isPlural) return "**" + entry.w + "** không thêm **s**. ✅ " + fillFrame(frame, part, entry.w) + ".";
+      return "";
+    }
+    if (count === "p") {
+      if (bare !== (entry.plural || entry.w).toLowerCase()) return "Dùng dạng số nhiều: **" + (entry.plural || entry.w) + "**.";
+      return "";
+    }
+    if (isPlural) return "";
+    if (isBase && (art === "a" || art === "an" || art === "the" || art === "my")) {
+      if ((art === "a" || art === "an") && entry.art && art !== entry.art) return "Trước **" + entry.w + "** dùng **" + entry.art + "**.";
+      return "";
+    }
+    if (isBase) return "**" + entry.w + "** đếm được, thêm **s**: " + (entry.plural || entry.w + "s") + ". ✅ " + fillFrame(frame, part, entry.plural || entry.w + "s") + ".";
+    return "";
+  }
+  if (mode === "article_or_uncount") {
+    if (count === "u" || count === "n") {
+      if (art === "a" || art === "an") return "**" + entry.w + "** không đếm được, bỏ **a/an**. ✅ " + fillFrame(frame, part, entry.w) + ".";
+      if (!isBase && isPlural) return "**" + entry.w + "** không thêm **s**.";
+      return "";
+    }
+    if (count === "p") {
+      if (bare !== (entry.plural || entry.w).toLowerCase()) return "Dùng dạng số nhiều: **" + (entry.plural || entry.w) + "**.";
+      return "";
+    }
+    if (isPlural && !art) return "";
+    if (isBase && (art === "a" || art === "an")) {
+      if (entry.art && art !== entry.art) return "Trước **" + entry.w + "** dùng **" + entry.art + "**. ✅ " + fillFrame(frame, part, entry.art + " " + entry.w) + ".";
+      return "";
+    }
+    if (isBase && (art === "the" || art === "my")) return "";
+    fixed = (entry.art || "a") + " " + entry.w;
+    return "Thêm **a** hoặc **an** trước từ này. ✅ " + fillFrame(frame, part, fixed) + ".";
+  }
+  if (mode === "after_a") {
+    if (isPlural && entry.plural && entry.plural.toLowerCase() !== entry.w.toLowerCase()) return "Sau **a** dùng số ít: **" + entry.w + "**.";
+    return "";
+  }
+  return "";
+}
+
+function checkSpecial(part, text, question) {
+  var slot = part.slot;
+  var low = text.toLowerCase();
+  if (slot === "number_age") {
+    if (!okNumber(text)) return { error: "Viết số như **10** hoặc **ten**." };
+    return { ok: true };
+  }
+  if (slot === "time_clock") {
+    if (!okTime(text)) return { error: "Viết giờ như **6 o'clock** hoặc **6:30**." };
+    return { ok: true };
+  }
+  if (slot === "transport") {
+    if (low === "on foot") return { ok: true };
+    if (/^by an?\b/.test(low)) return { error: "Không thêm **a**. ✅ I go to school by bus." };
+    if (/^by [a-z][a-z' -]{1,30}$/.test(low)) {
+      var rest = low.replace(/^by /, "");
+      if (viChars(rest)) return { error: englishMsg(question, part) };
+      var known = LEX[rest] && hasCat(LEX[rest], "transport");
+      if (known) return { ok: true };
+      if (latinPhrase(rest)) return { ok: true, unsure: true, word: rest };
+      return { error: "Dùng **by bus** hoặc **on foot**." };
+    }
+    return { error: "Dùng **by bus** hoặc **on foot**. ✅ I go to school by bike." };
+  }
+  if (slot === "prep_place") {
+    var pm = /^(in|on|under) (the|my) (.+)$/.exec(low);
+    if (!pm) {
+      if (/^(in|on|under) [a-z]/.test(low)) return { error: "Thêm **the**: **on the table**." };
+      return { error: "Viết vị trí như **on the table** hoặc **under the chair**." };
+    }
+    if (viChars(pm[3])) return { error: englishMsg(question, part) };
+    var obj = findEntry(pm[3]);
+    if (obj && !hasCat(obj.entry, "object_room") && !hasCat(obj.entry, "furniture") && !hasCat(obj.entry, "place_go")) return { error: wrongCat(obj.entry, part) };
+    if (obj) return { ok: true };
+    if (latinPhrase(pm[3])) return { ok: true, unsure: true, word: pm[3] };
+    return { error: "Viết vị trí như **on the table**." };
+  }
+  return null;
+}
+
+function checkOneSlot(part, text, question, frame) {
+  var min = part.words ? part.words.min : 1;
+  var max = part.words ? part.words.max : 3;
+  var n = wordCount(text);
+  if (n < min || n > max) return { error: countMsg(part) };
+  if (isEcho(part, text)) return { error: "Hãy thay bằng **" + echoLabel(part) + "** (ví dụ: " + sampleOf(part) + "), đừng viết lại chữ gợi ý nhé." };
+  var special = checkSpecial(part, text, question);
+  if (special) return special;
+  if ((part.slot === "name" || part.slot === "city_place") && !eachWordCap(text)) {
+    return { error: "Tên riêng phải **viết hoa chữ cái đầu**: Lan, không phải lan." };
+  }
+  if (viChars(text) && !LOANS[text.toLowerCase()]) return { error: englishMsg(question, part) };
+  if (part.slot === "hobby_ing" || part.slot === "activity_ing") {
+    if (!/\b[a-z]+ing\b/i.test(text)) return { error: "Cần động từ thêm **-ing**, ví dụ: " + sampleOf(part) + "." };
+  }
+  if (part.slot === "activity_future" || part.slot === "verb_a1") {
+    var first = text.split(" ")[0].toLowerCase();
+    if (first === "to" || /^to$/.test(text.split(" ")[0].toLowerCase())) return { error: "Dùng động từ nguyên mẫu, không thêm **to**." };
+    if (/ing$/.test(first) && first.length > 4) return { error: "Dùng động từ nguyên mẫu, không dùng **-ing**." };
+    if (looksPast(first)) return { error: "Dùng động từ nguyên mẫu, không dùng quá khứ." };
+    if (looksThird(first)) return { error: "Dùng động từ nguyên mẫu, không thêm **s**." };
+  }
+  var found = findEntry(text);
+  if (!found && /^(a|an|the|my)\s+/.test(text.toLowerCase())) found = findEntry(text.replace(/^(a|an|the|my)\s+/i, ""));
+  if (found && !hasCat(found.entry, part.slot)) return { error: wrongCat(found.entry, part) };
+  if (found) {
+    var nounErr = checkNoun(part, found, frame);
+    if (nounErr) return { error: nounErr };
+    return { ok: true };
+  }
+  if (phraseOk(part, text)) return { ok: true };
+  if (latinPhrase(text)) return { ok: true, unsure: true, word: text };
+  return { error: "Từ này chưa rõ. Hãy nhìn ví dụ: **" + sampleOf(part) + "**." };
+}
+
+function checkSlots(slots, question, frame) {
+  var unsure = false;
+  var words = [];
+  var i;
+  for (i = 0; i < slots.length; i++) {
+    var one = checkOneSlot(slots[i].part, slots[i].text, question, frame);
+    if (one.error) return { error: one.error, unsure: false, newWords: [] };
+    if (one.unsure) { unsure = true; if (one.word) words.push(one.word); }
+  }
+  return { error: "", unsure: unsure, newWords: words };
+}
+
+function altsOf(part) {
+  var options = [part.t];
+  var a = part.alts || [];
+  var i;
+  for (i = 0; i < a.length; i++) if (a[i]) options.push(a[i]);
+  options.sort(function (x, y) { return y.length - x.length; });
+  return options;
+}
+
+function matchAt(body, pos, frame, fi, acc) {
+  if (fi >= frame.length) {
+    if (pos < body.length && body.charAt(pos) === " ") pos++;
+    if (pos !== body.length) return null;
+    return acc;
+  }
+  if (pos < body.length && body.charAt(pos) === " ") pos++;
+  var part = frame[fi];
+  if (part.t) {
+    var options = altsOf(part);
+    var j;
+    for (j = 0; j < options.length; j++) {
+      var opt = options[j];
+      if (pos + opt.length > body.length) continue;
+      if (body.substr(pos, opt.length).toLowerCase() !== opt.toLowerCase()) continue;
+      var next = pos + opt.length;
+      if (next < body.length && body.charAt(next) !== " ") continue;
+      var hit = matchAt(body, next, frame, fi + 1, acc);
+      if (hit) return hit;
+    }
+    return null;
+  }
+  if (fi === frame.length - 1) {
+    return matchAt(body, body.length, frame, fi + 1, acc.concat([{ part: part, text: body.substring(pos).trim() }]));
+  }
+  var k = pos;
+  while (k <= body.length) {
+    if (k === body.length || body.charAt(k) === " ") {
+      var hit2 = matchAt(body, k, frame, fi + 1, acc.concat([{ part: part, text: body.substring(pos, k).trim() }]));
+      if (hit2) return hit2;
+    }
+    if (k === body.length) break;
+    k++;
+  }
+  return null;
+}
+
+function matchFrame(body, frame) {
+  if (!frame || !frame.length) return null;
+  return matchAt(body, 0, frame, 0, []);
+}
+
+function basicFail(s) {
+  if (!s) return "Hãy viết câu trả lời của bạn trước nhé.";
+  if (/___|\[[^\]]*\]|\.\.\./.test(s)) return "Hãy thay phần **[ ]** bằng từ của bạn nhé.";
+  if (!re("^[" + UPPER + "]").test(s)) return "Chữ cái đầu câu phải **viết hoa**.";
+  if (!/[.!?]$/.test(s)) return "Cuối câu cần có **dấu chấm (.)**.";
+  return "";
+}
+
+function splitSentences(s) {
+  var out = [];
+  var cur = "";
+  var i;
+  for (i = 0; i < s.length; i++) {
+    var ch = s.charAt(i);
+    cur += ch;
+    if (ch === "." || ch === "!" || ch === "?") {
+      var t = cur.trim();
+      if (t) out.push(t);
+      cur = "";
+    }
+  }
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+
+function yesNeed(aux) {
+  if (aux === "do") return "Yes, I do.";
+  if (aux === "can") return "Yes, I can.";
+  return "Yes, I am.";
+}
+
+function noNeed(aux) {
+  if (aux === "do") return "No, I don't.";
+  if (aux === "can") return "No, I can't.";
+  return "No, I am not.";
+}
+
+function yesNoTable(body, q) {
+  var aux = q.aux;
+  if (/^(Yes|No),\s*(yes|no)\b/i.test(body)) return "Chọn **Yes** hoặc **No** thôi nhé.";
+  if (/^(Yes|No) [A-Za-z]/.test(body) && body.indexOf(",") < 0) return "Sau **Yes/No** cần có **dấu phẩy**: " + yesNeed(aux).replace(/\.$/, "") + ".";
+  if (/^Yes,\s+I'm$/i.test(body)) return "Câu trả lời ngắn khẳng định **không viết tắt**: Yes, I am.";
+  if (viChars(body) && !LOANS[body.toLowerCase()]) return "Hãy viết bằng **tiếng Anh** nhé.";
+  if (/\bI am no\b/i.test(body)) return "Dùng **not**. ✅ I am not a student.";
+  if (/\bI amn't\b/i.test(body) || /\bI aren't\b/i.test(body)) return "'I' đi với **am not** (hoặc **I'm not**).";
+  if (/\bI can not\b/i.test(body)) return "Viết liền: **cannot** hoặc **can't**.";
+  if (/\bI don't can\b/i.test(body) || /\bI no can\b/i.test(body)) return "Với **can**, dùng **can't** hoặc **cannot**. ✅ I can't swim.";
+  if (/\bI doesn't\b/i.test(body) || /\bI not live\b/i.test(body)) return "'I' dùng **don't**. ✅ No, I don't.";
+  if (aux === "am" && (/^Yes,\s+I\s+(do|can)\b/i.test(body) || /^No,\s+I\s+(do not|don't|do|can't|cannot)\b/i.test(body))) return "Câu hỏi dùng **am**, nên trả lời **Yes, I am.**";
+  if (aux === "do" && (/^Yes,\s+I\s+(am|can)\b/i.test(body) || /^No,\s+I\s+(am|can't|cannot)\b/i.test(body))) return "Câu hỏi dùng **do**, nên trả lời **Yes, I do.**";
+  if (aux === "can" && (/^Yes,\s+I\s+(am|do)\b/i.test(body) || /^No,\s+I\s+(am|do not|don't|do)\b/i.test(body))) return "Câu hỏi dùng **can**, nên trả lời **Yes, I can.**";
+  if (aux === "can") {
+    if (/^(?:Yes,\s+|No,\s+)?I can to\b/i.test(body)) return "Sau **can** là động từ nguyên mẫu, không có **to**, **-ing** hay **s**. ✅ I can swim.";
+    if (/^(?:Yes,\s+|No,\s+)?I can [a-z]+ing\b/i.test(body)) return "Sau **can** là động từ nguyên mẫu, không có **to**, **-ing** hay **s**. ✅ I can swim.";
+    var verb = "";
+    var mv = /^(?:Yes,\s+|No,\s+)?I can ([a-z]+)\b/i.exec(body);
+    if (mv && looksThird(mv[1].toLowerCase())) return "Sau **can** là động từ nguyên mẫu, không có **to**, **-ing** hay **s**. ✅ I can swim.";
+  }
+  if (/^Yes\b/i.test(body) && /(\bnot\b|n't\b|\bcannot\b)/i.test(body)) return "Yes thì câu phía sau **không có not**. ✅ " + yesNeed(aux);
+  if (/^No,\s+I\s+(am|do|can)$/i.test(body)) return "No thì cần **not**. ✅ " + noNeed(aux);
+  if (aux === "am" && /^(?:No,\s+)?I not\b/i.test(body)) return "Thiếu **am**. ✅ No, I am not.";
+  return "";
+}
+
+function matchL2(body, aux) {
+  if (aux === "am") {
+    if (/^Yes, I am$/i.test(body)) return "yes";
+    if (/^No, I am not$/i.test(body) || /^No, I'm not$/i.test(body)) return "no";
+  }
+  if (aux === "do") {
+    if (/^Yes, I do$/i.test(body)) return "yes";
+    if (/^No, I don't$/i.test(body) || /^No, I do not$/i.test(body)) return "no";
+  }
+  if (aux === "can") {
+    if (/^Yes, I can$/i.test(body)) return "yes";
+    if (/^No, I can't$/i.test(body) || /^No, I cannot$/i.test(body)) return "no";
+  }
+  return "";
+}
+
+function matchL3(body, q) {
+  var pol = "";
+  var rest = body;
+  var m = /^(Yes|No),\s+(.*)$/i.exec(body);
+  if (m) { pol = m[1].toLowerCase(); rest = m[2]; }
+  var work = rest;
+  if (q.tails && q.tails.length) work = work.replace(/\s+(very well|a little|well)$/i, "");
+  var negFirst = /(\bnot\b|n't\b|\bcannot\b)/i.test(work);
+  var list = [];
+  var i;
+  var affirm = q.core && q.core.affirm ? q.core.affirm : [];
+  var negate = q.core && q.core.negate ? q.core.negate : [];
+  if (negFirst) {
+    for (i = 0; i < negate.length; i++) list.push({ frame: negate[i], neg: true });
+    for (i = 0; i < affirm.length; i++) list.push({ frame: affirm[i], neg: false });
+  } else {
+    for (i = 0; i < affirm.length; i++) list.push({ frame: affirm[i], neg: false });
+    for (i = 0; i < negate.length; i++) list.push({ frame: negate[i], neg: true });
+  }
+  for (i = 0; i < list.length; i++) {
+    var slots = matchFrame(work, list[i].frame);
+    if (!slots) continue;
+    if (pol === "yes" && list[i].neg) return { error: "Yes thì câu phía sau **không có not**. ✅ " + yesNeed(q.aux) };
+    if (pol === "no" && !list[i].neg) return { error: "No thì cần **not**. ✅ " + noNeed(q.aux) };
+    var slotRes = checkSlots(slots, q, list[i].frame);
+    if (slotRes.error) return { error: slotRes.error };
+    return { ok: true, pol: list[i].neg ? "no" : "yes", unsure: slotRes.unsure, newWords: slotRes.newWords };
+  }
+  return null;
+}
+
+function nudgeFor(level, pol, q) {
+  if (level === 1) {
+    if (pol === "no") return "Thử viết cả câu: **" + noNeed(q.aux) + "**";
+    return "Thử viết cả câu: **" + yesNeed(q.aux) + "**";
+  }
+  if (level === 2) {
+    var sample = q.example || "";
+    if (pol === "no" && q.negExample) sample = q.negExample;
+    sample = sample.replace(/[.!?]$/, "");
+    var lead = pol === "no" ? "No, " : "Yes, ";
+    if (/^(yes|no),/i.test(sample)) lead = "";
+    return "Thêm cả câu cho đầy đủ: **" + lead + sample + ".**";
+  }
+  return "";
+}
+
+function framesOf(q) {
+  var list = [];
+  var i;
+  if (q.frame) list.push(q.frame);
+  if (q.altFrames) for (i = 0; i < q.altFrames.length; i++) list.push(q.altFrames[i]);
+  if (q.core) {
+    if (q.core.affirm) for (i = 0; i < q.core.affirm.length; i++) list.push(q.core.affirm[i]);
+    if (q.core.negate) for (i = 0; i < q.core.negate.length; i++) list.push(q.core.negate[i]);
+  }
+  return list;
+}
+
+function prepFollow(body) {
+  var s = body.replace(/^(?:But|And)\s+/i, "");
+  s = s.replace(/^(?:Yes|No),\s+/i, "");
+  s = s.replace(/\s+(?:very well|a little|well)$/i, "");
+  return s;
+}
+
+function matchAnyLesson(body) {
+  var slotError = "";
+  var li;
+  var qi;
+  var fi;
+  for (li = 0; li < LESSONS.length; li++) {
+    var qs = LESSONS[li].questions;
+    for (qi = 0; qi < qs.length; qi++) {
+      var frames = framesOf(qs[qi]);
+      for (fi = 0; fi < frames.length; fi++) {
+        var slots = matchFrame(body, frames[fi]);
+        if (!slots) continue;
+        var res = checkSlots(slots, qs[qi], frames[fi]);
+        if (!res.error) return { ok: true, unsure: res.unsure, newWords: res.newWords };
+        if (!slotError) slotError = res.error;
+      }
+    }
+  }
+  if (slotError) return { ok: false, error: slotError };
+  return { ok: false, error: "" };
+}
+
+function checkFollowUps(parts) {
+  var i;
+  var unsure = false;
+  var words = [];
+  if (parts.length > 2) return { bad: true, message: "Câu chính đúng rồi! Chỉ thêm tối đa 2 câu thôi nhé." };
+  for (i = 0; i < parts.length; i++) {
+    var sent = parts[i];
+    var body = sent.replace(/[.!?]$/, "");
+    if (wordCount(body) > 12) return { bad: true, message: "Câu chính đúng rồi! Câu thêm hơi dài. Thử câu ngắn như **I am a teacher.**" };
+    var shared = firstError(SHARED_ERRORS, sent);
+    if (shared) return { bad: true, message: "Câu chính đúng rồi! Câu thêm bị lỗi: " + shared + "." };
+    var cleaned = prepFollow(body);
+    var hit = matchAnyLesson(cleaned);
+    if (hit.ok) {
+      if (hit.unsure) { unsure = true; words = words.concat(hit.newWords || []); }
+      continue;
+    }
+    if (hit.error) return { bad: true, message: "Câu chính đúng rồi! Câu thêm bị lỗi: " + hit.error };
+    if (/^(I|My|We|He|She|It|They|The|There)\b/.test(cleaned) && latinPhrase(cleaned) && !viChars(cleaned)) {
+      unsure = true;
+      words.push(cleaned);
+      continue;
+    }
+    return { bad: true, message: "Câu thêm chưa rõ. Thử câu ngắn như **I am a teacher.**" };
+  }
+  return { bad: false, unsure: unsure, newWords: words };
+}
+
+function pack(status, message, sentence, extra) {
+  var out = { status: status, message: message || "", sentence: sentence, nudge: "", level: 0, newWords: [] };
+  if (extra) {
+    if (extra.nudge) out.nudge = extra.nudge;
+    if (extra.level) out.level = extra.level;
+    if (extra.newWords) out.newWords = extra.newWords;
+  }
+  if (out.newWords && out.newWords.length) logUnsure(out.newWords);
+  return out;
+}
+
+function checkYesNo(s, q) {
+  var parts = splitSentences(s);
+  var i;
+  for (i = 0; i < parts.length; i++) {
+    if (!re("^[" + UPPER + "]").test(parts[i])) return pack("error", "Chữ cái đầu câu phải **viết hoa**.", s);
+    if (!/[.!?]$/.test(parts[i])) return pack("error", "Cuối câu cần có **dấu chấm (.)**.", s);
+  }
+  var main = parts[0];
+  var mainBody = main.replace(/[.!?]$/, "");
+  var table = yesNoTable(mainBody, q);
+  if (table) return pack("error", table, s);
+  var qerr = firstError(q.errors, main);
+  if (qerr) return pack("error", qerr, s);
+  var level = 0;
+  var pol = "";
+  var newWords = [];
+  var unsure = false;
+  if (/^Yes$/i.test(mainBody) || /^No$/i.test(mainBody)) {
+    level = 1;
+    pol = /^Yes$/i.test(mainBody) ? "yes" : "no";
+  }
+  if (!level) {
+    var l2 = matchL2(mainBody, q.aux);
+    if (l2) { level = 2; pol = l2; }
+  }
+  if (!level) {
+    var l3 = matchL3(mainBody, q);
+    if (l3 && l3.error) return pack("error", l3.error, s);
+    if (l3 && l3.ok) {
+      level = 3;
+      pol = l3.pol;
+      unsure = !!l3.unsure;
+      newWords = l3.newWords || [];
+    }
+  }
+  if (!level) {
+    if (parts.length === 1) {
+      var also = firstError(q.alsoOk, s) || firstError(YESNO_ALSO, s);
+      if (also) return pack("alsoOk", also, s);
+    }
+    if (viChars(s)) return pack("error", englishMsg(q, null), s);
+    return pack("error", MSG_FRAME, s);
+  }
+  var nudge = nudgeFor(level, pol, q);
+  if (parts.length === 1) return pack(unsure ? "unsureOk" : "ok", "", s, { level: level, nudge: nudge, newWords: newWords });
+  var fu = checkFollowUps(parts.slice(1));
+  if (fu.bad) return pack("ok", "", s, { level: level, nudge: fu.message, newWords: newWords });
+  var allNew = newWords.concat(fu.newWords || []);
+  return pack(unsure || fu.unsure ? "unsureOk" : "ok", "", s, { level: 4, nudge: "Mở rộng rất tốt! 🌟", newWords: allNew });
+}
+
+function grade(raw, question) {
+  var s = normalize(raw);
+  var basic = basicFail(s);
+  if (basic) return pack("error", basic, s);
+  if (question.type === "yesno") return checkYesNo(s, question);
+  var err = firstError(question.errors, s);
+  if (err) return pack("error", err, s);
+  var body = s.replace(/[.!?]$/, "");
+  var slots = matchFrame(body, question.frame);
+  if (!slots) {
+    var also = firstError(question.alsoOk, s);
+    if (also) return pack("alsoOk", also, s);
+    if (viChars(s)) return pack("error", englishMsg(question, null), s);
+    return pack("error", MSG_FRAME, s);
+  }
+  var slotRes = checkSlots(slots, question, question.frame);
+  if (slotRes.error) return pack("error", slotRes.error, s);
+  if (slotRes.unsure) return pack("unsureOk", "", s, { newWords: slotRes.newWords });
+  return pack("ok", "", s);
+}
+
+function checkAnswer(raw, question) {
+  var r = grade(raw, question);
+  if (r.status === "ok" || r.status === "unsureOk") {
+    return { ok: true, sentence: r.sentence, message: r.message || "", nudge: r.nudge || "", level: r.level || 0, status: r.status };
+  }
+  if (r.status === "alsoOk") return { ok: false, alsoOk: true, message: r.message, sentence: r.sentence, status: "alsoOk" };
+  return { ok: false, message: r.message, status: "error" };
 }
 
 function lessonById(id) {
@@ -2060,33 +2518,60 @@ function nextLesson() {
   return LESSONS[0];
 }
 
+var TOPIC_SHORT = {
+  1: "Giới thiệu tớ",
+  2: "Chỗ tớ ở",
+  3: "Gia đình tớ",
+  4: "Thứ tớ thích",
+  5: "Ngày của tớ",
+  6: "Ngay bây giờ",
+  7: "Trong phòng tớ",
+  8: "Tớ làm được",
+  9: "Hôm qua",
+  10: "Ngày mai"
+};
+var TOPIC_ART = {
+  1: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG0" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT0" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF0" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl0" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw0"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><g transform="translate(44 60) scale(0.95)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><path d="M80 6h30a8 8 0 0 1 8 8v14a8 8 0 0 1-8 8H98l-8 8v-8h-10a8 8 0 0 1-8-8V14a8 8 0 0 1 8-8z" fill="url(#gW0)"></path><text x="95" y="27" text-anchor="middle" font-family="Nunito,sans-serif" font-weight="800" font-size="15" fill="#DE7A80">Hi!</text></svg>',
+  2: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG1" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT1" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF1" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl1" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw1"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><ellipse cx="60" cy="92" rx="46" ry="7.82" fill="#7A4A44" opacity="0.18" filter="url(#bl1)"></ellipse><rect x="30" y="14" width="10" height="24" rx="3" fill="url(#gO1)"></rect><rect x="22" y="42" width="76" height="50" rx="9" fill="url(#gW1)"></rect><polygon points="15,46 60,13 105,46" fill="url(#gO1)" stroke="#F4B2A8" stroke-width="6" stroke-linejoin="round"></polygon><rect x="43" y="48" width="34" height="30" rx="7" fill="url(#gB1)"></rect><g clip-path="url(#cw1)"><rect x="43" y="68" width="34" height="12" fill="url(#gM1)"></rect><g transform="translate(60 70) scale(0.5)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g></g><rect x="43" y="48" width="34" height="30" rx="7" fill="none" stroke="#fff" stroke-width="3.5"></rect><line x1="60" y1="48" x2="60" y2="78" stroke="#fff" stroke-width="2.5"></line><rect x="26" y="62" width="11" height="30" rx="4" fill="url(#gO1)"></rect></svg>',
+  3: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG2" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT2" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF2" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl2" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw2"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><ellipse cx="60" cy="90" rx="54" ry="8" fill="url(#gM2)" opacity=".7"></ellipse><g transform="translate(36 58) scale(0.8)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(84 62) scale(0.66)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(60 78) scale(0.42)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(60 34) scale(0.6)"><path d="M0 9C-15-3-11-19 0-10 11-19 15-3 0 9z" fill="url(#gP2)" stroke="#F8B0C2" stroke-width="2.5" stroke-linejoin="round"></path><ellipse cx="-5" cy="-6" rx="3.4" ry="1.8" fill="#fff" opacity="0.85" transform="rotate(-35 -5 -6)"></ellipse></g></svg>',
+  4: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG3" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT3" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF3" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl3" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw3"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><g transform="translate(40 58) scale(0.82)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(98 63) scale(1.05)"><path d="M0 9C-15-3-11-19 0-10 11-19 15-3 0 9z" fill="url(#gP3)" stroke="#F8B0C2" stroke-width="2.5" stroke-linejoin="round"></path><ellipse cx="-5" cy="-6" rx="3.4" ry="1.8" fill="#fff" opacity="0.85" transform="rotate(-35 -5 -6)"></ellipse></g><path d="M66 50C80 32 108 30 114 48" fill="none" stroke="#F3A79C" stroke-width="7" stroke-linecap="round"/><path d="M66 74C82 94 110 92 114 72" fill="none" stroke="#F3A79C" stroke-width="7" stroke-linecap="round"/><circle cx="114" cy="48" r="5" fill="#F8C4BA"/><circle cx="114" cy="72" r="5" fill="#F8C4BA"/><g transform="translate(22 20) scale(0.5)"><polygon points="0,-12 3.5,-4 12,-3.5 5.5,2.5 7.5,11 0,6.5 -7.5,11 -5.5,2.5 -12,-3.5 -3.5,-4" fill="url(#gY3)" stroke="#FFD98D" stroke-width="3.5" stroke-linejoin="round"></polygon><ellipse cx="-3" cy="-4" rx="3" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-30 -3 -4)"></ellipse></g><g transform="translate(100 24) scale(0.4)"><polygon points="0,-12 3.5,-4 12,-3.5 5.5,2.5 7.5,11 0,6.5 -7.5,11 -5.5,2.5 -12,-3.5 -3.5,-4" fill="url(#gY3)" stroke="#FFD98D" stroke-width="3.5" stroke-linejoin="round"></polygon><ellipse cx="-3" cy="-4" rx="3" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-30 -3 -4)"></ellipse></g></svg>',
+  5: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG4" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT4" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF4" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl4" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw4"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><circle cx="82" cy="36" r="22" fill="url(#gY4)"></circle><line x1="111.0" y1="36.0" x2="119.0" y2="36.0" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="102.5" y1="56.5" x2="108.2" y2="62.2" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="82.0" y1="65.0" x2="82.0" y2="73.0" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="61.5" y1="56.5" x2="55.8" y2="62.2" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="53.0" y1="36.0" x2="45.0" y2="36.0" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="61.5" y1="15.5" x2="55.8" y2="9.8" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="82.0" y1="7.0" x2="82.0" y2="-1.0" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="102.5" y1="15.5" x2="108.2" y2="9.8" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><g fill="#fff" opacity=".95"><ellipse cx="26" cy="22" rx="14" ry="7"></ellipse><ellipse cx="36" cy="18" rx="9" ry="7"></ellipse><ellipse cx="18" cy="24" rx="8" ry="5"></ellipse></g><g transform="translate(50 64) scale(0.92)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g></svg>',
+  6: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG5" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT5" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF5" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl5" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw5"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><g transform="translate(38 62) scale(0.85)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(88 60)"><circle cx="-12" cy="-22" r="7" fill="url(#gO5)"></circle><circle cx="12" cy="-22" r="7" fill="url(#gO5)"></circle><circle r="20" fill="url(#gO5)"></circle><circle r="15.5" fill="url(#gW5)"></circle><line x1="0" y1="0" x2="0" y2="-9.5" stroke="#8B5E58" stroke-width="3" stroke-linecap="round"></line><line x1="0" y1="0" x2="7" y2="4" stroke="#8B5E58" stroke-width="3" stroke-linecap="round"></line><circle r="1.8" fill="#8B5E58"></circle><rect x="-14" y="18" width="5" height="6" rx="2.5" fill="#DE8680"></rect><rect x="9" y="18" width="5" height="6" rx="2.5" fill="#DE8680"></rect></g></svg>',
+  7: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG6" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT6" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF6" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl6" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw6"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><ellipse cx="62" cy="92" rx="48" ry="8.16" fill="#7A4A44" opacity="0.18" filter="url(#bl6)"></ellipse><rect x="8" y="36" width="10" height="56" rx="5" fill="url(#gT6)"></rect><rect x="12" y="66" width="98" height="22" rx="8" fill="url(#gW6)"></rect><rect x="104" y="58" width="7" height="34" rx="3.5" fill="url(#gT6)"></rect><ellipse cx="38" cy="64" rx="22" ry="11" fill="url(#gW6)"></ellipse><g transform="translate(38 52) scale(0.68)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><path d="M28 68Q40 62 52 66H104a8 8 0 0 1 8 8v8a8 8 0 0 1-8 8H36a8 8 0 0 1-8-8z" fill="url(#gM6)"></path><text x="92" y="30" font-family="Nunito,sans-serif" font-weight="800" font-size="15" fill="#EE9A9E">z</text><text x="102" y="18" font-family="Nunito,sans-serif" font-weight="800" font-size="10" fill="#EE9A9E">z</text></svg>',
+  8: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG7" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT7" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF7" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl7" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw7"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><path d="M31 70Q17 62 20 44" fill="none" stroke="#F0A0A5" stroke-width="9" stroke-linecap="round"></path><path d="M89 70Q103 62 100 44" fill="none" stroke="#F0A0A5" stroke-width="9" stroke-linecap="round"></path><circle cx="20" cy="42" r="6.5" fill="url(#gR7)"></circle><circle cx="100" cy="42" r="6.5" fill="url(#gR7)"></circle><g transform="translate(60 68) scale(0.88)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(60 16) scale(0.9)"><polygon points="0,-12 3.5,-4 12,-3.5 5.5,2.5 7.5,11 0,6.5 -7.5,11 -5.5,2.5 -12,-3.5 -3.5,-4" fill="url(#gY7)" stroke="#FFD98D" stroke-width="3.5" stroke-linejoin="round"></polygon><ellipse cx="-3" cy="-4" rx="3" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-30 -3 -4)"></ellipse></g><g transform="translate(30 16) scale(0.45)"><polygon points="0,-12 3.5,-4 12,-3.5 5.5,2.5 7.5,11 0,6.5 -7.5,11 -5.5,2.5 -12,-3.5 -3.5,-4" fill="url(#gY7)" stroke="#FFD98D" stroke-width="3.5" stroke-linejoin="round"></polygon><ellipse cx="-3" cy="-4" rx="3" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-30 -3 -4)"></ellipse></g><g transform="translate(90 16) scale(0.45)"><polygon points="0,-12 3.5,-4 12,-3.5 5.5,2.5 7.5,11 0,6.5 -7.5,11 -5.5,2.5 -12,-3.5 -3.5,-4" fill="url(#gY7)" stroke="#FFD98D" stroke-width="3.5" stroke-linejoin="round"></polygon><ellipse cx="-3" cy="-4" rx="3" ry="1.6" fill="#fff" opacity="0.8" transform="rotate(-30 -3 -4)"></ellipse></g></svg>',
+  9: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG8" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT8" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF8" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl8" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw8"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><g transform="translate(42 64) scale(0.85)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g><g transform="translate(66 18)"><rect width="42" height="48" rx="9" fill="url(#gW8)"></rect><path d="M0 9a9 9 0 0 1 9-9h24a9 9 0 0 1 9 9v7H0z" fill="url(#gR8)"></path><path d="M24 26l-8 9 8 9" fill="none" stroke="#DE7A80" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>',
+  10: '<svg viewBox="0 0 120 100" aria-hidden="true"><defs><radialGradient id="gR9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFE2DE"></stop><stop offset="0.4" stop-color="#F7B0AE"></stop><stop offset="1" stop-color="#E48A90"></stop></radialGradient><radialGradient id="gG9" cx="0.3" cy="0.25" r="0.9"><stop offset="0" stop-color="#DDF3E3"></stop><stop offset="0.5" stop-color="#A0D7B0"></stop><stop offset="1" stop-color="#6DB088"></stop></radialGradient><radialGradient id="gY9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFF4D2"></stop><stop offset="0.5" stop-color="#FFD98D"></stop><stop offset="1" stop-color="#F2BC62"></stop></radialGradient><radialGradient id="gW9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset="0.6" stop-color="#FFF6F0"></stop><stop offset="1" stop-color="#F1DAD2"></stop></radialGradient><radialGradient id="gP9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDE5"></stop><stop offset="0.5" stop-color="#F8B0C2"></stop><stop offset="1" stop-color="#E283A0"></stop></radialGradient><radialGradient id="gM9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#E6F5EB"></stop><stop offset="0.5" stop-color="#B8E0C5"></stop><stop offset="1" stop-color="#8EC8A4"></stop></radialGradient><radialGradient id="gO9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#FFDDD3"></stop><stop offset="0.5" stop-color="#F4B2A8"></stop><stop offset="1" stop-color="#DE8680"></stop></radialGradient><radialGradient id="gB9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F2FAFF"></stop><stop offset="1" stop-color="#BDDCEE"></stop></radialGradient><radialGradient id="gT9" cx="0.35" cy="0.3" r="0.85"><stop offset="0" stop-color="#F6DFD0"></stop><stop offset="1" stop-color="#D9A292"></stop></radialGradient><radialGradient id="gF9" cx="0.4" cy="0.3" r="0.8"><stop offset="0" stop-color="#FFF8E8"></stop><stop offset="0.6" stop-color="#F8E6C6"></stop><stop offset="1" stop-color="#EBD0A6"></stop></radialGradient><filter id="bl9" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="2.2"></feGaussianBlur></filter><clipPath id="cw9"><rect x="45" y="50" width="30" height="26" rx="5"></rect></clipPath></defs><circle cx="88" cy="68" r="22" fill="url(#gY9)"></circle><line x1="60.7" y1="58.1" x2="53.2" y2="55.3" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="71.4" y1="44.2" x2="66.8" y2="37.7" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="88.0" y1="39.0" x2="88.0" y2="31.0" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="104.6" y1="44.2" x2="109.2" y2="37.7" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><line x1="115.3" y1="58.1" x2="122.8" y2="55.3" stroke="#FFD98D" stroke-width="4.5" stroke-linecap="round"></line><ellipse cx="60" cy="104" rx="72" ry="30" fill="url(#gM9)"></ellipse><g transform="translate(42 68) scale(0.82)"><image href="char-card.png" x="-40" y="-46" width="82" height="82"/></g></svg>'
+};
+
 function renderHub() {
   var done = 0;
   var i;
   for (i = 0; i < LESSONS.length; i++) if (allLearned(LESSONS[i])) done++;
   var pct = Math.round(done / LESSONS.length * 100);
-  var tones = ["tone-blush", "tone-mint"];
-  var html = '<div class="scene hub"><div class="col"><div class="hub-app"><aside class="hub-side">';
-  html += '<button type="button" class="home-back" data-action="welcome">' + ICON_HOME + "<span>Trang chủ</span></button>";
-  html += '<div class="greet"><div class="bubble"><p class="greet-k">Xin chào, tớ là <span class="nobr">O-ma-oo</span>.</p><h2>Tớ sẽ hướng dẫn cho cậu tập viết câu.</h2></div>' + charImg() + "</div>";
-  html += '<div class="progcard"><div><p>Hôm nay</p><b>' + done + " / " + LESSONS.length + ' bài</b></div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
-  html += '<div class="hub-foot"><div class="foot-row">' + tomatoHtml() + '<button type="button" class="btn" data-action="continue">Bắt đầu</button></div><p class="note">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></div></aside>';
-  html += '<div class="hub-main"><div class="hub-scroll"><div class="hub-head"><h1>Chọn chủ đề</h1></div><section class="hub-topics"><div class="tgrid">';
+  var html = '<div class="scene hub"><div class="col"><div class="hub-app"><header class="hub-bar">';
+  html += '<button type="button" class="hub-home" data-action="welcome" aria-label="Trang chủ">' + ICON_HOME + "</button>";
+  html += '<img class="hub-mascot" src="char.png" alt="">';
+  html += '<div class="hub-hello"><p>Xin chào, tớ là <span class="nobr">O-ma-oo</span>.</p><b>Tớ sẽ hướng dẫn cho cậu tập viết câu.</b></div>';
+  html += '<div class="hub-spacer"></div>';
+  html += '<div class="hub-today"><div class="row"><span>Hôm nay</span><b>' + done + " / " + LESSONS.length + ' bài</b></div><div class="bar"><i style="width:' + pct + '%"></i></div></div>';
+  html += tomatoHtml();
+  html += '<button type="button" class="btn hub-start" data-action="continue">Bắt đầu</button></header>';
+  html += '<div class="hub-body"><div class="hub-head"><h1>Chọn chủ đề</h1><span>10 chủ đề · 5 câu mỗi chủ đề</span></div><div class="tgrid">';
   for (i = 0; i < LESSONS.length; i++) {
     var lesson = LESSONS[i];
     var finished = allLearned(lesson);
-    html += '<button type="button" class="tile ' + tones[i % tones.length] + '" data-action="learn" data-lesson="' + lesson.id + '">';
-    html += '<span class="ticon">' + (TOPIC_ICONS[lesson.id] || "") + "</span>";
-    html += '<span class="tbody"><span class="ttitle">' + esc(lesson.title) + '</span><span class="tsub">' + esc(lesson.vi) + "</span></span>";
-    if (finished) html += '<span class="tcheck" aria-hidden="true">✓</span>';
-    html += "</button>";
+    html += '<button type="button" class="tile b" data-action="learn" data-lesson="' + lesson.id + '">';
+    html += '<span class="ti">' + TOPIC_ART[lesson.id] + "</span>";
+    if (finished) html += '<span class="tcheck" aria-hidden="true">' + ICON_CHECK + "</span>";
+    html += "<b>" + esc(lesson.title) + "</b><small>" + esc(TOPIC_SHORT[lesson.id]) + "</small></button>";
   }
-  html += '</div></section><section class="big-block"><div class="big-head"><h2>Bài kiểm tra to</h2></div><p class="test-note">Mỗi bài gồm 10 câu hỏi trộn từ 10 chủ đề bạn đã học. Hoàn thành một bài sẽ nhận được 10 quả cà chua.</p><div class="big-row">';
+  html += '</div><section class="hub-big"><div class="big-head"><h2>Bài kiểm tra to</h2><span>10 câu trộn từ 10 chủ đề · xong một bài nhận 10 quả cà chua</span></div><div class="big-row">';
   for (i = 1; i <= 5; i++) {
     var got = bigDone(i);
-    html += '<button type="button" class="big-btn' + (got === 10 ? " done" : "") + '" data-action="big-test" data-big="' + i + '"><b>Bài ' + i + "</b><small>" + (got ? got + "/10 câu đã thuộc" : "10 câu, mỗi chủ đề một câu") + "</small></button>";
+    html += '<button type="button" class="big-btn' + (got === 10 ? " done" : "") + '" data-action="big-test" data-big="' + i + '"><b>Bài ' + i + "</b><small>" + (got ? got + "/10 câu đã thuộc" : "10 câu mới") + "</small></button>";
   }
-  html += "</div></section><div class=\"hub-pad\"></div></div></div></div></div></div>";
+  html += '</div></section><p class="note hub-note">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></div>';
+  html += '<div class="hub-foot"><button type="button" class="btn" data-action="continue">Bắt đầu</button></div></div></div></div>';
   return html;
 }
 
@@ -2112,10 +2597,11 @@ function renderHome() {
   html += '<section id="chu-de"><h2>Chọn chủ đề</h2><p class="sub">Mỗi chủ đề là một tình huống hỏi – đáp quen thuộc.</p><div class="grid">';
   for (i = 0; i < LESSONS.length; i++) {
     var lesson = LESSONS[i];
-    var num = (i < 9 ? "0" : "") + (i + 1);
-    html += '<button type="button" class="tile ' + (i % 2 ? "m" : "b") + '" data-action="learn" data-lesson="' + lesson.id + '">';
-    html += '<span class="ti">' + (TOPIC_ICONS[lesson.id] || "") + "</span>";
-    html += "<b>" + esc(lesson.title) + "</b><small>" + esc(lesson.vi) + "</small><em>" + num + "</em></button>";
+    var finished = allLearned(lesson);
+    html += '<button type="button" class="tile b" data-action="learn" data-lesson="' + lesson.id + '">';
+    html += '<span class="ti">' + TOPIC_ART[lesson.id] + "</span>";
+    if (finished) html += '<span class="tcheck" aria-hidden="true">' + ICON_CHECK + "</span>";
+    html += "<b>" + esc(lesson.title) + "</b><small>" + esc(TOPIC_SHORT[lesson.id]) + "</small></button>";
   }
   html += '</div></section><section id="kiem-tra"><h2>Kiểm tra</h2><p class="sub">Học xong thì thử sức, mỗi bài đúng nhận thêm cà chua.</p><div class="tests">';
   html += '<div class="panel"><h3>Bài kiểm tra nhỏ</h3><p>Cuối mỗi chủ đề có một bài nhỏ để ôn lại 5 câu vừa học.</p><div class="stats">';
@@ -2183,6 +2669,7 @@ function renderLearn() {
   var say = "";
   var sayCls = "";
   if (step === 2 && state.ghepChecked && !state.ghepOk) { mood = "mad"; say = "Chưa đúng thứ tự."; sayCls = " bad"; }
+  else if (step === 3 && state.writeAlso) { mood = ""; say = "Đúng ngoài đời."; sayCls = " ok"; }
   else if (step === 3 && state.writeOk) { mood = "happy"; say = "Đúng rồi."; sayCls = " ok"; }
   else if (step === 3 && state.writeMsg) { mood = "cry"; say = "Chưa đúng. Cần viết lại."; sayCls = " bad"; }
   var pct = Math.round(state.qIndex / lesson.questions.length * 100);
@@ -2196,10 +2683,13 @@ function renderLearn() {
     html += renderStep2(q);
     if (state.ghepChecked && !state.ghepOk) html += '<p class="why">Chưa đúng thứ tự. Bấm vào từ trong ô để gỡ ra rồi thử lại.</p>';
   }
+  else if (step === 3 && state.writeAlso) html += renderStep3(q) + '<p class="why">' + formatMsg(state.writeMsg) + "</p>" + vocabHtml(q, true);
   else if (!(step === 3 && (state.writeOk || state.writeMsg))) html += renderStep3(q) + vocabHtml(q, !state.writeOk);
   else if (state.writeOk) {
     var nextLabel = state.single ? "Quay lại test →" : (state.qIndex === lesson.questions.length - 1 ? "Về danh sách →" : "Câu tiếp theo →");
-    html += '<p class="answer-pill ok" lang="en">' + esc(state.draft) + '</p><div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + nextLabel + "</button></div>";
+    html += '<p class="answer-pill ok" lang="en">' + esc(state.draft) + "</p>";
+    if (state.nudge) html += '<p class="why">' + formatMsg(state.nudge) + "</p>";
+    html += '<div class="btn-row"><button type="button" class="btn ok" data-action="next-q">' + nextLabel + "</button></div>";
   } else html += '<p class="answer-pill bad" lang="en">' + esc(state.draft) + '</p><p class="why">' + formatMsg(state.writeMsg) + '</p><div class="btn-row"><button type="button" class="btn" data-action="retry-write">Thử lại</button></div>';
   html += "</div></div></div></div>";
   return html;
@@ -2300,6 +2790,7 @@ function renderTest() {
   var say = "";
   var sayCls = "";
   if (locked && (mastered || hintKind)) { mood = "happy"; say = mastered ? "Đúng rồi." : "Đúng rồi, nhưng có gợi ý."; sayCls = " ok"; }
+  else if (!locked && state.writeAlso) { mood = ""; say = "Đúng ngoài đời."; sayCls = " ok"; }
   else if (locked || state.writeMsg) { mood = "cry"; say = "Chưa đúng. Cần viết lại."; sayCls = " bad"; }
   html += '<div class="mascot">' + (say ? '<p class="say' + sayCls + '">' + say + "</p>" : "") + charImg(mood, "float-char") + "</div>";
   html += '</div><div class="sheet card">';
@@ -2312,6 +2803,7 @@ function renderTest() {
     if (state.writeMsg) html += '<p class="why">' + msg + "</p>";
   } else {
     var body = mastered ? "Đúng rồi. Thẻ này chuyển sang Đã thuộc." : msg;
+    if ((mastered || hintKind) && state.result && state.result.nudge) body += "<p>" + formatMsg(state.result.nudge) + "</p>";
     html += '<p class="answer-pill ' + (mastered || hintKind ? "ok" : "bad") + '" lang="en">' + esc(state.draft) + '</p><div class="why">' + body + "</div>";
     html += '<div class="btn-row">';
     if (!mastered && !hintKind) html += '<button type="button" class="btn btn-ghost" data-action="retry">Sửa lại</button>';
@@ -2394,6 +2886,8 @@ function goQuestion(i) {
   state.draft = "";
   state.writeMsg = "";
   state.writeOk = false;
+  state.writeAlso = false;
+  state.nudge = "";
   state.counted = false;
   state.ghepChecked = false;
   state.ghepOk = false;
@@ -2417,6 +2911,8 @@ function goWrite() {
   state.draft = "";
   state.writeMsg = "";
   state.writeOk = false;
+  state.writeAlso = false;
+  state.nudge = "";
   state.counted = false;
   state.vocabOpen = false;
   render();
@@ -2468,9 +2964,19 @@ function checkWrite() {
   var raw = input ? input.value : state.draft;
   state.draft = raw;
   var result = checkAnswer(raw, currentQuestion());
+  if (result.alsoOk) {
+    state.writeMsg = result.message;
+    state.writeAlso = true;
+    state.writeOk = false;
+    state.nudge = "";
+    render();
+    return;
+  }
   if (!result.ok) {
     state.writeMsg = result.message;
     state.writeOk = false;
+    state.writeAlso = false;
+    state.nudge = "";
     render();
     return;
   }
@@ -2485,6 +2991,8 @@ function checkWrite() {
   }
   state.draft = result.sentence;
   state.writeMsg = "";
+  state.writeAlso = false;
+  state.nudge = result.nudge || "";
   state.writeOk = true;
   render();
 }
@@ -2509,6 +3017,8 @@ function nextQuestion() {
   state.draft = "";
   state.writeMsg = "";
   state.writeOk = false;
+  state.writeAlso = false;
+  state.nudge = "";
   state.counted = false;
   state.vocabOpen = false;
   render();
@@ -2592,6 +3102,8 @@ function freshTestState() {
   state.result = null;
   state.draft = "";
   state.writeMsg = "";
+  state.writeAlso = false;
+  state.nudge = "";
   state.single = false;
   state.pileOk = false;
   state.pileWait = false;
@@ -2630,6 +3142,8 @@ function openCard() {
   state.phase = "write";
   state.draft = "";
   state.writeMsg = "";
+  state.writeAlso = false;
+  state.nudge = "";
   state.hintUsed = false;
   state.hintOpen = false;
   state.result = null;
@@ -2668,9 +3182,18 @@ function checkTest() {
   var result = checkAnswer(raw, q);
   if (!normalize(raw)) {
     state.writeMsg = result.message;
+    state.writeAlso = false;
     render();
     return;
   }
+  if (result.alsoOk) {
+    state.writeMsg = result.message;
+    state.writeAlso = true;
+    state.nudge = "";
+    render();
+    return;
+  }
+  state.writeAlso = false;
   state.phase = "result";
   state.writeMsg = "";
   if (result.ok && !state.hintUsed) {
@@ -2678,12 +3201,12 @@ function checkTest() {
     masteredFlags(lesson)[qIndex] = true;
     saveProgress();
     state.queue.shift();
-    state.result = { kind: "mastered", qIndex: qIndex, card: card };
+    state.result = { kind: "mastered", qIndex: qIndex, card: card, nudge: result.nudge || "" };
     state.draft = result.sentence;
   } else if (result.ok) {
     rememberSentence();
     moveCard("end");
-    state.result = { kind: "hint", qIndex: qIndex, card: card };
+    state.result = { kind: "hint", qIndex: qIndex, card: card, nudge: result.nudge || "" };
     state.draft = result.sentence;
   } else {
     moveCard("later");
@@ -2716,6 +3239,8 @@ function nextCard() {
   state.result = null;
   state.draft = "";
   state.writeMsg = "";
+  state.writeAlso = false;
+  state.nudge = "";
   state.counted = false;
   if (!state.queue.length) state.view = "celebrate";
   render();
@@ -2733,6 +3258,8 @@ function startReview() {
   state.draft = "";
   state.writeMsg = "";
   state.writeOk = false;
+  state.writeAlso = false;
+  state.nudge = "";
   state.counted = false;
   state.ghepChecked = false;
   state.ghepOk = false;
@@ -2832,7 +3359,7 @@ function onClick(e) {
     goQuestion(resumeAt);
     return;
   }
-  if (action === "retry-write") { state.writeMsg = ""; render(); return; }
+  if (action === "retry-write") { state.writeMsg = ""; state.writeAlso = false; state.nudge = ""; render(); return; }
   if (action === "welcome") { state.view = "home"; render(); return; }
   if (action === "home" || action === "topics") { state.view = "topics"; render(); return; }
   if (action === "learn") { startLearn(btn.getAttribute("data-lesson")); return; }
