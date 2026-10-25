@@ -286,12 +286,23 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
 .stash.pop::after{content:"+1";position:absolute;right:calc(100% + 8px);top:4px;color:#C45C5C;font-size:1.25rem;font-weight:800;line-height:1;pointer-events:none;white-space:nowrap;animation:tomato-plus 1s ease forwards}
 .rand{appearance:none;border:0;background:none;color:#C45C5C;font-weight:800;font-size:1.05rem;padding:0}
 .hub .tgrid{flex:none;min-height:0;overflow:visible;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-template-rows:auto auto;gap:12px;align-content:start;padding:0}
-.hub .tile{position:relative;min-height:0;height:auto;border-radius:20px;padding:14px 16px 12px;gap:0;justify-content:flex-start;background:linear-gradient(160deg,#FDEFEC,#F8D3CF);box-shadow:0 14px 22px -16px rgba(92,64,56,.35)}
-.hub .tile.b,.hub .tile.m{background:linear-gradient(160deg,#FDEFEC,#F8D3CF)}
-.hub .ti{display:block;height:78px;margin:0 0 8px}
-.hub .ti svg{height:78px;width:auto;display:block}
-.hub .tile b{font-size:20px;line-height:1.15;font-weight:800;letter-spacing:-.02em}
-.hub .tile small{display:block;margin-top:3px;font-size:15px;color:var(--muted);line-height:1.25;font-weight:700}
+.hub .tile{position:relative;min-height:0;height:auto;border-radius:22px;padding:8px 8px 12px;gap:0;justify-content:flex-start;background:#fff;box-shadow:0 0 0 1px rgba(243,221,216,.95),0 14px 22px -16px rgba(92,64,56,.3);transition:transform .15s}
+.hub .tile.b,.hub .tile.m{background:#fff}
+.hub .tile:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(243,221,216,.95),0 16px 24px -12px rgba(92,64,56,.34)}
+.hub .ti{display:flex;align-items:flex-end;justify-content:center;height:82px;margin:0 0 8px;border-radius:16px;background:#FFF4EE;overflow:hidden}
+.hub .ti svg{height:70px;width:auto;display:block}
+.hub .tile b{font-size:18px;line-height:1.15;font-weight:800;letter-spacing:-.02em;padding:0 4px}
+.hub .tile small{display:block;margin-top:2px;padding:0 4px 0;font-size:14px;color:var(--muted);line-height:1.25;font-weight:700}
+.hub .tgrid .tile:nth-child(1) .ti{background:#FDECEA}
+.hub .tgrid .tile:nth-child(2) .ti{background:#F8F1EC}
+.hub .tgrid .tile:nth-child(3) .ti{background:#FDE8F1}
+.hub .tgrid .tile:nth-child(4) .ti{background:#FFF6DC}
+.hub .tgrid .tile:nth-child(5) .ti{background:#FFF3E0}
+.hub .tgrid .tile:nth-child(6) .ti{background:#F6EBE6}
+.hub .tgrid .tile:nth-child(7) .ti{background:#EAF6EE}
+.hub .tgrid .tile:nth-child(8) .ti{background:#FFF6DC}
+.hub .tgrid .tile:nth-child(9) .ti{background:#FDECEA}
+.hub .tgrid .tile:nth-child(10) .ti{background:#E7F4EC}
 .tcheck{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:#E07A7A;color:#fff;display:grid;place-items:center}
 .tcheck svg{width:14px;height:14px}
 .hub-big{flex:none;display:flex;flex-direction:column;gap:10px}
@@ -389,8 +400,9 @@ button.vchip:hover{border-color:var(--coral)}.vchip-en{font-weight:800}.vchip-vi
   .test-note{font-size:1.05rem;margin-bottom:12px}
   .hub .tgrid{flex:none;overflow:visible;grid-template-columns:1fr 1fr;grid-template-rows:none;gap:10px}
   .hub .tile{min-height:156px}
-  .hub .ti,.hub .ti svg{height:58px}
-  .hub .tile b{font-size:17px}
+  .hub .ti{height:68px}
+  .hub .ti svg{height:56px}
+  .hub .tile b{font-size:16px}
   .hub .tile small{font-size:13px}
   .hub-foot{display:flex;flex:none;padding:10px 0 calc(12px + env(safe-area-inset-bottom));background:rgba(255,246,242,.92);box-shadow:0 -10px 20px -14px rgba(92,64,56,.35)}
   .hub-foot .btn{width:100%;min-height:52px;font-size:1.15rem}
@@ -505,10 +517,21 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
 .home-land .cta{display:flex;gap:12px;flex-wrap:wrap}
 .home-land .note{margin:18px 0 0;color:var(--muted);font-size:.9rem;font-weight:700}
 .home-land .stage{position:relative;display:flex;flex-direction:column;align-items:center;margin:0;padding:0;background:transparent;border-radius:0;min-height:0}
-.home-land .bubble{position:relative;left:auto;right:auto;bottom:auto;background:#fff;border-radius:24px;padding:16px 20px;font-weight:800;line-height:1.4;font-size:1rem;box-shadow:0 14px 24px -14px rgba(92,64,56,.35);margin:0 0 18px;max-width:340px;max-height:none;overflow:visible}
+.home-land .bubble{position:relative;z-index:3;left:auto;right:auto;bottom:auto;background:#fff;border-radius:24px;padding:16px 20px;font-weight:800;line-height:1.4;font-size:1rem;box-shadow:0 14px 24px -14px rgba(92,64,56,.35);margin:0 0 18px;max-width:340px;max-height:none;overflow:visible}
 .home-land .bubble::after{left:50%;bottom:-7px;width:16px;height:16px;background:#fff;border:0;transform:translateX(-50%) rotate(45deg);border-radius:3px}
 .home-land .bubble small{display:block;color:#C45C5C;font-size:.95rem}
-.home-land .stage .mascot-img{width:min(300px,70%);height:auto;filter:drop-shadow(0 10px 10px rgba(150,80,50,.18));animation:bob 3.6s ease-in-out infinite}
+.home-land .stage .mascot-img{position:relative;z-index:1;width:min(300px,70%);height:auto;filter:drop-shadow(0 10px 10px rgba(150,80,50,.18));animation:bob 3.6s ease-in-out infinite}
+.home-land .mood{position:absolute;z-index:0;inset:-8px -36px 0;pointer-events:none}
+.home-land .orb,.home-land .chip{position:absolute;display:block}
+.home-land .orb{border-radius:50%;background:radial-gradient(circle at 32% 30%,#fff 0 18%,rgba(255,255,255,0) 42%),radial-gradient(circle at 50% 58%,rgba(255,226,222,.7),rgba(255,226,222,.12) 72%);box-shadow:inset 0 0 0 2px rgba(255,255,255,.95),0 10px 16px -12px rgba(196,92,92,.55)}
+.home-land .o1{width:78px;height:78px;right:0;top:36%;animation:bobble 5.2s ease-in-out infinite}
+.home-land .o2{width:48px;height:48px;left:16%;bottom:18%;background:radial-gradient(circle at 32% 30%,#fff 0 18%,rgba(255,255,255,0) 42%),radial-gradient(circle at 50% 58%,rgba(214,239,224,.85),rgba(214,239,224,.16) 72%);animation:bobble 6s ease-in-out infinite .4s}
+.home-land .o3{width:30px;height:30px;right:24%;top:8%;animation:bobble 4.6s ease-in-out infinite .8s}
+.home-land .c1{width:34px;height:26px;right:10%;bottom:8%;background:#F6B4B0;border-radius:62% 38% 55% 45% / 48% 60% 40% 52%;animation:squish 5.4s ease-in-out infinite}
+.home-land .c2{width:22px;height:18px;left:28%;top:46%;background:#B7E0C8;border-radius:48% 52% 42% 58% / 58% 42% 58% 42%;animation:squish 6.2s ease-in-out infinite .6s}
+.home-land .c3{width:16px;height:16px;right:2%;bottom:30%;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px #F3C1BD;animation:bobble 4.8s ease-in-out infinite 1s}
+@keyframes bobble{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-12px) scale(1.05)}}
+@keyframes squish{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-9px) rotate(8deg)}}
 .home-land .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
 .home-land .stat{background:#fff;border-radius:20px;padding:12px 18px;box-shadow:0 12px 20px -14px rgba(92,64,56,.4)}
 .home-land .stat b{display:block;font-size:1.4rem}
@@ -523,13 +546,23 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
 .home-land .step b{display:block;font-size:1.25rem;margin-bottom:4px}
 .home-land .step p{margin:0;color:var(--muted);line-height:1.55;font-family:"Be Vietnam Pro",Nunito,sans-serif;font-weight:500;font-size:.95rem}
 .home-land .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.home-land .tile{position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:0;min-height:0;height:auto;padding:14px 16px 12px;border-radius:20px;background:linear-gradient(160deg,#FDEFEC,#F8D3CF);box-shadow:0 14px 22px -16px rgba(92,64,56,.35);transition:transform .15s}
-.home-land .tile:hover{transform:translateY(-2px);box-shadow:0 16px 24px -12px rgba(92,64,56,.4)}
-.home-land .tile.b,.home-land .tile.m{background:linear-gradient(160deg,#FDEFEC,#F8D3CF)}
-.home-land .ti{display:block;width:auto;height:78px;margin:0 0 8px;border-radius:0;background:none}
-.home-land .ti svg{height:78px;width:auto;display:block}
-.home-land .tile b{font-size:20px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-top:0}
-.home-land .tile small{display:block;margin-top:3px;font-size:15px;color:var(--muted);line-height:1.25;font-weight:700}
+.home-land .tile{position:relative;display:flex;flex-direction:column;justify-content:flex-start;gap:0;min-height:0;height:auto;padding:8px 8px 12px;border-radius:22px;background:#fff;box-shadow:0 0 0 1px rgba(243,221,216,.95),0 14px 22px -16px rgba(92,64,56,.3);transition:transform .15s}
+.home-land .tile:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(243,221,216,.95),0 16px 24px -12px rgba(92,64,56,.34)}
+.home-land .tile.b,.home-land .tile.m{background:#fff}
+.home-land .ti{display:flex;align-items:flex-end;justify-content:center;width:auto;height:82px;margin:0 0 8px;border-radius:16px;background:#FFF4EE;overflow:hidden}
+.home-land .ti svg{height:70px;width:auto;display:block}
+.home-land .tile b{font-size:18px;line-height:1.15;font-weight:800;letter-spacing:-.02em;margin-top:0;padding:0 4px}
+.home-land .tile small{display:block;margin-top:2px;padding:0 4px;font-size:14px;color:var(--muted);line-height:1.25;font-weight:700}
+.home-land .grid .tile:nth-child(1) .ti{background:#FDECEA}
+.home-land .grid .tile:nth-child(2) .ti{background:#F8F1EC}
+.home-land .grid .tile:nth-child(3) .ti{background:#FDE8F1}
+.home-land .grid .tile:nth-child(4) .ti{background:#FFF6DC}
+.home-land .grid .tile:nth-child(5) .ti{background:#FFF3E0}
+.home-land .grid .tile:nth-child(6) .ti{background:#F6EBE6}
+.home-land .grid .tile:nth-child(7) .ti{background:#EAF6EE}
+.home-land .grid .tile:nth-child(8) .ti{background:#FFF6DC}
+.home-land .grid .tile:nth-child(9) .ti{background:#FDECEA}
+.home-land .grid .tile:nth-child(10) .ti{background:#E7F4EC}
 .home-land .tests{display:grid;grid-template-columns:.8fr 1.2fr;gap:16px}
 .home-land .panel{background:#fff;border-radius:30px;padding:24px;box-shadow:0 24px 40px -26px rgba(92,64,56,.4)}
 .home-land .panel h3{margin:0 0 6px;font-size:1.3rem}
@@ -542,15 +575,20 @@ html:has(.home-land){scroll-padding-top:72px;scroll-behavior:smooth}
 .home-land .band{display:flex;align-items:center;gap:20px;background:#FDECEA;border-radius:32px;padding:20px 28px;margin:10px 0 40px}
 .home-land .band .mascot-img{height:96px;width:auto;animation:none;filter:none}
 .home-land .band p{margin:0;flex:1;font-weight:800;font-size:1.2rem;line-height:1.4}
-@media (prefers-reduced-motion:reduce){.home-land .stage .mascot-img{animation:none}}
+@media (prefers-reduced-motion:reduce){.home-land .stage .mascot-img,.home-land .orb,.home-land .chip{animation:none}}
 @media (max-width:860px){
   .home-land .hero .w{grid-template-columns:1fr;padding-top:32px}
   .home-land .stage{order:-1}
   .home-land .stage .mascot-img{width:150px}
+  .home-land .mood{inset:0 -6px 0}
+  .home-land .o1{width:46px;height:46px;right:0}
+  .home-land .o2{width:28px;height:28px;left:6%;bottom:10%}
+  .home-land .o3{display:none}
   .home-land .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .home-land .tile{min-height:156px}
-  .home-land .ti,.home-land .ti svg{height:58px}
-  .home-land .tile b{font-size:17px}
+  .home-land .ti{height:68px}
+  .home-land .ti svg{height:56px}
+  .home-land .tile b{font-size:16px}
   .home-land .tile small{font-size:13px}
   .home-land .steps,.home-land .tests{grid-template-columns:1fr}
   .home-land .nl{display:none}
@@ -2865,7 +2903,8 @@ function renderHome() {
   html += '<p class="lead">Tớ là O-ma-oo. Mỗi câu đi qua ba bước xem – ghép – viết, rồi cậu thử sức với bài kiểm tra nhỏ và bài kiểm tra to nhé.</p>';
   html += '<div class="cta"><button type="button" class="btn" data-action="topics">Bắt đầu học</button><a class="btn g" href="#cach">Xem cách học</a></div>';
   html += '<p class="note">Bài tập đệm, nên học cùng thầy cô hoặc phụ huynh.</p></div>';
-  html += '<div class="stage"><div class="bubble">Xin chào, tớ là O-ma-oo.<small>Tớ sẽ hướng dẫn cho cậu tập viết câu.</small></div>';
+  html += '<div class="stage"><div class="mood" aria-hidden="true"><span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span><span class="chip c1"></span><span class="chip c2"></span><span class="chip c3"></span></div>';
+  html += '<div class="bubble">Xin chào, tớ là O-ma-oo.<small>Tớ sẽ hướng dẫn cho cậu tập viết câu.</small></div>';
   html += '<img class="mascot-img" src="char.png" alt="Mascot O-ma-oo"></div></div></header><main class="w">';
   html += '<section id="cach"><h2>Mỗi câu chỉ cần ba bước</h2><p class="sub">Đi chậm một chút, nhớ lâu hơn một chút.</p><div class="steps">';
   html += '<div class="step"><i>1</i><b>Xem</b><p>Đọc câu hỏi, câu mẫu và nghĩa tiếng Việt của từng phần.</p></div>';
